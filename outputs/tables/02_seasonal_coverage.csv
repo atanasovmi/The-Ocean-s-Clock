@@ -1,0 +1,162 @@
+row,year,label,latitude,n_nights,n_years
+10,1988,"Faga’alu, American Samoa",-14.2794444444444,5,2
+10,1995,"Faga’alu, American Samoa",-14.2794444444444,5,2
+5,1982,"Big Broadhurst Reef, Australia",-18.922962962962934,6,3
+5,1983,"Big Broadhurst Reef, Australia",-18.922962962962934,6,3
+5,1987,"Big Broadhurst Reef, Australia",-18.922962962962934,6,3
+4,1983,"Bowden Reef, Australia",-19.043659027777778,8,3
+4,1986,"Bowden Reef, Australia",-19.043659027777778,8,3
+4,1987,"Bowden Reef, Australia",-19.043659027777778,8,3
+1,1978,"Heron Island, Australia",-23.45,6,3
+1,1980,"Heron Island, Australia",-23.45,6,3
+1,2005,"Heron Island, Australia",-23.45,6,3
+3,1992,"Magnetic Island, Australia",-19.1544106060606,22,7
+3,1993,"Magnetic Island, Australia",-19.1544106060606,22,7
+3,1995,"Magnetic Island, Australia",-19.1544106060606,22,7
+3,1984,"Magnetic Island, Australia",-19.1544106060606,22,7
+3,1981,"Magnetic Island, Australia",-19.1544106060606,22,7
+3,1982,"Magnetic Island, Australia",-19.1544106060606,22,7
+3,1983,"Magnetic Island, Australia",-19.1544106060606,22,7
+6,1984,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1993,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1994,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,2016,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1992,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1995,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1983,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1982,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,1991,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,2008,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,2010,"Orpheus Island, Australia",-18.605348656565653,22,12
+6,2011,"Orpheus Island, Australia",-18.605348656565653,22,12
+8,2016,"Vatuolalai, Fiji",-18.21,23,4
+8,2017,"Vatuolalai, Fiji",-18.21,23,4
+8,2018,"Vatuolalai, Fiji",-18.21,23,4
+8,2019,"Vatuolalai, Fiji",-18.21,23,4
+7,2008,"Votua, Fiji",-18.22,17,4
+7,2010,"Votua, Fiji",-18.22,17,4
+7,2011,"Votua, Fiji",-18.22,17,4
+7,2012,"Votua, Fiji",-18.22,17,4
+2,2016,"Reunion Island, France",-21.303333333333335,15,6
+2,2017,"Reunion Island, France",-21.303333333333335,15,6
+2,2012,"Reunion Island, France",-21.303333333333335,15,6
+2,2013,"Reunion Island, France",-21.303333333333335,15,6
+2,2014,"Reunion Island, France",-21.303333333333335,15,6
+2,2015,"Reunion Island, France",-21.303333333333335,15,6
+9,2002,"Moorea, French Polynesia",-17.5,12,1
+20,2016,"Kaneohe Bay, Hawaiian Islands",21.457272727272727,11,2
+20,1983,"Kaneohe Bay, Hawaiian Islands",21.457272727272727,11,2
+19,1991,"Molokini, Hawaiian Islands",20.6333333333333,17,6
+19,1994,"Molokini, Hawaiian Islands",20.6333333333333,17,6
+19,1995,"Molokini, Hawaiian Islands",20.6333333333333,17,6
+19,1996,"Molokini, Hawaiian Islands",20.6333333333333,17,6
+19,1997,"Molokini, Hawaiian Islands",20.6333333333333,17,6
+19,1998,"Molokini, Hawaiian Islands",20.6333333333333,17,6
+31,1981,"Eilat, Israel",29.532789115646224,245,6
+31,1982,"Eilat, Israel",29.532789115646224,245,6
+31,2015,"Eilat, Israel",29.532789115646224,245,6
+31,2016,"Eilat, Israel",29.532789115646224,245,6
+31,2017,"Eilat, Israel",29.532789115646224,245,6
+31,2018,"Eilat, Israel",29.532789115646224,245,6
+29,2002,"Akajima, Japan",26.19725069444445,64,17
+29,2004,"Akajima, Japan",26.19725069444445,64,17
+29,2006,"Akajima, Japan",26.19725069444445,64,17
+29,2007,"Akajima, Japan",26.19725069444445,64,17
+29,2008,"Akajima, Japan",26.19725069444445,64,17
+29,2009,"Akajima, Japan",26.19725069444445,64,17
+29,2010,"Akajima, Japan",26.19725069444445,64,17
+29,2011,"Akajima, Japan",26.19725069444445,64,17
+29,2012,"Akajima, Japan",26.19725069444445,64,17
+29,2013,"Akajima, Japan",26.19725069444445,64,17
+29,1989,"Akajima, Japan",26.19725069444445,64,17
+29,1990,"Akajima, Japan",26.19725069444445,64,17
+29,1991,"Akajima, Japan",26.19725069444445,64,17
+29,1995,"Akajima, Japan",26.19725069444445,64,17
+29,1997,"Akajima, Japan",26.19725069444445,64,17
+29,1998,"Akajima, Japan",26.19725069444445,64,17
+29,1999,"Akajima, Japan",26.19725069444445,64,17
+32,2002,"Amakusa, Japan",32.1666666666667,14,2
+32,2003,"Amakusa, Japan",32.1666666666667,14,2
+33,2006,"Kochi, Japan",32.7690462145723,113,8
+33,2007,"Kochi, Japan",32.7690462145723,113,8
+33,2008,"Kochi, Japan",32.7690462145723,113,8
+33,2009,"Kochi, Japan",32.7690462145723,113,8
+33,2002,"Kochi, Japan",32.7690462145723,113,8
+33,2003,"Kochi, Japan",32.7690462145723,113,8
+33,2004,"Kochi, Japan",32.7690462145723,113,8
+33,2005,"Kochi, Japan",32.7690462145723,113,8
+26,2010,"Sekisei, Japan",24.277645238095236,14,10
+26,2011,"Sekisei, Japan",24.277645238095236,14,10
+26,2012,"Sekisei, Japan",24.277645238095236,14,10
+26,1999,"Sekisei, Japan",24.277645238095236,14,10
+26,2000,"Sekisei, Japan",24.277645238095236,14,10
+26,2005,"Sekisei, Japan",24.277645238095236,14,10
+26,2007,"Sekisei, Japan",24.277645238095236,14,10
+26,2006,"Sekisei, Japan",24.277645238095236,14,10
+26,2001,"Sekisei, Japan",24.277645238095236,14,10
+26,2003,"Sekisei, Japan",24.277645238095236,14,10
+30,2014,"Sesoko, Japan",26.644116161616193,55,9
+30,2017,"Sesoko, Japan",26.644116161616193,55,9
+30,2018,"Sesoko, Japan",26.644116161616193,55,9
+30,1993,"Sesoko, Japan",26.644116161616193,55,9
+30,2015,"Sesoko, Japan",26.644116161616193,55,9
+30,2016,"Sesoko, Japan",26.644116161616193,55,9
+30,1986,"Sesoko, Japan",26.644116161616193,55,9
+30,1990,"Sesoko, Japan",26.644116161616193,55,9
+30,1991,"Sesoko, Japan",26.644116161616193,55,9
+34,1989,"Shikoku Bay, Japan",33.32781481481485,15,3
+34,1990,"Shikoku Bay, Japan",33.32781481481485,15,3
+34,1993,"Shikoku Bay, Japan",33.32781481481485,15,3
+14,2012,"Lankayan Island, Malaysia",6.5052,11,5
+14,2013,"Lankayan Island, Malaysia",6.5052,11,5
+14,2014,"Lankayan Island, Malaysia",6.5052,11,5
+14,2015,"Lankayan Island, Malaysia",6.5052,11,5
+14,2019,"Lankayan Island, Malaysia",6.5052,11,5
+13,2007,"Mabul Island, Malaysia",4.2427,8,2
+13,2009,"Mabul Island, Malaysia",4.2427,8,2
+12,2014,"Pulau Tioman, Malaysia",2.81544722222222,5,1
+15,2002,"Babeldaob, Palau",7.515,6,2
+15,2003,"Babeldaob, Palau",7.515,6,2
+16,1990,"Uva Island, Panama",7.8048,17,5
+16,1992,"Uva Island, Panama",7.8048,17,5
+16,1993,"Uva Island, Panama",7.8048,17,5
+16,1994,"Uva Island, Panama",7.8048,17,5
+16,1997,"Uva Island, Panama",7.8048,17,5
+18,2015,"Cabarruyan Island, Philippines",16.3341768,20,4
+18,2016,"Cabarruyan Island, Philippines",16.3341768,20,4
+18,2006,"Cabarruyan Island, Philippines",16.3341768,20,4
+18,2007,"Cabarruyan Island, Philippines",16.3341768,20,4
+23,2011,"Al Fahal, Saudi Arabia",22.224031,14,3
+23,2012,"Al Fahal, Saudi Arabia",22.224031,14,3
+23,2013,"Al Fahal, Saudi Arabia",22.224031,14,3
+21,2011,"Dreams Beach, Saudi Arabia",21.7567861111111,16,2
+21,2012,"Dreams Beach, Saudi Arabia",21.7567861111111,16,2
+24,2014,"Fsar, Saudi Arabia",22.22965,11,1
+11,2002,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2003,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2005,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2007,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2012,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2014,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2015,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2016,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2017,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2018,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+11,2019,"Raffles Lighthouse, Singapore",1.16666666666667,41,11
+28,2014,"Bitoujiao, Taiwan",25.1257,20,3
+28,2015,"Bitoujiao, Taiwan",25.1257,20,3
+28,2016,"Bitoujiao, Taiwan",25.1257,20,3
+27,2014,"Longdong, Taiwan",25.1187,17,2
+27,2016,"Longdong, Taiwan",25.1187,17,2
+25,2010,"Lyudao, Taiwan",22.66026470588235,68,7
+25,2011,"Lyudao, Taiwan",22.66026470588235,68,7
+25,2012,"Lyudao, Taiwan",22.66026470588235,68,7
+25,2013,"Lyudao, Taiwan",22.66026470588235,68,7
+25,2014,"Lyudao, Taiwan",22.66026470588235,68,7
+25,2015,"Lyudao, Taiwan",22.66026470588235,68,7
+25,2016,"Lyudao, Taiwan",22.66026470588235,68,7
+22,1991,"Nanwan Bay, Taiwan",21.9166666666667,16,2
+22,1992,"Nanwan Bay, Taiwan",21.9166666666667,16,2
+17,2003,"Chumphon, Thailand",10.205662499999988,8,3
+17,2010,"Chumphon, Thailand",10.205662499999988,8,3
+17,2012,"Chumphon, Thailand",10.205662499999988,8,3
