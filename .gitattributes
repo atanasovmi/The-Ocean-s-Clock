@@ -8,3 +8,11 @@ data/raw/** -text
 *.png binary
 *.xlsx binary
 *.nc binary
+# Downloaded sources and generated results are not authored program code.
+data/raw/** linguist-vendored
+data/derived/** linguist-generated
+data/spatial/** linguist-generated
+outputs/** linguist-generated
+*.shp binary
+*.shx binary
+*.dbf binary
