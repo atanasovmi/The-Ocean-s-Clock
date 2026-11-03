@@ -1,0 +1,10 @@
+subsite_id,date,site,country,latitude,longitude,year,month,utc_offset,lunar_day,supplied_full_moon,n_records,n_genera,sst_c,grid_latitude,grid_longitude,day,label
+36,2016-11-17,Orpheus Island,Australia,-18.611175,146.486647222222,2016,11,10,3,2016-11-14,8,2,27.02999939583242,-18.625,146.375,321,Orpheus Island  |  2 recorded reef-nights · 2016
+36,2016-11-19,Orpheus Island,Australia,-18.611175,146.486647222222,2016,11,10,5,2016-11-14,6,5,26.899999398738142,-18.625,146.375,323,Orpheus Island  |  2 recorded reef-nights · 2016
+106,2016-05-25,Sesoko,Japan,26.6534055555556,127.850563888889,2016,5,9,3,2016-05-22,1,1,26.02999941818416,26.625,127.875,145,Sesoko  |  3 recorded reef-nights · 2016
+106,2016-05-27,Sesoko,Japan,26.6534055555556,127.850563888889,2016,5,9,5,2016-05-22,1,1,26.59999940544367,26.625,127.875,147,Sesoko  |  3 recorded reef-nights · 2016
+106,2016-05-28,Sesoko,Japan,26.6534055555556,127.850563888889,2016,5,9,6,2016-05-22,1,1,26.559999406337734,26.625,127.875,148,Sesoko  |  3 recorded reef-nights · 2016
+143,2016-04-25,Raffles Lighthouse,Singapore,1.16666666666667,103.75,2016,4,8,3,2016-04-22,6,4,30.469999318942428,1.125,103.625,115,Raffles Lighthouse  |  4 recorded reef-nights · 2016
+143,2016-04-26,Raffles Lighthouse,Singapore,1.16666666666667,103.75,2016,4,8,4,2016-04-22,11,6,30.35999932140112,1.125,103.625,116,Raffles Lighthouse  |  4 recorded reef-nights · 2016
+143,2016-04-27,Raffles Lighthouse,Singapore,1.16666666666667,103.75,2016,4,8,5,2016-04-22,5,4,30.95999930799007,1.125,103.625,117,Raffles Lighthouse  |  4 recorded reef-nights · 2016
+143,2016-04-28,Raffles Lighthouse,Singapore,1.16666666666667,103.75,2016,4,8,6,2016-04-22,9,5,30.879999309778217,1.125,103.625,118,Raffles Lighthouse  |  4 recorded reef-nights · 2016

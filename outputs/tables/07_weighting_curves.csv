@@ -1,0 +1,91 @@
+lunar_day,n,share,method
+-15,9,0.0025217147660409078,Every observation row
+-14,19,0.005323620061641917,Every observation row
+-13,19,0.005323620061641917,Every observation row
+-12,20,0.005603810591202018,Every observation row
+-11,20,0.005603810591202018,Every observation row
+-10,20,0.005603810591202018,Every observation row
+-9,20,0.005603810591202018,Every observation row
+-8,7,0.001961333706920706,Every observation row
+-7,9,0.0025217147660409078,Every observation row
+-6,7,0.001961333706920706,Every observation row
+-5,17,0.0047632390025217144,Every observation row
+-4,24,0.0067245727094424204,Every observation row
+-3,43,0.012048192771084338,Every observation row
+-2,41,0.011487811711964136,Every observation row
+-1,77,0.021574670776127767,Every observation row
+0,124,0.034743625665452506,Every observation row
+1,117,0.0327822919585318,Every observation row
+2,198,0.05547772485289997,Every observation row
+3,382,0.10703278229195853,Every observation row
+4,521,0.14597926590081256,Every observation row
+5,656,0.18380498739142617,Every observation row
+6,584,0.1636312692630989,Every observation row
+7,284,0.07957411039506865,Every observation row
+8,140,0.039226674138414123,Every observation row
+9,48,0.013449145418884841,Every observation row
+10,62,0.017371812832726253,Every observation row
+11,43,0.012048192771084338,Every observation row
+12,14,0.003922667413841412,Every observation row
+13,18,0.0050434295320818156,Every observation row
+14,26,0.007284953768562623,Every observation row
+-15,8,0.007797270955165692,Every reef-night once
+-14,16,0.015594541910331383,Every reef-night once
+-13,17,0.016569200779727095,Every reef-night once
+-12,15,0.014619883040935672,Every reef-night once
+-11,14,0.01364522417153996,Every reef-night once
+-10,12,0.011695906432748537,Every reef-night once
+-9,12,0.011695906432748537,Every reef-night once
+-8,7,0.00682261208576998,Every reef-night once
+-7,7,0.00682261208576998,Every reef-night once
+-6,6,0.005847953216374269,Every reef-night once
+-5,10,0.009746588693957114,Every reef-night once
+-4,9,0.008771929824561403,Every reef-night once
+-3,12,0.011695906432748537,Every reef-night once
+-2,16,0.015594541910331383,Every reef-night once
+-1,27,0.02631578947368421,Every reef-night once
+0,42,0.04093567251461988,Every reef-night once
+1,54,0.05263157894736842,Every reef-night once
+2,78,0.07602339181286549,Every reef-night once
+3,103,0.10038986354775828,Every reef-night once
+4,98,0.09551656920077972,Every reef-night once
+5,126,0.12280701754385964,Every reef-night once
+6,120,0.11695906432748537,Every reef-night once
+7,74,0.07212475633528265,Every reef-night once
+8,39,0.038011695906432746,Every reef-night once
+9,27,0.02631578947368421,Every reef-night once
+10,20,0.01949317738791423,Every reef-night once
+11,15,0.014619883040935672,Every reef-night once
+12,10,0.009746588693957114,Every reef-night once
+13,13,0.012670565302144249,Every reef-night once
+14,19,0.018518518518518517,Every reef-night once
+-15,NA,0.010155738005384088,Equal weight per subsite
+-14,NA,0.011689112287110823,Equal weight per subsite
+-13,NA,0.004376851283124166,Equal weight per subsite
+-12,NA,0.004228435708787185,Equal weight per subsite
+-11,NA,0.011327639897325032,Equal weight per subsite
+-10,NA,0.004862338594337618,Equal weight per subsite
+-9,NA,0.0014830381562136504,Equal weight per subsite
+-8,NA,0.0010784716056866412,Equal weight per subsite
+-7,NA,0.002012178421746398,Equal weight per subsite
+-6,NA,3.7819149364182316e-4,Equal weight per subsite
+-5,NA,0.011106841928174611,Equal weight per subsite
+-4,NA,0.006683854784599231,Equal weight per subsite
+-3,NA,0.006329429797821304,Equal weight per subsite
+-2,NA,0.02174806724477215,Equal weight per subsite
+-1,NA,0.03848849754237843,Equal weight per subsite
+0,NA,0.07189989144001406,Equal weight per subsite
+1,NA,0.051276014139982035,Equal weight per subsite
+2,NA,0.08031509104527373,Equal weight per subsite
+3,NA,0.10250976930431961,Equal weight per subsite
+4,NA,0.09051840349669493,Equal weight per subsite
+5,NA,0.1859265655542853,Equal weight per subsite
+6,NA,0.11606487342282296,Equal weight per subsite
+7,NA,0.06376755034689782,Equal weight per subsite
+8,NA,0.03409882577153464,Equal weight per subsite
+9,NA,0.021446467604703902,Equal weight per subsite
+10,NA,0.022415527427803266,Equal weight per subsite
+11,NA,0.01198700751422255,Equal weight per subsite
+12,NA,0.002055150155894603,Equal weight per subsite
+13,NA,0.0022624341256877257,Equal weight per subsite
+14,NA,0.007507741898759717,Equal weight per subsite
