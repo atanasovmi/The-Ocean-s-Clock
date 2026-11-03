@@ -5,6 +5,7 @@
 .Ruserdata
 .Rlibrary/
 .Renviron
+/data/derived/regional_daily.rds
 
 # Local build caches and deliverable bundles.
 .quarto/

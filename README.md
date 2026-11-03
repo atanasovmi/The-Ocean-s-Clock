@@ -82,7 +82,7 @@ source("run.R", encoding = "UTF-8")
 
 Setup installs missing packages into an ignored project library and needs internet access. The included public data caches then allow the analysis to run without live data services. From a terminal, use `Rscript run.R`. Package versions are recorded in [`outputs/session-info.txt`](outputs/session-info.txt).
 
-The local delivery also provides a genuine `.Rhistory` of the executed entry commands and an optional `.RData` snapshot of selected analytical objects. They are conveniences for inspecting the work in RStudio; the project does not automatically restore them, and the scripts remain the reproducible source of truth. Local session files are excluded from Git and included in the submission bundle.
+The delivery includes a genuine [interactive R command history](outputs/session.Rhistory) and a [native R workspace snapshot](outputs/models/analysis_workspace.RData) containing the calendar weights, exposure results, model scores and fitted models. Load the latter with `load("outputs/models/analysis_workspace.RData")` to inspect those objects in RStudio. The project does not automatically restore them; the scripts reproduce the analysis from its inputs. Local `.RData` and `.Rhistory` copies are also included in the submission bundle.
 
 ```mermaid
 flowchart LR

@@ -20,7 +20,13 @@ project_files <- c(list.files("R", recursive = TRUE, full.names = TRUE),
                    list.files("docs", recursive = TRUE, full.names = TRUE),
                    list.files("outputs", recursive = TRUE, full.names = TRUE),
                    "README.md", "run.R", "setup.R", "export_submission.R", "authors.csv",
+                   list.files("tools", recursive = TRUE, full.names = TRUE),
                    "The-Oceans-Clock.Rproj", "AGENTS.md", ".gitattributes", ".gitignore")
+# The large parsed regional cache is reproducible from the included source gzip
+# archives. The optional native snapshot contains selected analysis/model objects.
+project_files <- setdiff(project_files, "data/derived/regional_daily.rds")
+native_files <- c(".RData", ".Rhistory")
+project_files <- c(project_files, native_files[file.exists(native_files)])
 zip::zipr("submission/The-Oceans-Clock_R-project.zip", project_files,
           include_directories = FALSE, mode = "mirror")
 message("Exported named PNGs and the complete R-project ZIP to submission/.")
