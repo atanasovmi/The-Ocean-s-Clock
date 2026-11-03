@@ -17,7 +17,7 @@ window_summary <- curves |> filter(lunar_day %in% window_days) |>
   group_by(method) |> summarise(share = sum(share), .groups = "drop")
 
 curve_plot <- ggplot(curves, aes(lunar_day, share, colour = method, linetype = method)) +
-  annotate("rect", xmin = -0.5, xmax = 7.5, ymin = -Inf, ymax = Inf, fill = "#E4EBCF", alpha = 0.65) +
+  annotate("rect", xmin = -0.5, xmax = 7.5, ymin = -Inf, ymax = Inf, fill = "#F1F4F6", alpha = 0.65) +
   geom_line(linewidth = 0.95) +
   scale_colour_manual(values = c(muted, ocean, coral), name = NULL) +
   scale_linetype_manual(values = c("dotted", "solid", "longdash"), name = NULL) +
@@ -33,8 +33,8 @@ summary_plot <- ggplot(window_summary, aes(share, reorder(method, share))) +
   labs(x = "Share on days 0–7 after full moon", y = NULL) +
   theme_clock() + theme(plot.margin = margin(8, 8, 8, 8), panel.grid.major.y = element_blank(), axis.text.y = element_text(size = 11))
 robustness_plot <- (curve_plot / summary_plot) + plot_layout(heights = c(1.3, 1)) +
-  plot_annotation(title = "A lunar pattern that survives a fairer count",
-    subtitle = "The headline changes when heavily documented nights stop dominating",
+  plot_annotation(title = "Counting each reef-night once changes 80% to 68%",
+    subtitle = "Repeated species records make the post-full-moon concentration look stronger.",
     caption = paste(source_coral, "\nNatural-reef observations; same supplied lunar offsets in all three views. Shading: a descriptive day 0–7 window,\nnot a fitted or independently validated forecast. Equal-subsite weighting gives each of 102 subsites equal total influence.\nUnknown survey effort remains: weighting cannot establish spawning probabilities or causal lunar effects."),
     theme = theme_clock())
 save_figure(robustness_plot, "07_weighting_robustness", height = 10)

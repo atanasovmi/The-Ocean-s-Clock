@@ -11,7 +11,16 @@ location_sf <- st_as_sf(locations, coords = c("longitude", "latitude"), crs = 43
                         remove = FALSE)
 world <- st_as_sf(maps::map("world", fill = TRUE, plot = FALSE)) |>
   filter(!grepl("Antarctica", ID)) |>
-  st_break_antimeridian(lon_0 = 150)
+  st_wrap_dateline(options = c("WRAPDATELINE=YES", "DATELINEOFFSET=180"), quiet = TRUE)
+# Some source outlines extend past 180 degrees. Normalize them first, then
+# repair rings in the same longitude/latitude plane used by the map clipping.
+world_geometry <- st_geometry(world) |> st_set_crs(NA) |> st_make_valid()
+stopifnot(all(st_is_valid(world_geometry)))
+st_geometry(world) <- st_set_crs(world_geometry, 4326)
+# Country identifiers are constant when an outline is split at the map seam.
+st_agr(world) <- "constant"
+world <- st_break_antimeridian(world, lon_0 = 150)
+stopifnot(st_bbox(world)["xmin"] >= -180, st_bbox(world)["xmax"] <= 180)
 pacific_projection <- "+proj=robin +lon_0=150 +datum=WGS84 +units=m +no_defs"
 
 map_plot <- ggplot() +

@@ -2,8 +2,9 @@
 # Packages stay in an ignored project library; no global R settings are changed.
 dir.create(".Rlibrary", showWarnings = FALSE)
 .libPaths(c(".Rlibrary", .libPaths()))
-packages <- c("ggplot2", "dplyr", "tidyr", "readr", "readxl", "httr2",
-              "jsonlite", "patchwork", "maps", "ragg", "zip", "ncdf4")
+packages <- c("ggplot2", "dplyr", "tidyr", "readr", "readxl", "jsonlite",
+              "patchwork", "maps", "ragg", "zip", "sf", "ggridges",
+              "ggdist", "ggforce", "ggrepel", "svglite")
 missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]
 if (length(missing)) install.packages(missing, lib = ".Rlibrary", repos = "https://cloud.r-project.org")
 message("Ready. Run source('run.R') to reproduce the project from cached data.")
