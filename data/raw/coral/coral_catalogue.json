@@ -1,0 +1,1011 @@
+{
+  "files": [
+    {
+      "id": 25048199,
+      "name": "Coral_Spawning_Database.accdb",
+      "size": 6180864,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/25048199",
+      "supplied_md5": "0b0c03fbe7c10c0285869e4aea5aa31e",
+      "computed_md5": "0b0c03fbe7c10c0285869e4aea5aa31e",
+      "mimetype": "application/x-msaccess"
+    },
+    {
+      "id": 25048202,
+      "name": "CSD_Tables.xlsx",
+      "size": 2959628,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/25048202",
+      "supplied_md5": "541399b10dec8d2c0c504bc21bfcb013",
+      "computed_md5": "541399b10dec8d2c0c504bc21bfcb013",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 25048205,
+      "name": "CSD_Data_Entry_Template.xlsx",
+      "size": 495366,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/25048205",
+      "supplied_md5": "1a8214297bab102b0c3943afdc5821cc",
+      "computed_md5": "1a8214297bab102b0c3943afdc5821cc",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 25048208,
+      "name": "CSD_Sunrise_Sunset_DoNFM_Calculations.xlsx",
+      "size": 244544,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/25048208",
+      "supplied_md5": "88cfa24f3fb772b17076c4b42cc21f04",
+      "computed_md5": "88cfa24f3fb772b17076c4b42cc21f04",
+      "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": 25048211,
+      "name": "CSD_Instructions for data entry.pdf",
+      "size": 672317,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/25048211",
+      "supplied_md5": "32d86963bf59e3c89f1a23c49a6d6c41",
+      "computed_md5": "32d86963bf59e3c89f1a23c49a6d6c41",
+      "mimetype": "application/pdf"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 6692074,
+      "full_name": "Andrew Baird",
+      "first_name": "Andrew",
+      "last_name": "Baird",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9511073,
+      "full_name": "James Guest",
+      "first_name": "James",
+      "last_name": "Guest",
+      "is_active": false,
+      "url_name": "James_Guest",
+      "orcid_id": "0000-0002-9714-9009"
+    },
+    {
+      "id": 9513047,
+      "full_name": "Alasdair Edwards",
+      "first_name": "Alasdair",
+      "last_name": "Edwards",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 6759983,
+      "full_name": "Andrew Bauman",
+      "first_name": "Andrew",
+      "last_name": "Bauman",
+      "is_active": true,
+      "url_name": "Andrew_Bauman",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513050,
+      "full_name": "Jessica Bouwmeester",
+      "first_name": "Jessica",
+      "last_name": "Bouwmeester",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 4977350,
+      "full_name": "Hanaka Mera",
+      "first_name": "Hanaka",
+      "last_name": "Mera",
+      "is_active": true,
+      "url_name": "Hanaka_Mera",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513053,
+      "full_name": "David Abrego",
+      "first_name": "David",
+      "last_name": "Abrego",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513056,
+      "full_name": "Mariana Alvarez-Noriega",
+      "first_name": "Mariana",
+      "last_name": "Alvarez-Noriega",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513059,
+      "full_name": "Russell C. Babcock",
+      "first_name": "Russell C.",
+      "last_name": "Babcock",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513082,
+      "full_name": "Miguel B Barbosa",
+      "first_name": "Miguel B",
+      "last_name": "Barbosa",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513085,
+      "full_name": "Victor Bonito",
+      "first_name": "Victor",
+      "last_name": "Bonito",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513088,
+      "full_name": "John A. Burt",
+      "first_name": "John A.",
+      "last_name": "Burt",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513091,
+      "full_name": "Patrick Cabaitan",
+      "first_name": "Patrick",
+      "last_name": "Cabaitan",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513097,
+      "full_name": "Ching-Fong Chang",
+      "first_name": "Ching-Fong",
+      "last_name": "Chang",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513100,
+      "full_name": "Suchana Chavanich",
+      "first_name": "Suchana",
+      "last_name": "Chavanich",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513101,
+      "full_name": "Chaolun Allen Chen",
+      "first_name": "Chaolun",
+      "last_name": "Allen Chen",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513103,
+      "full_name": "Chieh-Jhen Chen",
+      "first_name": "Chieh-Jhen",
+      "last_name": "Chen",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513106,
+      "full_name": "Wei-Jen Chen",
+      "first_name": "Wei-Jen",
+      "last_name": "Chen",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513109,
+      "full_name": "Fung-Chen Chung",
+      "first_name": "Fung-Chen",
+      "last_name": "Chung",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513112,
+      "full_name": "Sean R. Connolly",
+      "first_name": "Sean R.",
+      "last_name": "Connolly",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513130,
+      "full_name": "Vivian R. Cumbo",
+      "first_name": "Vivian R.",
+      "last_name": "Cumbo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 2736487,
+      "full_name": "Maria Dornelas",
+      "first_name": "Maria",
+      "last_name": "Dornelas",
+      "is_active": true,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 230284,
+      "full_name": "Christopher Doropoulos",
+      "first_name": "Christopher",
+      "last_name": "Doropoulos",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513257,
+      "full_name": "Gal Eyal",
+      "first_name": "Gal",
+      "last_name": "Eyal",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513260,
+      "full_name": "Lee Eyal-Shaham",
+      "first_name": "Lee",
+      "last_name": "Eyal-Shaham",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513263,
+      "full_name": "Nur Fadli",
+      "first_name": "Nur",
+      "last_name": "Fadli",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513269,
+      "full_name": "Joana Figueiredo",
+      "first_name": "Joana",
+      "last_name": "Figueiredo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513272,
+      "full_name": "Jean-François Flot",
+      "first_name": "Jean-François",
+      "last_name": "Flot",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513278,
+      "full_name": "Sze-Hoon Gan",
+      "first_name": "Sze-Hoon",
+      "last_name": "Gan",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513284,
+      "full_name": "Elizabeth Gomez",
+      "first_name": "Elizabeth",
+      "last_name": "Gomez",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513287,
+      "full_name": "Erin M. Graham",
+      "first_name": "Erin M.",
+      "last_name": "Graham",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513293,
+      "full_name": "Mila Grinblat",
+      "first_name": "Mila",
+      "last_name": "Grinblat",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513296,
+      "full_name": "Nataly Gutiérrez-Isaza",
+      "first_name": "Nataly",
+      "last_name": "Gutiérrez-Isaza",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513305,
+      "full_name": "Saki Harii",
+      "first_name": "Saki",
+      "last_name": "Harii",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513365,
+      "full_name": "Peter Harrison",
+      "first_name": "Peter",
+      "last_name": "Harrison",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513368,
+      "full_name": "Masayuki Hatta",
+      "first_name": "Masayuki",
+      "last_name": "Hatta",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513407,
+      "full_name": "Nina Ann Jin Ho",
+      "first_name": "Nina Ann Jin",
+      "last_name": "Ho",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513409,
+      "full_name": "Gaetan Hoarau",
+      "first_name": "Gaetan",
+      "last_name": "Hoarau",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513412,
+      "full_name": "Mia Hoogenboom",
+      "first_name": "Mia",
+      "last_name": "Hoogenboom",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513415,
+      "full_name": "Emily J. Howells",
+      "first_name": "Emily",
+      "last_name": "J. Howells",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513417,
+      "full_name": "Akira Iguchi",
+      "first_name": "Akira",
+      "last_name": "Iguchi",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 8015750,
+      "full_name": "Naoko Isomura",
+      "first_name": "Naoko",
+      "last_name": "Isomura",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513419,
+      "full_name": "Emmeline Jamodiong",
+      "first_name": "Emmeline",
+      "last_name": "Jamodiong",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513422,
+      "full_name": "Suppakarn Jandang",
+      "first_name": "Suppakarn",
+      "last_name": "Jandang",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513427,
+      "full_name": "Jude Keyes",
+      "first_name": "Jude",
+      "last_name": "Keyes",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513428,
+      "full_name": "Seiya Kitanobo",
+      "first_name": "Seiya",
+      "last_name": "Kitanobo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513431,
+      "full_name": "Narinratana Kongjandtre",
+      "first_name": "Narinratana",
+      "last_name": "Kongjandtre",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513439,
+      "full_name": "Chao-Yang Kuo",
+      "first_name": "Chao-Yang",
+      "last_name": "Kuo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513440,
+      "full_name": "Charlon Ligson",
+      "first_name": "Charlon",
+      "last_name": "Ligson",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513443,
+      "full_name": "Che-Hung Lin",
+      "first_name": "Che-Hung",
+      "last_name": "Lin",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513445,
+      "full_name": "Jeffrey Low",
+      "first_name": "Jeffrey",
+      "last_name": "Low",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513448,
+      "full_name": "Yossi Loya",
+      "first_name": "Yossi",
+      "last_name": "Loya",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513450,
+      "full_name": "Elizaldy A. Maboloc",
+      "first_name": "Elizaldy A.",
+      "last_name": "Maboloc",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 796340,
+      "full_name": "Joshua Madin",
+      "first_name": "Joshua",
+      "last_name": "Madin",
+      "is_active": true,
+      "url_name": "Joshua_Madin",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513451,
+      "full_name": "Takuma Mezaki",
+      "first_name": "Takuma",
+      "last_name": "Mezaki",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513482,
+      "full_name": "Min Choo",
+      "first_name": "Min",
+      "last_name": "Choo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513484,
+      "full_name": "Masaya Morita",
+      "first_name": "Masaya",
+      "last_name": "Morita",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 7973774,
+      "full_name": "Aurélie Moya",
+      "first_name": "Aurélie",
+      "last_name": "Moya",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513492,
+      "full_name": "Su-Hwei Neo",
+      "first_name": "Su-Hwei",
+      "last_name": "Neo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 8513205,
+      "full_name": "Matthew Nitschke",
+      "first_name": "Matthew",
+      "last_name": "Nitschke",
+      "is_active": false,
+      "url_name": "Matthew_Nitschke",
+      "orcid_id": "0000-0002-7573-5920"
+    },
+    {
+      "id": 9513495,
+      "full_name": "Satoshi Nojima",
+      "first_name": "Satoshi",
+      "last_name": "Nojima",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 8013026,
+      "full_name": "Yoko Nozawa",
+      "first_name": "Yoko",
+      "last_name": "Nozawa",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513498,
+      "full_name": "Srisakul Piromvaragorn",
+      "first_name": "Srisakul",
+      "last_name": "Piromvaragorn",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513501,
+      "full_name": "Sakanan Plathong",
+      "first_name": "Sakanan",
+      "last_name": "Plathong",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513503,
+      "full_name": "Eneour Puill-Stephan",
+      "first_name": "Eneour",
+      "last_name": "Puill-Stephan",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513504,
+      "full_name": "Kate Quigley",
+      "first_name": "Kate",
+      "last_name": "Quigley",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513507,
+      "full_name": "Catalina Ramírez-Portilla",
+      "first_name": "Catalina",
+      "last_name": "Ramírez-Portilla",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 8229057,
+      "full_name": "Gerard Ricardo",
+      "first_name": "Gerard",
+      "last_name": "Ricardo",
+      "is_active": true,
+      "url_name": "Gerard_Ricardo",
+      "orcid_id": "0000-0002-2220-3971"
+    },
+    {
+      "id": 8580339,
+      "full_name": "Sakai, Kazuhiko",
+      "first_name": "Sakai,",
+      "last_name": "Kazuhiko",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513513,
+      "full_name": "Eugenia Sampayo",
+      "first_name": "Eugenia",
+      "last_name": "Sampayo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513523,
+      "full_name": "Tom Shlesinger",
+      "first_name": "Tom",
+      "last_name": "Shlesinger",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513525,
+      "full_name": "Leony Sikim",
+      "first_name": "Leony",
+      "last_name": "Sikim",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513526,
+      "full_name": "Chris Simpson",
+      "first_name": "Chris",
+      "last_name": "Simpson",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513528,
+      "full_name": "Carrie A. Sims",
+      "first_name": "Carrie A.",
+      "last_name": "Sims",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513531,
+      "full_name": "Frederic Sinniger",
+      "first_name": "Frederic",
+      "last_name": "Sinniger",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513532,
+      "full_name": "Davies A Spiji",
+      "first_name": "Davies A",
+      "last_name": "Spiji",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513535,
+      "full_name": "Tracy Tabalanza",
+      "first_name": "Tracy",
+      "last_name": "Tabalanza",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513537,
+      "full_name": "Chung-Hong Tan",
+      "first_name": "Chung-Hong",
+      "last_name": "Tan",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513540,
+      "full_name": "Tullia I. Terraneo",
+      "first_name": "Tullia I.",
+      "last_name": "Terraneo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513546,
+      "full_name": "Gergely Torda",
+      "first_name": "Gergely",
+      "last_name": "Torda",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513549,
+      "full_name": "James True",
+      "first_name": "James",
+      "last_name": "True",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513550,
+      "full_name": "Karenne Tun",
+      "first_name": "Karenne",
+      "last_name": "Tun",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513894,
+      "full_name": "Kareen Vicentuan",
+      "first_name": "Kareen",
+      "last_name": "Vicentuan",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513551,
+      "full_name": "Voranop Viyakarn",
+      "first_name": "Voranop",
+      "last_name": "Viyakarn",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513553,
+      "full_name": "Zarinah Waheed",
+      "first_name": "Zarinah",
+      "last_name": "Waheed",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513556,
+      "full_name": "Selina Ward",
+      "first_name": "Selina",
+      "last_name": "Ward",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513570,
+      "full_name": "Bette Willis",
+      "first_name": "Bette",
+      "last_name": "Willis",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513571,
+      "full_name": "Rachael M. Woods",
+      "first_name": "Rachael M.",
+      "last_name": "Woods",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513573,
+      "full_name": "Erika S. Woolsey",
+      "first_name": "Erika S.",
+      "last_name": "Woolsey",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513576,
+      "full_name": "Hiromi H Yamamoto",
+      "first_name": "Hiromi H",
+      "last_name": "Yamamoto",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9513577,
+      "full_name": "Syafyudin Yusuf",
+      "first_name": "Syafyudin",
+      "last_name": "Yusuf",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://outputs.ncl.ac.uk/articles/dataset/Coral_Spawning_Database/13082333",
+  "download_disabled": false,
+  "description": "<h3></h3><h3></h3><h3></h3><h3></h3><h3>The discovery of multi-species\nsynchronous spawning of scleractinian corals on the Great Barrier Reef in the\n1980s stimulated an extraordinary effort to document spawning times in other\nparts of the globe. Unfortunately, most of these data remain unpublished which\nlimits our understanding of regional and global reproductive patterns. The\nCoral Spawning Database (CSD) collates much of these disparate data into a\nsingle place. The CSD includes 6178 observations (3085 of which were\nunpublished) of the time or day of spawning for over 300 scleractinian species in\n61 genera from 101 sites in the Indo-Pacific. The goal of the CSD is to provide\nopen access to coral spawning data to accelerate our understanding of coral\nreproductive biology and to provide a baseline against which to evaluate any\nfuture changes in reproductive phenology.</h3><br>",
+  "funding": "ARC Centre of Excellence for Coral Reef Studies CE140100020",
+  "funding_list": [
+    {
+      "id": 19182692,
+      "title": "ARC Centre of Excellence for Coral Reef Studies CE140100020",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 1,
+  "status": "public",
+  "size": 10552719,
+  "created_date": "2020-12-01T09:12:30Z",
+  "modified_date": "2023-05-30T15:46:57Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 2,
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "tags": [
+    "Coral reefs",
+    "Phenology",
+    "Reproduction",
+    "Spawning",
+    "Ecology not elsewhere classified",
+    "Biological Sciences not elsewhere classified",
+    "Global Change Biology",
+    "Invertebrate Biology",
+    "Marine Biology"
+  ],
+  "keywords": [
+    "Coral reefs",
+    "Phenology",
+    "Reproduction",
+    "Spawning",
+    "Ecology not elsewhere classified",
+    "Biological Sciences not elsewhere classified",
+    "Global Change Biology",
+    "Invertebrate Biology",
+    "Marine Biology"
+  ],
+  "categories": [
+    {
+      "id": 30989,
+      "title": "Ecology not elsewhere classified",
+      "parent_id": 30962,
+      "path": "/30881/30962/30989",
+      "source_id": "310399",
+      "taxonomy_id": 102
+    },
+    {
+      "id": 31205,
+      "title": "Other biological sciences not elsewhere classified",
+      "parent_id": 31196,
+      "path": "/30881/31196/31205",
+      "source_id": "319999",
+      "taxonomy_id": 102
+    },
+    {
+      "id": 31202,
+      "title": "Global change biology",
+      "parent_id": 31196,
+      "path": "/30881/31196/31202",
+      "source_id": "319902",
+      "taxonomy_id": 102
+    },
+    {
+      "id": 31187,
+      "title": "Invertebrate biology",
+      "parent_id": 31148,
+      "path": "/30881/31148/31187",
+      "source_id": "310913",
+      "taxonomy_id": 102
+    },
+    {
+      "id": 30977,
+      "title": "Marine and estuarine ecology (incl. marine ichthyology)",
+      "parent_id": 30962,
+      "path": "/30881/30962/30977",
+      "source_id": "310305",
+      "taxonomy_id": 102
+    }
+  ],
+  "references": [
+    "https://doi.org/10.1038/s41597-020-00793-8"
+  ],
+  "has_linked_file": false,
+  "citation": "Baird, Andrew; Guest, James; Edwards, Alasdair; Bauman, Andrew; Bouwmeester, Jessica; Mera, Hanaka; et al. (2020). Coral Spawning Database. Newcastle University. Dataset. https://doi.org/10.25405/data.ncl.13082333.v1",
+  "related_materials": [
+    {
+      "id": 3161390,
+      "identifier": "10.1038/s41597-020-00793-8",
+      "title": "An Indo-Pacific coral spawning database",
+      "relation": "IsSupplementTo",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.1038/s41597-020-00793-8"
+    }
+  ],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": "file",
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 13082333,
+  "title": "Coral Spawning Database",
+  "doi": "10.25405/data.ncl.13082333.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/13082333",
+  "published_date": "2020-12-01T09:12:30Z",
+  "thumb": "https://s3-eu-west-1.amazonaws.com/ppreviews-ncl-9551642052/25048211/thumb.png",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": 61306,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/13082333",
+  "url_public_api": "https://api.figshare.com/v2/articles/13082333",
+  "url_private_html": "https://figshare.com/account/articles/13082333",
+  "url_public_html": "https://outputs.ncl.ac.uk/articles/dataset/Coral_Spawning_Database/13082333",
+  "timeline": {
+    "posted": "2020-12-01T09:12:30",
+    "firstOnline": "2020-12-01"
+  },
+  "resource_title": "An Indo-Pacific coral spawning database",
+  "resource_doi": "10.1038/s41597-020-00793-8"
+}
