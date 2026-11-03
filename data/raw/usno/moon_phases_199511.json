@@ -1,0 +1,44 @@
+{
+  "apiversion": "4.0.1", 
+  "day": 1, 
+  "month": 11, 
+  "numphases": 5, 
+  "phasedata": [
+    {
+      "day": 7, 
+      "month": 11, 
+      "phase": "Full Moon", 
+      "time": "07:21", 
+      "year": 1995
+    }, 
+    {
+      "day": 15, 
+      "month": 11, 
+      "phase": "Last Quarter", 
+      "time": "11:40", 
+      "year": 1995
+    }, 
+    {
+      "day": 22, 
+      "month": 11, 
+      "phase": "New Moon", 
+      "time": "15:43", 
+      "year": 1995
+    }, 
+    {
+      "day": 29, 
+      "month": 11, 
+      "phase": "First Quarter", 
+      "time": "06:28", 
+      "year": 1995
+    }, 
+    {
+      "day": 7, 
+      "month": 12, 
+      "phase": "Full Moon", 
+      "time": "01:27", 
+      "year": 1995
+    }
+  ], 
+  "year": 1995
+}
