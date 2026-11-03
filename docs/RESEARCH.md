@@ -48,23 +48,21 @@ Aquarium tank temperature, local-station weather and regional solar flux have di
 
 [Sheridan et al. (2025)](https://doi.org/10.7717/peerj.19447), Supplement 4, supplies 81 spawning atoll-days from October 2021–May 2024, representing 3,026 Acropora colony observations. The published CSV and attribution are preserved under [`data/raw/maldives/`](../data/raw/maldives/), CC BY 4.0.
 
-We compare the historical **Acropora** genus-night sample with the new atoll-day data, rather than silently changing the biological group. Their monitoring designs and geographical aggregation remain different. The colony-weighted view is shown separately so a large event does not masquerade as many independently sampled dates. The similar day 0–7 concentration is a descriptive replication, not a pooled effect estimate or an unfamiliar natural phenomenon discovered here.
+We compare the historical **Acropora** genus-night sample with the new atoll-day data. Their monitoring designs and geographical aggregation remain different. The presentation compares recorded dates; the colony-weighted calculation remains in the full analytical table. The similar day 0–7 concentration is a descriptive comparison, not a pooled effect estimate or a newly discovered natural mechanism.
 
 An audit found a source discrepancy: the article text gives a Baa maximum of 203 colonies, while the CSV records 243 on 2 November 2023. The source CSV is preserved unchanged and its overall counts agree with the paper. The raw-data README records the discrepancy; weighted calculations use the supplied table.
 
-## Graphics and additional R tools
+## R tools
 
-The course teaches tidyverse preparation and ggplot2 alongside packages such as sf, viridis, zoo and leaflet. No exclusive package whitelist was found in the archived assignment and assessment instructions. Additional libraries serve explicit analytical or communication tasks; their availability is not treated as a grading loophole.
+The course teaches tidyverse preparation and ggplot2 alongside packages such as sf, viridis, zoo and leaflet. No exclusive package whitelist was found in the archived assignment and assessment instructions. The current implementation uses a small set with specific jobs.
 
-- [sf](https://r-spatial.github.io/sf/) performs the polygon join and cartographic projection.
-- [ggforce](https://ggforce.data-imaginist.com/) supplies additional ggplot geometries where ordinary points and intervals lose useful distribution detail.
-- [ggrepel](https://ggrepel.slowkow.com/) places direct labels without hiding dense observations.
-- [ggtext](https://wilkelab.org/ggtext/) supports selective emphasis in readable labels and annotations.
-- [ggdist](https://mjskay.github.io/ggdist/) supports distribution and uncertainty layers; [ggridges](https://wilkelab.org/ggridges/) supports aligned distribution displays, with lunar boundaries requiring explicit care.
-- [patchwork](https://patchwork.data-imaginist.com/) aligns complementary panels rather than presenting each measure as an isolated chart.
+- `readxl`, `readr`, `dplyr` and `tidyr` read and prepare the tables.
+- [sf](https://r-spatial.github.io/sf/) performs the point-in-polygon join and exports the working Shapefiles.
+- [ggplot2](https://ggplot2.tidyverse.org/) draws each presentation chart with standard geoms and `theme_bw()`.
+- Base R's `stats` functions fit the binomial models and perform the lag calculations.
 - [ragg](https://ragg.r-lib.org/) and [svglite](https://svglite.r-lib.org/) provide reliable raster and vector exports.
 
-Libraries were researched through their maintainers' documentation. ComplexHeatmap was also considered for annotated matrix displays; a large Bioconductor dependency was not needed to build the retained ggplot calendars. White backgrounds, restrained colours, direct titles, visible observation counts and explanatory annotations are design choices intended to make the findings inspectable, rather than to imply complexity through decoration.
+The figures use one chart per question, readable axes and at most a small number of series. Detailed records and diagnostics stay in the tables. The separate Python utilities download the public NOAA histories and independently check numerical calculations; they are not required for the cached R workflow.
 
 ## Contribution and limits
 

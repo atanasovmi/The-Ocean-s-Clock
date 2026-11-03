@@ -3,11 +3,17 @@
 library(readr)
 library(zip)
 authors <- read_csv("authors.csv", show_col_types = FALSE)
-stopifnot(all(c("figure", "main_author") %in% names(authors)))
+stopifnot(file.exists("The-Oceans-Clock.Rproj"),
+          all(c("figure", "main_author") %in% names(authors)),
+          !anyDuplicated(authors$figure))
 if (anyNA(authors$main_author) || any(!nzchar(trimws(authors$main_author)))) {
   stop("Fill the main_author column in authors.csv before exporting the submission.")
 }
 dir.create("submission/graphics", recursive = TRUE, showWarnings = FALSE)
+# This folder contains generated submission copies. Remove obsolete PNG copies
+# when the figure selection or author assignment changes; source figures stay intact.
+old_exports <- list.files("submission/graphics", pattern = "\\.png$", full.names = TRUE)
+if (length(old_exports)) unlink(old_exports)
 for (i in seq_len(nrow(authors))) {
   source_file <- file.path("outputs/figures", authors$figure[i])
   stopifnot(file.exists(source_file))

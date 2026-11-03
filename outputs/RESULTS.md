@@ -1,41 +1,33 @@
-# Findings
+# What we found
 
-## What the combined records make possible
+## Spawning follows a lunar pattern, but it is not one universal appointment
 
-The project connects 1,026 recorded reef-nights to 214 official NOAA reef-region histories. Spatial polygons and exact date labels yield 751 environmental matches. Regional ocean context is kept separate from direct measurements at coral depth.
+Of the 1,026 recorded reef-nights in the historical field data, 67.7% fall on days 0–7 after the nearest local full moon. That is the main pattern in [Figure 1](figures/01_lunar_timing.png): the week after full moon contains most of the records, while events also occur elsewhere in the cycle.
 
-The parsed environmental record contains 3,203,007 available station-days for 1985–2025. The climate comparison uses 8,346 complete region-years in 1986–2024; incomplete 2025 records remain available but do not enter that comparison.
+The night-time starts add another detail. [Figure 2](figures/02_night_timing.png) shows six well-recorded coral genera: some tend to start earlier after sunset, while others start later or have a wider spread. The locations and species differ between groups, so this is a description of the records rather than an isolated effect of genus. Daylight spawning records remain in the data; this plot focuses on exact starts after sunset.
 
-## Heat-stress conditions became geographically widespread
+The independent Maldives study gives a similar lunar result for Acropora: 70.4% of its 81 spawning atoll-days fall in the same week, compared with 69.8% of 400 historical Acropora reef-dates. [Figure 6](figures/06_field_comparison.png) keeps these studies separate because their survey designs and geographic units differ.
 
-In 2024, 202 of 214 regions reached an annual maximum of at least 4 °C-weeks DHW; 171 reached at least 8. These are equal-weight region counts, not the share of global reef area or a count of observed bleaching events.
+These percentages describe recorded spawning events. They do not give the chance that an arbitrary future night will contain spawning; the field databases do not list every surveyed non-spawning night.
 
-## Spawning-season exposure is uneven
+## Heat stress increased, and its overlap with spawning seasons is uneven
 
-Seventeen well-recorded sites define historical monthly spawning calendars in 14 NOAA regions. Holding those calendars fixed, 10 regions show a higher calendar-weighted fraction of days at DHW ≥4 in 2015–2024 than in 1986–1995. The other 4 remain at zero in both periods.
+The heat-stress comparison follows the same 214 NOAA reef regions over 39 complete years. In 1986, 5 reached the severe threshold; in 2024, 171 did. [Figure 3](figures/03_heat_stress.png) reduces the daily histories to one comparable count per year. There is considerable year-to-year variation, but recent years reach many more regions.
 
-The largest increase is in Northern Taiwan: 1.5% to 26.3%, a change of 24.8 percentage points. The result describes overlap between a fixed recorded calendar and regional heat-stress conditions. It does not measure a change in spawning dates, reproductive success, mortality or adaptation.
+NOAA's degree-heating weeks (DHW) measure accumulated unusually high temperatures over twelve weeks. The threshold in Figure 3 is DHW ≥8. A region reaching that threshold is not the same as observing coral deaths there, and equally counting regions does not weight them by reef area.
 
-Each eligible site has at least ten recorded subsite-dates over at least three years. Event shares are calculated within sites; sites receive equal weight within their NOAA region. Historical observation effort can affect the calendar. Regional DHW is a heat-stress statistic, not an organism-level reproductive threshold.
+To connect this with reproduction, we used the historical distribution of spawning months as a fixed calendar. For Northern Taiwan, its heat-stress overlap index rises from 1.5% in 1986–1995 to 26.3% in 2015–2024; the Gulf of Aqaba rises from 0.0% to 22.7%. [Figure 4](figures/04_spawning_exposure.png) shows the five largest increases and Singapore, where the index stays at zero. The full fourteen-region comparison is in [the data table](../data/derived/decadal_exposure.csv).
 
-## More predictors did not give better held-out aquarium predictions
+Across the full comparison, ten regions increase and four remain at zero. This tells us that regional heat-stress conditions increasingly overlap some recorded spawning seasons. It does not show that spawning dates moved, that reproduction failed, or that the old calendars still describe present-day behaviour. Historical survey effort can also influence those calendars. The index uses DHW ≥4, a lower threshold than the severe-stress overview.
 
-A separate fifteen-year aquarium diary contains 1,350 monitored seasonal dates, including explicit non-spawning dates. The paired prediction comparison uses 1,007 complete dates from fourteen years, with each entire year held out in turn. Brier scores are 0.111 for the calendar model, 0.115 after adding the preceding week's environmental measurements, and 0.136 for the training-prevalence baseline; lower is better.
+## Extra weather inputs did not improve this prediction test
 
-The paired calendar-minus-environment Brier difference is -0.0033, with a whole-year bootstrap interval of -0.0078 to +0.0006. This comparison gives no clear evidence that adding those environmental features improves prediction. It does not establish that the environment has no biological effect.
+The aquarium diary records both spawning and non-spawning days, which allows a prediction test that the occurrence-only field data cannot support. We held out each entire year before predicting it, and compared all models on the same 1,007 dates from fourteen years.
 
-The source's misleadingly named spawning_binary column counts tanks; the analysis explicitly derives spawning presence. Environmental features use the seven days strictly before each diary date. This retrospective held-year-out validation uses other years on both sides of the held year; it is not a prospective deployment trial or a wild-reef forecast. See docs/AQUARIUM_METHODS.md for equations, complete-case selection and checks.
+The moon-and-season model has Brier error 0.111; adding the preceding week's environmental measurements gives 0.115. Lower is better. The paired uncertainty interval includes no improvement, so [Figure 5](figures/05_model_comparison.png) supports a modest conclusion: these extra inputs did not give a clear predictive gain in this specified test. That does not mean environmental conditions have no biological effect.
 
-## A separate field dataset repeats the lunar concentration
+This is a retrospective comparison within one aquarium and its supplied monitoring seasons. It is not a forecasting service for wild reefs. The [model methods](../docs/AQUARIUM_METHODS.md) explain the lagged inputs, excluded dates, probability score and whole-year resampling.
 
-Among historical Acropora genus-nights, 69.8% occur on days 0–7 after full moon. The independently published Maldives study records 70.4% of its 81 spawning atoll-days in that window; weighting by its 3,026 colony spawning observations gives 73.9%. The similarity is descriptive: geography, monitoring and counting units differ.
+## How much evidence sits behind the plots?
 
-## Timing and observation effort still matter
-
-The original lunar concentration changes from 80.3% per observation row to 67.7% per recorded reef-night, or 76.2% with equal subsite weighting. All are conditional distributions among recorded occurrences. None gives the probability of spawning on an arbitrary night. Exact-time graphics retain genuine daylight spawning and flag the ambiguous midnight record.
-
-## Validation and scope
-
-Independent Python checks reconstruct all 546 calendar-exposure region-years from original NOAA archives. Separate model refits verify held-out predictions, and explicit date-range calculations verify lagged features. Details and numerical tolerances appear in docs/VALIDATION.md. The source USNO cross-check covers seven historical reef-nights only.
-
-These are new analyses within this project. A broader claim of scientific novelty would need an exhaustive literature review. Source data, code, model artefacts and numerical checks are retained so others can examine the conclusions.
+The project uses 6,178 historical source observations, 3,203,007 NOAA daily regional records, a fifteen-year aquarium study and an independent Maldives field table. The spatial and date joins match 751 historical reef-nights to NOAA context. The presentation shows summaries of those records; the raw sources, joins and full analytical tables remain available for inspection.

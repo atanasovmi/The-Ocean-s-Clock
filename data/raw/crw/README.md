@@ -4,7 +4,7 @@ Downloaded on **3 November 2026** from the official [regional station index](htt
 
 The `*.txt.gz` files are losslessly compressed copies of NOAA's original ASCII responses. Gzip metadata is deterministic. `manifest.csv` records each source URL, row count, date range and SHA-256 of the **uncompressed original response**. The cache contains **3,268,207 source station-days** and occupies approximately **44.1 MB** compressed. This is genuine daily environmental history, not simulated data or replicated spawning records.
 
-`tools/fetch_crw.py` can retrieve missing station archives. It requires Python, `requests` and `beautifulsoup4` only for acquisition; the included caches mean the normal R analysis needs none of them. `R/02_regional_environment.R` performs the parsing, checks, spatial joins and summaries in R. The downloaded `station_index.html` and official `station_markers.xlsx` preserve the discovery catalogue. The latter is a reference; the R parser obtains marker coordinates directly from each ASCII header.
+`tools/fetch_crw.py` can retrieve missing station archives. It requires Python, `requests` and `beautifulsoup4` only for acquisition; the included caches mean the normal R analysis needs none of them. `R/prepare_ocean.R` performs the parsing, checks, spatial joins and summaries in R. The downloaded `station_index.html` and official `station_markers.xlsx` preserve the discovery catalogue. The latter is a reference; the R parser obtains marker coordinates directly from each ASCII header.
 
 ## Meaning of a regional value
 
@@ -45,6 +45,6 @@ This avoids a real classification error from using longitude alone: the Pacific 
 
 ## Reproduction and attribution
 
-Original compressed sources are committed; the approximately 37.5-MB `regional_daily.rds` is a rebuildable local intermediate. Smaller catalogue, spatial lookup, gap and annual/event tables are plain CSVs. Regenerate them by sourcing `R/02_regional_environment.R` after the coral preparation step.
+Original compressed sources are committed; the approximately 37.5-MB `regional_daily.rds` is a rebuildable local intermediate. Smaller catalogue, spatial lookup, gap and annual/event tables are plain CSVs. Regenerate them by sourcing `R/prepare_ocean.R` after the coral preparation step.
 
 Data: NOAA Coral Reef Watch, Version 3.1 Daily 5-km Regional Virtual Stations, released 2019, updated daily; accessed 3 November 2026. Follow NOAA's [citation recommendations](https://coralreefwatch.noaa.gov/satellite/docs/recommendations_crw_citation.php) and acknowledge NOAA Coral Reef Watch. Public NOAA products remain subject to their source disclaimers; the analysis does not imply NOAA endorsement.

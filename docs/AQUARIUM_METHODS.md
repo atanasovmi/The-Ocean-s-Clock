@@ -50,7 +50,7 @@ The calendar model achieves Brier **0.111** versus **0.136** for training preval
 
 This is an informative limit on prediction. It does not show that temperature or weather is biologically irrelevant, nor contradict the source paper's annual associations: the response, lag window, model form and validation question differ. Tank and colony composition, missingness, the limited number of years and aquarium-specific conditions also restrict interpretation. The fitted model is not a wild-reef forecasting service.
 
-See `R/analysis_methods.R`, `outputs/tables/aquarium_*`, `outputs/models/aquarium_models.rds` and figures 10–11 for executable calculations, held-out predictions and visual checks.
+See `R/fit_aquarium_models.R`, `outputs/tables/aquarium_*`, `outputs/models/aquarium_models.rds` and figures 10–11 for executable calculations, held-out predictions and visual checks.
 
 ## Independent numerical audit
 

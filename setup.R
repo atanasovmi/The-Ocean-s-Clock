@@ -3,8 +3,7 @@
 dir.create(".Rlibrary", showWarnings = FALSE)
 .libPaths(c(".Rlibrary", .libPaths()))
 packages <- c("ggplot2", "dplyr", "tidyr", "readr", "readxl", "jsonlite",
-              "patchwork", "maps", "ragg", "zip", "sf", "ggridges",
-              "ggdist", "ggforce", "ggrepel", "svglite")
+              "ragg", "zip", "sf", "svglite")
 missing <- packages[!vapply(packages, requireNamespace, logical(1), quietly = TRUE)]
 if (length(missing)) install.packages(missing, lib = ".Rlibrary", repos = "https://cloud.r-project.org")
 message("Ready. Run source('run.R') to reproduce the project from cached data.")

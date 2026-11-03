@@ -1,113 +1,92 @@
 # The Ocean's Clock
 
-Coral reproduction depends on brief windows in the year, the lunar month and the night. Understanding those windows matters for monitoring and restoration: a well-timed spawning event can supply the next generation of a reef. The surrounding ocean, however, is changing.
+We studied when corals spawn and how their recorded spawning seasons overlap with ocean heat stress. The work combines historical reef observations, NOAA's daily regional records and a separate aquarium diary. The analysis and figures are written in R.
 
-We connect historical spawning observations with four decades of regional heat-stress records, then ask a separate prediction question using a long aquarium diary: **how much do we learn from the calendar, and does adding environmental information help on a year the model has never seen?**
+About **68% of the recorded reef-nights fall in the week beginning at full moon**. An independent Acropora field study shows a similar concentration. The ocean surrounding those events is changing: severe heat stress reached **171 of the same 214 NOAA regions in 2024**, compared with five in 1986. We then connect the historical spawning calendars to those regional records and test whether extra environmental inputs improve predictions within one aquarium.
 
-![Four decades of regional coral heat stress](outputs/figures/06_regional_heat_stress.png)
+![Recorded spawning nights relative to full moon](outputs/figures/01_lunar_timing.png)
 
-## What the analysis shows
+## The figures
 
-In 2024, **202 of NOAA's 214 reef regions reached 4 °C-weeks of accumulated heat stress; 171 reached 8 °C-weeks**. These are regional bleaching-stress indicators, not counts of dead reefs or reproductive failures. Region sizes differ, so the percentages describe regions rather than global reef area.
+Each figure answers one question. The plots use ordinary ggplot2 bars, boxplots, a line or points with uncertainty intervals. PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 
-The historical spawning calendars allow a more focused comparison. We hold each calendar fixed and ask how often its months overlap regional heat-stress conditions in different years. For the Gulf of Aqaba, this calendar-weighted exposure index rises from **0% in 1986–1995 to 22.7% in 2015–2024**. Northern Taiwan rises from **1.5% to 26.3%**. Some regions show little or no change in this index. The result identifies changing environmental context around recorded reproductive seasons; it does not show that spawning shifted or reproduction failed.
+| Figure | What to look for |
+| --- | --- |
+| [1. Spawning and full moon](outputs/figures/01_lunar_timing.png) | Most recorded nights are concentrated in a short part of the lunar cycle. |
+| [2. Starting times after sunset](outputs/figures/02_night_timing.png) | Six coral genera have different recorded timing distributions. |
+| [3. Regional heat stress over time](outputs/figures/03_heat_stress.png) | The same regional comparison reveals large changes and year-to-year variation. |
+| [4. Heat exposure during spawning seasons](outputs/figures/04_spawning_exposure.png) | Five large increases and a zero-change example show that the overlap is uneven. |
+| [5. Do extra environmental inputs help?](outputs/figures/05_model_comparison.png) | Adding preceding-week conditions gives no clear predictive gain in the held-out-year test. |
+| [6. A second field study](outputs/figures/06_field_comparison.png) | About 70% of Acropora records fall in the same lunar window in both studies. |
 
-The aquarium analysis tests a different claim. On **1,007 complete-case dates across 14 years**, a calendar model reduces held-out Brier error from **0.136 to 0.111**. Adding preceding-week temperature and weather produces **0.115**, with no clear improvement in the paired whole-year bootstrap comparison. Environmental cues can matter biologically without necessarily improving this particular daily prediction model.
+[Findings](outputs/RESULTS.md) explain the results in words. The [plot guide](docs/PLOT_GUIDE.md) explains the axes, counting units and limits of each comparison. For a short presentation, figures 1, 3, 4 and 5 give a useful route through the project; the other two add biological detail and an independent comparison.
 
-An independent Maldives study provides another useful check: **70.4% of its 81 recorded spawning atoll-days fall in days 0–7 after full moon**, compared with **69.8% of 400 historical Acropora genus/reef-nights**. The similar concentration is a descriptive replication across different recording designs, not a pooled estimate or a new discovery of lunar control.
+## How the project is organised
 
-Read the [generated findings](outputs/RESULTS.md) for the full interpretation and [aquarium methods](docs/AQUARIUM_METHODS.md) for the validation design.
+`run.R` is the entry point. It prepares the data, runs the analyses, then draws the six figures. Data preparation and plotting are separate, so each plot script can be read on its own.
 
-## Figures
+```text
+The-Oceans-Clock.Rproj     Open this file in RStudio
+run.R                     Run the complete project
+setup.R                   Install missing R packages once
+R/
+  prepare_coral.R         Read and join observations, sites and species
+  prepare_ocean.R         Read NOAA histories; match reef coordinates to regions
+  analyse_heat_exposure.R Compare heat stress around historical spawning seasons
+  fit_aquarium_models.R   Fit and test models with whole years held out
+  compare_field_studies.R Summarise the independent Maldives observations
+  export_spatial_data.R   Write the region and reef Shapefiles
+  plots/                  Six short ggplot scripts, plus a shared theme
+data/
+  raw/                    Original downloaded files and source notes
+  derived/                Joined data and full analytical results
+  spatial/                Shapefiles for inspection in R or GIS software
+outputs/
+  figures/                The six presentation PNGs
+  vector/                 SVG versions of the same figures
+  tables/                 Plot values and model diagnostics
+  models/                 Fitted models and a native R workspace snapshot
+docs/                     Methods, sources, course requirements and checks
+tools/                    Download utility and independent numerical checks
+```
 
-The collection has twelve figures. The climate, calendar-exposure and prediction figures carry the main argument; the geographical, biological and replication figures explain the evidence behind it. Every figure has a high-resolution PNG, a vector SVG and the values used to draw it.
+The field-data connection is: **observation ID → reef coordinates → NOAA region polygon → region and date**. This produces environmental matches for 751 recorded reef-nights. The aquarium analysis is a separate branch: its diary and environmental measurements join by date. We do not combine tank observations and wild-reef events into one model.
 
-| Figure | What it contributes |
-|---|---|
-| [01 · Observation atlas](outputs/figures/01_observation_atlas.png) | Projected geography and the uneven historical coverage. |
-| [02 · Seasonal calendars](outputs/figures/02_seasonal_calendars.png) | Thirty-four reef-site calendars beside the years that support them. |
-| [03 · Lunar timing](outputs/figures/03_lunar_calendars.png) | The full distributions behind a shared post-full-moon concentration. |
-| [04 · Time of day](outputs/figures/04_sunset_timing.png) | Individual starting times, sunset alignment and daylight exceptions. |
-| [05 · Orpheus Island](outputs/figures/05_one_reef_one_night.png) | Seventeen species on one night, placed in the context of other well-recorded nights. |
-| [06 · Regional heat stress](outputs/figures/06_regional_heat_stress.png) | Annual heat-stress histories for all 214 NOAA regions. |
-| [07 · Counting choices](outputs/figures/07_weighting_robustness.png) | How the lunar summary changes when repeated nights and subsites receive different weights. |
-| [08 · Spawning-season exposure](outputs/figures/08_spawning_season_exposure.png) | Historical biological calendars joined to changing regional conditions. |
-| [09 · Seasonal overlap](outputs/figures/09_seasonal_heat_overlap.png) | Which months account for the change at selected regions. |
-| [10 · Aquarium diary](outputs/figures/10_aquarium_calendar.png) | Fifteen seasonal diaries containing observed zero as well as positive dates. |
-| [11 · Held-out predictions](outputs/figures/11_prediction_validation.png) | Calendar and environmental models tested on excluded years. |
-| [12 · Maldives comparison](outputs/figures/12_maldives_replication.png) | An independent Acropora field study, with day and colony weighting kept distinct. |
+The remaining short R scripts check the lunar reference, write the findings and validate the exports. Their execution order is visible in `run.R`.
 
-The [plot-data tables](outputs/tables/) make the graphics inspectable. The [SVG exports](outputs/vector/) allow resizing for a presentation without losing sharpness.
+## Run it in RStudio
 
-## Data and connections
-
-| Source | Evidence and join |
-|---|---|
-| [Coral Spawning Database](https://doi.org/10.25405/data.ncl.13082333.v1) | 6,178 source observations. Separate subsite, species and family tables are linked through their published IDs. The natural-reef sample contains 1,026 recorded subsite-dates. |
-| [NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/data.php) | More than 3.2 million daily regional records across 214 regions. Published polygons connect 97 of 102 natural-reef subsites to regions; 751 recorded reef-nights also have matching satellite dates. |
-| [Okinawa Churaumi Aquarium diary](https://doi.org/10.5281/zenodo.10974150) | 1,350 seasonal diary dates joined by date to 5,479 days of environmental measurements. The prediction sample uses 1,007 dates with complete preceding-week inputs. |
-| [Maldives field study](https://doi.org/10.7717/peerj.19447) | An independent 2021–2024 table of 81 spawning atoll-days representing 3,026 colony observations; analysed separately from the historical field and aquarium samples. |
-| [US Naval Observatory](https://aa.usno.navy.mil/data/api.html) | A cached independent lunar reference checks seven covered historical reef-nights. It does not validate the full database or the later studies. |
-
-The NOAA source cache contains 3,268,207 station-days through 1 November 2026. The R daily table freezes coverage at 1985–2025, retaining **3,203,007 available records**. Primary heat-stress comparisons use **1986–2024**, the complete common period: the initial 1985 accumulation window and genuinely missing 2025 dates are not silently treated as zero stress.
-
-Regional values are not temperatures measured at each coral. NOAA's virtual stations summarize reef regions using a specified HotSpot statistic. The point-in-polygon join respects those boundaries; unmatched sites remain unmatched. Source definitions, licences and acquisition records are in the [research notes](docs/RESEARCH.md) and the README files under [`data/raw/`](data/raw/).
-
-## The calculations behind the comparisons
-
-For a reef site, the recorded share of spawning nights in each month gives a calendar weight. Sites receive equal weight within their NOAA region so a heavily documented site cannot dominate simply through its record count. The exposure index is
-
-$$
-E_{r,y}=\sum_{m=1}^{12}w_{r,m}\left[\frac{1}{|D_{y,m}|}\sum_{d\in D_{y,m}}\mathbf{1}\{\mathrm{DHW}_{r,d}\geq4\}\right].
-$$
-
-Here, $w_{r,m}$ is the region's fixed historical spawning-calendar weight for month $m$, and the bracket is the fraction of that month's days at NOAA DHW ≥4 °C-weeks. Eligibility requires at least ten recorded reef-nights across three years at each site; 17 sites contribute calendars to 14 regions. Holding the weights fixed separates a changing heat record from a changing biological calendar. It also means the index cannot measure a shift in spawning itself.
-
-The aquarium model instead predicts whether any tank spawned on an eligible diary date. A whole year is excluded from fitting before predicting it. The Brier score measures the resulting probability errors:
-
-$$
-\mathrm{BS}=\frac{1}{n}\sum_{t=1}^{n}(p_t-Y_t)^2.
-$$
-
-Lower is better. All three models use the same dates, and uncertainty resamples whole held-out years. Lunar and seasonal sine/cosine terms respect cyclic time; environmental features use only the seven preceding dates. The [method document](docs/AQUARIUM_METHODS.md) explains the response conversion, missingness, retrospective validation and paired bootstrap.
-
-## Reproduce the project
-
-Open `The-Oceans-Clock.Rproj` in RStudio, then run:
+Open `The-Oceans-Clock.Rproj`, then run:
 
 ```r
 source("setup.R")
 source("run.R", encoding = "UTF-8")
 ```
 
-Setup installs missing packages into an ignored project library and needs internet access. The included public data caches then allow the analysis to run without live data services. From a terminal, use `Rscript run.R`. Package versions are recorded in [`outputs/session-info.txt`](outputs/session-info.txt).
+Setup needs an internet connection for missing packages. The analysis then uses the included source caches. To redraw one figure from the prepared data, run its script, for example:
 
-The delivery includes a genuine [interactive R command history](outputs/session.Rhistory) and a [native R workspace snapshot](outputs/models/analysis_workspace.RData) containing the calendar weights, exposure results, model scores and fitted models. Load the latter with `load("outputs/models/analysis_workspace.RData")` to inspect those objects in RStudio. The project does not automatically restore them; the scripts reproduce the analysis from its inputs. Local `.RData` and `.Rhistory` copies are also included in the submission bundle.
-
-```mermaid
-flowchart LR
-  C[Wild-reef observations and taxonomy] --> P[Explicit keys and recording units]
-  N[NOAA regional histories and polygons] --> J[Spatial and date joins]
-  P --> J
-  J --> E[Fixed-calendar heat exposure]
-  A[Aquarium diary and environment] --> M[Whole-year held-out models]
-  V[Independent Maldives observations] --> R[Lunar-pattern replication]
-  P --> B[Seasonal, lunar and daily timing]
-  E --> G[Figures and exported plot data]
-  M --> G
-  R --> G
-  B --> G
-  G --> Z[Author-named PNGs and R-project ZIP]
+```r
+source("R/plots/01_lunar_timing.R", encoding = "UTF-8")
 ```
 
-`R/` contains the numbered analysis and shared design. `data/raw/` preserves downloaded inputs; `data/derived/` contains checked joins and summaries. Figures, vector exports, models and plot tables are under `outputs/`. The [learning guide](docs/LEARNING_GUIDE.md) follows the calculations for someone preparing to explain them.
+The [R workspace snapshot](outputs/models/analysis_workspace.RData) contains selected analytical objects and fitted models; the [session history](outputs/session.Rhistory) records commands actually run. They can help when inspecting the work, but `run.R` starts from explicit input files. The large parsed NOAA RDS file is rebuilt locally from the included compressed sources.
 
-## Scope and attribution
+## Data and geography
 
-The field datasets contain recorded occurrences with incomplete survey-effort information. They cannot turn an unrecorded night into an observed absence. The aquarium diary supplies explicit seasonal zero dates, but its models are aquarium-specific and do not become a forecasting service for wild reefs. Likewise, NOAA's bleaching-stress thresholds are environmental context rather than demonstrated reproductive thresholds.
+| Source | What it supplies |
+| --- | --- |
+| [Coral Spawning Database](https://doi.org/10.25405/data.ncl.13082333.v1) | 6,178 source observations, with separate location and taxonomy tables; 1,026 recorded natural-reef location-dates. |
+| [NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/data.php) | 3,203,007 available daily regional records in 1985–2025. The main comparison uses the complete common period, 1986–2024. |
+| [Churaumi Aquarium study](https://doi.org/10.5281/zenodo.10974150) | Fifteen seasonal diaries, including observed non-spawning days, with environmental measurements. |
+| [Maldives field study](https://doi.org/10.7717/peerj.19447) | 81 spawning atoll-days, representing 3,026 colony observations, analysed separately. |
+| [US Naval Observatory](https://aa.usno.navy.mil/data/api.html) | A limited independent check of seven covered historical reef-nights. |
 
-The project contributes its own source integration, fixed-calendar comparison and held-out daily model evaluation. Prior research already establishes environmental and astronomical associations with coral reproduction; we do not present those associations as newly discovered. Relevant literature and the precise limits of our comparisons are collected in [RESEARCH.md](docs/RESEARCH.md).
+NOAA publishes its region boundaries as GeoJSON. `sf::st_join()` uses those polygons to identify each reef's region. The [spatial folder](data/spatial/) contains Shapefile copies of all 214 region polygons and 102 reef coordinates, with their identifiers and WGS84 reference system. Read a layer with `sf::st_read("data/spatial/reef_sites.shp")`. The [spatial notes](data/spatial/README.md) explain the fields and source.
 
-Biological sources are credited to Baird et al. (2021), Sakai, Yamamoto and Maruyama (2024), and Sheridan et al. (2025). Heat-stress data are provided by NOAA Coral Reef Watch. Independent lunar reference: USNO. Source datasets retain their original terms and each figure names its sources.
+Source definitions, licences and the main limitations are in [the research notes](docs/RESEARCH.md). The field data contain recorded occurrences with incomplete observation effort; the aquarium diary contains explicit zero days within its monitoring seasons. That difference determines which questions each source can answer.
 
-Mihael and Pirasanna are the project team. [`authors.csv`](authors.csv) records the provisional main-author distribution for export; actual contributions and understanding must be reviewed by the students. Run `source("export_submission.R")` to create named PNGs and the complete project ZIP. The [course notes](docs/COURSE_REQUIREMENTS.md) retain the remaining administrative questions: permission for a two-person group and Prezi, any later rubric/report instructions, attendance, presentation and Moodle submission.
+## Methods and submission
+
+The heat-exposure index weights monthly heat-stress conditions by the recorded spawning calendar. It holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
+
+Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`; the students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.

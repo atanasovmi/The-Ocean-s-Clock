@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='792.00pt' height='453.60pt' viewBox='0 0 792.00 453.60'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3OTIuMDB8MC4wMHw0NTMuNjA='>
+    <rect x='0.00' y='0.00' width='792.00' height='453.60' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw0NTMuNjA=)'>
+<rect x='0.000000000000064' y='-0.00000000000011' width='792.00' height='453.60' style='stroke-width: 1.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMTkzLjA4fDc3NC4wN3w2Mi40NnwzNjkuMDQ='>
+    <rect x='193.08' y='62.46' width='580.99' height='306.58' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTkzLjA4fDc3NC4wN3w2Mi40NnwzNjkuMDQ=)'>
+<rect x='193.08' y='62.46' width='580.99' height='306.58' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
+<polyline points='245.89,369.04 245.89,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='351.53,369.04 351.53,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='457.16,369.04 457.16,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='562.80,369.04 562.80,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='668.43,369.04 668.43,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<line x1='303.63' y1='215.75' x2='518.96' y2='215.75' style='stroke-width: 1.71; stroke: #737373; stroke-linecap: butt;' />
+<line x1='318.21' y1='311.56' x2='538.75' y2='311.56' style='stroke-width: 1.71; stroke: #737373; stroke-linecap: butt;' />
+<line x1='423.92' y1='119.94' x2='643.10' y2='119.94' style='stroke-width: 1.71; stroke: #737373; stroke-linecap: butt;' />
+<circle cx='411.85' cy='215.75' r='3.96' style='stroke-width: 1.10; stroke: #356A8A; fill: #356A8A;' />
+<circle cx='429.41' cy='311.56' r='3.96' style='stroke-width: 1.10; stroke: #595959; fill: #595959;' />
+<circle cx='539.32' cy='119.94' r='3.96' style='stroke-width: 1.10; stroke: #595959; fill: #595959;' />
+<text x='550.65' y='220.53' style='font-size: 13.37px; font-family: "Arial";' textLength='31.50px' lengthAdjust='spacingAndGlyphs'>0.111</text>
+<text x='570.44' y='316.34' style='font-size: 13.37px; font-family: "Arial";' textLength='32.48px' lengthAdjust='spacingAndGlyphs'>0.115</text>
+<text x='674.79' y='124.72' style='font-size: 13.37px; font-family: "Arial";' textLength='33.47px' lengthAdjust='spacingAndGlyphs'>0.136</text>
+<rect x='193.08' y='62.46' width='580.99' height='306.58' style='stroke-width: 1.07; stroke: #595959;' />
+</g>
+<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw0NTMuNjA=)'>
+<text x='185.46' y='316.93' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='173.50px' lengthAdjust='spacingAndGlyphs'>Moon + season + weather</text>
+<text x='185.46' y='221.12' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='103.02px' lengthAdjust='spacingAndGlyphs'>Moon + season</text>
+<text x='185.46' y='125.31' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='160.95px' lengthAdjust='spacingAndGlyphs'>Same chance every day</text>
+<polyline points='188.84,311.56 193.08,311.56 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='188.84,215.75 193.08,215.75 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='188.84,119.94 193.08,119.94 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='245.89,373.27 245.89,369.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='351.53,373.27 351.53,369.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='457.16,373.27 457.16,369.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='562.80,373.27 562.80,369.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='668.43,373.27 668.43,369.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<text x='245.89' y='387.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='29.20px' lengthAdjust='spacingAndGlyphs'>0.08</text>
+<text x='351.53' y='387.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='29.20px' lengthAdjust='spacingAndGlyphs'>0.10</text>
+<text x='457.16' y='387.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='29.20px' lengthAdjust='spacingAndGlyphs'>0.12</text>
+<text x='562.80' y='387.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='29.20px' lengthAdjust='spacingAndGlyphs'>0.14</text>
+<text x='668.43' y='387.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='29.20px' lengthAdjust='spacingAndGlyphs'>0.16</text>
+<text x='483.57' y='406.25' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='310.55px' lengthAdjust='spacingAndGlyphs'>Prediction error (Brier score; lower is better)</text>
+<text x='193.08' y='47.77' style='font-size: 13.00px; font-family: "Arial";' textLength='456.12px' lengthAdjust='spacingAndGlyphs'>1,007 aquarium diary dates; each whole year was excluded before predicting it.</text>
+<text x='193.08' y='26.28' style='font-size: 20.00px; font-family: "Arial";' textLength='455.88px' lengthAdjust='spacingAndGlyphs'>Adding weather data showed no clear improvement</text>
+<text x='193.08' y='428.74' style='font-size: 10.00px; font-family: "Arial";' textLength='330.19px' lengthAdjust='spacingAndGlyphs'>Points: held-out scores. Lines: 95% intervals from resampling whole years.</text>
+<text x='193.08' y='439.54' style='font-size: 10.00px; font-family: "Arial";' textLength='460.86px' lengthAdjust='spacingAndGlyphs'>Source: Sakai et al. (2024), reanalysed here. Results concern this aquarium, not forecasts for wild reefs.</text>
+</g>
+</g>
+</svg>

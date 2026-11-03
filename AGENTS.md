@@ -2,6 +2,8 @@
 
 Keep the R analysis readable by a student who must explain it. Prefer visible import, preparation, analysis, plotting and export stages; meaningful intermediate names; explicit join keys; relative paths; and ordinary tidyverse/ggplot2 code. Functions and additional dependencies should simplify actual repeated or difficult work. These are preferences, not fixed limits on code size or structure.
 
+Presentation graphics should be easy to explain to a classroom. Prefer one question and one conventional chart per file, large readable labels, and colour with a clear analytical role. Keep detailed tables and diagnostics available behind the presentation figures. Use a simple file tree and a short explanation for architecture; dense multi-panel posters and broad flowcharts have not worked for this user.
+
 Read `docs/COURSE_REQUIREMENTS.md` for the assessment context and `docs/RESEARCH.md` for the data and analytical limitations. Apply the project skill at `.agents/skills/ocean-clock-analysis/SKILL.md` when changing the coral timing analysis.
 
 Keep downloaded source files unchanged. Put derived data and figures in their designated output folders. Cache external responses so a normal analysis run does not depend on live APIs. Check meaningful risks: join cardinality, sampling units, missing-value codes, local dates and returned environmental timestamps. Explain analytical decisions in comments, including units and exclusions.

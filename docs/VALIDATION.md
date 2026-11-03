@@ -20,14 +20,16 @@ Every validation fit and both full-data aquarium fits converge with full rank an
 
 ## Timing and visual checks
 
-Lunar and monthly-calendar shares sum to one within every displayed group. The source-relative lunar smoother wraps at the edge of its thirty day-offset bins; unsmoothed counts produce the printed percentages. Genuine dawn observations 3975/3976 remain more than twelve hours before the same-date sunset; midnight record 6153 is flagged separately. The limited cached USNO sample matches seven historical reef-nights exactly.
+The lunar histogram counts all 1,026 reef-nights once, and its shares sum to one. Calendar weights sum to one within each region. The presentation uses raw counts and conventional summaries. Genuine dawn observations 3975/3976 remain more than twelve hours before the same-date sunset; midnight record 6153 is flagged separately. The limited cached USNO sample matches seven historical reef-nights exactly.
 
-Twelve figures are exported as 300 dpi PNGs and scalable SVGs. White backgrounds, readable labels, direct annotations, map projection, scales and categorical units were reviewed in the actual output files. Individual panels use explicit denominators and retain meaningful exceptions rather than forcing a uniform pattern.
+Six single-chart figures are exported as 300 dpi PNGs and scalable SVGs, using standard ggplot2 geoms and `theme_bw()`. They are checked at classroom-sized display widths. Bars start at zero. Model uncertainty uses points and intervals, rather than non-zero-based bars. Regional selections, counting units and the two DHW thresholds are stated. Every figure has its plotted values in a CSV.
+
+The exported Shapefiles are read back: they contain all 214 region polygons and 102 reef coordinates, preserve their identifiers and region assignments, and retain WGS84 (EPSG:4326). Point coordinates are checked to numerical precision. The authoritative source polygons remain unchanged as GeoJSON.
 
 ## Reproduction and native R files
 
 The full workflow was run in a fresh native R terminal without restoring an earlier workspace. A genuine command history and a selected-object `.RData` snapshot accompany the delivery. Neither is needed to rebuild the analysis. The large parsed regional RDS cache is rebuilt from the included original archives and excluded from the submission ZIP to avoid duplicating the data.
 
-The submission ZIP was extracted into a separate folder and rebuilt in a fresh R process with no workspace restored or live data download. All **70** compared PNGs, SVGs, plot-data tables and derived CSVs match the main build byte-for-byte. This caught an initially unspecified legend order; the final guide order is explicit and stable. The archive retains directory paths and produces twelve PNGs with the names assigned in `authors.csv`. Package installation on a new computer uses `setup.R`.
+The current data and model calculations have passed the independent checks after the code was separated from plotting. The submission archive preserves directory paths and includes six author-named PNGs, the R project and all source inputs. Package installation on a new computer uses `setup.R`; cached data do not need a live service. Extracted-bundle reproduction is checked again for this six-figure version before delivery.
 
 The student-dependent requirements—actual contribution review, attendance, accepted group/presentation format and Moodle upload—remain outside these numerical checks.

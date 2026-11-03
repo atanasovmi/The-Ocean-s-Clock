@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='792.00pt' height='417.60pt' viewBox='0 0 792.00 417.60'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3OTIuMDB8MC4wMHw0MTcuNjA='>
+    <rect x='0.00' y='0.00' width='792.00' height='417.60' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw0MTcuNjA=)'>
+<rect x='0.000000000000064' y='-0.00000000000011' width='792.00' height='417.60' style='stroke-width: 1.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMTUxLjMxfDc3NC4wN3w2Mi40NnwzMzMuMDQ='>
+    <rect x='151.31' y='62.46' width='622.76' height='270.58' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTUxLjMxfDc3NC4wN3w2Mi40NnwzMzMuMDQ=)'>
+<rect x='151.31' y='62.46' width='622.76' height='270.58' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
+<polyline points='151.31,333.04 151.31,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='275.86,333.04 275.86,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='400.41,333.04 400.41,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='524.96,333.04 524.96,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='649.52,333.04 649.52,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='774.07,333.04 774.07,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<rect x='151.31' y='108.58' width='434.37' height='55.35' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
+<rect x='151.31' y='231.57' width='438.24' height='55.35' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
+<text x='595.61' y='141.03' style='font-size: 13.37px; font-family: "Arial";' textLength='99.23px' lengthAdjust='spacingAndGlyphs'>69.8%  (n = 400)</text>
+<text x='598.73' y='264.03' style='font-size: 13.37px; font-family: "Arial";' textLength='91.80px' lengthAdjust='spacingAndGlyphs'>70.4%  (n = 81)</text>
+<rect x='151.31' y='62.46' width='622.76' height='270.58' style='stroke-width: 1.07; stroke: #595959;' />
+</g>
+<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw0MTcuNjA=)'>
+<text x='143.69' y='264.62' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='130.91px' lengthAdjust='spacingAndGlyphs'>Maldives field study</text>
+<text x='143.69' y='141.62' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='131.73px' lengthAdjust='spacingAndGlyphs'>Historical reef study</text>
+<polyline points='147.08,259.24 151.31,259.24 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='147.08,136.25 151.31,136.25 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='151.31,337.27 151.31,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='275.86,337.27 275.86,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='400.41,337.27 400.41,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='524.96,337.27 524.96,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='649.52,337.27 649.52,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='774.07,337.27 774.07,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
+<text x='151.31' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='21.69px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<text x='275.86' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<text x='400.41' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>40%</text>
+<text x='524.96' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>60%</text>
+<text x='649.52' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>80%</text>
+<text x='774.07' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='38.38px' lengthAdjust='spacingAndGlyphs'>100%</text>
+<text x='462.69' y='370.25' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='365.88px' lengthAdjust='spacingAndGlyphs'>Recorded location-dates in days 0–7 after full moon</text>
+<text x='151.31' y='47.77' style='font-size: 13.00px; font-family: "Arial";' textLength='359.94px' lengthAdjust='spacingAndGlyphs'>About 70% of Acropora records fall in the week after full moon.</text>
+<text x='151.31' y='26.28' style='font-size: 20.00px; font-family: "Arial";' textLength='402.47px' lengthAdjust='spacingAndGlyphs'>Both field studies show a similar lunar pattern</text>
+<text x='151.31' y='392.74' style='font-size: 10.00px; font-family: "Arial";' textLength='433.42px' lengthAdjust='spacingAndGlyphs'>Historical study: 400 genus/reef-dates; Maldives: 81 spawning atoll-days. Survey coverage differs.</text>
+<text x='151.31' y='403.54' style='font-size: 10.00px; font-family: "Arial";' textLength='440.14px' lengthAdjust='spacingAndGlyphs'>Sources: Baird et al. (2021); Sheridan et al. (2025). These are shares of recorded spawning events.</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+station_id,station_name,change,region,period,exposure,percent_label
+northern_taiwan,Northern Taiwan,0.24838709677419352,Northern Taiwan,1986–1995,0.01451612903225806,1.5%
+northern_taiwan,Northern Taiwan,0.24838709677419352,Northern Taiwan,2015–2024,0.2629032258064516,26.3%
+gulf_of_aqaba,Gulf of Aqaba,0.22683344305464123,Gulf of Aqaba,1986–1995,0,0.0%
+gulf_of_aqaba,Gulf of Aqaba,0.22683344305464123,Gulf of Aqaba,2015–2024,0.22683344305464123,22.7%
+panama_pacific_west,Panama Pacific West,0.18406072106261864,Pacific Panama (west),1986–1995,0,0.0%
+panama_pacific_west,Panama Pacific West,0.18406072106261864,Pacific Panama (west),2015–2024,0.18406072106261864,18.4%
+northern_philippines,Northern Philippines,0.12827956989247313,Northern Philippines,1986–1995,0,0.0%
+northern_philippines,Northern Philippines,0.12827956989247313,Northern Philippines,2015–2024,0.12827956989247313,12.8%
+tromelin_reunion,"Tromelin and Reunion, France",0.07812543037237143,Tromelin / Réunion,1986–1995,0.02024630541871921,2.0%
+tromelin_reunion,"Tromelin and Reunion, France",0.07812543037237143,Tromelin / Réunion,2015–2024,0.09837173579109064,9.8%
+singapore,Singapore Strait,0,Singapore,1986–1995,0,0.0%
+singapore,Singapore Strait,0,Singapore,2015–2024,0,0.0%

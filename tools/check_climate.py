@@ -2,7 +2,7 @@
 
 Uses the original NOAA ASCII caches and reconstructs the biological weights
 separately in pandas. It does not call the R implementation being checked.
-Run from the project root after R/05_climate.R. Requires pandas and numpy.
+Run from the project root after R/analyse_heat_exposure.R. Requires pandas and numpy.
 """
 from pathlib import Path
 import gzip
@@ -47,7 +47,7 @@ for station_id in weights.station_id.unique():
     exposure = months.groupby(["station_id", "year"])["weighted_stress"].sum().reset_index()
     parts.append(exposure)
 independent = pd.concat(parts, ignore_index=True)
-r_exposure = pd.read_csv("outputs/tables/08_calendar_exposure.csv")
+r_exposure = pd.read_csv("data/derived/calendar_exposure.csv")
 checked = independent.merge(r_exposure, on=["station_id", "year"], validate="one_to_one")
 exposure_error = float((checked.weighted_stress - checked.calendar_exposure).abs().max())
 assert exposure_error < 1e-12
@@ -55,7 +55,7 @@ assert exposure_error < 1e-12
 early = independent.query("1986 <= year <= 1995").groupby("station_id").weighted_stress.mean()
 recent = independent.query("2015 <= year <= 2024").groupby("station_id").weighted_stress.mean()
 changes = recent - early
-comparison = pd.read_csv("outputs/tables/08_decadal_exposure.csv").set_index("station_id")
+comparison = pd.read_csv("data/derived/decadal_exposure.csv").set_index("station_id")
 assert np.max(np.abs(changes - comparison.change)) < 1e-12
 summary = {"eligible_sites": len(eligible), "regions": len(changes),
            "independently_checked_region_years": len(checked),

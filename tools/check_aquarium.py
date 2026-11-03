@@ -1,4 +1,4 @@
-"""Independent calculation checks; temporary delivery QA, not a project dependency."""
+"""Independent numerical checks for the aquarium models; not an R dependency."""
 from pathlib import Path
 import numpy as np
 import pandas as pd
