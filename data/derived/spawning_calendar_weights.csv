@@ -1,0 +1,169 @@
+station_id,station_name,month,calendar_weight,n_sites
+fiji,Fiji,1,0,2
+fiji,Fiji,2,0,2
+fiji,Fiji,3,0,2
+fiji,Fiji,4,0,2
+fiji,Fiji,5,0,2
+fiji,Fiji,6,0,2
+fiji,Fiji,7,0,2
+fiji,Fiji,8,0,2
+fiji,Fiji,9,0,2
+fiji,Fiji,10,0.45268542199488493,2
+fiji,Fiji,11,0.36445012787723785,2
+fiji,Fiji,12,0.18286445012787722,2
+gbr_central,Central GBR,1,0,2
+gbr_central,Central GBR,2,0,2
+gbr_central,Central GBR,3,0.045454545454545456,2
+gbr_central,Central GBR,4,0,2
+gbr_central,Central GBR,5,0,2
+gbr_central,Central GBR,6,0,2
+gbr_central,Central GBR,7,0,2
+gbr_central,Central GBR,8,0,2
+gbr_central,Central GBR,9,0,2
+gbr_central,Central GBR,10,0.29545454545454547,2
+gbr_central,Central GBR,11,0.5681818181818182,2
+gbr_central,Central GBR,12,0.09090909090909091,2
+gulf_of_aqaba,Gulf of Aqaba,1,0,1
+gulf_of_aqaba,Gulf of Aqaba,2,0,1
+gulf_of_aqaba,Gulf of Aqaba,3,0,1
+gulf_of_aqaba,Gulf of Aqaba,4,0,1
+gulf_of_aqaba,Gulf of Aqaba,5,0.024489795918367346,1
+gulf_of_aqaba,Gulf of Aqaba,6,0.27346938775510204,1
+gulf_of_aqaba,Gulf of Aqaba,7,0.4326530612244898,1
+gulf_of_aqaba,Gulf of Aqaba,8,0.24081632653061225,1
+gulf_of_aqaba,Gulf of Aqaba,9,0.02857142857142857,1
+gulf_of_aqaba,Gulf of Aqaba,10,0,1
+gulf_of_aqaba,Gulf of Aqaba,11,0,1
+gulf_of_aqaba,Gulf of Aqaba,12,0,1
+hawaii,Main Hawaiian Islands,1,0,1
+hawaii,Main Hawaiian Islands,2,0,1
+hawaii,Main Hawaiian Islands,3,0,1
+hawaii,Main Hawaiian Islands,4,0.6470588235294118,1
+hawaii,Main Hawaiian Islands,5,0.35294117647058826,1
+hawaii,Main Hawaiian Islands,6,0,1
+hawaii,Main Hawaiian Islands,7,0,1
+hawaii,Main Hawaiian Islands,8,0,1
+hawaii,Main Hawaiian Islands,9,0,1
+hawaii,Main Hawaiian Islands,10,0,1
+hawaii,Main Hawaiian Islands,11,0,1
+hawaii,Main Hawaiian Islands,12,0,1
+madinah_makkah,Al Madinah and Makkah,1,0,1
+madinah_makkah,Al Madinah and Makkah,2,0,1
+madinah_makkah,Al Madinah and Makkah,3,0,1
+madinah_makkah,Al Madinah and Makkah,4,0.5,1
+madinah_makkah,Al Madinah and Makkah,5,0.42857142857142855,1
+madinah_makkah,Al Madinah and Makkah,6,0.07142857142857142,1
+madinah_makkah,Al Madinah and Makkah,7,0,1
+madinah_makkah,Al Madinah and Makkah,8,0,1
+madinah_makkah,Al Madinah and Makkah,9,0,1
+madinah_makkah,Al Madinah and Makkah,10,0,1
+madinah_makkah,Al Madinah and Makkah,11,0,1
+madinah_makkah,Al Madinah and Makkah,12,0,1
+northern_philippines,Northern Philippines,1,0,1
+northern_philippines,Northern Philippines,2,0,1
+northern_philippines,Northern Philippines,3,0.2,1
+northern_philippines,Northern Philippines,4,0.3,1
+northern_philippines,Northern Philippines,5,0.3,1
+northern_philippines,Northern Philippines,6,0.2,1
+northern_philippines,Northern Philippines,7,0,1
+northern_philippines,Northern Philippines,8,0,1
+northern_philippines,Northern Philippines,9,0,1
+northern_philippines,Northern Philippines,10,0,1
+northern_philippines,Northern Philippines,11,0,1
+northern_philippines,Northern Philippines,12,0,1
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",1,0,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",2,0,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",3,0,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",4,0,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",5,0.15866477272727272,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",6,0.6176136363636364,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",7,0.1455965909090909,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",8,0.0703125,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",9,0.0078125,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",10,0,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",11,0,2
+northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",12,0,2
+northern_taiwan,Northern Taiwan,1,0,1
+northern_taiwan,Northern Taiwan,2,0,1
+northern_taiwan,Northern Taiwan,3,0,1
+northern_taiwan,Northern Taiwan,4,0,1
+northern_taiwan,Northern Taiwan,5,0,1
+northern_taiwan,Northern Taiwan,6,0,1
+northern_taiwan,Northern Taiwan,7,0.75,1
+northern_taiwan,Northern Taiwan,8,0.25,1
+northern_taiwan,Northern Taiwan,9,0,1
+northern_taiwan,Northern Taiwan,10,0,1
+northern_taiwan,Northern Taiwan,11,0,1
+northern_taiwan,Northern Taiwan,12,0,1
+panama_pacific_west,Panama Pacific West,1,0.35294117647058826,1
+panama_pacific_west,Panama Pacific West,2,0.17647058823529413,1
+panama_pacific_west,Panama Pacific West,3,0.29411764705882354,1
+panama_pacific_west,Panama Pacific West,4,0.11764705882352941,1
+panama_pacific_west,Panama Pacific West,5,0.058823529411764705,1
+panama_pacific_west,Panama Pacific West,6,0,1
+panama_pacific_west,Panama Pacific West,7,0,1
+panama_pacific_west,Panama Pacific West,8,0,1
+panama_pacific_west,Panama Pacific West,9,0,1
+panama_pacific_west,Panama Pacific West,10,0,1
+panama_pacific_west,Panama Pacific West,11,0,1
+panama_pacific_west,Panama Pacific West,12,0,1
+sabah,"Sabah, Malaysia",1,0,1
+sabah,"Sabah, Malaysia",2,0,1
+sabah,"Sabah, Malaysia",3,0,1
+sabah,"Sabah, Malaysia",4,0.8181818181818182,1
+sabah,"Sabah, Malaysia",5,0.18181818181818182,1
+sabah,"Sabah, Malaysia",6,0,1
+sabah,"Sabah, Malaysia",7,0,1
+sabah,"Sabah, Malaysia",8,0,1
+sabah,"Sabah, Malaysia",9,0,1
+sabah,"Sabah, Malaysia",10,0,1
+sabah,"Sabah, Malaysia",11,0,1
+sabah,"Sabah, Malaysia",12,0,1
+singapore,Singapore Strait,1,0,1
+singapore,Singapore Strait,2,0,1
+singapore,Singapore Strait,3,0.0975609756097561,1
+singapore,Singapore Strait,4,0.9024390243902439,1
+singapore,Singapore Strait,5,0,1
+singapore,Singapore Strait,6,0,1
+singapore,Singapore Strait,7,0,1
+singapore,Singapore Strait,8,0,1
+singapore,Singapore Strait,9,0,1
+singapore,Singapore Strait,10,0,1
+singapore,Singapore Strait,11,0,1
+singapore,Singapore Strait,12,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",1,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",2,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",3,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",4,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",5,1,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",6,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",7,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",8,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",9,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",10,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",11,0,1
+southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",12,0,1
+southern_taiwan,Southern Taiwan,1,0,1
+southern_taiwan,Southern Taiwan,2,0,1
+southern_taiwan,Southern Taiwan,3,0,1
+southern_taiwan,Southern Taiwan,4,0.2647058823529412,1
+southern_taiwan,Southern Taiwan,5,0.5588235294117647,1
+southern_taiwan,Southern Taiwan,6,0.17647058823529413,1
+southern_taiwan,Southern Taiwan,7,0,1
+southern_taiwan,Southern Taiwan,8,0,1
+southern_taiwan,Southern Taiwan,9,0,1
+southern_taiwan,Southern Taiwan,10,0,1
+southern_taiwan,Southern Taiwan,11,0,1
+southern_taiwan,Southern Taiwan,12,0,1
+tromelin_reunion,"Tromelin and Reunion, France",1,0.26666666666666666,1
+tromelin_reunion,"Tromelin and Reunion, France",2,0.2,1
+tromelin_reunion,"Tromelin and Reunion, France",3,0,1
+tromelin_reunion,"Tromelin and Reunion, France",4,0,1
+tromelin_reunion,"Tromelin and Reunion, France",5,0,1
+tromelin_reunion,"Tromelin and Reunion, France",6,0,1
+tromelin_reunion,"Tromelin and Reunion, France",7,0,1
+tromelin_reunion,"Tromelin and Reunion, France",8,0,1
+tromelin_reunion,"Tromelin and Reunion, France",9,0,1
+tromelin_reunion,"Tromelin and Reunion, France",10,0.2,1
+tromelin_reunion,"Tromelin and Reunion, France",11,0.3333333333333333,1
+tromelin_reunion,"Tromelin and Reunion, France",12,0,1

@@ -1,0 +1,18 @@
+site,country,station_id,station_name,n_nights,years
+Akajima,Japan,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",64,17
+Al Fahal,Saudi Arabia,madinah_makkah,Al Madinah and Makkah,14,3
+Bitoujiao,Taiwan,northern_taiwan,Northern Taiwan,20,3
+Cabarruyan Island,Philippines,northern_philippines,Northern Philippines,20,4
+Eilat,Israel,gulf_of_aqaba,Gulf of Aqaba,245,6
+Lankayan Island,Malaysia,sabah,"Sabah, Malaysia",11,5
+Lyudao,Taiwan,southern_taiwan,Southern Taiwan,68,7
+Magnetic Island,Australia,gbr_central,Central GBR,22,7
+Molokini,Hawaiian Islands,hawaii,Main Hawaiian Islands,17,6
+Orpheus Island,Australia,gbr_central,Central GBR,22,12
+Raffles Lighthouse,Singapore,singapore,Singapore Strait,41,11
+Reunion Island,France,tromelin_reunion,"Tromelin and Reunion, France",15,6
+Sekisei,Japan,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",14,10
+Sesoko,Japan,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",55,9
+Uva Island,Panama,panama_pacific_west,Panama Pacific West,17,5
+Vatuolalai,Fiji,fiji,Fiji,23,4
+Votua,Fiji,fiji,Fiji,17,4
