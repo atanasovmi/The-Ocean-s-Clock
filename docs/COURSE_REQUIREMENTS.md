@@ -24,6 +24,14 @@ The course requests approximately 3–5 PowerPoint slides. The students intend t
 - A minimum graphic count is not the quality target. Every retained figure should answer a useful question, use an explicit denominator and contribute to a coherent story.
 - Keep the R/tidyverse/ggplot2 approach familiar from the course. Add tools only where they materially improve the analysis.
 
+## Software and the scope of the examples
+
+The [installation section](https://rapp.fhnw.ch/RAPP/ProjektWoche_DataScience/OD_HT01/#section-installation-von-r-und-rstudio) teaches local R and RStudio. The DataViz tutorials introduce ggplot2 layers and scales; the case scripts use tidyverse preparation, `sf` for geographic data, `viridis` and `colorspace` for colours, `zoo::rollmean()` for rolling summaries, and `leaflet` for interactive map examples. Other supplied examples load packages such as `gridExtra`, `eurostat`, `classInt`, `MASS`, `ggimage` and `rsvg`.
+
+These are demonstrated tools, **not an exclusive package whitelist**: no such restriction was found in the captured course instructions. Conversely, their inclusion does not formally approve every possible advanced technique. Our use of ggplot2 and explicit tidyverse joins follows the taught approach; packages for Excel import, API access, figure composition and PNG export serve concrete project needs. A database or interactive website is unnecessary for the present analysis.
+
+Sources: [DataViz](https://rapp.fhnw.ch/RAPP/ProjektWoche_DataScience/OD_HT02/) and [case tutorials](https://rapp.fhnw.ch/RAPP/ProjektWoche_DataScience/OD_HT03/), reviewed through the local read-only course extraction. This paragraph describes what was found, rather than adding a new course rule.
+
 ## Items the students must still resolve
 
 - Lecturer Good to Go, including group-size and Prezi-format exceptions.
