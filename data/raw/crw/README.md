@@ -37,6 +37,12 @@ The source coral database has 102 natural-reef subsites. **97 fall inside a publ
 
 The date join compares NOAA's UTC daily date label with the source's local observation date. This is daily regional context, not a subdaily temperature at the spawning instant. A region's modern heat stress can be compared with historical spawning-month windows, but such an overlay does not demonstrate that spawning still occurred on those dates, that reproduction failed, or that a seasonal pattern changed.
 
+## Geographic display groups
+
+`station_groups.csv` preserves NOAA's five top-level index headings: Atlantic (43 unique regions), Pacific (44), Southeast Asia (53), Australia (24) and Indian Ocean (50). These are display groups, not ocean-basin boundaries. A region listed under more than one heading is displayed once under its first source appearance; `all_source_groups` retains the other headings. The acquisition script reconstructs the mapping from the cached HTML, and the R parser writes it to `region_display_groups.csv`.
+
+This avoids a real classification error from using longitude alone: the Pacific side of Central America must not be labelled Atlantic, while western Australia and the Great Barrier Reef cannot be separated into oceans by a single longitude cut.
+
 ## Reproduction and attribution
 
 Original compressed sources are committed; the approximately 37.5-MB `regional_daily.rds` is a rebuildable local intermediate. Smaller catalogue, spatial lookup, gap and annual/event tables are plain CSVs. Regenerate them by sourcing `R/02_regional_environment.R` after the coral preparation step.

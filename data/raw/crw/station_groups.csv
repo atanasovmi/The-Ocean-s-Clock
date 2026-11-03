@@ -1,0 +1,215 @@
+station_id,display_group,source_subregion,all_source_groups
+abc_islands,Atlantic,Caribbean,Atlantic
+abrolhos_reefs,Atlantic,Brazil,Atlantic
+aden,Indian Ocean,MiddleEast,Indian Ocean
+al_wusta,Indian Ocean,MiddleEast,Indian Ocean
+andaman,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+austral_islands,Pacific,Polynesia,Pacific
+bahrain,Indian Ocean,MiddleEast,Indian Ocean
+bangka_belitung,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+bassas_da_india,Indian Ocean,WesternIndianOcean,Indian Ocean
+beagle_gulf,Australia,OtherAustraliaStations,Australia
+belize,Atlantic,Caribbean,Atlantic
+bermuda,Atlantic,OtherAtlanticOceanStations,Atlantic
+brunei_darussalam,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+buzios,Atlantic,Brazil,Atlantic
+cape_verde,Atlantic,EasternAtlantic,Atlantic
+cayman_islands,Atlantic,Caribbean,Atlantic
+central_bahamas,Atlantic,OtherAtlanticOceanStations,Atlantic
+central_mozambique,Indian Ocean,WesternIndianOcean,Indian Ocean
+central_philippines,Southeast Asia,CoralTriangle,Southeast Asia
+central_western_aus,Australia,OtherAustraliaStations,Australia
+chagos_archipelago,Indian Ocean,SouthAsia,Indian Ocean
+chesterfield_islands,Pacific,Melanesia,Pacific
+christmas_island,Australia,OtherAustraliaStations,Australia
+clipperton_island,Pacific,EasternPacific,Pacific
+colombia_atlantic,Atlantic,Caribbean,Atlantic
+comoros,Indian Ocean,WesternIndianOcean,Indian Ocean
+costa_dos_corais,Atlantic,Brazil,Atlantic
+costa_rica_atlantic,Atlantic,Caribbean,Atlantic
+costa_rica_pacific,Pacific,EasternPacific,Pacific
+dhofar,Indian Ocean,MiddleEast,Indian Ocean
+dongsha,Southeast Asia,EastAsia,Southeast Asia
+east_gulf_of_thailand,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+east_java_bali,Southeast Asia,CoralTriangle,Southeast Asia
+east_kalimantan,Southeast Asia,CoralTriangle,Southeast Asia
+east_nusa_tenggara,Southeast Asia,CoralTriangle,Southeast Asia
+easter_island,Pacific,Polynesia,Pacific
+eastern_fsm,Pacific,Micronesia,Pacific
+eastern_new_caledonia,Pacific,Melanesia,Pacific
+eastern_persian_gulf,Indian Ocean,MiddleEast,Indian Ocean
+eastern_philippines,Southeast Asia,CoralTriangle,Southeast Asia
+eastern_sri_lanka,Indian Ocean,SouthAsia,Indian Ocean
+eastern_yemen,Indian Ocean,MiddleEast,Indian Ocean
+egypt,Indian Ocean,MiddleEast,Indian Ocean
+el_salvador,Pacific,EasternPacific,Pacific
+eritrea,Indian Ocean,MiddleEast,Indian Ocean
+fernando_de_noronha,Atlantic,Brazil,Atlantic
+fiji,Pacific,Melanesia,Pacific
+florida_keys,Atlantic,Florida,Atlantic
+flower_garden,Atlantic,GulfofAmerica,Atlantic
+galapagos,Pacific,EasternPacific,Pacific
+gbr_central,Australia,GreatBarrierReef,Australia
+gbr_far_northern,Australia,GreatBarrierReef,Australia
+gbr_northern,Australia,GreatBarrierReef,Australia
+gbr_southern,Australia,GreatBarrierReef,Australia
+gilbert_islands,Pacific,Micronesia,Pacific
+glorieuse_geyser,Indian Ocean,WesternIndianOcean,Indian Ocean
+great_nicobar,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+guam,Pacific,Micronesia,Pacific
+gulf_of_aqaba,Indian Ocean,MiddleEast,Indian Ocean
+gulf_of_carpentaria,Australia,OtherAustraliaStations,Australia
+gulf_of_kutch,Indian Ocean,SouthAsia,Indian Ocean
+gulf_of_mannar,Indian Ocean,SouthAsia,Indian Ocean
+gulf_of_oman,Indian Ocean,MiddleEast,Indian Ocean
+gulf_of_suez,Indian Ocean,MiddleEast,Indian Ocean
+gulf_of_tadjoura,Indian Ocean,MiddleEast,Indian Ocean
+hainan_island,Southeast Asia,EastAsia,Southeast Asia
+hamelin_pool,Australia,OtherAustraliaStations,Australia
+hawaii,Pacific,Polynesia,Pacific
+honduras,Atlantic,Caribbean,Atlantic
+hong_kong,Southeast Asia,EastAsia,Southeast Asia
+houtman_abrolhos,Australia,OtherAustraliaStations,Australia
+howland_baker,Pacific,USPacificRemoteIslands,Pacific
+inhambane,Indian Ocean,WesternIndianOcean,Indian Ocean
+isla_del_coco,Pacific,EasternPacific,Pacific
+jamaica,Atlantic,Caribbean,Atlantic
+jazan,Indian Ocean,MiddleEast,Indian Ocean
+johnston_atoll,Pacific,USPacificRemoteIslands,Pacific
+johor_pahang,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+kenya,Indian Ocean,WesternIndianOcean,Indian Ocean
+kerala,Indian Ocean,SouthAsia,Indian Ocean
+la_guajira,Atlantic,Caribbean,Atlantic
+lakshadweep,Indian Ocean,SouthAsia,Indian Ocean
+lampung_banten,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+leeward_caribbean,Atlantic,Caribbean,Atlantic
+lord_howe_island,Australia,OtherAustraliaStations,Australia
+madinah_makkah,Indian Ocean,MiddleEast,Indian Ocean
+malacca_strait,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+maldives,Indian Ocean,SouthAsia,Indian Ocean
+maluku,Southeast Asia,CoralTriangle,Southeast Asia
+maputo,Indian Ocean,WesternIndianOcean,Indian Ocean
+maracajau,Atlantic,Brazil,Atlantic
+marmion_rottnest,Australia,OtherAustraliaStations,Australia
+marquesas_islands,Pacific,Polynesia,Pacific
+marshall_islands,Pacific,Micronesia,Pacific
+mayotte,Indian Ocean,WesternIndianOcean,Indian Ocean
+moreton_bay,Australia,OtherAustraliaStations,Australia
+nauru,Pacific,Micronesia,Pacific
+nearshore_venezuela,Atlantic,Caribbean,Atlantic
+nicaragua,Atlantic,Caribbean,Atlantic
+ningaloo,Australia,OtherAustraliaStations,Australia
+norfolk_island,Australia,OtherAustraliaStations,Australia
+north_maluku,Southeast Asia,CoralTriangle,Southeast Asia
+north_sulawesi,Southeast Asia,CoralTriangle,Southeast Asia
+north_western_aus,Australia,OtherAustraliaStations,Australia
+northeastern_cuba,Atlantic,Caribbean,Atlantic
+northeastern_madagascar,Indian Ocean,WesternIndianOcean,Indian Ocean
+northern_bahamas,Atlantic,OtherAtlanticOceanStations,Atlantic
+northern_borneo,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+northern_cnmi,Pacific,Micronesia,Pacific
+northern_cook_islands,Pacific,Polynesia,Pacific
+northern_coral_sea,Australia,GreatBarrierReef,Australia
+northern_hispaniola,Atlantic,Caribbean,Atlantic
+northern_java,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+northern_line_islands,Pacific,Polynesia,Pacific
+northern_mauritius,Indian Ocean,WesternIndianOcean,Indian Ocean
+northern_mozambique,Indian Ocean,WesternIndianOcean,Indian Ocean
+northern_myanmar,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+northern_philippines,Southeast Asia,CoralTriangle,Southeast Asia
+northern_ryukyu_islands,Southeast Asia,EastAsia,Southeast Asia
+northern_taiwan,Southeast Asia,EastAsia,Southeast Asia
+northern_territory,Australia,OtherAustraliaStations,Australia
+northern_tonga,Pacific,Polynesia,Pacific
+northern_vietnam,Southeast Asia,EastAsia,Southeast Asia
+northwestern_cuba,Atlantic,Caribbean,Atlantic
+northwestern_madagascar,Indian Ocean,WesternIndianOcean,Indian Ocean
+northwestern_sumatra,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+nwhi,Pacific,Polynesia,Pacific
+offshore_venezuela,Atlantic,Caribbean,Atlantic
+ogasawara,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+palau,Pacific,Micronesia,Pacific
+panama_atlantic_east,Atlantic,Caribbean,Atlantic
+panama_atlantic_west,Atlantic,Caribbean,Atlantic
+panama_pacific_east,Pacific,EasternPacific,Pacific
+panama_pacific_west,Pacific,EasternPacific,Pacific
+papua_new_guinea,Pacific,Melanesia,Pacific | Southeast Asia
+paracel_islands,Southeast Asia,EastAsia,Southeast Asia
+phoenix_islands,Pacific,Micronesia,Pacific
+pitcairn,Pacific,Polynesia,Pacific
+puerto_rico,Atlantic,Caribbean,Atlantic
+pulu_keeling,Australia,OtherAustraliaStations,Australia
+quintana_roo,Atlantic,Caribbean,Atlantic
+riau_islands,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+rowley_shoals,Australia,OtherAustraliaStations,Australia
+sabah,Southeast Asia,CoralTriangle,Southeast Asia
+samoas,Pacific,Polynesia,Pacific
+sao_tome_principe,Atlantic,EasternAtlantic,Atlantic
+scott_ashmore,Australia,OtherAustraliaStations,Australia
+seychelles,Indian Ocean,WesternIndianOcean,Indian Ocean
+shark_bay,Australia,OtherAustraliaStations,Australia
+singapore,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+society_archipelago,Pacific,Polynesia,Pacific
+socotra,Indian Ocean,MiddleEast,Indian Ocean
+solomon_islands,Pacific,Melanesia,Pacific | Southeast Asia
+somalia,Indian Ocean,WesternIndianOcean,Indian Ocean
+south_africa,Indian Ocean,WesternIndianOcean,Indian Ocean
+south_sulawesi,Southeast Asia,CoralTriangle,Southeast Asia
+southeast_florida,Atlantic,Florida,Atlantic
+southeast_sulawesi,Southeast Asia,CoralTriangle,Southeast Asia
+southeastern_cuba,Atlantic,Caribbean,Atlantic
+southeastern_india,Indian Ocean,SouthAsia,Indian Ocean
+southeastern_madagascar,Indian Ocean,WesternIndianOcean,Indian Ocean
+southern_borneo,Southeast Asia,CoralTriangle,Southeast Asia
+southern_cook_islands,Pacific,Polynesia,Pacific
+southern_coral_sea,Australia,GreatBarrierReef,Australia
+southern_hispaniola,Atlantic,Caribbean,Atlantic
+southern_java,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+southern_line_islands,Pacific,Polynesia,Pacific
+southern_mauritius,Indian Ocean,WesternIndianOcean,Indian Ocean
+southern_myanmar,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+southern_philippines,Southeast Asia,CoralTriangle,Southeast Asia
+southern_ryukyu_islands,Southeast Asia,EastAsia,Southeast Asia
+southern_sri_lanka,Indian Ocean,SouthAsia,Indian Ocean
+southern_taiwan,Southeast Asia,EastAsia,Southeast Asia
+southern_tonga,Pacific,Polynesia,Pacific
+southern_vietnam,Southeast Asia,EastAsia,Southeast Asia
+southwestern_cuba,Atlantic,Caribbean,Atlantic
+southwestern_madagascar,Indian Ocean,WesternIndianOcean,Indian Ocean
+southwestern_sumatra,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+southwestern_thailand,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+spratly_islands,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+sudan,Indian Ocean,MiddleEast,Indian Ocean
+sulawesi_gorontalo,Southeast Asia,CoralTriangle,Southeast Asia
+tabuk,Indian Ocean,MiddleEast,Indian Ocean
+tanzania,Indian Ocean,WesternIndianOcean,Indian Ocean
+terengganu,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+timor_leste,Southeast Asia,CoralTriangle,Southeast Asia
+todos_os_santos,Atlantic,Brazil,Atlantic
+torres_strait,Australia,GreatBarrierReef,Australia
+trinadade_martim_vaz,Atlantic,Brazil,Atlantic
+trinidad_tobago,Atlantic,Caribbean,Atlantic
+tromelin_reunion,Indian Ocean,WesternIndianOcean,Indian Ocean
+tuamotu_archipelago,Pacific,Polynesia,Pacific
+turks_caicos,Atlantic,OtherAtlanticOceanStations,Atlantic
+tuvalu,Pacific,Polynesia,Pacific
+usvi,Atlantic,Caribbean,Atlantic
+vanuatu,Pacific,Melanesia,Pacific
+veracruz,Atlantic,GulfofAmerica,Atlantic
+wake_atoll,Pacific,USPacificRemoteIslands,Pacific
+wallis_futuna,Pacific,Polynesia,Pacific
+west_gulf_of_thailand,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+west_kalimanta,Southeast Asia,OtherSoutheastAsiaStations,Southeast Asia
+west_nusa_tenggara,Southeast Asia,CoralTriangle,Southeast Asia
+west_papua,Pacific,Melanesia,Pacific | Southeast Asia
+west_sulawesi,Southeast Asia,CoralTriangle,Southeast Asia
+west_timor,Southeast Asia,CoralTriangle,Southeast Asia
+western_fsm,Pacific,Micronesia,Pacific
+western_india,Indian Ocean,SouthAsia,Indian Ocean
+western_madagascar,Indian Ocean,WesternIndianOcean,Indian Ocean
+western_new_caledonia,Pacific,Melanesia,Pacific
+western_persian_gulf,Indian Ocean,MiddleEast,Indian Ocean
+western_philippines,Southeast Asia,CoralTriangle,Southeast Asia
+western_yemen,Indian Ocean,MiddleEast,Indian Ocean
+windward_caribbean,Atlantic,Caribbean,Atlantic
+yucatan,Atlantic,GulfofAmerica,Atlantic

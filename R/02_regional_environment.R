@@ -52,6 +52,10 @@ stopifnot(!anyNA(regional_daily$sst_c), all(regional_daily$sst_c > -3),
 saveRDS(regional_daily, "data/derived/regional_daily.rds", compress = "gzip")
 write_csv(region_catalogue, "data/derived/region_catalogue.csv")
 write_csv(calendar_gaps, "data/derived/regional_calendar_gaps.csv")
+display_groups <- read_csv("data/raw/crw/station_groups.csv", show_col_types = FALSE)
+stopifnot(!anyDuplicated(display_groups$station_id),
+          setequal(display_groups$station_id, region_catalogue$station_id))
+write_csv(display_groups, "data/derived/region_display_groups.csv")
 
 # Keep the full daily series, but exclude 1985 from heat-stress comparisons:
 # the initial 84-day accumulation window was not valid at the start of that year.

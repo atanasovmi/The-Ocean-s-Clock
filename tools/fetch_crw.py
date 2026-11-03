@@ -33,6 +33,35 @@ for row in soup.select("tr"):
             stations[station_id] = {"station_id": station_id, "station_name": station_name,
                                     "url": urljoin(BASE, href)}
 
+# Preserve NOAA's actual five geographic headings. Longitude bands cannot
+# distinguish the Pacific and Atlantic sides of Central America reliably.
+group_labels = {"AtlanticOcean": "Atlantic", "PacificOcean": "Pacific",
+                "SoutheastAsia": "Southeast Asia", "Australia": "Australia",
+                "IndianOcean": "Indian Ocean"}
+groups = {}
+current_group = current_subregion = None
+for link in soup.select("a[name], a[href]"):
+    anchor = link.get("name")
+    if anchor in group_labels:
+        current_group = group_labels[anchor]
+        current_subregion = None
+    elif anchor:
+        current_subregion = anchor
+    href = link.get("href", "")
+    if href.endswith(".txt") and "data/" in href:
+        station_id = Path(href).stem
+        if station_id not in groups:
+            groups[station_id] = {"station_id": station_id, "display_group": current_group,
+                                  "source_subregion": current_subregion,
+                                  "all_source_groups": current_group}
+        elif current_group not in groups[station_id]["all_source_groups"].split(" | "):
+            groups[station_id]["all_source_groups"] += " | " + current_group
+assert set(groups) == set(stations)
+with (OUT / "station_groups.csv").open("w", newline="", encoding="utf-8") as stream:
+    writer = csv.DictWriter(stream, fieldnames=list(next(iter(groups.values()))))
+    writer.writeheader()
+    writer.writerows(groups[key] for key in sorted(groups))
+
 
 def download(station):
     path = OUT / (station["station_id"] + ".txt.gz")
