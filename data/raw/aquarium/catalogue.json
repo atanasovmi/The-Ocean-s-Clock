@@ -1,0 +1,117 @@
+{
+  "created": "2024-04-17T14:13:46.271008+00:00",
+  "modified": "2024-04-17T14:13:46.929092+00:00",
+  "id": 10974150,
+  "conceptrecid": "10974149",
+  "doi": "10.5281/zenodo.10974150",
+  "conceptdoi": "10.5281/zenodo.10974149",
+  "doi_url": "https://doi.org/10.5281/zenodo.10974150",
+  "metadata": {
+    "title": "Data from: Long-term aquarium records delineate the synchronized spawning strategy of Acropora corals",
+    "doi": "10.5281/zenodo.10974150",
+    "publication_date": "2024-04-17",
+    "description": "<p>Coral mass spawning, where corals synchronically release their gametes over several days following full moon, is one of the most spectacular reproduction events in the world. However, despite decades of studies, environmental drivers of the synchronous spawning remain controversial, partly because long-term systematic characterisations of the reproduction activities are challenging in the field. In this study, the authors take an advantage of 15-years-long spawning records of&nbsp;<em>Acropora</em> corals from aquarium tanks to successfully identify key environmental factors to determine coral spawning timing. The study demonstrates the great potential of the aquarium system in shaping our understanding of coral reproduction behaviour.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Sakai, Yusuke",
+        "affiliation": "Osaka City University",
+        "orcid": "0000-0002-7092-0094"
+      },
+      {
+        "name": "Yamamoto, Hiromi H.",
+        "affiliation": "Okinawa Churashima Foundation Research Institute"
+      },
+      {
+        "name": "Maruyama, Shinichiro",
+        "affiliation": "The University of Tokyo",
+        "orcid": "0000-0002-1128-5916"
+      }
+    ],
+    "resource_type": {
+      "title": "Dataset",
+      "type": "dataset"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "10974149"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Data from: Long-term aquarium records delineate the synchronized spawning strategy of Acropora corals",
+  "links": {
+    "self": "https://zenodo.org/api/records/10974150",
+    "self_html": "https://zenodo.org/records/10974150",
+    "preview_html": "https://zenodo.org/records/10974150?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.10974150",
+    "self_doi": "https://doi.org/10.5281/zenodo.10974150",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.10974150",
+    "reserve_doi": "https://zenodo.org/api/records/10974150/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/10974149",
+    "parent_html": "https://zenodo.org/records/10974149",
+    "parent_doi": "https://doi.org/10.5281/zenodo.10974149",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.10974149",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:10974150/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:10974150/sequence/default",
+    "files": "https://zenodo.org/api/records/10974150/files",
+    "media_files": "https://zenodo.org/api/records/10974150/media-files",
+    "latest": "https://zenodo.org/api/records/10974150/versions/latest",
+    "latest_html": "https://zenodo.org/records/10974150/latest",
+    "versions": "https://zenodo.org/api/records/10974150/versions",
+    "draft": "https://zenodo.org/api/records/10974150/draft",
+    "access_links": "https://zenodo.org/api/records/10974150/access/links",
+    "access_grants": "https://zenodo.org/api/records/10974150/access/grants",
+    "access_users": "https://zenodo.org/api/records/10974150/access/users",
+    "access_request": "https://zenodo.org/api/records/10974150/access/request",
+    "access": "https://zenodo.org/api/records/10974150/access",
+    "communities": "https://zenodo.org/api/records/10974150/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/10974150/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/10974150/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/10974150/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/10974150/quota-increase",
+    "requests": "https://zenodo.org/api/records/10974150/requests"
+  },
+  "updated": "2024-04-17T14:13:46.929092+00:00",
+  "recid": "10974150",
+  "revision": 4,
+  "files": [
+    {
+      "id": "5b63009a-cf98-46fc-af0b-c0d0879eb86c",
+      "key": "Dataset_Sakai_etal_Acropora.zip",
+      "size": 226868,
+      "checksum": "md5:f2e51a4aa5c88005e20ed9d79ea94ad2",
+      "links": {
+        "self": "https://zenodo.org/api/records/10974150/files/Dataset_Sakai_etal_Acropora.zip/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1098271"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 34,
+    "unique_downloads": 33,
+    "views": 194,
+    "unique_views": 182,
+    "version_downloads": 34,
+    "version_unique_downloads": 33,
+    "version_unique_views": 182,
+    "version_views": 194
+  },
+  "state": "done",
+  "submitted": true
+}
