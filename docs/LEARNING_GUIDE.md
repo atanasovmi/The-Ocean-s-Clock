@@ -1,75 +1,62 @@
-# Understand and own the analysis
+# Reading and explaining the project
 
-The project should be reproducible by R and explainable by its two students. Read the results alongside the scripts rather than memorising chart captions. The course asks you to explain the guiding question, data, approach, answer and limitations in at most two minutes per visualization.
+The project asks how recorded coral spawning aligns with natural cycles, what regional heat stress looks like around those historical seasons, and whether environmental measurements improve a separate aquarium prediction task. These questions use different kinds of evidence. Understanding that distinction matters more than memorising every package call.
 
-## Begin with a clean R session
+## Rebuild first, inspect afterwards
 
-Open `The-Oceans-Clock.Rproj` in RStudio. It sets the project root for relative paths and disables automatic workspace/history restoration. Run `source("setup.R")` once to install any missing packages into the ignored local `.Rlibrary`. Then restart R and run `source("run.R")`.
+Open `The-Oceans-Clock.Rproj` in RStudio. Run `source("setup.R")` once to install missing packages into the local `.Rlibrary`, then run `source("run.R", encoding = "UTF-8")` in a fresh session. Published source caches are included, so the analysis does not depend on data services being online. Package installation on a new computer still needs internet access.
 
-The normal run recreates the preparation and graphics from explicit inputs. Preserved API responses allow the environmental data to be reused without depending on an interactive browser session. If a required response is missing, the enrichment script may need network access to retrieve it.
+The project disables automatic workspace restoration so an object left in memory cannot silently rescue an incomplete script. The delivered `.RData` snapshot can be loaded explicitly for inspection, and `.Rhistory` records commands actually executed during the build. These native files are included in the local delivery and submission ZIP when present, but excluded from Git. Neither is evidence of student participation or a replacement for scripts. Inspect the snapshot in a separate session with `load(".RData")`; reproducibility checks must start without it.
 
-An `.RData` file would save whatever objects happened to exist in one person's interactive session. That can hide a missing preparation step. It is deliberately excluded here, as are `.Rhistory` and personal RStudio state. The `.Rproj`, scripts and documented source files are the reproducible project.
+The large `regional_daily.rds` is a convenience cache reconstructed from committed NOAA gzip archives. It contains 3,203,007 available station-days, not artificial copies of coral observations.
 
-## Follow the data, one step at a time
+## Follow the calculations
 
-1. **`setup.R`** checks package availability. It is installation support, not part of the analysis itself.
-2. **`run.R`** lists the numbered analysis scripts in execution order. This is the main entry point; it also records the R session information.
-3. **`R/01_prepare.R`** reads separate Excel tables, checks identifier uniqueness, joins locations and accepted taxonomy, parses dates/times, separates field observations and builds the analysis units. Read the checks beside the joins: they protect against multiplying observations accidentally.
-4. **`R/02_enrich.R`** extracts temperature at three selected subsites from 21 cached NOAA daily NetCDF grids in 2016, producing 63 location-date values. The dates combine first-of-month references with the exact dates of nine recorded reef-nights. It checks actual NetCDF dates, units and valid ocean cells, holds the chosen grid cells fixed, records their distance from the reefs, and checks available independent USNO full-moon calculations.
-5. **`R/03_geography_seasons.R`** creates figures 01 and 02: the coverage atlas and site-by-month spawning calendars. Compare the counted reef-nights with the source rows before reading the monthly percentages.
-6. **`R/04_moon_sunset.R`** creates figures 03–05: genus lunar calendars, exact starting times relative to sunset, and species appointments on one Orpheus Island night. It keeps a focused local example distinct from pooled comparisons.
-7. **`R/05_temperature.R`** creates figures **06 and 08**: the sampled 2016 temperature context and the integrated seasonal/lunar/temperature view. Both use the same nine selected reef-nights. Connecting first-of-month points guides the eye; it does not reconstruct daily temperatures.
-8. **`R/06_robustness.R`** creates figure 07. It compares the same lunar pattern when counting every source row, every reef-night once, or each subsite with equal total weight.
-9. **`R/07_results.R`** checks consequential data/timing invariants and writes the findings from the analytical tables. Read these generated results alongside the graphics.
-10. **`R/style.R`** holds the shared colours, ggplot theme and PNG-export helper. This keeps the graphic family consistent without hiding the actual analysis in a framework.
+| Script | What to look for |
+|---|---|
+| `R/01_prepare.R` | Separate observation, site and taxonomy tables; unique keys; many-to-one joins; settings, dates and counting units. |
+| `R/02_lunar_audit.R` | UTC full-moon instants converted to local dates. Seven historical reef-nights are independently checked. |
+| `R/02_regional_environment.R` | All 214 NOAA regional histories; missing dates; point-in-polygon matches; coverage and environmental event joins. |
+| `R/03_geography_seasons.R` | Geographic and temporal coverage, then within-site seasonal distributions. |
+| `R/04_moon_sunset.R` | Genus lunar distributions, exact starting times and the Orpheus Island example. |
+| `R/05_climate.R` | Regional heat-stress histories and the fixed-calendar exposure index. |
+| `R/06_robustness.R` | How the lunar result changes when records, reef-nights or subsites receive the votes. |
+| `R/analysis_methods.R` | The separate aquarium diary, lagged features, held-year-out models and uncertainty. |
+| `R/09_maldives.R` | A separate Acropora field dataset, compared with its different monitoring unit retained. |
+| `R/07_results.R` | Consequential checks and findings generated from the output tables. |
+| `R/style.R` | Shared white-background design, typography and PNG/SVG exports. |
 
-`data/raw/` preserves source inputs and service responses. `data/derived/` contains reproducible analytical tables. The figures and their plot-data tables are exported under `outputs/`. A plot-data CSV is useful when checking an unexpected mark: it shows the numbers actually given to the chart.
+`run.R` lists the execution order and records session information. Preserved inputs live under `data/raw/`, prepared tables under `data/derived/`, and values behind the figures under `outputs/tables/`. If a mark looks surprising, find its table row before changing the graphic.
 
-## Three units that must not be confused
+## Know what a row means
 
-| Unit | Meaning | Why it matters |
-| --- | --- | --- |
-| Observation row | One record in the source collection | Several records can describe the same night and location. |
-| Reef-night | One subsite and local date | Counts one recorded spawning night without giving heavily recorded species extra votes. |
-| Genus-night | One subsite, local date and coral genus | Allows genus timing comparisons; a night with several genera can contribute to several groups. |
+The historical wild-reef source has 3,569 natural-reef records, 1,026 subsite-dates and 1,942 genus/subsite-dates. Several species can be recorded on the same night. These units prevent double counting but are not automatically independent random samples. An unrecorded night is not an observed non-spawning night.
 
-None of these units is automatically an independent random sample. Shared location, study and year can still connect the observations. Nor does an unrecorded date mean that spawning was surveyed and found absent.
+The aquarium diary supplies 1,350 seasonal dates over fifteen years, including explicit zeros and 208 positive dates. Its column `spawning_binary` actually counts spawning tanks; the model converts positive counts to presence. Environmental dates outside this diary supply preceding measurements only. Their zero scores are not promoted into extra observed absences.
 
-## Five decisions to be able to explain
+The Maldives source records 81 spawning atoll-days and 3,026 colony spawning observations. Figure 12 shows both counting choices alongside historical Acropora genus-nights. Similar patterns provide a descriptive cross-check, not identical sampling designs.
 
-**Why filter to natural reefs?** `In situ` and `Ex situ` settings have different interpretations. Tank observations remain in the preserved input and quality accounting, but should not silently define a chart about natural reef behaviour.
+NOAA rows are regional daily satellite statistics. The SST field follows a regional 90th-percentile HotSpot statistic; it is neither a coral-depth thermometer nor an ordinary regional mean. Coral coordinates are intersected with published NOAA polygons, then dates are joined. Of 1,026 recorded reef-nights, 751 have regional context. Nonmatches stay missing.
 
-**Why use local dates?** A full-moon timestamp is an instant in UTC. Near the International Date Line, the local calendar date may differ. At the verified American Samoa example, 7 November 1995 at 07:21 UTC is still 6 November at an offset of −11 hours. The event dated 9 November is therefore three local calendar days later.
+## Explain the calculations and their limits
 
-**Why do timing samples have different sizes?** A date-only observation can inform season and lunar timing. A sunset comparison additionally needs a usable starting time, a clear recording convention and a stated quality filter. Use the sample named on the graphic.
+For the climate integration, each site's recorded monthly spawning shares form a calendar. Sites receive equal total weight within their NOAA region. For every year, the index averages the monthly fraction of days at DHW ≥4 using those fixed weights. The comparison is 1986–1995 against 2015–2024, within the complete 1986–2024 record.
 
-**What does temperature represent?** NOAA supplies daily sea-surface temperature for a geographic grid cell. It gives regional surface-ocean context, not the exact water temperature at every coral's depth. Our bounded case study uses Raffles Lighthouse, Orpheus Island and Sesoko in **2016 only**: twelve first-of-month reference dates plus the actual spawning dates, totalling 21 distinct dates and 63 point extractions. These are individual daily values, not monthly averages, a complete annual series or a climatic baseline. The source's UTC-labelled daily date is matched to the local recorded date as a stated daily-date approximation; this does not provide an exact local event-hour temperature.
+This measures overlap between a fixed historical calendar and regional heat-stress conditions. It does not measure changed spawning dates, fertilisation, mortality or adaptation. Four calendar-linked regions remain at zero exposure in both periods; this counterpoint belongs in the explanation.
 
-**What does a percentage mean?** It describes the share of the specified recorded observations or nights in the chosen sample. It does not give the probability of spawning on an arbitrary future night. Compare denominators before comparing percentages between charts.
+For aquarium prediction, sine and cosine represent lunar and annual cycles continuously. The environmental model adds measurements averaged over the seven days strictly before the response date. Each entire year is withheld in turn, and all models use the same 1,007 complete dates from fourteen years. The Brier score measures squared probability error; lower is better. Whole-year resampling describes uncertainty while retaining some within-season dependence. See [AQUARIUM_METHODS.md](AQUARIUM_METHODS.md) for equations and selection choices.
 
-## A short rehearsal for any figure
+The calendar model scores about 0.111, against 0.136 for training prevalence. Adding the chosen environmental inputs scores about 0.115 and gives no clear gain. That is a result about this sample and validation design, not evidence that weather and temperature are biologically irrelevant. The exercise is retrospective validation within one aquarium, not a wild-reef forecast.
 
-Point to the chart and answer:
+## Take responsibility for the work
 
-- What single question does it answer?
-- What does one mark or cell represent, and what is the denominator?
-- Which source tables or services were joined, on which keys?
-- What is the clearest result, and which mark supports that statement?
-- What is the most relevant limitation or alternative explanation?
+For each figure, explain the question, what one mark represents, which records were joined, the strongest supported finding and its most relevant limitation. Use the exported tables when rehearsing. The course allows at most two minutes per visualization, so select a coherent presentation subset rather than displaying all twelve figures.
 
-If a result changes under a different reasonable weighting or filter, explain that change. A sensitivity result can be more informative than an overly confident headline. Observed associations do not establish that the Moon, sunset or temperature caused the recorded event.
+`authors.csv` gives Mihael seven provisional main-author exports (01, 03, 05, 06, 07, 08 and 11), and Pirasanna five (02, 04, 09, 10 and 12). These are planned responsibilities, not a record of completed work. Update them if ownership changes.
 
-## Record actual student contributions
+| Student | Decisions and analysis reviewed or performed | Code and findings understood and checked |
+|---|---|---|
+| Mihael | To be completed from actual work | To be completed after review |
+| Pirasanna | To be completed from actual work | To be completed after review |
 
-`authors.csv` records the team's **provisional export allocation**: Mihael is assigned figures 01, 03, 05, 07 and 08; Pirasanna is assigned 02, 04 and 06. These assignments identify planned main-author filenames, not evidence of work already performed. Update them if actual responsibility changes.
-
-Before submission, complete the entries below with actual responsibilities and reviewed decisions. Use the real work performed; do not claim an automated step as personal understanding without reviewing it. AI-assisted preparation does not remove the need for individual participation and the ability to explain the result.
-
-| Student | Graphics mainly responsible for | Analytical/design decisions reviewed or made | Code sections understood and checked |
-| --- | --- | --- | --- |
-| Mihael | Provisional: 01, 03, 05, 07, 08 | To be recorded from actual work | To be recorded after review |
-| Pirasanna | Provisional: 02, 04, 06 | To be recorded from actual work | To be recorded after review |
-
-The course requires the main author's name in each submitted PNG filename. Assign this truthfully after reviewing the graphics. Both students should understand the overall source connections and support each other's work; the course also assesses individual participation.
-
-See `COURSE_REQUIREMENTS.md` for unresolved course-format questions and the submission requirements, and `RESEARCH.md` for source provenance and the analytical limitations.
+Run `source("export_submission.R")` after agreeing on ownership to create named PNGs and the complete R-project ZIP. Attendance, participation, oral explanation and Moodle upload remain student responsibilities. [COURSE_REQUIREMENTS.md](COURSE_REQUIREMENTS.md) retains the instructions and outstanding format confirmations.

@@ -1,71 +1,51 @@
-# Scientific and visual review
+# Scientific review
 
-Independent workbook audit, 3 November 2026. Counts below were calculated from the public workbook, after trimming observation-setting labels and joining locations and accepted taxonomy. They describe this collection of recorded events.
+Review date: 3 November 2026. These checks concern the actual data, transformations and interpretation. The historical wild-reef occurrence database, monitored seasonal aquarium diary, regional satellite histories and separate Maldives field study are distinct recording systems.
 
-## What the sampling supports
+## Historical records and timing
 
-The 3,569 underwater (`In situ`) records represent 1,026 subsite-date combinations at 102 subsites and 68 named sites. A record may describe several colonies; colony count is sometimes missing or a lower bound. It is unsuitable as a universal precision weight.
+The original workbook contains 6,178 observations. Reconstructing the site and accepted-taxonomy joins preserves that count without missing location or genus matches. The natural-reef subset contains 3,569 records representing 1,026 subsite-dates at 102 subsites and 68 named sites. Treating species rows as independent nights would exaggerate heavily documented events.
 
-The collection contains spawning observations, without consistent surveyed non-spawning nights. Consequently, percentages must be labelled as shares of **recorded events**, not chances that a coral spawns on a given night. Blank calendar cells mean no recorded event in this extract; they do not demonstrate biological absence.
+The share recorded on days 0–7 after nearest local full moon is 80.3% per observation row, 67.7% per reef-night and 76.2% with equal total weight per subsite. These are sensitivity results for a descriptive window, not confidence intervals, daily spawning probabilities or causal estimates. Pooled genus comparisons differ in geography, species and study composition. Lunar ridges use a stated three-bin circular smoother; accompanying percentages use unsmoothed counts. Displayed within-group shares sum to one.
 
-One subsite-date is a useful counting unit, but nearby subsites, successive nights, species and references may still be dependent. Avoid calling these statistically independent replicates. No significance testing is needed for the descriptive graphics.
+The occurrence database does not consistently document surveyed non-spawning nights. Calendar zeros therefore mean no recorded event, rather than observed biological absence.
 
-## Recommended visual story
+Two genuine dawn observations, 3975 and 3976, occur more than twelve hours before same-date sunset. Automatically wrapping every difference to a twelve-hour interval would misclassify them. The workflow preserves daylight events and flags the ambiguous 00:05 record 6153 rather than silently assigning another evening. Exact-time graphics use their stated narrower sample.
 
-| Question | Graphic | Counting unit and interpretation |
-| --- | --- | --- |
-| Where do these observations come from? | Geographic atlas with scaled points and a restrained coverage summary | Unique spawning dates per subsite. Show coverage, not global reef abundance. |
-| Does every reef share the same season? | Site-by-month heatmap, ordered by latitude | Share of each site's recorded subsite-dates, with sample sizes. Months and years of survey effort are unknown. |
-| Do coral groups share the same lunar calendar? | Genus-by-lunar-day heatmap | One subsite-date-genus vote. Normalize within genus and name the denominator. Site composition differs between genera. |
-| Does the pattern survive a different way of counting? | Aligned lunar distributions for records, subsite-dates and equal-subsite weighting | Same in-situ sample; compare weighting choices explicitly. |
-| How does spawning relate to sunset? | Genus distributions of exact start times relative to sunset | Aggregate repeated records to a subsite-date-genus median. Preserve genuine daytime spawning. |
-| What happens within one real reef-night? | Ranked species starts at Orpheus Island, 24 November 1983 | Earliest exact field start per species, with extensions to the latest start where several records exist, within one subsite-date. An illustrative case, not a universal sequence. |
-| What thermal setting surrounds recorded spawning? | Selected reefs' sampled 2016 SST context with observed event dates | A documented representative subsite per location, first-of-month reference values and exact event dates, and actual sampled grid coordinates. Connecting lines guide the eye, rather than reconstructing daily SST. Surface-temperature context, not coral-depth temperature or a causal trigger. |
-| What difference can a time-zone-aware join make? | Small annotated UTC/local-date example and audit summary | A reproducible astronomy check. Display disagreements as well as agreements if found. |
+The Orpheus Island example on 24 November 1983 retains 17 species with exact starts from 0.25 to 3.5 hours after sunset. It was selected for informative coverage, not as a representative random night or a universal species schedule.
 
-The final selection should favour distinct useful findings over a fixed chart count. Use direct labels, shared scales where comparable, and sequential palettes for ordered magnitudes. Purposeful colour and appropriate measurement scales match the course's DataViz guidance. A few visual case studies may be easier to explain than a single dense multi-axis chart.
+The independent USNO check converts UTC lunar instants to the source's local offset before comparing dates. All seven reef-nights covered by the cached 1995 phases agree. The wider historical analysis still uses source-supplied lunar fields; this limited check is not validation of every year.
 
-## Findings worth communicating
+## Regional histories and the calendar integration
 
-Using the supplied nearest-full-moon day, the share in days 0 through 7 is:
+The NOAA cache supplies 214 unique regions and 3,203,007 available daily records for 1985–2025. All 214 original-response SHA-256 hashes were independently checked. There are 1,643 missing station-days in 2025 across eighty regions; they are not filled with zero stress. The primary 1986–2024 period has 8,346 complete regional years. Initial 1985 heat-stress accumulations were not fully populated, so annual comparisons begin in 1986.
 
-- **80.3%** when each of the 3,569 records receives one vote.
-- **67.7%** when each of the 1,026 subsite-dates receives one vote.
-- **76.2%** when each of the 102 subsites receives equal total weight.
+Actual NOAA polygons contain 97 of the 102 natural-reef subsites. Five at Amakusa, Kochi and Shikoku Bay lie outside. Date matching supplies context for 751 recorded reef-nights at 65 sites, 88 subsites and 41 regions. This is daily regional context, not an event-hour measurement at coral depth.
 
-These are sensitivity results, not confidence intervals or estimates of all reefs. The concentration persists, while its apparent strength depends on the counting unit. The graphics use source-supplied lunar offsets; independent USNO checks cover only the successful cached sample and do not validate all years.
+NOAA's regional values follow its specified 90th-percentile HotSpot procedure, rather than simple area means or one fixed pixel. DHW thresholds describe bleaching heat-stress conditions, not observed reproductive failure. In 2024, 202 of 214 regions reached DHW ≥4 and 171 reached DHW ≥8. Equal-weight region counts do not give the share of global reef area affected or the number of observed bleaching events.
 
-Genus-night counts for the seven largest field groups are Acropora 400, Platygyra 257, Galaxea 192, Favites 152, Montipora 137, Goniastrea 109 and Dipsastraea 95. These counts are smaller than species/colony record totals.
+Display grouping follows NOAA's five index headings. Longitude bands would misclassify the Pacific side of Central America and cannot separate Australia's coasts reliably. Overlapping source headings are retained in the mapping, while each unique region is displayed once. The colour scale is visually capped at 40 and labelled 40+; the single larger value, 40.0914 °C-weeks, remains unchanged in the table.
 
-The exact-time field subset has 876 records. After grouping by subsite-date-genus, useful samples include Acropora 87, Favites 36, Montipora 23, Platygyra 23, Goniastrea 15 and Galaxea 14. Excluding the ambiguous midnight observation described below reduces Acropora to 86 units in the comparative sunset graphic. Pocillopora has ten genus-nights at only two subsites, all morning starts. It provides an interesting exception, with its limited coverage stated.
+Seventeen sites with at least ten recorded reef-nights over at least three years define calendars in fourteen regions. Monthly shares are calculated within sites, then sites receive equal weight within a region. These fixed weights average monthly fractions of days at DHW ≥4. The index is influenced by the historical observation calendar; it does not estimate changed spawning behaviour.
 
-At Orpheus Island, subsite 40, on 24 November 1983, the exact field sample contains 18 records spanning 17 accepted species and nine genera. Starts run from 18:48 to 22:03; supplied sunset is approximately 18:33, and the supplied lunar offset is +4 days. Porites cylindrica has two starts; the figure marks each species' earliest start and extends the mark to the latest start where they differ. This is a strong illustration that sharing a night does not require sharing the same minute.
+An independent Python calculation reconstructs site weights from reef-night and spatial-lookup tables and heat-stress fractions directly from original NOAA archives. All 546 region-year exposures agree with R: maximum weight difference 1.11 × 10⁻¹⁶, maximum exposure difference 2.22 × 10⁻¹⁶. Decadal contrasts also agree. Ten regions have higher exposure in 2015–2024 than in 1986–1995; four remain zero and none decreases. Northern Taiwan has the largest increase, about 1.45% to 26.29%, or 24.84 percentage points.
 
-## Timing pitfalls requiring explicit handling
+Repeat the independent audit with `python tools/check_climate.py` after the R workflow. Its pandas and NumPy dependencies support validation only, not the R analysis.
 
-The [database paper](https://www.nature.com/articles/s41597-020-00793-8) defines exact starts as observed onset under continuous observation, distinguishes field from recently collected tank observations, and supplies date-specific UTC offsets. Its lunar convention ranges from -15 to +14 days; the solar fields are calculated benchmarks.
+## Aquarium prediction
 
-Do not automatically map every sunset difference into the shortest circular interval. Doing so changes the two Pavona varians records 3975 and 3976 at Uva Island from a morning start at 05:15, 13.29 hours before that day's sunset, to an apparently evening-relative +10.71 hours. They must remain visibly identifiable as dawn observations.
+The aquarium source has 1,350 explicitly recorded seasonal dates over fifteen years, including 208 positive dates. Its `spawning_binary` field counts tanks and must be converted to presence for the binomial analysis. These seasonal zeros are valid observations; extra environmental dates outside the diary are not extra monitored absences.
 
-Exact field record 6153 (Acropora valida, Eilat, 12 June 2017, 00:05) requires special midnight handling. The calendar date alone does not establish which evening the recorder intended. Excluding this single ambiguous record from comparative sunset summaries is defensible if documented; assigning it to the previous sunset must be labelled as an assumption. Other true daytime records should not be removed merely because they are negative relative to sunset.
+All model comparisons use identical complete-case dates: 1,007 days from fourteen years, including 162 positives. Environmental inputs average the seven calendar dates strictly preceding the response. Entire years are held out. Retrospective leave-year-out validation still trains on years on both sides of a held year; it is not a prospective deployment trial.
 
-The source uses local full-moon dates rather than simply subtracting UTC calendar dates. Independently retrieved lunar instants must be converted with each record's supplied offset before comparison. Near the middle of the lunar cycle, two candidate full-moon dates can tie or differ by a day from another convention; retain and investigate rather than silently treating all differences as errors.
+Held-out Brier scores are approximately 0.1114 for cyclic calendar terms, 0.1147 after adding the selected lagged environment variables and 0.1356 for training prevalence. The paired calendar-minus-environment difference is −0.0033, with a whole-year bootstrap interval of −0.0078 to +0.0006. This gives no clear predictive gain from those added inputs. It does not establish that environmental factors have no biological effect. The interval conditions on fitted held-out predictions and does not cover all model-selection uncertainty.
 
-For SST, match returned timestamps explicitly and verify year/date coverage. A coastal grid point may be land or a different water body. Record distance, valid-water selection and representative-subsite choice. The final temperature case study is bounded to 2016 at three selected subsites: 21 original daily NetCDF files provide 63 location-date extractions, including first-of-month references and nine exact recorded reef-nights. These are daily samples, not monthly means, a complete annual curve or a climatological baseline. Matching UTC-labelled daily fields to a recorded local calendar date is a daily-date approximation rather than an event-hour temperature measurement.
+Separate calculations check lagged inputs and held-out probabilities. R retains convergence, matrix-rank and warning information by fold. [AQUARIUM_METHODS.md](AQUARIUM_METHODS.md) documents equations, complete-case selection and numerical audits. Pooled AUC can obscure between-year effects; within-year summaries are also supplied. The model should not be presented as a calibrated wild-reef forecasting service.
 
-## Claims to avoid
+## Independent field comparison and scope
 
-- This project newly discovers the connection between spawning, the Moon and sunset.
-- A high share of recorded events means a high probability of spawning on an arbitrary future night.
-- A temperature association proves temperature causes a timing shift.
-- Pooled genus differences isolate genus effects from location, species or observer differences.
-- Every exact time has minute-level biological precision; some sources assign identical times to many species.
-- More API calls, a database or a more elaborate architecture automatically earns a higher grade.
+The Maldives study supplies 81 spawning atoll-days and 3,026 colony spawning observations from October 2021 to May 2024. The comparison is restricted to Acropora: 69.8% of historical genus-nights fall on days 0–7 after full moon, compared with 70.4% of Maldives spawning atoll-days and 73.9% of colony-weighted observations. This is useful descriptive replication with different units, geography, monitoring and weights, not interchangeable estimates from a common random sample.
 
-The distinctive contribution is the combination of sources, the transparency of the counting and alignment choices, and the clarity of the resulting visual explanation.
+The substantive work is the combined regional histories and biological calendars, sensitivity to counting, independently checked prediction and a separate field-data comparison. These are new analyses within this project. Claiming that the underlying ecological relationships were previously unknown would require a broader literature review and appropriate study design.
 
-## Independent output checks
-
-The geography/season and Moon/sunset scripts were independently executed in R. Their exported plot-data tables were checked separately: the seasonal calendar contains 168 cells for 14 locations, and the lunar calendar contains 240 cells for eight genera. Shares sum to one within every displayed location/genus, to numerical precision. The single-night case retains 17 species and spans 0.25 to 3.5 hours after sunset. The sunset comparison excludes the ambiguous midnight record.
-
-Initial PNG inspection detected a Windows source-encoding problem affecting Unicode labels. The main workflow must read the R scripts as UTF-8 and visually inspect the regenerated exports; a successful script exit alone does not establish visual correctness.
+Figures should keep direct labels, stated denominators and sources. Their tables and vector exports allow inspection beyond presentation-sized PNGs. Visual review remains necessary: a clean script exit alone does not establish legibility, particularly for Windows UTF-8 labels.
