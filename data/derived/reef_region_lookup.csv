@@ -1,0 +1,103 @@
+subsite_id,site,country,latitude,longitude,station_id,station_name,marker_longitude,marker_latitude,maximum_monthly_mean_c,match_method
+1,Faga’alu,American Samoa,-14.2794444444444,-170.700833333333,samoas,Samoas,-170.475,-12.825,28.9658,inside_NOAA_polygon
+2,Big Broadhurst Reef,Australia,-18.9294444444444,147.757222222222,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+3,Big Broadhurst Reef,Australia,-18.95,148.716666666667,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+4,Big Broadhurst Reef,Australia,-18.8997222222222,147.755277777778,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+5,Bowden Reef,Australia,-19.0361111111111,147.9275,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+6,Bowden Reef,Australia,-19.046175,147.919553,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+7,Dampier,Australia,-20.5,116.7,central_western_aus,Central Western Australia,116.9,-20.7,29.5406,inside_NOAA_polygon
+9,Davies Reef,Australia,-18.8333333333333,147.65,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+11,Fantome Island,Australia,-18.691344,146.519412,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+12,Heron Island,Australia,-23.45,151.916666666667,gbr_southern,Southern GBR,151.125,-22.625,27.657,inside_NOAA_polygon
+17,Houtman Abrolhos,Australia,-28.4613888888889,113.697777777778,houtman_abrolhos,Houtman Abrolhos,113.85,-28.5,23.5289,inside_NOAA_polygon
+19,Lizard Island,Australia,-14.66285,145.45540277777,gbr_northern,Northern GBR,145.975,-16.1,28.7041,inside_NOAA_polygon
+20,Lizard Island,Australia,-14.6996111111111,145.448675,gbr_northern,Northern GBR,145.975,-16.1,28.7041,inside_NOAA_polygon
+23,Magnetic Island,Australia,-19.1549333333333,146.866066666667,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+25,Magnetic Island,Australia,-19.1666666666667,146.85,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+26,Magnetic Island,Australia,-19.15,146.85,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+27,Magnetic Island,Australia,-19.1358333333333,146.842222222222,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+32,Ningaloo,Australia,-22.67,113.67,ningaloo,Ningaloo,113.9,-23.225,27.1173,inside_NOAA_polygon
+36,Orpheus Island,Australia,-18.611175,146.486647222222,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+38,Orpheus Island,Australia,-18.571667,146.4916667,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+40,Orpheus Island,Australia,-18.6161111111111,146.497222222222,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+41,Orpheus Island,Australia,-18.6,146.483333333333,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+42,Orpheus Island,Australia,-18.61,146.486666666667,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+43,Pandora,Australia,-18.8133,146.4326,gbr_central,Central GBR,148.275,-19.225,28.3422,inside_NOAA_polygon
+49,Scott Reef,Australia,-14.0666666666667,121.766666666667,scott_ashmore,Scott to Ashmore Reefs,122.625,-13.475,29.5454,inside_NOAA_polygon
+53,Salomon Atoll,Chagos Archipelago,-5.33388888888889,72.2180555555556,chagos_archipelago,"Chagos Archipelago, UK",71.75,-6.2,29.0073,inside_NOAA_polygon
+54,Galapagos,Ecuador,-0.823055555555556,-91.0966666666667,galapagos,"Galapagos, Ecuador",-90.625,0.15,26.2556,inside_NOAA_polygon
+55,Vatuolalai,Fiji,-18.21,177.69,fiji,Fiji,179.35,-16.775,28.4228,inside_NOAA_polygon
+56,Votua,Fiji,-18.22,177.72,fiji,Fiji,179.35,-16.775,28.4228,inside_NOAA_polygon
+57,Reunion Island,France,-21.33,55.47,tromelin_reunion,"Tromelin and Reunion, France",54.975,-18.625,27.9217,inside_NOAA_polygon
+58,Reunion Island,France,-21.28,55.34,tromelin_reunion,"Tromelin and Reunion, France",54.975,-18.625,27.9217,inside_NOAA_polygon
+62,Moorea,French Polynesia,-17.5,-149.833333333333,society_archipelago,Society Archipelago,-151.375,-16.95,28.8,inside_NOAA_polygon
+70,Kaneohe Bay,Hawaiian Islands,21.43,-157.79,hawaii,Main Hawaiian Islands,-157.7,20.575,26.9824,inside_NOAA_polygon
+73,Kaneohe Bay,Hawaiian Islands,21.46,-157.81,hawaii,Main Hawaiian Islands,-157.7,20.575,26.9824,inside_NOAA_polygon
+74,Molokini,Hawaiian Islands,20.6333333333333,-156.5,hawaii,Main Hawaiian Islands,-157.7,20.575,26.9824,inside_NOAA_polygon
+75,Vaan Island,India,8.83333333333333,78.2166666666667,gulf_of_mannar,Gulf of Mannar,78.975,8.85,30.1405,inside_NOAA_polygon
+76,Karimunjawa,Indonesia,-5.81666666666667,110.4,northern_java,Northern Java,109.525,-6.225,29.5895,inside_NOAA_polygon
+77,Pulau Weh,Indonesia,5.87746111111111,95.2546638888889,northwestern_sumatra,Northwestern Sumatra,97.225,2.95,29.5353,inside_NOAA_polygon
+78,Spermonde Archipelago,Indonesia,-5,119,south_sulawesi,South Sulawesi,119.625,-5.325,29.3237,inside_NOAA_polygon
+82,Eilat,Israel,29.5333333333333,34.9666666666667,gulf_of_aqaba,Gulf of Aqaba,34.625,28.6,27.5569,inside_NOAA_polygon
+83,Akajima,Japan,26.1923361111111,127.305547222222,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+84,Akajima,Japan,26.1988888888889,127.280555555556,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+85,Amakusa,Japan,32.1666666666667,130.033333333333,NA,NA,NA,NA,NA,outside_published_regions
+88,Kochi,Japan,32.77888889,132.7325,NA,NA,NA,NA,NA,outside_published_regions
+89,Kochi,Japan,32.7666666666667,132.733333333333,NA,NA,NA,NA,NA,outside_published_regions
+93,Sekisei,Japan,24.235,124.031,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+94,Sekisei,Japan,24.247,124.091,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+95,Sekisei,Japan,24.5768111111111,124.106522222222,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+96,Sekisei,Japan,24.295,124.075,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+97,Sekisei,Japan,24.319,124.174,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+98,Sekisei,Japan,24.2522222222222,124.085555555556,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+99,Sekisei,Japan,24.258,124.134,southern_ryukyu_islands,"Southern Ryukyu Islands, Japan",124.2,24.975,29.0097,inside_NOAA_polygon
+101,Sesoko,Japan,26.64,127.87,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+105,Sesoko,Japan,26.6254666666667,127.861233333333,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+106,Sesoko,Japan,26.6534055555556,127.850563888889,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+107,Sesoko,Japan,26.6461111111111,127.864722222222,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+108,Sesoko,Japan,26.6333333333333,127.866666666667,northern_ryukyu_islands,"Northern Ryukyu Islands, Japan",129,28.3,28.5761,inside_NOAA_polygon
+110,Shikoku Bay,Japan,33.3666666666667,135.783333333333,NA,NA,NA,NA,NA,outside_published_regions
+111,Shikoku Bay,Japan,32.7838888888889,132.708333333333,NA,NA,NA,NA,NA,outside_published_regions
+112,Nyali,Kenya,-3.98333333333333,39.75,kenya,Kenya,40.525,-3.2,28.7719,inside_NOAA_polygon
+113,Lankayan Island,Malaysia,6.5052,117.918,sabah,"Sabah, Malaysia",117.2,5.8,29.4999,inside_NOAA_polygon
+114,Mabul Island,Malaysia,4.2427,118.6303,sabah,"Sabah, Malaysia",117.2,5.8,29.4999,inside_NOAA_polygon
+115,Pulau Bidong,Malaysia,5.621,103.057,terengganu,"Terengganu, Malaysia",103.15,5.375,29.809,inside_NOAA_polygon
+116,Pulau Tioman,Malaysia,2.81544722222222,104.150991666667,johor_pahang,"Johor and Pahang, Malaysia",104.2,2.25,29.6224,inside_NOAA_polygon
+118,Babeldaob,Palau,7.515,134.5825,palau,Palau,134.425,7.675,29.2309,inside_NOAA_polygon
+119,Ioul Lukes,Palau,7.287,134.499,palau,Palau,134.425,7.675,29.2309,inside_NOAA_polygon
+121,Malakal Harbor,Palau,7.326,134.458,palau,Palau,134.425,7.675,29.2309,inside_NOAA_polygon
+125,Contadora Island,Panama,8.6275,-79.0376,panama_pacific_east,Panama Pacific East,-79.325,8.175,28.3059,inside_NOAA_polygon
+127,Uva Island,Panama,7.8048,-81.7588,panama_pacific_west,Panama Pacific West,-82.25,7.725,28.8997,inside_NOAA_polygon
+128,Kimbe Bay,Papua New Guinea,-5.37152777777778,150.262422222222,papua_new_guinea,Papua New Guinea,151.15,-6.425,29.025,inside_NOAA_polygon
+132,Cabarruyan Island,Philippines,16.310556,120.029722,northern_philippines,Northern Philippines,121.125,17.75,29.319,inside_NOAA_polygon
+133,Cabarruyan Island,Philippines,16.3443,120.0119,northern_philippines,Northern Philippines,121.125,17.75,29.319,inside_NOAA_polygon
+135,Abu Madafi,Saudi Arabia,22.05,38.75,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+136,Al Fahal,Saudi Arabia,22.224031,38.969478,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+137,Dreams Beach,Saudi Arabia,21.7567861111111,39.0519583333333,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+138,Fsar,Saudi Arabia,22.22965,39.028833,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+139,Qita al Kirsh,Saudi Arabia,22.4321888888889,38.9969666666667,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+140,Shi'b Nizar E,Saudi Arabia,22.3190333333333,38.8543833333333,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+141,Shi'b Nizar NE,Saudi Arabia,22.3190333333333,38.8543833333333,madinah_makkah,Al Madinah and Makkah,39.45,21.125,30.8682,inside_NOAA_polygon
+142,Tarut Bay,Saudi Arabia,26.6166666666667,50.1333333333333,bahrain,Bahrain,50.75,26.125,33.3575,inside_NOAA_polygon
+143,Raffles Lighthouse,Singapore,1.16666666666667,103.75,singapore,Singapore Strait,104.15,0.2,29.8794,inside_NOAA_polygon
+144,Gizo,Solomon Islands,-8.11,156.84,solomon_islands,Solomon Islands,162.175,-8.7,29.4728,inside_NOAA_polygon
+145,Bitoujiao,Taiwan,25.1257,121.9149,northern_taiwan,Northern Taiwan,121.725,25.1,28.1951,inside_NOAA_polygon
+147,Longdong,Taiwan,25.1187,121.9197,northern_taiwan,Northern Taiwan,121.725,25.1,28.1951,inside_NOAA_polygon
+148,Lyudao,Taiwan,22.676,121.482,southern_taiwan,Southern Taiwan,120.55,22.875,28.5874,inside_NOAA_polygon
+149,Lyudao,Taiwan,22.637,121.494,southern_taiwan,Southern Taiwan,120.55,22.875,28.5874,inside_NOAA_polygon
+150,Lyudao,Taiwan,22.68,121.49,southern_taiwan,Southern Taiwan,120.55,22.875,28.5874,inside_NOAA_polygon
+151,Lyudao,Taiwan,22.68,121.47,southern_taiwan,Southern Taiwan,120.55,22.875,28.5874,inside_NOAA_polygon
+152,Nanwan Bay,Taiwan,21.9166666666667,120.75,southern_taiwan,Southern Taiwan,120.55,22.875,28.5874,inside_NOAA_polygon
+157,Chumphon,Thailand,10.3333333333333,99.3333333333333,west_gulf_of_thailand,Western Gulf of Thailand,99.75,10.9,30.1316,inside_NOAA_polygon
+160,Chumphon,Thailand,10.064075,99.826246,west_gulf_of_thailand,Western Gulf of Thailand,99.75,10.9,30.1316,inside_NOAA_polygon
+161,Chumphon,Thailand,10.389,99.292,west_gulf_of_thailand,Western Gulf of Thailand,99.75,10.9,30.1316,inside_NOAA_polygon
+162,Rayong,Thailand,12.582054,101.509497,east_gulf_of_thailand,Eastern Gulf of Thailand,102.5,11.25,30.3184,inside_NOAA_polygon
+168,Saih Al Shaib,United Arab Emirates,24.9223333333333,54.9042666666667,eastern_persian_gulf,Eastern Persian Gulf,54.05,25.925,33.5964,inside_NOAA_polygon
+179,Kadavu,Fiji,-18.866824,178.516437,fiji,Fiji,179.35,-16.775,28.4228,inside_NOAA_polygon
+180,Makogai,Fiji,-17.452597,178.950154,fiji,Fiji,179.35,-16.775,28.4228,inside_NOAA_polygon
+181,Viti Levu,Fiji,-18.146996,178.398824,fiji,Fiji,179.35,-16.775,28.4228,inside_NOAA_polygon
+182,Viti Levu,Fiji,-18.177365000000002,178.448094,fiji,Fiji,179.35,-16.775,28.4228,inside_NOAA_polygon
+183,Eilat,Israel,29.5,34.92,gulf_of_aqaba,Gulf of Aqaba,34.625,28.6,27.5569,inside_NOAA_polygon
+186,Andavadoaka,Madagascar,-22.08,43.23,southwestern_madagascar,Southwestern Madagascar,44.05,-22.675,28.9558,inside_NOAA_polygon
+187,Zanzibar,Tanzania,-6.278333,39.173333,tanzania,Tanzania,39.725,-7.575,28.7733,inside_NOAA_polygon
+188,Chonburi,Thailand,12.643143,100.860516,east_gulf_of_thailand,Eastern Gulf of Thailand,102.5,11.25,30.3184,inside_NOAA_polygon
