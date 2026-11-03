@@ -1,0 +1,15 @@
+# Local R/RStudio state is not reproducible project input.
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Rlibrary/
+.Renviron
+
+# Local build caches and deliverable bundles.
+.quarto/
+_freeze/
+*.zip
+submission/
+.DS_Store
+Thumbs.db
