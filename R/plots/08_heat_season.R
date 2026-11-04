@@ -1,0 +1,66 @@
+# Plate 8. Does the heat now reach the months when corals spawn?
+# Same grammar as plate 7, but counted only inside each region's spawning months.
+# The spawning calendar is held fixed, so this measures overlap with the heat
+# record. It cannot show that spawning moved or that reproduction failed.
+source("R/plots/style.R")
+
+yearly <- read_csv("data/derived/calendar_exposure.csv", show_col_types = FALSE)
+comparison <- read_csv("data/derived/decadal_exposure.csv", show_col_types = FALSE) |>
+  rename(early = `1986–1995`, recent = `2015–2024`)
+
+region_names <- c(
+  northern_taiwan = "Northern Taiwan", gulf_of_aqaba = "Gulf of Aqaba",
+  panama_pacific_west = "Pacific Panama", northern_philippines = "Northern Philippines",
+  tromelin_reunion = "Tromelin and Réunion", sabah = "Sabah",
+  gbr_central = "Central Great Barrier Reef", northern_ryukyu_islands = "Northern Ryukyu Islands",
+  madinah_makkah = "Saudi Red Sea", southern_taiwan = "Southern Taiwan", fiji = "Fiji",
+  hawaii = "Hawaii", singapore = "Singapore", southern_ryukyu_islands = "Southern Ryukyu Islands")
+
+rows <- comparison |>
+  arrange(desc(change), station_id) |>
+  mutate(row = -row_number(), region = region_names[station_id],
+         change_label = if_else(change == 0, "0", sprintf("+%.1f", 100 * change)))
+stopifnot(!anyNA(rows$region), nrow(rows) == 14)
+
+exposure_classes <- c("none", "under 10%", "10–25%", "25–50%", "50–75%", "over 75%")
+plot_data <- yearly |>
+  left_join(select(rows, station_id, row), by = "station_id", relationship = "many-to-one") |>
+  mutate(exposure_class = cut(calendar_exposure, c(-Inf, 0, 0.1, 0.25, 0.5, 0.75, Inf),
+                              labels = exposure_classes))
+
+# The window reaches left of 1986 and right of 2024 for the two text columns.
+year_window <- c(1974.2, 2029.6)
+
+heat_season_plate <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
+  # Empty rows still need to read as rows, so each gets a faint track.
+  annotate("rect", xmin = 1985.5, xmax = 2024.5, ymin = rows$row - 0.43, ymax = rows$row + 0.43,
+           fill = "#10263A") +
+  geom_tile(data = filter(plot_data, exposure_class != "none"),
+            width = 0.94, height = 0.86, linewidth = 0) +
+  geom_text(data = rows, aes(x = 1985.1, y = row, label = region), inherit.aes = FALSE,
+            hjust = 1, family = font_note, size = pts(14.5), colour = soft) +
+  geom_text(data = rows, aes(x = 2029.5, y = row, label = change_label), inherit.aes = FALSE,
+            hjust = 1, family = font_note, size = pts(14.5), colour = moon) +
+  annotate("text", x = 2029.5, y = 0.25, hjust = 1, vjust = 0, family = font_label, size = pts(13.5),
+           colour = soft, lineheight = 1, label = "Change, points\n1986–95 to 2015–24") +
+  scale_fill_manual(values = setNames(heat_steps, exposure_classes), limits = exposure_classes[-1],
+                    name = "Share of spawning-season days under heat stress") +
+  scale_x_continuous(breaks = c(1986, seq(1990, 2020, 5), 2024), expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_cartesian(xlim = year_window, ylim = c(-14.55, 0.5), clip = "off") +
+  guides(fill = guide_legend(nrow = 1, keywidth = unit(44, "pt"), keyheight = unit(10, "pt"),
+                             label.position = "bottom")) +
+  labs(title = "Heat now reaches the spawning months, unevenly",
+       subtitle = sprintf("Each region keeps its historical spawning months. In %d of %d regions those months now see more heat stress. In Northern\nTaiwan and the Gulf of Aqaba about a quarter of the season is under stress in a typical recent year. Four regions stay clear.",
+                          sum(comparison$change > 0), nrow(comparison)),
+       x = NULL, y = NULL,
+       caption = "Heat stress here means NOAA degree heating weeks of 4 or more. Each year’s share is weighted by the months in which spawning was recorded at that region’s well-sampled sites, and that calendar is held fixed.\nThis measures overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +
+  theme_plate() +
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
+        legend.position = "bottom", legend.justification = "right", legend.margin = margin(t = 2),
+        legend.title = element_text(margin = margin(r = 12), vjust = 0.9),
+        legend.key.spacing.x = unit(2, "pt"),
+        plot.subtitle = element_text(margin = margin(b = 34)))
+
+save_plate(heat_season_plate, "08_heat_season")
+write_csv(select(rows, station_id, region, early, recent, change), "outputs/tables/08_heat_season.csv")

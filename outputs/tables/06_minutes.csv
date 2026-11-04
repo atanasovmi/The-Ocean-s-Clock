@@ -1,0 +1,13 @@
+setting,group,n,median_minutes,q25,q75,middle_half
+wild,Galaxea,13,30,23,68,45
+wild,Goniastrea,15,110,99.5,132,32.5
+wild,Favites,35,110,105,133,28
+wild,Montipora,23,110.00000000000003,103.5,116.5,13
+wild,Platygyra,22,134.5,106.25,157,50.75
+wild,Acropora,86,135.5,78.25,162.75,84.5
+tank,A. austera,10,82,80,99,19
+tank,M. aequituberculata,33,109,100,112,12
+tank,A. millepora,11,155,136,159.5,23.5
+tank,A. elseyi,19,155,149.5,169,19.5
+tank,A. loripes,90,179,175,180,5
+tank,A. hyacinthus,9,209,205,210,5

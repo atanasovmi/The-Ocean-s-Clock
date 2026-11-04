@@ -9,9 +9,9 @@ scripts <- c(
   "prepare_coral.R", "check_lunar_reference.R", "prepare_ocean.R",
   "analyse_heat_exposure.R", "fit_aquarium_models.R", "compare_field_studies.R",
   "export_spatial_data.R", "prepare_moon_positions.R", "prepare_seasim.R",
-  "plots/01_lunar_timing.R", "plots/02_night_timing.R", "plots/03_heat_stress.R",
-  "plots/04_spawning_exposure.R", "plots/05_model_comparison.R", "plots/06_field_comparison.R",
-  "plots/07_orpheus_moonrise.R", "plots/08_moon_calendar.R", "plots/09_seasim_colonies.R",
+  "prepare_seasons.R", "prepare_sky.R", "analyse_clocks.R",
+  "plots/01_three_clocks.R", "plots/02_season.R", "plots/03_moon.R", "plots/04_sky.R",
+  "plots/05_diary.R", "plots/06_minutes.R", "plots/07_heat_years.R", "plots/08_heat_season.R",
   "write_findings.R", "check_results.R"
 )
 for (script in scripts) {

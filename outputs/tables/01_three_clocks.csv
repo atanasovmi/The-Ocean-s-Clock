@@ -1,0 +1,4 @@
+n,tightness,typical,clock,unit,period
+884,0.7217151579968081,-52.76464829396634,year,days from the local temperature peak,365
+1026,0.5682447893150927,4.5419705664943795,moon,days from full moon,29.53
+346,0.9028701666819284,1.8280369852199625,sun,hours after sunset,24

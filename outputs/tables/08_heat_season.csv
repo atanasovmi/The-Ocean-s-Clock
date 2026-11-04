@@ -1,0 +1,15 @@
+station_id,region,early,recent,change
+northern_taiwan,Northern Taiwan,0.01451612903225806,0.2629032258064516,0.24838709677419352
+gulf_of_aqaba,Gulf of Aqaba,0,0.22683344305464123,0.22683344305464123
+panama_pacific_west,Pacific Panama,0,0.18406072106261864,0.18406072106261864
+northern_philippines,Northern Philippines,0,0.12827956989247313,0.12827956989247313
+tromelin_reunion,Tromelin and Réunion,0.02024630541871921,0.09837173579109064,0.07812543037237143
+sabah,Sabah,0,0.03695014662756598,0.03695014662756598
+gbr_central,Central Great Barrier Reef,0.00454545454545454,0.02653958944281525,0.0219941348973607
+northern_ryukyu_islands,Northern Ryukyu Islands,0.02626664833822092,0.04369272360703812,0.0174260752688172
+madinah_makkah,Saudi Red Sea,0,9.523809523809524e-4,9.523809523809524e-4
+southern_taiwan,Southern Taiwan,0,5.88235294117647e-4,5.88235294117647e-4
+fiji,Fiji,0,0,0
+hawaii,Hawaii,0,0,0
+singapore,Singapore,0,0,0
+southern_ryukyu_islands,Southern Ryukyu Islands,0,0,0

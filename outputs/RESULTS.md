@@ -1,33 +1,45 @@
 # What we found
 
-## Spawning follows a lunar pattern, but it is not one universal appointment
+The records point to three natural cycles working at different scales: the yearly warming of the sea, the Moon and sunset. They do not hold spawning equally firmly. Measured on one scale from 0 (spread evenly around the cycle) to 1 (everything at one moment), the Sun scores 0.90, the year 0.72 and the Moon 0.57 ([plate 1](figures/01_three_clocks.png)). The full-moon story that usually leads this topic is the loosest of the three.
 
-Of the 1,026 recorded reef-nights in the historical field data, 67.7% fall on days 0–7 after the nearest local full moon. That is the main pattern in [Figure 1](figures/01_lunar_timing.png): the week after full moon contains most of the records, while events also occur elsewhere in the cycle.
+## The year opens the season
 
-The night-time starts add another detail. [Figure 2](figures/02_night_timing.png) shows six well-recorded coral genera: some tend to start earlier after sunset, while others start later or have a wider spread. The locations and species differ between groups, so this is a description of the records rather than an isolated effect of genus. Daylight spawning records remain in the data; this plot focuses on exact starts after sunset.
+Calendar months cannot be compared across the equator, so each NOAA region gets its own typical temperature year. Of the 884 reef-nights inside a NOAA region, 89% fall while the local sea is warming, a stretch that covers 47% of the year. The typical reef-night sits 53 days before the warmest week ([plate 2](figures/02_season.png)). Field teams look for spawning when they expect it, so quiet months are under-recorded and this share is likely too high.
 
-The independent Maldives study gives a similar lunar result for Acropora: 70.4% of its 81 spawning atoll-days fall in the same week, compared with 69.8% of 400 historical Acropora reef-dates. [Figure 6](figures/06_field_comparison.png) keeps these studies separate because their survey designs and geographic units differ.
+## The Moon narrows the night, more in the tropics
 
-These percentages describe recorded spawning events. They do not give the chance that an arbitrary future night will contain spawning; the field databases do not list every surveyed non-spawning night.
+Of 1,026 recorded reef-nights, 67.7% fall in the eight days from full moon, where an even spread would give 27%. That single figure hides two groups. Inside the tropics the share is 88%; beyond them it is 51% ([plate 3](figures/03_moon.png)). Without Eilat and Kochi it rises to 83%.
 
-## Heat stress increased, and its overlap with spawning seasons is uneven
+Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = -0.73, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. Sites with more recorded nights also look looser, even after allowing for latitude (p = 0.004), so heavier monitoring probably explains part of the pattern. This describes the records. It does not show why the Moon matters less at higher latitudes.
 
-The heat-stress comparison follows the same 214 NOAA reef regions over 39 complete years. In 1986, 5 reached the severe threshold; in 2024, 171 did. [Figure 3](figures/03_heat_stress.png) reduces the daily histories to one comparable count per year. There is considerable year-to-year variation, but recent years reach many more regions.
+For Acropora, 69.8% of 400 historical genus/reef-dates and 70.4% of 81 spawning atoll-days from a separate Maldives study fall in those eight days. The two studies use different units and are kept apart.
 
-NOAA's degree-heating weeks (DHW) measure accumulated unusually high temperatures over twelve weeks. The threshold in Figure 3 is DHW ≥8. A region reaching that threshold is not the same as observing coral deaths there, and equally counting regions does not weight them by reef area.
+## The Sun sets the hour
 
-To connect this with reproduction, we used the historical distribution of spawning months as a fixed calendar. For Northern Taiwan, its heat-stress overlap index rises from 1.5% in 1986–1995 to 26.3% in 2015–2024; the Gulf of Aqaba rises from 0.0% to 22.7%. [Figure 4](figures/04_spawning_exposure.png) shows the five largest increases and Singapore, where the index stays at zero. The full fourteen-region comparison is in [the data table](../data/derived/decadal_exposure.csv).
+We calculated moonrise for each timed reef-night and checked the formula against 12,897 NASA/JPL Horizons positions; the largest gap is 0.3°. Moonrise moves about 46 minutes later each night in this sample. The start of spawning moves 2.2 minutes a night (95% interval -0.4 to 4.8), comparing like with like within the eight best-recorded genera. Starts scatter 2.7 times less around sunset than around moonrise ([plate 4](figures/04_sky.png)). Half of them fall between 1.5 and 2.5 hours after sunset.
 
-Across the full comparison, ten regions increase and four remain at zero. This tells us that regional heat-stress conditions increasingly overlap some recorded spawning seasons. It does not show that spawning dates moved, that reproduction failed, or that the old calendars still describe present-day behaviour. Historical survey effort can also influence those calendars. The index uses DHW ≥4, a lower threshold than the severe-stress overview.
+So the Moon may help pick a night, but it does not set the hour. The two still interact: 88% of starts on or after full moon happen before moonrise, in the dark gap that opens after sunset once the Moon starts rising late. Holding reefs and clock times fixed, the Moon is below the horizon for 76% of recorded starts, against 50% on the 28 surrounding dates. Experiments have tested that dark gap directly, including [Lin et al. (2021)](https://doi.org/10.1073/pnas.2101985118); our sky reconstruction cannot establish a cue by itself.
 
-## Extra weather inputs did not improve this prediction test
+## A diary with every day watched
 
-The aquarium diary records both spawning and non-spawning days, which allows a prediction test that the occurrence-only field data cannot support. We held out each entire year before predicting it, and compared all models on the same 1,007 dates from fourteen years.
+The Churaumi Aquarium diary is the one record with its empty days written down, so it can check the field pattern for observer bias. It weakens the lunar story: 32% of its 208 spawning days fall in the same eight days, against 27% of the days watched ([plate 5](figures/05_diary.png)).
 
-The moon-and-season model has Brier error 0.111; adding the preceding week's environmental measurements gives 0.115. Lower is better. The paired uncertainty interval includes no improvement, so [Figure 5](figures/05_model_comparison.png) supports a modest conclusion: these extra inputs did not give a clear predictive gain in this specified test. That does not mean environmental conditions have no biological effect.
+We forecast each year from the others, on the same 1,007 complete days. With no calendar the Brier error is 0.136. The Moon alone gives 0.136, season alone 0.113, both 0.111, and both plus the previous week's tank temperature, wind, rain and sunlight 0.115. Season cuts the error by 17%. Adding the Moon to season gains 0.0014 (95% interval -0.0032 to 0.0059), which includes zero.
 
-This is a retrospective comparison within one aquarium and its supplied monitoring seasons. It is not a forecasting service for wild reefs. The [model methods](../docs/AQUARIUM_METHODS.md) explain the lagged inputs, excluded dates, probability score and whole-year resampling.
+We cannot tell from this whether field records overstate the Moon, because teams go out near full moon, or whether a tank dulls the signal. This is one aquarium. Its result is a reason for caution about the field numbers and does not forecast a wild reef.
 
-## How much evidence sits behind the plots?
+## Each species keeps its own time
 
-The project uses 6,178 historical source observations, 3,203,007 NOAA daily regional records, a fifteen-year aquarium study and an independent Maldives field table. The spatial and date joins match 751 historical reef-nights to NOAA context. The presentation shows summaries of those records; the raw sources, joins and full analytical tables remain available for inspection.
+In the Australian Sea Simulator the seasons were moved by six months and the light cycle by four hours, and corals spawned on the moved schedule. Against one programmed sunset, half of the Acropora loripes releases fall within 5 minutes; in the wild, with places and species mixed, Acropora spreads over 84 ([plate 6](figures/06_minutes.png)). Tank species keep distinct times, from about 80 to about 210 minutes after sunset.
+
+Of the 28 tagged colonies timed in both years, 24 started earlier in 2023, with a median shift of 8 minutes. Both years used shifted cues, and shared tank conditions prevent isolating a cause.
+
+## The heat is changing around these clocks
+
+NOAA's 214 reef regions are followed through 39 complete years. 5 reached the severe level of 8 degree heating weeks in 1986 and 171 in 2024, about four in five ([plate 7](figures/07_heat_years.png)). The years 1998, 2010, 2016 and 2024 each followed an El Niño. Regions count equally whatever their reef area, and degree heating weeks measure accumulated heat, not coral death.
+
+Holding each region's historical spawning months fixed, ten of fourteen regions now see more heat stress in those months, and four stay clear ([plate 8](figures/08_heat_season.png)). Northern Taiwan rises from 1.5% to 26.3% of the season and the Gulf of Aqaba from 0.0% to 22.7%, comparing 1986–1995 with 2015–2024. The index uses DHW ≥4 and measures overlap only. It cannot show that spawning moved or that reproduction failed.
+
+## What sits behind the plates
+
+The project uses 6,178 historical coral records, 3,203,007 daily NOAA regional records, fifteen aquarium seasons, the Maldives field table, 172 timed colony records from the Sea Simulator and 12,897 NASA ephemeris positions. Field percentages describe recorded events, so they are not the chance of spawning on an unobserved night. Sources, joins and full tables stay in the project.
