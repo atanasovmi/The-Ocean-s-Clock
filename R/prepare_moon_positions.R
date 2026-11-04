@@ -54,7 +54,7 @@ moon_calendar <- night_shares |>
             .by = shift_days) |>
   left_join(by_site, by = "shift_days", relationship = "one-to-one") |>
   arrange(shift_days)
-write_csv(moon_calendar, "outputs/tables/08_moon_calendar.csv")
+write_csv(moon_calendar, "outputs/tables/moon_calendar.csv")
 
 # The first precise record per species on the historical Orpheus evening.
 # One species was recorded at two times. It contributes only its first start.
@@ -71,5 +71,5 @@ track <- sky |>
   transmute(local_minute = utc_minute - local_midnight, moon_deg) |> arrange(local_minute)
 stopifnot(identical(as.integer(track$local_minute), 1080:1440),
           !anyNA(orpheus_species$moon_deg))
-write_csv(orpheus_species, "outputs/tables/07_orpheus_species.csv")
-write_csv(track, "outputs/tables/07_orpheus_moon_track.csv")
+write_csv(orpheus_species, "outputs/tables/orpheus_species.csv")
+write_csv(track, "outputs/tables/orpheus_moon_track.csv")

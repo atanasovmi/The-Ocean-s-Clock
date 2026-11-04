@@ -1,2 +1,3 @@
 comparison,estimate,low,high
 Calendar Brier minus calendar+environment Brier,-0.003324495936067595,-0.007797207674543851,5.799040537302109e-4
+Season Brier minus season+moon Brier,0.0014418348748182486,-0.003163338035910158,0.005854966535450733

@@ -31,7 +31,8 @@ for year in sorted(sample.year.unique()):
     train = sample.loc[sample.year.ne(year)]
     test = sample.loc[sample.year.eq(year)]
     assert set(train.year).isdisjoint(set(test.year))
-    for model, columns in [("calendar", calendar), ("environment", calendar + weather)]:
+    for model, columns in [("calendar", calendar), ("environment", calendar + weather),
+                           ("season", calendar[4:]), ("moon", calendar[:4])]:
         center, scale = train[columns].mean(), train[columns].std(ddof=0)
         x = np.column_stack([np.ones(len(train)), (train[columns] - center) / scale])
         x_test = np.column_stack([np.ones(len(test)), (test[columns] - center) / scale])

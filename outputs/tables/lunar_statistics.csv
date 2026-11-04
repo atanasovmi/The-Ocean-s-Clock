@@ -1,0 +1,13 @@
+measure,value
+share_all,0.6773879142300195
+share_inside_tropics,0.8796498905908097
+share_outside_tropics,0.5149384885764499
+nights_inside_tropics,457
+nights_outside_tropics,569
+share_without_eilat_kochi,0.8308383233532934
+aquarium_share,0.32211538461538464
+aquarium_expected,0.2659259259259259
+spearman_rho,-0.7312252964426876
+spearman_p,7.373818328580402e-5
+latitude_p_given_effort,3.636401202088645e-4
+effort_p_given_latitude,0.003909870899978248

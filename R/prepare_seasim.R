@@ -30,4 +30,4 @@ pairs <- entries |>
   mutate(change_minutes = median_minutes_2023 - median_minutes_2022) |>
   arrange(species, change_minutes, colony_tag)
 stopifnot(!anyDuplicated(pairs$colony_tag), nrow(pairs) > 0)
-write_csv(pairs, "outputs/tables/09_seasim_colony_pairs.csv")
+write_csv(pairs, "outputs/tables/seasim_colony_pairs.csv")

@@ -1,0 +1,12 @@
+measure,value
+start_drift_minutes_per_night,2.1650704607946345
+start_drift_low,-0.4365836323930765
+start_drift_high,4.766724553982345
+moonrise_delay_minutes_per_night,45.935568771683805
+median_start_hours,1.8833333333333333
+q25_start_hours,1.5125
+q75_start_hours,2.466666666666667
+sd_from_sunset_hours,0.8162516102627457
+sd_from_moonrise_hours,2.171842548644176
+share_moon_down,0.8348623853211009
+share_moon_down_after_full,0.8770226537216829

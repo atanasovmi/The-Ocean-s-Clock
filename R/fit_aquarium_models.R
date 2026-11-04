@@ -53,6 +53,9 @@ stopifnot(nrow(eligible) > 900, n_distinct(eligible$year) >= 10)
 calendar_formula <- any_spawning ~ lunar_sin + lunar_cos + lunar_sin2 + lunar_cos2 + annual_sin + annual_cos
 environment_formula <- update(calendar_formula, . ~ . + temp_previous_week +
                                 wind_previous_week + log_rain_previous_week + solar_previous_week)
+# Splitting the calendar model shows which clock carries the forecast.
+season_formula <- any_spawning ~ annual_sin + annual_cos
+moon_formula <- any_spawning ~ lunar_sin + lunar_cos + lunar_sin2 + lunar_cos2
 # Retain numerical warnings by fold instead of losing them in console output.
 fit_binomial <- function(formula, train) {
   fit_warnings <- character()
@@ -72,25 +75,36 @@ for (held_out_year in sort(unique(eligible$year))) {
   test <- eligible |> filter(year == held_out_year)
   calendar_result <- fit_binomial(calendar_formula, train)
   environment_result <- fit_binomial(environment_formula, train)
+  season_result <- fit_binomial(season_formula, train)
+  moon_result <- fit_binomial(moon_formula, train)
   calendar_fit <- calendar_result$model
   environment_fit <- environment_result$model
+  season_fit <- season_result$model
+  moon_fit <- moon_result$model
   fold_audits[[as.character(held_out_year)]] <- tibble(
-    held_out_year = held_out_year, model = c("calendar", "environment"),
+    held_out_year = held_out_year, model = c("calendar", "environment", "season", "moon"),
     n_training_dates = nrow(train), n_test_dates = nrow(test),
     n_training_years = n_distinct(train$year),
-    converged = c(calendar_fit$converged, environment_fit$converged),
-    model_rank = c(calendar_fit$rank, environment_fit$rank),
-    warning_count = c(length(calendar_result$warnings), length(environment_result$warnings)),
+    converged = c(calendar_fit$converged, environment_fit$converged,
+                  season_fit$converged, moon_fit$converged),
+    model_rank = c(calendar_fit$rank, environment_fit$rank, season_fit$rank, moon_fit$rank),
+    warning_count = c(length(calendar_result$warnings), length(environment_result$warnings),
+                      length(season_result$warnings), length(moon_result$warnings)),
     warning_messages = c(paste(calendar_result$warnings, collapse = " | "),
-                         paste(environment_result$warnings, collapse = " | ")))
+                         paste(environment_result$warnings, collapse = " | "),
+                         paste(season_result$warnings, collapse = " | "),
+                         paste(moon_result$warnings, collapse = " | ")))
   fold_predictions[[as.character(held_out_year)]] <- test |>
     select(date, year, any_spawning, tanks_spawning) |>
     mutate(prevalence = mean(train$any_spawning),
            calendar = as.numeric(predict(calendar_fit, newdata = test, type = "response")),
-           environment = as.numeric(predict(environment_fit, newdata = test, type = "response")))
+           environment = as.numeric(predict(environment_fit, newdata = test, type = "response")),
+           season = as.numeric(predict(season_fit, newdata = test, type = "response")),
+           moon = as.numeric(predict(moon_fit, newdata = test, type = "response")))
 }
 predictions <- bind_rows(fold_predictions) |>
-  pivot_longer(c(prevalence, calendar, environment), names_to = "model", values_to = "probability")
+  pivot_longer(c(prevalence, calendar, environment, season, moon),
+               names_to = "model", values_to = "probability")
 stopifnot(!anyNA(predictions$probability),
           all(predictions$probability > 0 & predictions$probability < 1),
           !anyDuplicated(paste(predictions$date, predictions$model)))
@@ -137,12 +151,18 @@ scores <- scores |> left_join(score_intervals, by = "model")
 improvement <- bootstrap_scores |>
   select(replicate, model, brier) |>
   pivot_wider(names_from = model, values_from = brier) |>
-  mutate(calendar_to_environment = calendar - environment)
+  mutate(calendar_to_environment = calendar - environment,
+         season_to_calendar = season - calendar)
+brier_of <- function(name) scores$brier[scores$model == name]
 improvement_summary <- tibble(
-  comparison = "Calendar Brier minus calendar+environment Brier",
-  estimate = scores$brier[scores$model == "calendar"] - scores$brier[scores$model == "environment"],
-  low = quantile(improvement$calendar_to_environment, 0.025),
-  high = quantile(improvement$calendar_to_environment, 0.975))
+  comparison = c("Calendar Brier minus calendar+environment Brier",
+                 "Season Brier minus season+moon Brier"),
+  estimate = c(brier_of("calendar") - brier_of("environment"),
+               brier_of("season") - brier_of("calendar")),
+  low = c(quantile(improvement$calendar_to_environment, 0.025),
+          quantile(improvement$season_to_calendar, 0.025)),
+  high = c(quantile(improvement$calendar_to_environment, 0.975),
+           quantile(improvement$season_to_calendar, 0.975)))
 
 # Reliability bins are defined by held-out prediction ranks, not outcomes.
 calibration <- predictions |>

@@ -60,7 +60,7 @@ for shift in range(-14, 15):
     expected.append([shift, *checks, site_average])
 expected = pd.DataFrame(expected, columns=[
     "shift_days", "share_below", "low_threshold_share", "high_threshold_share", "equal_site_share"])
-actual = pd.read_csv("outputs/tables/08_moon_calendar.csv")[expected.columns]
+actual = pd.read_csv("outputs/tables/moon_calendar.csv")[expected.columns]
 assert np.allclose(expected, actual, rtol=0, atol=1e-12)
 assert len(positions) == 12897 and len(unique) == 538
 assert unique[["subsite_id", "date"]].drop_duplicates().shape[0] == 172
@@ -88,7 +88,7 @@ pd.testing.assert_frame_equal(
     actual_entries.sort_values(keys).reset_index(drop=True), check_dtype=False)
 paired = independent.groupby(["colony_tag", "species", "year"]).minutes_after_sunset.median().unstack().dropna()
 paired["change"] = paired[2023] - paired[2022]
-r_pairs = pd.read_csv("outputs/tables/09_seasim_colony_pairs.csv", dtype={"colony_tag": str}).set_index(["colony_tag", "species"])
+r_pairs = pd.read_csv("outputs/tables/seasim_colony_pairs.csv", dtype={"colony_tag": str}).set_index(["colony_tag", "species"])
 assert paired.index.equals(r_pairs.sort_index().index)
 assert np.allclose(paired.change, r_pairs.sort_index().change_minutes, rtol=0, atol=1e-12)
 assert len(independent) == 172 and len(paired) == 28
