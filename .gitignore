@@ -11,6 +11,8 @@
 .quarto/
 _freeze/
 *.zip
+!data/raw/horizons/reef_moon_positions.zip
+__pycache__/
 submission/
 .DS_Store
 Thumbs.db

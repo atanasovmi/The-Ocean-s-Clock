@@ -1,31 +1,36 @@
-# Question: did the heat-stress overlap change equally in every spawning region?
 source("R/plots/style.R")
-comparison <- read_csv("data/derived/decadal_exposure.csv", show_col_types = FALSE)
-# Show five largest increases and a zero-change comparison; the full table has 14 regions.
-selected <- bind_rows(slice_max(comparison, change, n = 5, with_ties = FALSE),
-                      filter(comparison, station_id == "singapore")) |>
-  arrange(desc(change)) |>
+comparison <- read_csv("data/derived/decadal_exposure.csv", show_col_types = FALSE) |>
+  arrange(desc(change), station_name) |>
   mutate(region = recode(station_id,
     northern_taiwan = "Northern Taiwan", gulf_of_aqaba = "Gulf of Aqaba",
     panama_pacific_west = "Pacific Panama (west)", northern_philippines = "Northern Philippines",
-    tromelin_reunion = "Tromelin / Réunion", singapore = "Singapore"))
-plot_data <- selected |>
+    tromelin_reunion = "Tromelin / Réunion", sabah = "Sabah",
+    gbr_central = "Central Great Barrier Reef", northern_ryukyu_islands = "Northern Ryukyu Islands",
+    madinah_makkah = "Al Madinah / Makkah", southern_taiwan = "Southern Taiwan",
+    fiji = "Fiji", hawaii = "Hawaii", singapore = "Singapore",
+    southern_ryukyu_islands = "Southern Ryukyu Islands"),
+    region = factor(region, levels = rev(region)),
+    change_label = if_else(change == 0, "0.0", sprintf("+%.1f", 100 * change)))
+plot_data <- comparison |>
   pivot_longer(c(`1986–1995`, `2015–2024`), names_to = "period", values_to = "exposure") |>
-  mutate(region = factor(region, levels = rev(selected$region)),
-         period = factor(period, levels = c("1986–1995", "2015–2024")),
-         percent_label = scales::percent(exposure, accuracy = 0.1))
-
-exposure_plot <- ggplot(plot_data, aes(exposure, region, fill = period)) +
-  geom_col(position = position_dodge(width = 0.75), width = 0.65) +
-  geom_text(aes(label = percent_label), position = position_dodge(width = 0.75),
-            hjust = -0.15, size = 4) +
-  scale_fill_manual(values = c("grey70", blue), drop = FALSE) +
-  scale_x_continuous(limits = c(0, 0.32), breaks = seq(0, 0.3, 0.1),
-                     labels = scales::label_percent(), expand = expansion(mult = c(0, 0))) +
-  labs(title = "Spawning-season heat exposure rose in some regions",
-       subtitle = "Five largest increases, with Singapore as a zero-change comparison.",
-       x = "Spawning-season heat exposure index", y = NULL,
-       caption = "Historical spawning calendars held fixed; monthly days at DHW ≥4 are weighted by those calendars.\nSources: Coral Spawning Database and NOAA CRW. This index does not measure reproductive failure.") +
-  theme_presentation() + theme(panel.grid.major.y = element_blank())
-save_plot(exposure_plot, "04_spawning_exposure", width = 11, height = 7)
+  mutate(period = factor(period, levels = c("1986–1995", "2015–2024")))
+p <- ggplot(plot_data, aes(exposure, region)) +
+  geom_segment(data = comparison, aes(x = `1986–1995`, xend = `2015–2024`, yend = region),
+               colour = "#A2B7BA", linewidth = 1.2) +
+  geom_point(aes(shape = period, colour = period), size = 3.4, fill = "white", stroke = 1.1) +
+  geom_text(data = comparison, aes(x = 0.31, label = change_label),
+            hjust = 1, size = 4.1, colour = muted) +
+  annotate("text", x = 0.31, y = 14.6, label = "Change (pp)", hjust = 1, size = 4.1, colour = muted) +
+  scale_colour_manual(values = c(muted, blue)) +
+  scale_shape_manual(values = c(21, 16)) +
+  scale_x_continuous(limits = c(0, 0.315), breaks = seq(0, 0.3, 0.1),
+                     labels = scales::label_percent(), expand = c(0.01, 0)) +
+  scale_y_discrete(expand = expansion(add = c(0.5, 1.1))) +
+  labs(title = "Spawning seasons face very different heat exposure",
+       subtitle = "All 14 eligible regions  ·  A fixed spawning calendar compared across two decades",
+       x = "Calendar-weighted exposure to heat stress", y = NULL,
+       caption = "Monthly fractions of days at DHW ≥4 are weighted by recorded spawning months. Hollow circles show 1986–1995.\nFilled dots show 2015–2024. pp = percentage points. Sources: Coral Spawning Database + NOAA CRW. Reproductive outcomes are unmeasured.") +
+  theme_presentation() + theme(panel.grid.major.y = element_blank(),
+                               axis.text.y = element_text(size = 12.5))
+save_plot(p, "04_spawning_exposure")
 write_csv(plot_data, "outputs/tables/04_spawning_exposure.csv")

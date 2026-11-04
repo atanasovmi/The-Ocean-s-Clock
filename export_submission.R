@@ -31,6 +31,7 @@ project_files <- c(list.files("R", recursive = TRUE, full.names = TRUE),
 # The large parsed regional cache is reproducible from the included source gzip
 # archives. The optional native snapshot contains selected analysis/model objects.
 project_files <- setdiff(project_files, "data/derived/regional_daily.rds")
+project_files <- project_files[!grepl("__pycache__|\\.pyc$", project_files)]
 native_files <- c(".RData", ".Rhistory")
 project_files <- c(project_files, native_files[file.exists(native_files)])
 zip::zipr("submission/The-Oceans-Clock_R-project.zip", project_files,

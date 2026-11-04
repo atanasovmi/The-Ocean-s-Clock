@@ -1,25 +1,51 @@
 # Explaining the figures
 
+The PNGs and SVGs share a 16:9 canvas. A complete figure can fit a Prezi frame without cropping. Each title states the point of that chart. Begin with the axes, describe the marked result, then explain what the comparison can support.
+
+For a short presentation, start with Figure 7, widen the view with Figure 8, and connect the timing to heat stress with Figure 4. Figure 9 gives a separate example of pairing the same organisms through time. Choose the final number of figures to fit the course's two-minute limit per graphic and the allocated group time.
+
 ## 1. Spawning and full moon
 
-Start with the horizontal axis: zero is the local full-moon date, negative values are earlier and positive values are later. Bar height is the share of the 1,026 recorded reef-nights. The blue bars cover days 0–7 and together contain 67.7% of the records. The useful finding is the concentration in a short part of the lunar cycle. We cannot turn it into the probability of spawning on an arbitrary night because survey effort and non-events are missing.
+The horizontal axis measures days from the nearest local full moon. Each bar counts distinct reef location-dates. Teal bars cover day zero through day seven, an inclusive eight-date interval. Together they contain 67.7% of 1,026 recorded reef-nights. Survey effort varies and unrecorded nights cannot be treated as observed absences.
 
 ## 2. Starting times after sunset
 
-Each box describes one of the six genera with the most exact night-time records. Its central line is the median; the box contains the middle half of the recorded starts. Whiskers extend to the usual 1.5-IQR limits and dots show observations beyond them. One input value is a median within a genus, subsite and date, so several species recorded that night do not get several votes. In this sample Galaxea tends to start closer to sunset; Acropora tends to start later. Species and locations differ, so the plot cannot isolate a biological genus effect. Daylight spawning is a separate part of the preserved data.
+The dots show one median exact start per genus, subsite and date. Horizontal lines span the middle half of those starts and white circles mark the medians. Galaxea tends to start closer to sunset than the other well-recorded groups. Species and locations differ between genera. Repeated species on one night do not each get a separate vote here.
 
 ## 3. Regional heat stress
 
-Each point on the line comes from the same 214 NOAA regions. It counts how many reached the severe heat-stress threshold that year, then divides by 214. The comparison moves from five regions in 1986 to 171 in 2024, with large variation between years. NOAA's degree-heating weeks combine how unusually hot the water was and how long the heat persisted over twelve weeks. Eight degree-heating weeks is not a sea-temperature reading of eight degrees. These are regional heat-stress indicators, not observations of dead reefs or a percentage of global reef area.
+The vertical axis counts regions. The monitored set stays fixed at 214 throughout 1986–2024. Five regions reached severe heat stress in 1986 and 171 did in 2024. Eight degree-heating weeks is an accumulated thermal-stress threshold. Equal region counts do not measure reef area or observed mortality.
 
-## 4. Heat around recorded spawning seasons
+## 4. Exposure during spawning seasons
 
-Grey bars describe 1986–1995 and blue bars describe 2015–2024. We show the five largest increases and Singapore as a zero-change comparison; all fourteen eligible regions remain in `data/derived/decadal_exposure.csv`. The comparison holds the historical spawning calendar fixed. If a site's records were all in May, its index would be the fraction of May days at DHW ≥4. Real calendars give weight to several months, and sites receive equal weight within their region. Northern Taiwan and the Gulf of Aqaba have much higher overlap in the later decade. This does not measure failed spawning or prove that the historical calendar still applies today. Notice that this index uses DHW ≥4; the severe-stress overview uses ≥8.
+Each row is one of fourteen regions supported by enough historical observations. The hollow circle is the mean index in 1986–1995 and the filled circle is 2015–2024. The line connects them. The right-hand column reports the change in percentage points.
 
-## 5. Prediction test
+The index asks how much heat stress overlaps a fixed historical spawning calendar. If all recorded spawning were in May, it would equal the fraction of May days with DHW at least four. Real calendars weight several months and give sites equal influence within a region. Ten regions increase and four remain at zero. Reproductive outcomes and changes in spawning dates were not measured.
 
-The horizontal axis measures prediction error; smaller values are better. The baseline gives a constant chance within each held-out year, estimated from the other years. The next model uses moon and seasonal timing. The last adds the preceding week's temperature, wind, rainfall and solar measurements. All are tested on the same 1,007 dates, with one whole year excluded from fitting at a time. The simple calendar score is 0.111 and the added-weather score is 0.115. The paired uncertainty interval includes no gain, so we found no clear predictive benefit from those extra inputs in this test. The lines show 95% intervals from resampling whole years. It is a retrospective aquarium comparison, not a wild-reef forecasting tool.
+## 5. Held-out prediction test
 
-## 6. Independent field comparison
+Left means less prediction error. All three models are scored on the same 1,007 dates after excluding the tested year from fitting. The baseline uses the training prevalence. The calendar uses lunar and annual cycles. Extra conditions include preceding-week tank temperature, wind, rainfall and solar radiation.
 
-The historical Acropora data give 69.8% of 400 genus/reef-dates in days 0–7 after full moon. The Maldives study gives 70.4% of 81 spawning atoll-days. The bars start at zero, so their near equality is visible without exaggerating the difference. These are separate studies with different survey designs and spatial units. The comparison shows a similar recorded pattern; it is not a test that the underlying populations are identical.
+The calendar's error is 0.111 and the extended model's is 0.115. The lines show 95% intervals from resampling complete years. The separate paired improvement interval includes zero, supporting no clear gain from adding those inputs. These results concern one aquarium and retrospective validation.
+
+## 6. A second field study
+
+The two panels use the same axes and the same day-zero-through-seven highlight. The historical Acropora data give 69.8% of 400 genus/reef-dates in that window. The Maldives study gives 70.4% of 81 spawning atoll-days. The full distributions show both the concentration and their differences elsewhere. Survey designs and spatial units differ.
+
+## 7. An evening at Orpheus Island
+
+The curve is the Moon's height viewed from the reef. Negative values put its centre below the ideal sea horizon. Teal dots locate the first precise starts of seventeen species on that curve. The first was recorded at 18:48 and the last two at 22:03. The Moon's centre reached the horizon at about 22:24.
+
+The visible contribution is joining species observations, coordinates, local clock times and NASA geometry. Upper-edge moonrise can occur a few minutes before the centre crossing because of refraction and the Moon's radius. This selected well-documented evening illustrates the calculation. It is not a universal coral schedule.
+
+## 8. Moving the date changes the sky
+
+Day zero uses the recorded spawning dates. Every other point uses the same reef and local clock times on a nearby date. The vertical value averages the below-horizon fraction within each reef-night, then across nights. This gives each night equal weight.
+
+The share is 76% at observed starts and averages 50% on the twenty-eight comparison dates. It reaches 96% five days later. That last detail matters. The observed timings did not maximise this measure. The extra dates contain astronomical calculations and provide no evidence of surveyed spawning absence. Moonlight at coral depth also depends on conditions we did not measure.
+
+## 9. Following the same colony
+
+Each dot is the same identified colony observed in both shifted seasons. Left of zero means it started sooner after the programmed sunset in 2023. Twenty-four of 28 did so, with a median shift of eight minutes. Eighteen of the matched colonies are A. loripes.
+
+Pairing the 15-digit tags avoids comparing different sets of organisms between years. Repeated nights are represented by a yearly median. Both years used the experimental cues, so the year difference cannot isolate their causal effect. Our data come from tagged Table S1 rows. The source notes document discrepancies with a separate summary table in the supplement.

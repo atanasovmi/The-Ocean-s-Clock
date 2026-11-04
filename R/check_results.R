@@ -19,4 +19,20 @@ stopifnot(nrow(matched) == nrow(nights),
 authors <- read_csv("authors.csv", show_col_types = FALSE)
 stopifnot(setequal(list.files("outputs/figures", pattern = "\\.png$"), authors$figure),
           length(list.files("outputs/vector", pattern = "\\.svg$")) == nrow(authors))
-message("Data totals, calendar denominators, timing and the six export names passed checks.")
+moon <- read_csv("outputs/tables/08_moon_calendar.csv", show_col_types = FALSE)
+colony_starts <- read_csv("data/derived/seasim_colony_starts.csv",
+                          col_types = cols(colony_tag = col_character()))
+colony_pairs <- read_csv("outputs/tables/09_seasim_colony_pairs.csv",
+                         col_types = cols(colony_tag = col_character()))
+exposure_plot <- read_csv("outputs/tables/04_spawning_exposure.csv", show_col_types = FALSE)
+stopifnot(identical(moon$shift_days, as.numeric(-14:14)),
+          all(moon$reef_nights == 172), all(moon$start_times == 538),
+          n_distinct(exposure_plot$station_id) == 14,
+          all(between(moon$share_below, 0, 1)),
+          all(moon$low_threshold_share <= moon$share_below),
+          all(moon$share_below <= moon$high_threshold_share),
+          nrow(colony_starts) == 172, nrow(colony_pairs) == 28,
+          sum(colony_pairs$change_minutes < 0) == 24,
+          !anyDuplicated(colony_pairs$colony_tag),
+          median(colony_pairs$change_minutes) == -8)
+message("Data totals, calendar denominators, astronomy, colony pairing and all export names passed checks.")

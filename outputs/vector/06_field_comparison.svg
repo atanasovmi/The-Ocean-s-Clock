@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='792.00pt' height='417.60pt' viewBox='0 0 792.00 417.60'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='960.00pt' height='540.00pt' viewBox='0 0 960.00 540.00'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,54 +21,139 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMC4wMHw3OTIuMDB8MC4wMHw0MTcuNjA='>
-    <rect x='0.00' y='0.00' width='792.00' height='417.60' />
+  <clipPath id='cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA='>
+    <rect x='0.00' y='0.00' width='960.00' height='540.00' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw0MTcuNjA=)'>
-<rect x='0.000000000000064' y='-0.00000000000011' width='792.00' height='417.60' style='stroke-width: 1.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+<rect x='0.00000000000013' y='-0.00000000000011' width='960.00' height='540.00' style='stroke-width: 1.55; stroke: none; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpMTUxLjMxfDc3NC4wN3w2Mi40NnwzMzMuMDQ='>
-    <rect x='151.31' y='62.46' width='622.76' height='270.58' />
+  <clipPath id='cpNzguMDV8OTM1LjA5fDExMS41NnwyNTkuNzg='>
+    <rect x='78.05' y='111.56' width='857.04' height='148.22' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTUxLjMxfDc3NC4wN3w2Mi40NnwzMzMuMDQ=)'>
-<rect x='151.31' y='62.46' width='622.76' height='270.58' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
-<polyline points='151.31,333.04 151.31,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='275.86,333.04 275.86,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='400.41,333.04 400.41,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='524.96,333.04 524.96,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='649.52,333.04 649.52,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='774.07,333.04 774.07,62.46 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<rect x='151.31' y='108.58' width='434.37' height='55.35' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<rect x='151.31' y='231.57' width='438.24' height='55.35' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<text x='595.61' y='141.03' style='font-size: 13.37px; font-family: "Arial";' textLength='99.23px' lengthAdjust='spacingAndGlyphs'>69.8%  (n = 400)</text>
-<text x='598.73' y='264.03' style='font-size: 13.37px; font-family: "Arial";' textLength='91.80px' lengthAdjust='spacingAndGlyphs'>70.4%  (n = 81)</text>
-<rect x='151.31' y='62.46' width='622.76' height='270.58' style='stroke-width: 1.07; stroke: #595959;' />
+<g clip-path='url(#cpNzguMDV8OTM1LjA5fDExMS41NnwyNTkuNzg=)'>
+<polyline points='78.05,259.78 935.09,259.78 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='78.05,192.41 935.09,192.41 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='78.05,125.03 935.09,125.03 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<rect x='117.01' y='256.41' width='20.73' height='3.37' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='142.29' y='256.41' width='20.73' height='3.37' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='167.57' y='251.36' width='20.73' height='8.42' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='192.85' y='253.04' width='20.73' height='6.74' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='218.13' y='253.04' width='20.73' height='6.74' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='243.41' y='249.67' width='20.73' height='10.11' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='268.69' y='251.36' width='20.73' height='8.42' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='293.97' y='256.41' width='20.73' height='3.37' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='319.25' y='256.41' width='20.73' height='3.37' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='344.53' y='258.10' width='20.73' height='1.68' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='369.81' y='253.04' width='20.73' height='6.74' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='395.09' y='253.04' width='20.73' height='6.74' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='420.37' y='247.99' width='20.73' height='11.79' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='445.65' y='242.94' width='20.73' height='16.84' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='470.93' y='229.46' width='20.73' height='30.32' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='496.21' y='221.04' width='20.73' height='38.74' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='521.49' y='232.83' width='20.73' height='26.95' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='546.77' y='226.09' width='20.73' height='33.69' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='572.05' y='185.67' width='20.73' height='74.11' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='597.33' y='182.30' width='20.73' height='77.48' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='622.61' y='175.56' width='20.73' height='84.22' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='647.89' y='168.83' width='20.73' height='90.95' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='673.17' y='215.99' width='20.73' height='43.79' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='698.45' y='241.25' width='20.73' height='18.53' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='723.73' y='247.99' width='20.73' height='11.79' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='749.01' y='247.99' width='20.73' height='11.79' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='774.29' y='247.99' width='20.73' height='11.79' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='799.57' y='249.67' width='20.73' height='10.11' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='824.85' y='253.04' width='20.73' height='6.74' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='850.13' y='254.73' width='20.73' height='5.05' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='875.41' y='259.78' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<text x='152.65' y='150.74' style='font-size: 15.36px;fill: #086879; font-family: "Arial";' textLength='114.00px' lengthAdjust='spacingAndGlyphs'>69.8%  (n = 400)</text>
 </g>
-<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw0MTcuNjA=)'>
-<text x='143.69' y='264.62' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='130.91px' lengthAdjust='spacingAndGlyphs'>Maldives field study</text>
-<text x='143.69' y='141.62' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='131.73px' lengthAdjust='spacingAndGlyphs'>Historical reef study</text>
-<polyline points='147.08,259.24 151.31,259.24 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='147.08,136.25 151.31,136.25 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='151.31,337.27 151.31,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='275.86,337.27 275.86,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='400.41,337.27 400.41,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='524.96,337.27 524.96,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='649.52,337.27 649.52,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='774.07,337.27 774.07,333.04 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<text x='151.31' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='21.69px' lengthAdjust='spacingAndGlyphs'>0%</text>
-<text x='275.86' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
-<text x='400.41' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>40%</text>
-<text x='524.96' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>60%</text>
-<text x='649.52' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>80%</text>
-<text x='774.07' y='351.40' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='38.38px' lengthAdjust='spacingAndGlyphs'>100%</text>
-<text x='462.69' y='370.25' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='365.88px' lengthAdjust='spacingAndGlyphs'>Recorded location-dates in days 0–7 after full moon</text>
-<text x='151.31' y='47.77' style='font-size: 13.00px; font-family: "Arial";' textLength='359.94px' lengthAdjust='spacingAndGlyphs'>About 70% of Acropora records fall in the week after full moon.</text>
-<text x='151.31' y='26.28' style='font-size: 20.00px; font-family: "Arial";' textLength='402.47px' lengthAdjust='spacingAndGlyphs'>Both field studies show a similar lunar pattern</text>
-<text x='151.31' y='392.74' style='font-size: 10.00px; font-family: "Arial";' textLength='433.42px' lengthAdjust='spacingAndGlyphs'>Historical study: 400 genus/reef-dates; Maldives: 81 spawning atoll-days. Survey coverage differs.</text>
-<text x='151.31' y='403.54' style='font-size: 10.00px; font-family: "Arial";' textLength='440.14px' lengthAdjust='spacingAndGlyphs'>Sources: Baird et al. (2021); Sheridan et al. (2025). These are shares of recorded spawning events.</text>
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNzguMDV8OTM1LjA5fDI5Ny4wMnw0NDUuMjQ='>
+    <rect x='78.05' y='297.02' width='857.04' height='148.22' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzguMDV8OTM1LjA5fDI5Ny4wMnw0NDUuMjQ=)'>
+<polyline points='78.05,445.24 935.09,445.24 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='78.05,377.87 935.09,377.87 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='78.05,310.49 935.09,310.49 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<rect x='117.01' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='142.29' y='420.29' width='20.73' height='24.95' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='167.57' y='420.29' width='20.73' height='24.95' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='192.85' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='218.13' y='428.61' width='20.73' height='16.64' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='243.41' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='268.69' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='293.97' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='319.25' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='344.53' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='369.81' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='395.09' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='420.37' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='445.65' y='420.29' width='20.73' height='24.95' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='470.93' y='403.65' width='20.73' height='41.59' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='496.21' y='378.70' width='20.73' height='66.54' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='521.49' y='387.02' width='20.73' height='58.22' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='546.77' y='403.65' width='20.73' height='41.59' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='572.05' y='387.02' width='20.73' height='58.22' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='597.33' y='362.06' width='20.73' height='83.18' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='622.61' y='362.06' width='20.73' height='83.18' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='647.89' y='378.70' width='20.73' height='66.54' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='673.17' y='428.61' width='20.73' height='16.64' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #086879;' />
+<rect x='698.45' y='420.29' width='20.73' height='24.95' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='723.73' y='436.92' width='20.73' height='8.32' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='749.01' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='774.29' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='799.57' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='824.85' y='445.24' width='20.73' height='0.00' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='850.13' y='428.61' width='20.73' height='16.64' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<rect x='875.41' y='428.61' width='20.73' height='16.64' style='stroke-width: 1.55; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BCC9CB;' />
+<text x='152.65' y='336.20' style='font-size: 15.36px;fill: #086879; font-family: "Arial";' textLength='105.45px' lengthAdjust='spacingAndGlyphs'>70.4%  (n = 81)</text>
+</g>
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNzguMDV8OTM1LjA5fDI3MS4zMHwyOTcuMDI='>
+    <rect x='78.05' y='271.30' width='857.04' height='25.72' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzguMDV8OTM1LjA5fDI3MS4zMHwyOTcuMDI=)'>
+<text x='84.43' y='289.17' style='font-size: 14.00px; font-weight: bold;fill: #1A1A1A; font-family: "Arial";' textLength='132.97px' lengthAdjust='spacingAndGlyphs'>Maldives field study</text>
+</g>
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNzguMDV8OTM1LjA5fDg1Ljg0fDExMS41Ng=='>
+    <rect x='78.05' y='85.84' width='857.04' height='25.72' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzguMDV8OTM1LjA5fDg1Ljg0fDExMS41Ng==)'>
+<text x='84.43' y='103.71' style='font-size: 14.00px; font-weight: bold;fill: #1A1A1A; font-family: "Arial";' textLength='134.55px' lengthAdjust='spacingAndGlyphs'>Historical reef study</text>
+</g>
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+<text x='127.37' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='22.06px' lengthAdjust='spacingAndGlyphs'>−15</text>
+<text x='253.77' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='22.06px' lengthAdjust='spacingAndGlyphs'>−10</text>
+<text x='380.17' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='14.83px' lengthAdjust='spacingAndGlyphs'>−5</text>
+<text x='506.57' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='57.09px' lengthAdjust='spacingAndGlyphs'>Full moon</text>
+<text x='632.97' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='14.83px' lengthAdjust='spacingAndGlyphs'>+5</text>
+<text x='759.37' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='22.06px' lengthAdjust='spacingAndGlyphs'>+10</text>
+<text x='885.77' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='22.06px' lengthAdjust='spacingAndGlyphs'>+15</text>
+<text x='70.88' y='264.44' text-anchor='end' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='18.80px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<text x='70.88' y='197.06' text-anchor='end' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>10%</text>
+<text x='70.88' y='129.69' text-anchor='end' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<text x='70.88' y='449.90' text-anchor='end' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='18.80px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<text x='70.88' y='382.52' text-anchor='end' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>10%</text>
+<text x='70.88' y='315.15' text-anchor='end' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<text x='506.57' y='482.45' text-anchor='middle' style='font-size: 14.00px;fill: #183139; font-family: "Arial";' textLength='290.92px' lengthAdjust='spacingAndGlyphs'>Days before or after the nearest local full moon</text>
+<text transform='translate(32.94,278.40) rotate(-90)' text-anchor='middle' style='font-size: 14.00px;fill: #183139; font-family: "Arial";' textLength='157.14px' lengthAdjust='spacingAndGlyphs'>Share of recorded events</text>
+<text x='22.91' y='64.75' style='font-size: 15.00px;fill: #53686D; font-family: "Arial";' textLength='515.94px' lengthAdjust='spacingAndGlyphs'>Acropora in historical records and in the Maldives  ·  Teal bars cover days 0–7</text>
+<text x='22.91' y='41.11' style='font-size: 32.00px; font-weight: bold;fill: #183139; font-family: "Times New Roman";' textLength='674.77px' lengthAdjust='spacingAndGlyphs'>Another field study shows a similar lunar rhythm</text>
+<text x='22.91' y='507.22' style='font-size: 11.00px;fill: #53686D; font-family: "Arial";' textLength='593.09px' lengthAdjust='spacingAndGlyphs'>Historical study counts 400 genus/reef-dates. The Maldives study counts 81 spawning atoll-days. Survey coverage differs.</text>
+<text x='22.91' y='521.74' style='font-size: 11.00px;fill: #53686D; font-family: "Arial";' textLength='635.78px' lengthAdjust='spacingAndGlyphs'>Sources: Baird et al. (2021) and Sheridan et al. (2025). Similar event distributions do not establish identical underlying populations.</text>
 </g>
 </g>
 </svg>

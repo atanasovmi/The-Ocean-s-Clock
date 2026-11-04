@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='792.00pt' height='504.00pt' viewBox='0 0 792.00 504.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='960.00pt' height='540.00pt' viewBox='0 0 960.00 540.00'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,83 +21,109 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMC4wMHw3OTIuMDB8MC4wMHw1MDQuMDA='>
-    <rect x='0.00' y='0.00' width='792.00' height='504.00' />
+  <clipPath id='cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA='>
+    <rect x='0.00' y='0.00' width='960.00' height='540.00' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw1MDQuMDA=)'>
-<rect x='0.000000000000064' y='0.00' width='792.00' height='504.00' style='stroke-width: 1.65; stroke: #FFFFFF; fill: #FFFFFF;' />
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+<rect x='0.00' y='-0.00000000000011' width='960.00' height='540.00' style='stroke-width: 1.55; stroke: none; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpMTY4LjgxfDc3NC4wN3wxMTMuNjF8NDE5LjQ0'>
-    <rect x='168.81' y='113.61' width='605.26' height='305.83' />
+  <clipPath id='cpMTc1Ljk1fDkzNS4wOXwxMzUuMDB8NDQ1LjI0'>
+    <rect x='175.95' y='135.00' width='759.15' height='310.24' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTY4LjgxfDc3NC4wN3wxMTMuNjF8NDE5LjQ0)'>
-<rect x='168.81' y='113.61' width='605.26' height='305.83' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
-<polyline points='168.81,419.44 168.81,113.61 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='357.95,419.44 357.95,113.61 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='547.10,419.44 547.10,113.61 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<polyline points='736.24,419.44 736.24,113.61 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
-<rect x='168.81' y='144.44' width='27.46' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='168.81' y='125.94' width='497.26' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<rect x='168.81' y='193.77' width='0.00' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='168.81' y='175.27' width='429.04' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<rect x='168.81' y='243.10' width='0.00' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='168.81' y='224.60' width='348.14' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<rect x='168.81' y='292.42' width='0.00' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='168.81' y='273.92' width='242.63' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<rect x='168.81' y='341.75' width='38.29' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='168.81' y='323.25' width='186.06' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<rect x='168.81' y='391.08' width='0.00' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='168.81' y='372.58' width='0.00' height='16.03' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<text x='200.16' y='156.53' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>1.5%</text>
-<text x='670.91' y='138.03' style='font-size: 11.38px; font-family: "Arial";' textLength='32.25px' lengthAdjust='spacingAndGlyphs'>26.3%</text>
-<text x='172.70' y='205.86' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>0.0%</text>
-<text x='602.69' y='187.36' style='font-size: 11.38px; font-family: "Arial";' textLength='32.25px' lengthAdjust='spacingAndGlyphs'>22.7%</text>
-<text x='172.70' y='255.18' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>0.0%</text>
-<text x='521.79' y='236.69' style='font-size: 11.38px; font-family: "Arial";' textLength='32.25px' lengthAdjust='spacingAndGlyphs'>18.4%</text>
-<text x='172.70' y='304.51' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>0.0%</text>
-<text x='416.28' y='286.01' style='font-size: 11.38px; font-family: "Arial";' textLength='32.25px' lengthAdjust='spacingAndGlyphs'>12.8%</text>
-<text x='210.99' y='353.84' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>2.0%</text>
-<text x='358.76' y='335.34' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>9.8%</text>
-<text x='172.70' y='403.16' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>0.0%</text>
-<text x='172.70' y='384.67' style='font-size: 11.38px; font-family: "Arial";' textLength='25.92px' lengthAdjust='spacingAndGlyphs'>0.0%</text>
-<rect x='168.81' y='113.61' width='605.26' height='305.83' style='stroke-width: 1.07; stroke: #595959;' />
+<g clip-path='url(#cpMTc1Ljk1fDkzNS4wOXwxMzUuMDB8NDQ1LjI0)'>
+<polyline points='183.39,445.24 183.39,135.00 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='419.66,445.24 419.66,135.00 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='655.94,445.24 655.94,135.00 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<polyline points='892.21,445.24 892.21,135.00 ' style='stroke-width: 0.73; stroke: #DCE4E4; stroke-linecap: butt;' />
+<line x1='217.69' y1='158.38' x2='804.56' y2='158.38' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='179.62' x2='719.34' y2='179.62' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='200.87' x2='618.28' y2='200.87' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='222.12' x2='486.48' y2='222.12' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='231.23' y1='243.37' x2='415.82' y2='243.37' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='264.62' x2='270.69' y2='264.62' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='194.13' y1='285.87' x2='246.10' y2='285.87' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='245.45' y1='307.12' x2='286.62' y2='307.12' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='328.37' x2='185.64' y2='328.37' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='349.62' x2='184.78' y2='349.62' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='370.87' x2='183.39' y2='370.87' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='392.12' x2='183.39' y2='392.12' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='413.37' x2='183.39' y2='413.37' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<line x1='183.39' y1='434.62' x2='183.39' y2='434.62' style='stroke-width: 2.56; stroke: #A2B7BA; stroke-linecap: butt;' />
+<circle cx='217.69' cy='158.38' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='804.56' cy='158.38' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='179.62' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='719.34' cy='179.62' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='200.87' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='618.28' cy='200.87' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='222.12' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='486.48' cy='222.12' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='231.23' cy='243.37' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='415.82' cy='243.37' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='264.62' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='270.69' cy='264.62' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='194.13' cy='285.87' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='246.10' cy='285.87' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='245.45' cy='307.12' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='286.62' cy='307.12' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='328.37' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='185.64' cy='328.37' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='349.62' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='184.78' cy='349.62' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='370.87' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='183.39' cy='370.87' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='392.12' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='183.39' cy='392.12' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='413.37' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='183.39' cy='413.37' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<circle cx='183.39' cy='434.62' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='183.39' cy='434.62' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<text x='915.84' y='162.55' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='29.50px' lengthAdjust='spacingAndGlyphs'>+24.8</text>
+<text x='915.84' y='183.80' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='29.50px' lengthAdjust='spacingAndGlyphs'>+22.7</text>
+<text x='915.84' y='205.05' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='29.50px' lengthAdjust='spacingAndGlyphs'>+18.4</text>
+<text x='915.84' y='226.30' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='29.50px' lengthAdjust='spacingAndGlyphs'>+12.8</text>
+<text x='915.84' y='247.54' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='23.02px' lengthAdjust='spacingAndGlyphs'>+7.8</text>
+<text x='915.84' y='268.79' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='23.02px' lengthAdjust='spacingAndGlyphs'>+3.7</text>
+<text x='915.84' y='290.04' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='23.02px' lengthAdjust='spacingAndGlyphs'>+2.2</text>
+<text x='915.84' y='311.29' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='23.02px' lengthAdjust='spacingAndGlyphs'>+1.7</text>
+<text x='915.84' y='332.54' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='23.02px' lengthAdjust='spacingAndGlyphs'>+0.1</text>
+<text x='915.84' y='353.79' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='23.02px' lengthAdjust='spacingAndGlyphs'>+0.1</text>
+<text x='915.84' y='375.04' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='16.20px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='915.84' y='396.29' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='16.20px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='915.84' y='417.54' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='16.20px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='915.84' y='438.79' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='16.20px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='915.84' y='141.30' text-anchor='end' style='font-size: 11.67px;fill: #53686D; font-family: "Arial";' textLength='64.80px' lengthAdjust='spacingAndGlyphs'>Change (pp)</text>
 </g>
-<g clip-path='url(#cpMC4wMHw3OTIuMDB8MC4wMHw1MDQuMDA=)'>
-<text x='161.19' y='395.21' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='68.39px' lengthAdjust='spacingAndGlyphs'>Singapore</text>
-<text x='161.19' y='345.89' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='126.17px' lengthAdjust='spacingAndGlyphs'>Tromelin / Réunion</text>
-<text x='161.19' y='296.56' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='135.08px' lengthAdjust='spacingAndGlyphs'>Northern Philippines</text>
-<text x='161.19' y='247.23' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='149.23px' lengthAdjust='spacingAndGlyphs'>Pacific Panama (west)</text>
-<text x='161.19' y='197.91' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='90.92px' lengthAdjust='spacingAndGlyphs'>Gulf of Aqaba</text>
-<text x='161.19' y='148.58' text-anchor='end' style='font-size: 15.00px; font-family: "Arial";' textLength='108.97px' lengthAdjust='spacingAndGlyphs'>Northern Taiwan</text>
-<polyline points='164.58,389.84 168.81,389.84 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='164.58,340.52 168.81,340.52 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='164.58,291.19 168.81,291.19 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='164.58,241.86 168.81,241.86 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='164.58,192.54 168.81,192.54 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='164.58,143.21 168.81,143.21 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='168.81,423.67 168.81,419.44 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='357.95,423.67 357.95,419.44 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='547.10,423.67 547.10,419.44 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<polyline points='736.24,423.67 736.24,419.44 ' style='stroke-width: 1.65; stroke: #333333; stroke-linecap: butt;' />
-<text x='168.81' y='437.80' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='21.69px' lengthAdjust='spacingAndGlyphs'>0%</text>
-<text x='357.95' y='437.80' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>10%</text>
-<text x='547.10' y='437.80' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
-<text x='736.24' y='437.80' text-anchor='middle' style='font-size: 15.00px; font-family: "Arial";' textLength='30.03px' lengthAdjust='spacingAndGlyphs'>30%</text>
-<text x='471.44' y='456.65' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='275.95px' lengthAdjust='spacingAndGlyphs'>Spawning-season heat exposure index</text>
-<rect x='367.88' y='62.46' width='207.12' height='34.22' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
-<rect x='376.35' y='70.93' width='17.28' height='17.28' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
-<rect x='377.44' y='72.02' width='15.09' height='15.09' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3B3B3;' />
-<rect x='475.67' y='70.93' width='17.28' height='17.28' style='stroke-width: 1.65; stroke: none; fill: #FFFFFF;' />
-<rect x='476.77' y='72.02' width='15.09' height='15.09' style='stroke-width: 1.65; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #356A8A;' />
-<text x='402.10' y='84.22' style='font-size: 13.00px; font-family: "Arial";' textLength='65.11px' lengthAdjust='spacingAndGlyphs'>1986–1995</text>
-<text x='501.42' y='84.22' style='font-size: 13.00px; font-family: "Arial";' textLength='65.11px' lengthAdjust='spacingAndGlyphs'>2015–2024</text>
-<text x='168.81' y='47.77' style='font-size: 13.00px; font-family: "Arial";' textLength='398.25px' lengthAdjust='spacingAndGlyphs'>Five largest increases, with Singapore as a zero-change comparison.</text>
-<text x='168.81' y='26.28' style='font-size: 20.00px; font-family: "Arial";' textLength='482.56px' lengthAdjust='spacingAndGlyphs'>Spawning-season heat exposure rose in some regions</text>
-<text x='168.81' y='479.14' style='font-size: 10.00px; font-family: "Arial";' textLength='443.53px' lengthAdjust='spacingAndGlyphs'>Historical spawning calendars held fixed; monthly days at DHW ≥4 are weighted by those calendars.</text>
-<text x='168.81' y='489.94' style='font-size: 10.00px; font-family: "Arial";' textLength='458.81px' lengthAdjust='spacingAndGlyphs'>Sources: Coral Spawning Database and NOAA CRW. This index does not measure reproductive failure.</text>
+<g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
+<text x='168.77' y='439.09' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='138.97px' lengthAdjust='spacingAndGlyphs'>Southern Ryukyu Islands</text>
+<text x='168.77' y='417.84' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='57.00px' lengthAdjust='spacingAndGlyphs'>Singapore</text>
+<text x='168.77' y='396.59' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='37.53px' lengthAdjust='spacingAndGlyphs'>Hawaii</text>
+<text x='168.77' y='375.34' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='15.98px' lengthAdjust='spacingAndGlyphs'>Fiji</text>
+<text x='168.77' y='354.09' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='92.91px' lengthAdjust='spacingAndGlyphs'>Southern Taiwan</text>
+<text x='168.77' y='332.84' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='116.72px' lengthAdjust='spacingAndGlyphs'>Al Madinah / Makkah</text>
+<text x='168.77' y='311.60' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='136.86px' lengthAdjust='spacingAndGlyphs'>Northern Ryukyu Islands</text>
+<text x='168.77' y='290.35' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='145.86px' lengthAdjust='spacingAndGlyphs'>Central Great Barrier Reef</text>
+<text x='168.77' y='269.10' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='36.16px' lengthAdjust='spacingAndGlyphs'>Sabah</text>
+<text x='168.77' y='247.85' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='105.14px' lengthAdjust='spacingAndGlyphs'>Tromelin / Réunion</text>
+<text x='168.77' y='226.60' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='112.58px' lengthAdjust='spacingAndGlyphs'>Northern Philippines</text>
+<text x='168.77' y='205.35' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='124.34px' lengthAdjust='spacingAndGlyphs'>Pacific Panama (west)</text>
+<text x='168.77' y='184.10' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='75.75px' lengthAdjust='spacingAndGlyphs'>Gulf of Aqaba</text>
+<text x='168.77' y='162.85' text-anchor='end' style='font-size: 12.50px;fill: #183139; font-family: "Arial";' textLength='90.80px' lengthAdjust='spacingAndGlyphs'>Northern Taiwan</text>
+<text x='183.39' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='18.80px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<text x='419.66' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>10%</text>
+<text x='655.94' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>20%</text>
+<text x='892.21' y='461.72' text-anchor='middle' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='26.03px' lengthAdjust='spacingAndGlyphs'>30%</text>
+<text x='555.52' y='482.45' text-anchor='middle' style='font-size: 14.00px;fill: #183139; font-family: "Arial";' textLength='266.81px' lengthAdjust='spacingAndGlyphs'>Calendar-weighted exposure to heat stress</text>
+<circle cx='192.56' cy='102.45' r='4.41' style='stroke-width: 1.56; stroke: #53686D; fill: #FFFFFF;' />
+<circle cx='290.89' cy='102.45' r='4.41' style='stroke-width: 1.56; stroke: none; fill: #086879;' />
+<text x='209.17' y='107.11' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='65.11px' lengthAdjust='spacingAndGlyphs'>1986–1995</text>
+<text x='307.50' y='107.11' style='font-size: 13.00px;fill: #183139; font-family: "Arial";' textLength='65.11px' lengthAdjust='spacingAndGlyphs'>2015–2024</text>
+<text x='22.91' y='64.75' style='font-size: 15.00px;fill: #53686D; font-family: "Arial";' textLength='544.56px' lengthAdjust='spacingAndGlyphs'>All 14 eligible regions  ·  A fixed spawning calendar compared across two decades</text>
+<text x='22.91' y='41.11' style='font-size: 32.00px; font-weight: bold;fill: #183139; font-family: "Times New Roman";' textLength='699.23px' lengthAdjust='spacingAndGlyphs'>Spawning seasons face very different heat exposure</text>
+<text x='22.91' y='507.22' style='font-size: 11.00px;fill: #53686D; font-family: "Arial";' textLength='557.88px' lengthAdjust='spacingAndGlyphs'>Monthly fractions of days at DHW ≥4 are weighted by recorded spawning months. Hollow circles show 1986–1995.</text>
+<text x='22.91' y='521.74' style='font-size: 11.00px;fill: #53686D; font-family: "Arial";' textLength='715.70px' lengthAdjust='spacingAndGlyphs'>Filled dots show 2015–2024. pp = percentage points. Sources: Coral Spawning Database + NOAA CRW. Reproductive outcomes are unmeasured.</text>
 </g>
 </g>
 </svg>
