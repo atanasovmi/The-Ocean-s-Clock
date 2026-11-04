@@ -57,3 +57,19 @@ See `R/fit_aquarium_models.R`, `outputs/tables/aquarium_*`, `outputs/models/aqua
 The 4,028 lagged inputs in the complete model sample were separately reconstructed in Python using explicit calendar-date lookups, rather than R's rolling filter. The maximum absolute difference was below \(1.2\times10^{-13}\). All twenty-eight held-out logistic models were independently refitted with a SciPy maximum-likelihood solver, using feature scaling calculated on each training fold only. The maximum difference from the R probabilities was below \(8.8\times10^{-9}\). The optional check can be repeated with `python tools/check_aquarium.py` after installing Python's NumPy, pandas and SciPy. Those packages are not dependencies of the R analysis itself.
 
 The R workflow records convergence, matrix rank and warning counts for every fold in `aquarium_fitting_audit.csv`; full-data models are saved separately from the held-out predictions. There is no global or test-informed feature standardization in the R fitting code.
+
+## Which clock carries the forecast?
+
+The calendar model mixes lunar and seasonal terms, so each half is also fitted alone, on the same folds and the same 1,007 dates.
+
+| Model | Held-out Brier error |
+| --- | --- |
+| Same chance every day | 0.136 |
+| Moon only | 0.136 |
+| Season only | 0.113 |
+| Moon and season | 0.111 |
+| Moon, season and preceding-week conditions | 0.115 |
+
+Season alone delivers about 94% of the improvement that the calendar model makes over the baseline, and the Moon alone delivers none. Adding the Moon to season improves the Brier error by 0.0014, with a whole-year bootstrap interval of −0.0032 to 0.0059, which includes zero. The lunar terms are not empty: inside the main late-May-to-June window the spawning rate is highest in the days just before full moon. They add little once the season is known.
+
+The diary covers 90 days a year around the expected season, so the season term only has to find a peak inside that window. It is one aquarium with its own tanks and lighting. The result is a reason for caution about the field concentration, not an estimate for wild reefs.

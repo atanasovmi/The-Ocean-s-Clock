@@ -4,17 +4,20 @@ Open `The-Oceans-Clock.Rproj` in RStudio and run `setup.R` once, then `run.R`. T
 
 ## Follow one question through the files
 
-For the lunar figure, begin with `R/prepare_coral.R`. It reads the separate observation, subsite and taxonomy tables, checks the keys and preserves the source row count through the joins. It then separates natural-reef records from ex-situ records. `R/plots/01_lunar_timing.R` reads the resulting reef-night table, counts events by lunar day and draws an ordinary bar chart. You can run that plot script alone from the project root once its prepared input exists.
+For the sky chart, begin with `R/prepare_coral.R`. It reads the separate observation, subsite and taxonomy tables, checks the keys and preserves the source row count through the joins. It then separates natural-reef records from ex-situ records. `R/prepare_sky.R` takes the exact evening starts, works out where the Moon and Sun were on every lunar night, and checks the result against NASA. `R/plots/04_sky.R` reads those tables and draws the plate. You can run a plot script alone from the project root once its prepared input exists.
 
 The same pattern applies to the other questions:
 
 | Calculation | File | Presentation script |
 | --- | --- | --- |
-| Observation and timing preparation | `R/prepare_coral.R` | `R/plots/01_lunar_timing.R`, `02_night_timing.R` |
-| Daily NOAA histories and spatial/date joins | `R/prepare_ocean.R` | `R/plots/03_heat_stress.R` |
-| Fixed-calendar heat overlap | `R/analyse_heat_exposure.R` | `R/plots/04_spawning_exposure.R` |
-| Aquarium model fitting and held-out predictions | `R/fit_aquarium_models.R` | `R/plots/05_model_comparison.R` |
-| Independent Acropora comparison | `R/compare_field_studies.R` | `R/plots/06_field_comparison.R` |
+| Tightness of the three cycles | `R/analyse_clocks.R` | `R/plots/01_three_clocks.R` |
+| Each region's typical temperature year | `R/prepare_seasons.R` | `R/plots/02_season.R` |
+| Lunar tightness place by place | `R/analyse_clocks.R` | `R/plots/03_moon.R` |
+| Moon, Sun and moonlight over the reefs | `R/prepare_sky.R` | `R/plots/04_sky.R` |
+| Aquarium model fitting and held-out predictions | `R/fit_aquarium_models.R` | `R/plots/05_diary.R` |
+| Sea Simulator colony timings | `R/prepare_seasim.R` | `R/plots/06_minutes.R` |
+| Daily NOAA histories and spatial/date joins | `R/prepare_ocean.R` | `R/plots/07_heat_years.R` |
+| Fixed-calendar heat overlap | `R/analyse_heat_exposure.R` | `R/plots/08_heat_season.R` |
 
 `R/check_lunar_reference.R` handles the small independent astronomy check. `R/export_spatial_data.R` writes the working Shapefiles and reads them back. `R/write_findings.R` generates the written results; `R/check_results.R` checks data totals, denominators and output names. The common plotting theme and save function are in `R/plots/style.R`.
 
@@ -36,7 +39,7 @@ The heat-overlap and model equations are in [METHODS.md](METHODS.md). For the mo
 
 `outputs/models/analysis_workspace.RData` contains selected analytical objects and fitted models. Load it explicitly in a separate R session if useful. `outputs/session.Rhistory` records commands actually run. The local `.RData` and `.Rhistory` copies are also included in the submission ZIP; automatic workspace restoration remains disabled.
 
-`authors.csv` currently assigns three figures to Mihael (1, 3 and 5) and three to Pirasanna (2, 4 and 6). These are editable export assignments. Record actual work and understanding before presenting:
+`authors.csv` carries over the earlier assignments where a plate replaces an earlier figure: Mihael for plates 4, 5 and 7, Pirasanna for plates 6 and 8. Plates 1, 2 and 3 are new or merge both students' work, so they are left blank for you to decide. These are editable export assignments. Record actual work and understanding before presenting:
 
 | Student | Decisions reviewed or made | Code and findings understood and checked |
 | --- | --- | --- |

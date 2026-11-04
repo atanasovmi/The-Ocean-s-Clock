@@ -2,7 +2,7 @@
 
 Keep the R analysis readable by a student who must explain it. Prefer visible import, preparation, analysis, plotting and export stages; meaningful intermediate names; explicit join keys; relative paths; and ordinary tidyverse/ggplot2 code. Functions and additional dependencies should simplify actual repeated or difficult work. These are preferences, not fixed limits on code size or structure.
 
-Presentation graphics should be easy to explain to a classroom. Prefer one question and one conventional chart per file, large readable labels, and colour with a clear analytical role. Keep detailed tables and diagnostics available behind the presentation figures. Use a simple file tree and a short explanation for architecture; dense multi-panel posters and broad flowcharts have not worked for this user.
+Presentation graphics should be easy to explain to a classroom. Prefer one question per file, the form that suits the data (dials for cycles, actograms for rhythms), large readable labels, and colour with a clear analytical role. The look lives in `R/plots/style.R`: keep its night palette and Bahnschrift type, and avoid generic templates such as serif headlines, big stat call-outs and teal accents, which the user rejected as looking AI-made. Keep detailed tables and diagnostics available behind the presentation figures. Use a simple file tree and a short explanation for architecture; dense multi-panel posters and broad flowcharts have not worked for this user.
 
 Read `docs/COURSE_REQUIREMENTS.md` for the assessment context and `docs/RESEARCH.md` for the data and analytical limitations. Apply the project skill at `.agents/skills/ocean-clock-analysis/SKILL.md` when changing the coral timing analysis.
 

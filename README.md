@@ -1,29 +1,31 @@
 # The Ocean's Clock
 
-We studied when corals spawn and how their recorded spawning seasons overlap with ocean heat stress. The work combines historical reef observations, NOAA's daily regional records and a separate aquarium diary. The analysis and figures are written in R.
+What tells a coral reef that tonight is the night? We combined historical reef observations, NOAA's daily regional records, NASA Moon positions, a fifteen-year aquarium diary and a tank experiment to see how spawning fits the rhythms of the ocean. The analysis and all graphics are written in R.
 
-About **68% of the recorded reef-nights fall in the week beginning at full moon**. An independent Acropora field study shows a similar concentration. The ocean surrounding those events is changing: severe heat stress reached **171 of the same 214 NOAA regions in 2024**, compared with five in 1986. We then connect the historical spawning calendars to those regional records and test whether extra environmental inputs improve predictions within one aquarium.
+The records point to three clocks. Warming water opens the season: 89% of recorded reef-nights fall in the warming part of the local year. The Moon narrows the night, far more inside the tropics (88% in the eight days from full moon) than beyond them (51%). Sunset sets the hour: starts stay near two hours after sunset while moonrise moves about 46 minutes a night. In the one record with every day watched, season carries almost all of the forecast and the Moon adds little. Around these clocks the ocean is changing: severe heat stress reached **171 of 214 NOAA reef regions in 2024**, compared with five in 1986.
 
-![Recorded spawning nights relative to full moon](outputs/figures/01_lunar_timing.png)
+![Moonlight, moonrise and the start of spawning across the lunar month](outputs/figures/04_sky.png)
 
-## The figures
+## The plates
 
-Each figure answers one question. The plots use ordinary ggplot2 bars, boxplots, a line or points with uncertainty intervals. PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
+PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 
-| Figure | What to look for |
-| --- | --- |
-| [1. Spawning and full moon](outputs/figures/01_lunar_timing.png) | Most recorded nights are concentrated in a short part of the lunar cycle. |
-| [2. Starting times after sunset](outputs/figures/02_night_timing.png) | Six coral genera have different recorded timing distributions. |
-| [3. Regional heat stress over time](outputs/figures/03_heat_stress.png) | The same regional comparison reveals large changes and year-to-year variation. |
-| [4. Heat exposure during spawning seasons](outputs/figures/04_spawning_exposure.png) | Five large increases and a zero-change example show that the overlap is uneven. |
-| [5. Do extra environmental inputs help?](outputs/figures/05_model_comparison.png) | Adding preceding-week conditions gives no clear predictive gain in the held-out-year test. |
-| [6. A second field study](outputs/figures/06_field_comparison.png) | About 70% of Acropora records fall in the same lunar window in both studies. |
+| Plate | Question | What to look for |
+| --- | --- | --- |
+| [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's hand is longest, the Moon's shortest. |
+| [2. The year](outputs/figures/02_season.png) | What does the season follow? | Both hemispheres sit on the warming part of the year. |
+| [3. The Moon](outputs/figures/03_moon.png) | Do all reefs follow the Moon equally? | Tight near the equator, loose beyond the tropics. |
+| [4. The sky](outputs/figures/04_sky.png) | Does the Sun or the Moon set the hour? | Moonrise climbs while the start of spawning stays flat. |
+| [5. The diary](outputs/figures/05_diary.png) | Does the pattern survive when every day is watched? | Spawning lines up with the calendar far more than with the Moon. |
+| [6. Minutes](outputs/figures/06_minutes.png) | How precise is the Sun clock? | Wide clouds in the wild, tight clusters in the tanks. |
+| [7. The heat](outputs/figures/07_heat_years.png) | How has heat stress changed? | Each stripe of heat, ending with 171 of 214 regions in 2024. |
+| [8. Heat in the season](outputs/figures/08_heat_season.png) | Does the heat reach the spawning months? | Ten of fourteen regions rose, four stayed clear. |
 
-[Findings](outputs/RESULTS.md) explain the results in words. The [plot guide](docs/PLOT_GUIDE.md) explains the axes, counting units and limits of each comparison. For a short presentation, figures 1, 3, 4 and 5 give a useful route through the project; the other two add biological detail and an independent comparison.
+The [findings](outputs/RESULTS.md) explain the results in words. The [plot guide](docs/PLOT_GUIDE.md) says how to read each plate, what to say about it and which questions to expect.
 
 ## How the project is organised
 
-`run.R` is the entry point. It prepares the data, runs the analyses, then draws the six figures. Data preparation and plotting are separate, so each plot script can be read on its own.
+`run.R` is the entry point. It prepares the data, runs the analyses, then draws the eight plates. Data preparation and plotting are separate, so each plot script can be read on its own.
 
 ```text
 The-Oceans-Clock.Rproj     Open this file in RStudio
@@ -32,22 +34,25 @@ setup.R                   Install missing R packages once
 R/
   prepare_coral.R         Read and join observations, sites and species
   prepare_ocean.R         Read NOAA histories; match reef coordinates to regions
+  prepare_seasons.R       Build each region's typical temperature year
+  prepare_sky.R           Calculate Moon and Sun positions; check them against NASA
+  analyse_clocks.R        Measure how tightly each cycle holds the records
   analyse_heat_exposure.R Compare heat stress around historical spawning seasons
   fit_aquarium_models.R   Fit and test models with whole years held out
   compare_field_studies.R Summarise the independent Maldives observations
   export_spatial_data.R   Write the region and reef Shapefiles
-  plots/                  Six short ggplot scripts, plus a shared theme
+  plots/                  Eight ggplot scripts, plus the shared style
 data/
   raw/                    Original downloaded files and source notes
   derived/                Joined data and full analytical results
   spatial/                Shapefiles for inspection in R or GIS software
 outputs/
-  figures/                The six presentation PNGs
-  vector/                 SVG versions of the same figures
+  figures/                The eight presentation PNGs
+  vector/                 SVG versions of the same plates
   tables/                 Plot values and model diagnostics
   models/                 Fitted models and a native R workspace snapshot
 docs/                     Methods, sources, course requirements and checks
-tools/                    Download utility and independent numerical checks
+tools/                    Download utilities and independent numerical checks
 ```
 
 The field-data connection is: **observation ID → reef coordinates → NOAA region polygon → region and date**. This produces environmental matches for 751 recorded reef-nights. The aquarium analysis is a separate branch: its diary and environmental measurements join by date. We do not combine tank observations and wild-reef events into one model.
@@ -63,11 +68,13 @@ source("setup.R")
 source("run.R", encoding = "UTF-8")
 ```
 
-Setup needs an internet connection for missing packages. The analysis then uses the included source caches. To redraw one figure from the prepared data, run its script, for example:
+Setup needs an internet connection for missing packages. The analysis then uses the included source caches. To redraw one plate from the prepared data, run its script, for example:
 
 ```r
-source("R/plots/01_lunar_timing.R", encoding = "UTF-8")
+source("R/plots/04_sky.R", encoding = "UTF-8")
 ```
+
+The plates use Bahnschrift, the DIN typeface that ships with Windows. On another system they fall back to the default sans-serif, so text widths shift slightly. The committed PNGs are the reference.
 
 The [R workspace snapshot](outputs/models/analysis_workspace.RData) contains selected analytical objects and fitted models; the [session history](outputs/session.Rhistory) records commands actually run. They can help when inspecting the work, but `run.R` starts from explicit input files. The large parsed NOAA RDS file is rebuilt locally from the included compressed sources.
 
@@ -79,6 +86,8 @@ The [R workspace snapshot](outputs/models/analysis_workspace.RData) contains sel
 | [NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/data.php) | 3,203,007 available daily regional records in 1985–2025. The main comparison uses the complete common period, 1986–2024. |
 | [Churaumi Aquarium study](https://doi.org/10.5281/zenodo.10974150) | Fifteen seasonal diaries, including observed non-spawning days, with environmental measurements. |
 | [Maldives field study](https://doi.org/10.7717/peerj.19447) | 81 spawning atoll-days, representing 3,026 colony observations, analysed separately. |
+| [Sea Simulator experiment](https://doi.org/10.1098/rspb.2025.1558) | 172 timed colony records from seasons moved by six months and light cycles moved by four hours. |
+| [NASA/JPL Horizons](https://ssd.jpl.nasa.gov/horizons/) | 12,897 Moon positions for 35 reef subsites, used to check our own Moon calculation. |
 | [US Naval Observatory](https://aa.usno.navy.mil/data/api.html) | A limited independent check of seven covered historical reef-nights. |
 
 NOAA publishes its region boundaries as GeoJSON. `sf::st_join()` uses those polygons to identify each reef's region. The [spatial folder](data/spatial/) contains Shapefile copies of all 214 region polygons and 102 reef coordinates, with their identifiers and WGS84 reference system. Read a layer with `sf::st_read("data/spatial/reef_sites.shp")`. The [spatial notes](data/spatial/README.md) explain the fields and source.
@@ -87,6 +96,6 @@ Source definitions, licences and the main limitations are in [the research notes
 
 ## Methods and submission
 
-The heat-exposure index weights monthly heat-stress conditions by the recorded spawning calendar. It holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
+Tightness is the length of the average direction of all records around a cycle, from 0 (an even spread) to 1 (one moment). The heat-exposure index weights monthly heat stress by the recorded spawning calendar and holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
 
-Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`; the students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.
+Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`. Plates 1 to 3 have no earlier author and need one before export; `export_submission.R` stops until they are filled in. The students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.
