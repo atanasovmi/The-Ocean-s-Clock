@@ -31,14 +31,6 @@ starts <- all_starts |>
   filter(between(lunar_day, first_night, last_night)) |>
   mutate(row = lunar_day + runif(n(), -0.3, 0.3))
 
-# One bar per night: the middle 50% of that night's starts. Single dots mix many genera
-# and reefs and look like noise; the bars show what stays the same from night to night.
-night_spread <- starts |>
-  summarise(n = n(), q25 = quantile(hours_after_sunset, 0.25), q75 = quantile(hours_after_sunset, 0.75),
-            .by = lunar_day) |>
-  # A middle 50% of fewer than 8 starts says little, so those nights keep only their dots.
-  filter(n >= 8)
-
 usual_hour <- stats[["median_start_hours"]]
 clock_text <- function(hours) sprintf("%d h %02d", floor(hours), round(60 * (hours %% 1)))
 
@@ -67,8 +59,8 @@ moon_lit <- bind_rows(lapply(seq_len(nrow(moonrise)), function(i) {
 
 # The key sits below the hour labels, outside the sky. Its marks match the plot.
 key_y <- 13.2
-key_moon_disc <- tibble(x = 4.3 + icon_width / 2 * cos(circle), y = key_y + icon_height / 2 * sin(circle))
-key_moon_lit <- moon_icon(4.3, key_y, 5, icon_width, icon_height, id = 1)
+key_moon_disc <- tibble(x = 0.75 + icon_width / 2 * cos(circle), y = key_y + icon_height / 2 * sin(circle))
+key_moon_lit <- moon_icon(0.75, key_y, 5, icon_width, icon_height, id = 1)
 
 # One real dot stands in as the key.
 key_dot <- starts |> filter(lunar_day == last_night) |> slice_max(hours_after_sunset, n = 1, with_ties = FALSE)
@@ -85,12 +77,8 @@ evenings_plot <- ggplot(sky, aes(hours_after_sunset, lunar_day)) +
                colour = night, linewidth = 0.3) +
   geom_polygon(data = moon_lit, aes(x, y, group = id), inherit.aes = FALSE, fill = moon) +
   # Dots go last, so no moon hides a record.
-  geom_point(data = starts, aes(hours_after_sunset, row), inherit.aes = FALSE, shape = 21, size = 1.7,
-             stroke = 0.2, fill = spawn, colour = night, alpha = 0.6) +
-  geom_segment(data = night_spread, aes(q25, lunar_day, xend = q75, yend = lunar_day), inherit.aes = FALSE,
-               colour = night, linewidth = 3.4, lineend = "round") +
-  geom_segment(data = night_spread, aes(q25, lunar_day, xend = q75, yend = lunar_day), inherit.aes = FALSE,
-               colour = moon, linewidth = 1.8, lineend = "round") +
+  geom_point(data = starts, aes(hours_after_sunset, row), inherit.aes = FALSE, shape = 21, size = 2.1,
+             stroke = 0.25, fill = spawn, colour = night) +
   # The two things to compare, named at the top of the column and beside the moons.
   plot_note(usual_hour, first_night - 0.95, sprintf("Spawning: about %s after sunset, every night", clock_text(usual_hour)),
             hjust = 0, colour = moon, size = 14) +
@@ -110,14 +98,11 @@ evenings_plot <- ggplot(sky, aes(hours_after_sunset, lunar_day)) +
 of
 starts", 100 * peak_share), hjust = 1, size = 12) +
   # Key
-  annotate("segment", x = -0.6, xend = -0.34, y = key_y, yend = key_y, colour = moon, linewidth = 1.8,
-           lineend = "round") +
-  plot_note(-0.27, key_y, "Middle 50% of that night’s starts (nights with 8+ starts)", size = 13) +
-  annotate("segment", x = 3.05, xend = 3.05, y = key_y - 0.34, yend = key_y + 0.34, colour = moon, linewidth = 0.4) +
-  plot_note(3.12, key_y, "Median start", size = 13) +
+  annotate("segment", x = -0.55, xend = -0.55, y = key_y - 0.34, yend = key_y + 0.34, colour = moon, linewidth = 0.4) +
+  plot_note(-0.48, key_y, "Median start", size = 13) +
   geom_polygon(data = key_moon_disc, aes(x, y), inherit.aes = FALSE, fill = "#1F3549") +
   geom_polygon(data = key_moon_lit, aes(x, y), inherit.aes = FALSE, fill = moon) +
-  plot_note(4.45, key_y, "Moon at moonrise, in that night’s phase", size = 13) +
+  plot_note(0.9, key_y, "Moon at moonrise, in that night’s phase", size = 13) +
   scale_fill_gradientn(colours = sky_colours, limits = sky_range, name = "Moonlight at the reef",
                        breaks = sky_range[1] + diff(sky_range) * c(0.07, 0.86),
                        labels = c("None", "Strongest"),
@@ -147,4 +132,5 @@ starts", 100 * peak_share), hjust = 1, size = 12) +
         legend.frame = element_rect(colour = rule, linewidth = 0.3, fill = NA))
 
 save_plot(evenings_plot, "04.01_sky")
-write_csv(select(night_spread, lunar_day, n, q25, q75), "outputs/tables/04.01_sky.csv")
+write_csv(select(starts, subsite_id, date, genus, lunar_day, hours_after_sunset, moonrise_hours),
+          "outputs/tables/04.01_sky.csv")

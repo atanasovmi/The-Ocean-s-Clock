@@ -38,7 +38,7 @@ Follow the cream line first: moonrise, about 46 minutes later every night. Then 
 
 The second point is the dark wedge at the lower right. After full moon the evening starts dark, because the Moon has not risen yet, and that is where the dots sit. Lin et al. (2021) tested this dark gap in experiments. Our chart shows the geometry and does not prove a cue.
 
-Plot 4 has a second version, `04.01_sky`. It shows the same data with one row per evening, read from sunset to the right. The moons mark moonrise, and each white bar is the middle 50% of that night's starts. The single dots look like a scatter with no trend, and that is the result: start time barely depends on the night (Spearman 0.08). Most of the spread comes from mixing reef sites and genera.
+Plot 4 has a second version, `04.01_sky`. It shows the same data with one row per evening, read from sunset to the right. The moons mark moonrise. The single dots look like a scatter with no trend, and that is the result: start time barely depends on the night (Spearman 0.08). Most of the spread comes from mixing reef sites and genera.
 
 ## 5. The diary
 
