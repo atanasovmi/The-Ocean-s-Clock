@@ -28,10 +28,12 @@ dots <- records |>
             relationship = "many-to-one")
 stopifnot(!anyNA(dots$row))
 
+loripes <- filter(summaries, group == "A. loripes")
+acropora <- filter(summaries, group == "Acropora")
 wild_top <- max(summaries$row[summaries$setting == "wild"])
 tank_top <- max(summaries$row[summaries$setting == "tank"])
 headers <- tibble(row = c(wild_top + 0.85, tank_top + 0.85),
-                  label = c("Wild reefs (number of dots)", "Research tanks (number of dots)"))
+                  label = c("Wild reefs, by genus (n dots)", "Research tanks, by species (n dots)"))
 
 label_x <- -7
 key_y <- wild_top + 0.85
@@ -53,23 +55,24 @@ minutes_plot <- ggplot(dots, aes(minutes, row)) +
   geom_text(data = summaries, aes(x = spread_x, label = spread_label), hjust = 1,
             family = font_note, size = pts(14.5), colour = moon) +
   annotate("text", x = spread_x, y = wild_top + 0.85, hjust = 1, family = font_label,
-           size = pts(14.5), colour = soft, label = "Half the dots within") +
+           size = pts(14.5), colour = soft, label = "Middle 50% spans") +
   # The key sits in the header row, drawn with the same marks as the rows below.
   annotate("point", x = 6, y = key_y, shape = 21, size = 2.2, stroke = 0.22, fill = spawn, colour = night) +
-  plot_note(10, key_y, "One spawning") +
+  plot_note(10, key_y, "One spawning start") +
   annotate("segment", x = 62, xend = 80, y = key_y, yend = key_y, colour = moon, linewidth = 1.2,
            lineend = "round") +
-  plot_note(84, key_y, "White bar: half of the dots. A shorter bar means more exact timing") +
-  plot_note(2, tank_top + 0.85, "Every coral here gets the same sunset") +
+  plot_note(84, key_y, "White bar: interquartile range (middle 50% of dots). Shorter = more exact") +
+  plot_note(2, tank_top + 0.85, "All tanks share one programmed sunset") +
   scale_x_continuous(breaks = seq(0, 240, 60), labels = c("Sunset", "+1 h", "+2 h", "+3 h", "+4 h"),
                      expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = c(-96, spread_x), ylim = c(min(summaries$row) - 0.6, wild_top + 1.3),
                   clip = "off") +
   labs(title = "In the tanks, each species keeps its own time",
-       subtitle = "Scientists moved the sunset in these tanks by four hours, and the corals moved with it. Each species spawns at its\nown time after sunset. Wild reefs, with many places and species mixed, are far more spread out.",
+       subtitle = sprintf("Scientists moved the tanks’ sunset by four hours and the corals moved with it. Each species spawns at its own time:\nhalf of A. loripes releases fall within %.0f minutes. Wild Acropora, with places and species mixed, spreads over %.0f.",
+                          loripes$middle_half, acropora$middle_half),
        x = NULL, y = NULL,
-       caption = "Wild dots: one coral type on one night. Tank dots: one tagged coral on one night, counted from the tanks’ sunset, 2022–23. Dots are nudged apart so they stay visible.\nA. = Acropora, M. = Montipora. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
+       caption = "Wild dots: one genus on one night. Tank dots: one tagged coral on one night, counted from the tanks’ sunset, 2022–23. Dots are nudged apart so they stay visible.\nA. = Acropora, M. = Montipora. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 12)))

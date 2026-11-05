@@ -350,7 +350,7 @@
 <rect x='726.54' y='394.78' width='13.65' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #603251;' />
 <rect x='741.38' y='394.78' width='13.65' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #462F4A;' />
 <rect x='533.02' y='137.44' width='118.72' height='318.19' style='stroke-width: 0.85; stroke: #B7C4CE; stroke-linecap: butt; stroke-linejoin: miter;' />
-<text x='307.44' y='331.51' text-anchor='end' style='font-size: 13.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='80.14px' lengthAdjust='spacingAndGlyphs'>Edge of the tropics</text>
+<text x='307.44' y='331.51' text-anchor='end' style='font-size: 13.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='106.67px' lengthAdjust='spacingAndGlyphs'>Edge of the tropics, 23.4°</text>
 <line x1='310.41' y1='326.89' x2='755.62' y2='326.89' style='stroke-width: 0.85; stroke: #31475A; stroke-linecap: butt;' />
 <text x='307.44' y='149.52' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='156.05px' lengthAdjust='spacingAndGlyphs'>Raffles Lighthouse, Singapore</text>
 <text x='307.44' y='161.66' text-anchor='end' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='162.08px' lengthAdjust='spacingAndGlyphs'>Maldives atolls, separate study</text>
@@ -394,13 +394,15 @@
 <text x='323.77' y='250.09' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='126.52px' lengthAdjust='spacingAndGlyphs'>88% fall inside the box</text>
 <text x='323.77' y='347.20' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='105.78px' lengthAdjust='spacingAndGlyphs'>Outside the tropics</text>
 <text x='323.77' y='365.47' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='123.66px' lengthAdjust='spacingAndGlyphs'>51% fall inside the box</text>
-<text x='35.87' y='479.24' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='145.17px' lengthAdjust='spacingAndGlyphs'>Spawning on that day:  little</text>
-<rect x='190.21' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #1C2B41;' />
-<rect x='204.30' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #57304F;' />
-<rect x='218.40' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A64562;' />
-<rect x='232.50' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
-<rect x='246.60' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFE0DC;' />
-<text x='264.41' y='479.24' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.23px' lengthAdjust='spacingAndGlyphs'>a lot</text>
+<text x='35.87' y='470.88' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='140.27px' lengthAdjust='spacingAndGlyphs'>Share of a place’s spawning</text>
+<text x='35.87' y='487.26' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='120.19px' lengthAdjust='spacingAndGlyphs'>nights on that lunar day</text>
+<text x='200.59' y='479.24' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='15.14px' lengthAdjust='spacingAndGlyphs'>0%</text>
+<rect x='205.05' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #1C2B41;' />
+<rect x='219.14' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #57304F;' />
+<rect x='233.24' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A64562;' />
+<rect x='247.34' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
+<rect x='261.44' y='469.35' width='12.91' height='10.20' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFE0DC;' />
+<text x='279.25' y='479.24' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='21.56px' lengthAdjust='spacingAndGlyphs'>50%</text>
 <polyline points='332.67,460.61 332.67,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='436.56,460.61 436.56,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='540.44,460.61 540.44,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
@@ -461,13 +463,16 @@
 <circle cx='845.78' cy='424.05' r='3.73' style='stroke-width: 0.43; stroke: #0B1D2E; fill: #FF7E8B;' />
 <circle cx='823.16' cy='436.20' r='3.73' style='stroke-width: 0.43; stroke: #0B1D2E; fill: #FF7E8B;' />
 <circle cx='862.50' cy='448.34' r='3.73' style='stroke-width: 0.43; stroke: #0B1D2E; fill: #FF7E8B;' />
-<text x='786.04' y='129.65' style='font-size: 14.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='52.20px' lengthAdjust='spacingAndGlyphs'>How exact?</text>
+<text x='786.04' y='107.79' style='font-size: 14.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='53.33px' lengthAdjust='spacingAndGlyphs'>Tightness R</text>
+<text x='786.04' y='121.85' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='137.64px' lengthAdjust='spacingAndGlyphs'>1 = all on the same lunar day</text>
+<text x='786.04' y='137.60' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='84.14px' lengthAdjust='spacingAndGlyphs'>0 = evenly spread</text>
 <polyline points='786.04,460.61 786.04,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='851.18,460.61 851.18,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='916.32,460.61 916.32,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
-<text x='786.04' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='33.88px' lengthAdjust='spacingAndGlyphs'>Spread</text>
-<text x='916.32' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='26.36px' lengthAdjust='spacingAndGlyphs'>Exact</text>
-<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='411.39px' lengthAdjust='spacingAndGlyphs'>White names and dots: separate studies. Only places with at least 12 spawning nights are shown.</text>
+<text x='786.04' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='6.02px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='851.18' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='13.95px' lengthAdjust='spacingAndGlyphs'>0.5</text>
+<text x='916.32' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='3.91px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='724.31px' lengthAdjust='spacingAndGlyphs'>White names and dots: separate studies. Only places with at least 12 spawning nights are shown. Latitude against tightness: Spearman ρ = -0.73, also found within genera.</text>
 <text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='744.30px' lengthAdjust='spacingAndGlyphs'>Places with more recorded nights also look more spread out, so closer watching may explain part of this. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).</text>
 <text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='729.89px' lengthAdjust='spacingAndGlyphs'>In the tropics, 88% of spawning nights fall in the 8 days after full moon. Outside the tropics it is 51%.</text>
 <text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='362.06px' lengthAdjust='spacingAndGlyphs'>If the Moon played no part, it would be about 27%.</text>

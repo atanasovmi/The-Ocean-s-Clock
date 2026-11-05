@@ -35,15 +35,15 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
   geom_line(data = trend_line, aes(lunar_day, hours), colour = moon, linewidth = 1.1) +
   annotate("text", x = 11.5, y = 8.1, hjust = 0, family = font_label, size = pts(16),
            colour = moon, label = "Moonrise") +
-  annotate("text", x = 11.5, y = 7.25, hjust = 0, family = font_note, size = pts(14),
+  annotate("text", x = 11.5, y = 7.1, hjust = 0, family = font_note, size = pts(14),
            colour = soft, lineheight = 1.05,
-           label = sprintf("%.0f minutes later\nevery night", stats[["moonrise_delay_minutes_per_night"]])) +
+           label = sprintf("Median of reefs:\n%.0f min later\nevery night", stats[["moonrise_delay_minutes_per_night"]])) +
   annotate("segment", x = 11.2, xend = 10.15, y = 4.6, yend = 2.25, colour = soft, linewidth = 0.35) +
   annotate("text", x = 11.5, y = 5.25, hjust = 0, family = font_label, size = pts(16),
            colour = moon, label = "Start of spawning") +
-  annotate("text", x = 11.5, y = 4.4, hjust = 0, family = font_note, size = pts(14),
+  annotate("text", x = 11.5, y = 4.2, hjust = 0, family = font_note, size = pts(14),
            colour = soft, lineheight = 1.05,
-           label = sprintf("%.0f minutes later\nevery night", stats[["start_drift_minutes_per_night"]])) +
+           label = sprintf("Straight-line fit:\n%.0f min later\nevery night", stats[["start_drift_minutes_per_night"]])) +
   annotate("text", x = -14.6, y = 7.8, hjust = 0, family = font_note, size = pts(14),
            colour = soft, label = "Moon has set") +
   annotate("text", x = -1.6, y = 7.2, family = font_label, size = pts(15), colour = night,
@@ -51,8 +51,14 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
   annotate("text", x = 8.55, y = 4.75, family = font_note, size = pts(14), colour = soft,
            lineheight = 1.05, label = "Moon not up yet") +
   plot_note(-16.5, 8.72, "Time after sunset") +
+  # What each kind of line would mean. Zero on this axis is sunset, so a line that
+  # follows the Sun stays flat and a line that follows the Moon climbs.
+  annotate("segment", x = -14.5, xend = -13.7, y = 6.55, yend = 7.15, colour = moon, linewidth = 0.9) +
+  plot_note(-13.4, 6.85, "Rising line = following the Moon:\nlater every night") +
+  annotate("segment", x = -14.5, xend = -13.7, y = 5.45, yend = 5.45, colour = moon, linewidth = 1.1) +
+  plot_note(-13.4, 5.45, "Flat line = following the Sun:\nsame time after sunset") +
   # One real dot stands in as the key.
-  plot_note(-14.6, 3.95, "Each dot: one coral type\nstarting to spawn") +
+  plot_note(-14.6, 3.95, "Each dot: one coral genus\nstarting to spawn on one night") +
   note_line(-12, 3.42, -12, 3.05) +
   moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = top_hour + 0.5, width = 0.78, height = 0.66) +
   plot_note(-14.1, top_hour + 0.5, "New moon", size = 14) +
@@ -68,8 +74,9 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
                           stats[["moonrise_delay_minutes_per_night"]], clock_text(stats[["median_start_hours"]]),
                           100 * stats[["share_moon_down_after_full"]]),
        x = "Days from full moon", y = NULL,
-       caption = sprintf("Lighter sky: more moonlight. %d starts on %d spawning nights at %d reef sites, spread sideways so the dots stay visible.\nStarts vary %.1f times less around sunset than around moonrise. Moon positions checked against NASA data. Coral data: Baird et al. (2021).",
+       caption = sprintf("Lighter sky: more moonlight (lit share of the Moon × its height). %d starts on %d spawning nights at %d reef sites, spread sideways so the dots stay visible.\nTrend with genus controlled: +%.1f min per night (95%% CI %.1f to %.1f). Starts vary %.1f times less around sunset than around moonrise. Moon formula checked against NASA. Data: Baird et al. (2021).",
                          nrow(starts), n_distinct(paste(starts$subsite_id, starts$date)), n_distinct(starts$subsite_id),
+                         stats[["start_drift_minutes_per_night"]], stats[["start_drift_low"]], stats[["start_drift_high"]],
                          stats[["sd_from_moonrise_hours"]] / stats[["sd_from_sunset_hours"]])) +
   theme_plot() +
   theme(plot.subtitle = element_text(margin = margin(b = 42)))

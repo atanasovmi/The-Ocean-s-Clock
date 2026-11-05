@@ -100,9 +100,10 @@
 <text x='760.35' y='135.67' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='16.12px' lengthAdjust='spacingAndGlyphs'>103</text>
 <text x='914.50' y='113.21' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='13.78px' lengthAdjust='spacingAndGlyphs'>171</text>
 <text x='182.30' y='132.39' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='276.64px' lengthAdjust='spacingAndGlyphs'>Number of reef regions with severe heat each year</text>
-<text x='35.87' y='130.51' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='126.42px' lengthAdjust='spacingAndGlyphs'>Severe heat: for example</text>
-<text x='35.87' y='146.89' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='102.42px' lengthAdjust='spacingAndGlyphs'>2 °C above the usual</text>
-<text x='35.87' y='163.27' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='128.84px' lengthAdjust='spacingAndGlyphs'>summer high for 4 weeks</text>
+<text x='35.87' y='122.32' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='110.38px' lengthAdjust='spacingAndGlyphs'>Severe heat: 8 degree</text>
+<text x='35.87' y='138.70' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='117.03px' lengthAdjust='spacingAndGlyphs'>heating weeks, such as</text>
+<text x='35.87' y='155.08' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='102.42px' lengthAdjust='spacingAndGlyphs'>2 °C above the usual</text>
+<text x='35.87' y='171.46' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='128.84px' lengthAdjust='spacingAndGlyphs'>summer high for 4 weeks</text>
 <rect x='172.67' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
 <rect x='191.94' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
 <rect x='211.21' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
@@ -8478,26 +8479,26 @@
 <text x='741.09' y='457.54' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='21.64px' lengthAdjust='spacingAndGlyphs'>2015</text>
 <text x='837.43' y='457.54' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.66px' lengthAdjust='spacingAndGlyphs'>2020</text>
 <text x='914.50' y='457.54' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.48px' lengthAdjust='spacingAndGlyphs'>2024</text>
-<text x='488.69' y='477.74' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='145.64px' lengthAdjust='spacingAndGlyphs'>Worst heat stress of the year</text>
-<rect x='646.29' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='646.29' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
-<rect x='688.13' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='688.13' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
-<rect x='729.98' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='729.98' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A3A7A;' />
-<rect x='771.82' y='466.70' width='34.98' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='771.82' y='466.70' width='34.98' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D24C5F;' />
-<rect x='814.77' y='466.70' width='58.92' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='814.77' y='466.70' width='58.92' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #F27F40;' />
-<rect x='881.67' y='466.70' width='42.47' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='881.67' y='466.70' width='42.47' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FDD78A;' />
-<text x='663.23' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='25.83px' lengthAdjust='spacingAndGlyphs'>None</text>
-<text x='705.07' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='20.59px' lengthAdjust='spacingAndGlyphs'>Low</text>
-<text x='746.91' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='22.56px' lengthAdjust='spacingAndGlyphs'>High</text>
-<text x='789.31' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='34.98px' lengthAdjust='spacingAndGlyphs'>Severe</text>
-<text x='844.23' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='58.92px' lengthAdjust='spacingAndGlyphs'>Very severe</text>
-<text x='902.90' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='42.47px' lengthAdjust='spacingAndGlyphs'>Extreme</text>
-<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='773.34px' lengthAdjust='spacingAndGlyphs'>214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Severe means at least 8 degree heating weeks. Heat stress is not the same as coral death.</text>
+<text x='344.84' y='477.74' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='196.03px' lengthAdjust='spacingAndGlyphs'>Peak degree heating weeks of the year</text>
+<rect x='552.83' y='466.70' width='37.28' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='552.83' y='466.70' width='37.28' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
+<rect x='598.08' y='466.70' width='40.41' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='598.08' y='466.70' width='40.41' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
+<rect x='646.46' y='466.70' width='44.80' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='646.46' y='466.70' width='44.80' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A3A7A;' />
+<rect x='699.23' y='466.70' width='60.39' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='699.23' y='466.70' width='60.39' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D24C5F;' />
+<rect x='767.59' y='466.70' width='87.75' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='767.59' y='466.70' width='87.75' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #F27F40;' />
+<rect x='863.31' y='466.70' width='60.83' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='863.31' y='466.70' width='60.83' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FDD78A;' />
+<text x='571.47' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='37.28px' lengthAdjust='spacingAndGlyphs'>None &lt;1</text>
+<text x='618.29' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='40.41px' lengthAdjust='spacingAndGlyphs'>Low 1–4</text>
+<text x='668.86' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='44.80px' lengthAdjust='spacingAndGlyphs'>High 4–8</text>
+<text x='729.42' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='60.39px' lengthAdjust='spacingAndGlyphs'>Severe 8–12</text>
+<text x='811.46' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='87.75px' lengthAdjust='spacingAndGlyphs'>Very severe 12–16</text>
+<text x='893.72' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='60.83px' lengthAdjust='spacingAndGlyphs'>Extreme 16+</text>
+<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='857.62px' lengthAdjust='spacingAndGlyphs'>214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Degree heating weeks add up heat above the usual summer high over 12 weeks. Heat stress is not coral death.</text>
 <text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='776.09px' lengthAdjust='spacingAndGlyphs'>In 1986 it was just 5 of 214 regions. Each line is one region, each column one year. The brighter, the hotter.</text>
 <text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='666.20px' lengthAdjust='spacingAndGlyphs'>The peaks of 1998, 2010, 2016 and 2024 each followed an El Niño, when the Pacific heats up.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='787.06px' lengthAdjust='spacingAndGlyphs'>In 2024, four in five reef regions crossed the severe heat line</text>

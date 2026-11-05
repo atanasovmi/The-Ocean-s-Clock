@@ -90,7 +90,7 @@ by_moon <- ggplot(spawning_days, aes(lunar_day, year)) +
 key_x <- 193
 key_rows <- c(full_moon = 0.42, spawning = 0.29, bigger = 0.16)
 calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by date: one clear peak") +
-  plot_note(calendar_window[1], 0.26, "Bars: how often\ncorals spawned", size = 13) +
+  plot_note(calendar_window[1], 0.26, "Bars: share of watched\ndays with spawning", size = 13) +
   annotate("point", x = key_x, y = key_rows[["full_moon"]], shape = 21, size = 2.6, stroke = 0.65,
            colour = moon, fill = NA) +
   annotate("point", x = key_x, y = key_rows[["spawning"]], shape = 21, size = 1.9, stroke = 0.25,
@@ -99,7 +99,7 @@ calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by dat
            colour = night, fill = spawn) +
   plot_note(key_x + 3.6, key_rows[["full_moon"]], "Full moon", size = 13) +
   plot_note(key_x + 3.6, key_rows[["spawning"]], "A day with spawning", size = 13) +
-  plot_note(key_x + 3.6, key_rows[["bigger"]], "Bigger dot: more tanks", size = 13)
+  plot_note(key_x + 3.6, key_rows[["bigger"]], "Bigger: more tanks (1–17)", size = 13)
 moon_strip <- rate_strip(lunar_rate, lunar_window, 0.8, "The same days, sorted by the Moon: much flatter")
 
 # A gap between the left and right panels, without indenting the plot's outer edges.
@@ -111,10 +111,10 @@ diary_plot <- (calendar_strip + left_gap + moon_strip + right_gap) /
   plot_layout(heights = c(1, 3.9)) +
   plot_annotation(
     title = "With every day watched, the season says far more than the Moon",
-    subtitle = sprintf("An aquarium in Okinawa wrote down spawning every day of the season for 15 years. Knowing the time of\nyear cuts prediction errors by %.0f%%. Knowing the Moon alone does not help, and neither do temperature and weather.",
+    subtitle = sprintf("An aquarium in Okinawa logged spawning every day of the season for 15 years. Logistic models predict each year from\nthe others: the time of year cuts the Brier error by %.0f%%. The Moon alone cuts nothing. Temperature and weather add nothing.",
                        error_cut("season")),
-    caption = sprintf("Bars: days with spawning out of days watched. Each year was predicted from the other years, using 1,007 complete days. Prediction error: no calendar %.3f, Moon %.3f, time of year %.3f.\nOne aquarium, so this tests the pattern and does not predict a wild reef. Source: Sakai, Yamamoto & Maruyama (2024), reanalysed.",
-                      brier[["prevalence"]], brier[["moon"]], brier[["season"]]),
+    caption = sprintf("Brier error: mean squared gap between predicted chance and what happened; lower is better. 1,007 complete days: no calendar %.3f, Moon %.3f, time of year %.3f, both %.3f, plus weather %.3f.\nOne aquarium, so this tests the pattern and does not predict a wild reef. Source: Sakai, Yamamoto & Maruyama (2024), reanalysed.",
+                      brier[["prevalence"]], brier[["moon"]], brier[["season"]], brier[["calendar"]], brier[["environment"]]),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 14)))
   )
 

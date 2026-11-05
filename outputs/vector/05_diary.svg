@@ -104,14 +104,14 @@
 <rect x='431.22' y='201.00' width='9.16' height='0.00' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <rect x='441.78' y='201.00' width='9.16' height='0.00' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <text x='277.35' y='137.82' text-anchor='middle' style='font-size: 14.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='55.62px' lengthAdjust='spacingAndGlyphs'>49% of days</text>
-<text x='64.32' y='165.68' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='78.73px' lengthAdjust='spacingAndGlyphs'>Bars: how often</text>
-<text x='64.32' y='182.06' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='79.28px' lengthAdjust='spacingAndGlyphs'>corals spawned</text>
+<text x='64.32' y='165.68' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='116.28px' lengthAdjust='spacingAndGlyphs'>Bars: share of watched</text>
+<text x='64.32' y='182.06' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='99.06px' lengthAdjust='spacingAndGlyphs'>days with spawning</text>
 <circle cx='370.66' cy='149.71' r='3.23' style='stroke-width: 0.92; stroke: #F1EAD7;' />
 <circle cx='370.66' cy='165.59' r='2.20' style='stroke-width: 0.35; stroke: #0B1D2E; fill: #FF7E8B;' />
 <circle cx='370.66' cy='181.46' r='4.87' style='stroke-width: 0.35; stroke: #0B1D2E; fill: #FF7E8B;' />
 <text x='383.33' y='154.33' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='50.11px' lengthAdjust='spacingAndGlyphs'>Full moon</text>
 <text x='383.33' y='170.20' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='103.69px' lengthAdjust='spacingAndGlyphs'>A day with spawning</text>
-<text x='383.33' y='186.08' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='114.80px' lengthAdjust='spacingAndGlyphs'>Bigger dot: more tanks</text>
+<text x='383.33' y='186.08' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='125.09px' lengthAdjust='spacingAndGlyphs'>Bigger: more tanks (1–17)</text>
 <text x='35.87' y='124.18' style='font-size: 15.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='150.97px' lengthAdjust='spacingAndGlyphs'>Sorted by date: one clear peak</text>
 <rect x='513.53' y='201.00' width='10.99' height='0.00' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <rect x='527.26' y='198.51' width='10.99' height='2.49' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
@@ -698,10 +698,10 @@
 <text x='821.14' y='455.59' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='10.30px' lengthAdjust='spacingAndGlyphs'>+7</text>
 <text x='917.27' y='455.59' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='14.94px' lengthAdjust='spacingAndGlyphs'>+14</text>
 <text x='718.15' y='477.43' text-anchor='middle' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='109.31px' lengthAdjust='spacingAndGlyphs'>Days from full moon</text>
-<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='792.27px' lengthAdjust='spacingAndGlyphs'>Bars: days with spawning out of days watched. Each year was predicted from the other years, using 1,007 complete days. Prediction error: no calendar 0.136, Moon 0.136, time of year 0.113.</text>
+<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='821.08px' lengthAdjust='spacingAndGlyphs'>Brier error: mean squared gap between predicted chance and what happened; lower is better. 1,007 complete days: no calendar 0.136, Moon 0.136, time of year 0.113, both 0.111, plus weather 0.115.</text>
 <text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='555.80px' lengthAdjust='spacingAndGlyphs'>One aquarium, so this tests the pattern and does not predict a wild reef. Source: Sakai, Yamamoto &amp; Maruyama (2024), reanalysed.</text>
-<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='769.02px' lengthAdjust='spacingAndGlyphs'>An aquarium in Okinawa wrote down spawning every day of the season for 15 years. Knowing the time of</text>
-<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='851.44px' lengthAdjust='spacingAndGlyphs'>year cuts prediction errors by 17%. Knowing the Moon alone does not help, and neither do temperature and weather.</text>
+<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='872.53px' lengthAdjust='spacingAndGlyphs'>An aquarium in Okinawa logged spawning every day of the season for 15 years. Logistic models predict each year from</text>
+<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='911.05px' lengthAdjust='spacingAndGlyphs'>the others: the time of year cuts the Brier error by 17%. The Moon alone cuts nothing. Temperature and weather add nothing.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='841.53px' lengthAdjust='spacingAndGlyphs'>With every day watched, the season says far more than the Moon</text>
 </g>
 </g>

@@ -65,7 +65,7 @@ heat_season_plot <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
        subtitle = sprintf("We kept each region’s usual spawning months and asked: does heat reach them more often now? In %d of %d regions, yes.\nIn Northern Taiwan and the Gulf of Aqaba it hits about a quarter of a typical recent season. Four regions stay clear.",
                           sum(comparison$change > 0), nrow(comparison)),
        x = NULL, y = NULL,
-       caption = "Heat here means 4 or more NOAA degree heating weeks, the level where corals are likely to bleach. The right column compares 2015–24 with 1986–95.\nThis shows overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +
+       caption = "Heat here means 4 or more NOAA degree heating weeks, the level where corals are likely to bleach. Months are weighted by recorded spawning. The right column compares 2015–24 with 1986–95.\nThis shows overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         legend.position = "bottom", legend.justification = "right", legend.margin = margin(t = 2),

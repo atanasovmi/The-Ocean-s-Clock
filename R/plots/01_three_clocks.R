@@ -104,7 +104,7 @@ share_warming <- mean(seasons$warming)
 expected_warming <- mean(seasons$warming_share_of_year)
 share_week <- mean(between(nights$lunar_day, 0, 7))
 clock_text <- function(h) sprintf("%d h %02d", floor(h), round(60 * (h %% 1)))
-# The text under the dials calls the Moon least exact and the Sun most exact, so check that.
+# The text under the dials calls the Moon loosest and the Sun tightest, so check that.
 hand_lengths <- clocks$tightness[match(c("year", "moon", "sun"), clocks$clock)]
 stopifnot(which.min(hand_lengths) == 2, which.max(hand_lengths) == 3)
 dial_text <- tibble(
@@ -119,11 +119,11 @@ dial_text <- tibble(
                      100 * share_week),
              sprintf("Half of all spawning starts between\n%s and %s after sunset",
                      clock_text(hours[["q25_start_hours"]]), clock_text(hours[["q75_start_hours"]]))),
-  timing = c("Timing: fairly exact", "Timing: least exact", "Timing: most exact")
+  timing = sprintf("R = %.2f%s", hand_lengths, c("", ", the loosest clock", ", the tightest clock"))
 )
 
 key_y <- 1.47
-key_ring <- mutate(circle(0.075, 1.425, "key"), y = y + key_y)
+key_ring <- mutate(circle(0.075, 2.15, "key"), y = y + key_y)
 
 clock_plot <- ggplot() +
   geom_polygon(data = rims, aes(x, y, group = id), fill = "#10263A", colour = rule, linewidth = 0.4) +
@@ -151,12 +151,12 @@ clock_plot <- ggplot() +
             size = pts(14), colour = moon) +
   # One key row above the dials names each mark by what it looks like.
   annotate("rect", xmin = -4.22, xmax = -4.06, ymin = key_y - 0.04, ymax = key_y + 0.04, fill = spawn) +
-  plot_note(-4, key_y, "Pink bar: how much spawning", size = 14) +
-  annotate("segment", x = -2.18, xend = -1.95, y = key_y, yend = key_y, colour = moon, linewidth = 1.5,
+  plot_note(-4, key_y, "Pink bar: share of records", size = 14) +
+  annotate("segment", x = -2.3, xend = -2.07, y = key_y, yend = key_y, colour = moon, linewidth = 1.5,
            lineend = "round") +
-  plot_note(-1.89, key_y, "White line: the usual time. A longer line means more exact", size = 14) +
+  plot_note(-2.01, key_y, "White line: average time. Length R: 0 = evenly spread, 1 = all at one moment", size = 14) +
   geom_path(data = key_ring, aes(x, y), colour = moon, linewidth = 0.35) +
-  plot_note(1.54, key_y, "Thin ring: what random spawning would look like", size = 14) +
+  plot_note(2.28, key_y, "Thin ring: an even spread", size = 14) +
   plot_note(0.17, 1.22, "Full moon", size = 14) +
   plot_note(0.17, -1.22, "New moon", size = 14) +
   scale_linewidth_manual(values = c("FALSE" = 0.25, "TRUE" = 0.5), guide = "none") +
@@ -164,7 +164,7 @@ clock_plot <- ggplot() +
   labs(title = "The reef reads three clocks, and the Moon is the loosest",
        subtitle = "Corals do not spawn at random. Each clock shows when they spawn: in the year, in the Moon’s cycle and in the day.",
        x = NULL, y = NULL,
-       caption = sprintf("Spawning is not watched equally at all times, so quiet times are under-recorded. The year clock starts at each region’s warmest week.\n%s spawning nights on the year clock, %s on the Moon clock, %d timed starts on the Sun clock. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+       caption = sprintf("R (mean resultant length) shows how concentrated the records are. It is not a confidence interval. Spawning is not watched equally at all times, so quiet times are under-recorded.\n%s spawning nights on the year clock, %s on the Moon clock, %d timed starts on the Sun clock. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          format(nrow(seasons), big.mark = ","), format(nrow(nights), big.mark = ","),
                          nrow(starts))) +
   theme_plot() +
