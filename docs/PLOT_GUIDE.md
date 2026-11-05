@@ -74,9 +74,17 @@ Ten of fourteen regions rose, and four stayed clear. This measures overlap only.
 
 Every wave is one genus across the lunar month, and a higher wave means more of its spawning nights fall on that day. The month starts before full moon and runs past new moon, so a new-moon peak stays whole. The percentages count nights inside the white frame. The strip on the right shows the hour spawning starts, with one dot for one genus on one night.
 
-Read it from top to bottom. Eleven genera peak inside the frame and start in the evening, so their timing is alike, but their tightness is not: the share inside the frame falls from 100% to 53%. Those differences remain when genus labels are shuffled within reefs, so place alone does not explain them. Pocillopora is the outlier. All 22 of its timed starts come after sunrise, and its 10 Red Sea nights all fall near new moon, while its 31 nights elsewhere fall after full moon.
+Read it from top to bottom. Eleven genera peak in the week after full moon and start around sunset, so their timing is alike. The share inside the frame still falls from 100% to 53%, but much of that gap comes from where each genus was recorded. Pocillopora is the outlier. All 22 of its timed starts come after sunrise, and its 10 Red Sea nights all fall within 2 days of new moon, while its 31 nights elsewhere fall after full moon.
 
-The Red Sea row has only 10 nights, from three sites. The waves are smoothed by about a day, and the records show when people looked. The plot shows that timing differs, not why.
+Questions to expect:
+
+- **Is 10 nights enough?** It is few. They are 6 spawning events at 3 sites from 2 studies, 30 years apart. Published Red Sea work reports the same morning spawning just before new moon ([Bouwmeester et al. 2021](https://doi.org/10.1002/ecs2.3340)), and morning spawning after full moon is reported at Lizard Island ([Schmidt-Roach et al. 2012](https://researchonline.jcu.edu.au/24820/1/24820_Schmidt-Roach_et_al_2012.pdf)). This is known biology that our data shows again, not a new discovery.
+- **Do genera differ on the same reef?** Mostly not. Shuffling genus labels within reefs gives p < 0.001, but p = 0.25 without Eilat, so that result rests on one reef. On most shared reefs, genera look alike.
+- **Why split Pocillopora by sea?** We chose that after seeing the data, and the caption says so. The genus may also hide look-alike species, so "same genus" does not mean the same species everywhere.
+- **Do people only look near full moon?** Partly, and plot 5 shows the Moon's signal shrinks when every day is watched. That bias would hide new-moon spawning, so it cannot create the Red Sea wave, but it may make the eleven waves look tighter than they are.
+- **Is Pocillopora the only one?** It is the only well-recorded genus that always spawns by day. Other genera have 4 daytime starts out of 1,460, and Platygyra has a small new-moon peak.
+
+The waves are smoothed by about a day. The plot shows that timing differs, not why.
 
 ## Words you may need
 

@@ -73,10 +73,11 @@ genus_stats <- setNames(genus_stats$value, genus_stats$measure)
 genus_group_nights <- read_csv("data/derived/genus_group_nights.csv", show_col_types = FALSE)
 stopifnot(!anyDuplicated(genus_group_nights[c("group", "subsite_id", "date")]),
           sum(genus_groups$nights) == nrow(genus_group_nights),
-          genus_stats[["pocillopora_evening"]] == 0,
+          genus_stats[["pocillopora_daytime"]] == genus_stats[["pocillopora_timed"]],
           genus_stats[["pocillopora_red_near_new"]] == genus_stats[["pocillopora_red_nights"]],
+          genus_stats[["pocillopora_red_max_days_from_new"]] < 2,
           genus_stats[["pocillopora_other_after_full"]] == genus_stats[["pocillopora_other_nights"]],
-          genus_stats[["same_reef_p"]] < 0.001)
+          genus_stats[["same_reef_p_without_eilat"]] > 0.05)
 
 # Exports: one PNG and one SVG per plot, and no private font names left in the SVGs.
 authors <- read_csv("authors.csv", show_col_types = FALSE)
