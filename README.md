@@ -96,7 +96,7 @@ About 23.1 million source values sit behind this project, and 98.9% of them are 
 
 | Source | Values | Share |
 | --- | ---: | --- |
-| NOAA Coral Reef Watch | 22,877,449 | `████████████` 98.90% |
+| NOAA Coral Reef Watch | 22,877,449 | `████████` 98.90% |
 | Coral Spawning Database | 170,314 | `▏` 0.74% |
 | Churaumi Aquarium | 68,369 | `▏` 0.30% |
 | NASA/JPL Horizons | 12,897 | `▏` 0.06% |
@@ -106,15 +106,15 @@ About 23.1 million source values sit behind this project, and 98.9% of them are 
 
 Every source is a saved copy in `data/raw/`, so `run.R` needs no live data service. Horizons came through an API, and the others are one-off file downloads.
 
-The coral database is the hub:
+The coral database is the hub. Reef coordinates place each record in a NOAA region, and the last three sources share no key with it:
 
 ```text
 Coral Spawning Database
-├─ NOAA           coordinates → region, then date
-├─ Horizons       subsite and UTC minute
-├─ Aquarium       compared side by side
-├─ Sea Simulator  compared side by side
-└─ Maldives       compared side by side
+├─ NOAA: region and date
+├─ Horizons: site and minute
+├─ Aquarium: side by side
+├─ Sea Simulator: side by side
+└─ Maldives: side by side
 ```
 
 Most NOAA values feed yearly and seasonal summaries. Of the 1,026 recorded reef-nights, 751 match an exact NOAA day, 142 fall outside NOAA's regions and 133 predate its records.
