@@ -1074,11 +1074,11 @@
 <line x1='281.88' y1='202.49' x2='638.17' y2='202.49' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
 <line x1='281.88' y1='202.49' x2='281.88' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
 <line x1='638.17' y1='202.49' x2='638.17' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<text x='638.17' y='216.27' text-anchor='end' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='159.38px' lengthAdjust='spacingAndGlyphs'>North of 15° N: 98% in Apr–Aug</text>
+<text x='638.17' y='216.27' text-anchor='end' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='154.31px' lengthAdjust='spacingAndGlyphs'>North: 98% spawn in Apr–Aug</text>
 <line x1='710.83' y1='424.66' x2='921.79' y2='424.66' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
 <line x1='710.83' y1='424.66' x2='710.83' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
 <line x1='921.79' y1='424.66' x2='921.79' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<text x='816.31' y='440.44' text-anchor='middle' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='158.28px' lengthAdjust='spacingAndGlyphs'>South of 10° S: 88% in Oct–Dec</text>
+<text x='816.31' y='440.44' text-anchor='middle' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='154.17px' lengthAdjust='spacingAndGlyphs'>South: 88% spawn in Oct–Dec</text>
 <text x='778.81' y='230.73' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='113.00px' lengthAdjust='spacingAndGlyphs'>Each dot: one night of</text>
 <text x='778.81' y='247.74' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='112.48px' lengthAdjust='spacingAndGlyphs'>spawning on one reef</text>
 <line x1='776.46' y1='234.44' x2='769.43' y2='234.44' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
@@ -1120,9 +1120,9 @@
 <text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='574.09px' lengthAdjust='spacingAndGlyphs'>A year calendar for every latitude. Gold: the sea is warming. Blue: it is cooling.</text>
 <text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='553.72px' lengthAdjust='spacingAndGlyphs'>89% of spawning nights fall while the local sea warms, just 47% of the year.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='636.88px' lengthAdjust='spacingAndGlyphs'>Both hemispheres spawn while the water warms</text>
-<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='556.45px' lengthAdjust='spacingAndGlyphs'>1,026 spawning nights, 1978–2019, of which 884 lie inside NOAA reef regions. Background colour: 39-year average from 214 regions.</text>
+<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='720.84px' lengthAdjust='spacingAndGlyphs'>1,026 spawning nights, 1978–2019, of which 884 lie inside NOAA reef regions. Background colour: 39-year average from 214 regions. North: above 15° N. South: below 10° S.</text>
 <text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='577.44px' lengthAdjust='spacingAndGlyphs'>People look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
-<text x='38.09' y='117.03' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='44.41px' lengthAdjust='spacingAndGlyphs'>Latitude</text>
+<text transform='translate(29.47,293.67) rotate(-90)' text-anchor='middle' style='font-size: 12.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='38.06px' lengthAdjust='spacingAndGlyphs'>Latitude</text>
 </g>
 </g>
 </svg>

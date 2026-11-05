@@ -57,10 +57,10 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
   plot_note(233, -3.6, "Near the equator: little change", hjust = 0.5) +
   # The two seasons, about half a year apart, marked on the calendar itself.
   season_bracket(month_starts[4], month_starts[9] - 1, 18.7, 0.9) +
-  plot_note(month_starts[9] - 1, 16.9, sprintf("North of 15° N: %.0f%% in Apr–Aug", 100 * share_north),
+  plot_note(month_starts[9] - 1, 16.9, sprintf("North: %.0f%% spawn in Apr–Aug", 100 * share_north),
             hjust = 1, colour = moon) +
   season_bracket(month_starts[10], 364, -25.8, 0.9) +
-  plot_note(319, -28, sprintf("South of 10° S: %.0f%% in Oct–Dec", 100 * share_south),
+  plot_note(319, -28, sprintf("South: %.0f%% spawn in Oct–Dec", 100 * share_south),
             hjust = 0.5, colour = moon) +
   # One real dot stands in as the key.
   plot_note(303, 12.3, "Each dot: one night of\nspawning on one reef") +
@@ -78,15 +78,15 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
        subtitle = sprintf("A year calendar for every latitude. Gold: the sea is warming. Blue: it is cooling.\n%.0f%% of spawning nights fall while the local sea warms, just %.0f%% of the year.",
                           100 * share_warming, 100 * share_of_year),
        x = NULL, y = NULL, tag = "Latitude",
-       caption = sprintf("%s spawning nights, 1978–2019, of which %s lie inside NOAA reef regions. Background colour: 39-year average from 214 regions.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+       caption = sprintf("%s spawning nights, 1978–2019, of which %s lie inside NOAA reef regions. Background colour: 39-year average from 214 regions. North: above 15° N. South: below 10° S.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          format(nrow(nights), big.mark = ","), format(nrow(seasons), big.mark = ","))) +
   theme_plot() +
   theme(axis.ticks.x = element_blank(), legend.position = "top", legend.justification = "right",
         legend.margin = margin(t = -44, b = 8), legend.title = element_text(hjust = 0),
         plot.subtitle = element_text(margin = margin(b = 8)),
         # A fixed tag position labels the axis without moving the panel.
-        plot.tag = element_text(family = font_note, size = 14, colour = soft, hjust = 0),
-        plot.tag.position = c(0.0025, 0.829))
+        plot.tag = element_text(family = font_note, size = 12, colour = faint, angle = 90),
+        plot.tag.position = c(-0.012, 0.46))
 
 save_plot(season_plot, "02_season")
 write_csv(select(seasons, subsite_id, date, station_id, days_from_peak, warming_c_per_month, warming),
