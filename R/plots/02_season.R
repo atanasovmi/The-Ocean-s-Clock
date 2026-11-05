@@ -10,7 +10,6 @@ seasons <- read_csv("data/derived/reef_night_seasons.csv", show_col_types = FALS
 
 warm_gold <- "#E3B54A"
 share_warming <- mean(seasons$warming)
-share_of_year <- mean(seasons$warming_share_of_year)
 
 month_starts <- as.integer(format(as.Date(sprintf("2023-%02d-01", 1:12)), "%j"))
 month_middles <- month_starts + c(diff(month_starts), 31) / 2
@@ -45,15 +44,14 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
   # The two colours named where they happen, so the legend is not needed to read them.
   plot_note(117, 33.2, "Water warming", hjust = 0.5, colour = night, size = 14.5) +
   plot_note(299, -27.8, "Water warming", hjust = 0.5, colour = night, size = 14.5) +
-  plot_note(307, 30.3, "Water cooling", hjust = 0.5, colour = night, size = 14.5) +
-  plot_note(133, -24.5, "Water cooling, no spawning recorded", hjust = 0.5, colour = moon, size = 14.5) +
-  plot_note(233, -3.6, "Near the equator the water\nhardly warms or cools", hjust = 0.5) +
+  plot_note(133, -24.5, "Water cooling", hjust = 0.5, colour = moon, size = 14.5) +
+  plot_note(233, -3.6, "Near the equator: little change", hjust = 0.5) +
   # One real dot stands in as the key.
-  plot_note(303, 12.3, "Each dot: one reef on\none night of spawning") +
+  plot_note(303, 12.3, "Each dot: one night of\nspawning on one reef") +
   note_line(302, 12.3, 299, 12.3) +
   scale_fill_gradient2(low = water, mid = "#12283B", high = warm_gold, midpoint = 0,
                        limits = c(-2.2, 2.2), oob = scales::squish, breaks = c(-2, 0, 2),
-                       labels = c("−2 °C", "0", "+2 °C"), name = "Sea temperature change per month",
+                       labels = c("Cooling", "No change", "Warming"), name = "Sea temperature",
                        guide = guide_colourbar(barwidth = unit(170, "pt"), barheight = unit(9, "pt"),
                                                title.position = "top", ticks = FALSE)) +
   scale_x_continuous(breaks = month_middles, labels = month.abb, expand = c(0, 0)) +
@@ -61,10 +59,10 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
                      labels = c("30° S", "15° S", "0°", "15° N", "30° N"), expand = c(0, 0)) +
   coord_cartesian(xlim = c(1, 365), ylim = c(-33, 35)) +
   labs(title = "Both hemispheres spawn while the water warms",
-       subtitle = sprintf("North and south spawn about half a year apart, yet both pick the same moment:\nwhile the sea warms. %.0f%% of spawning nights fall then, in just %.0f%% of the year.",
-                          100 * share_warming, 100 * share_of_year),
+       subtitle = sprintf("In the north, corals spawn around April to August. In the south, around October to\nDecember. Different months, same moment: %.0f%% of spawning nights fall while the sea warms.",
+                          100 * share_warming),
        x = NULL, y = NULL,
-       caption = sprintf("Each dot: one recorded spawning night (%s, 1978–2019). Backdrop: 39-year mean warming rate by latitude band, 214 NOAA regions. Warming share from the %s nights inside NOAA regions.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+       caption = sprintf("%s spawning nights, 1978–2019, of which %s lie inside NOAA reef regions. Background colour: 39-year average from 214 regions.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          format(nrow(nights), big.mark = ","), format(nrow(seasons), big.mark = ","))) +
   theme_plot() +
   theme(axis.ticks.x = element_blank(), legend.position = "top", legend.justification = "right",

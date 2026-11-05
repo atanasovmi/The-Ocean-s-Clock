@@ -21,8 +21,9 @@ region_rows <- annual |>
   mutate(row = -(row_number() + 6 * (as.integer(ocean) - 1)))
 stopifnot(!anyNA(region_rows$ocean))
 
-# Degree heating weeks in classes. 4 and 8 are NOAA's bleaching-risk thresholds.
-dhw_classes <- c("under 1", "1–4", "4–8", "8–12", "12–16", "16 or more")
+# Degree heating weeks in classes, named in words for the legend. The cuts are under 1,
+# 1–4, 4–8, 8–12, 12–16 and 16 or more; 4 and 8 are NOAA's bleaching-risk thresholds.
+dhw_classes <- c("None", "Low", "High", "Severe", "Very severe", "Extreme")
 plot_data <- annual |>
   left_join(region_rows, by = c("station_id", "marker_latitude"), relationship = "many-to-one") |>
   mutate(dhw_class = cut(max_dhw_c_weeks, c(-Inf, 1, 4, 8, 12, 16, Inf),
@@ -43,9 +44,8 @@ year_breaks <- c(1986, seq(1990, 2020, 5), 2024)
 year_window <- c(1978.4, 2024.5)
 share_2024 <- severe_by_year$n_severe[severe_by_year$year == 2024] / 214
 first_count <- severe_by_year$n_severe[severe_by_year$year == 1986]
-# Rows below the panel for the two notes level with the year labels and the legend.
+# A row below the panel for the note level with the year labels.
 axis_row <- min(region_rows$row) - 16
-legend_row <- min(region_rows$row) - 36
 
 # Top strip: the count of regions over the severe threshold.
 count_strip <- ggplot(severe_by_year, aes(year, n_severe)) +
@@ -53,10 +53,8 @@ count_strip <- ggplot(severe_by_year, aes(year, n_severe)) +
   geom_text(data = peaks, aes(label = n_severe, y = n_severe + 7), family = font_label,
             size = pts(15), colour = moon, vjust = 0) +
   annotate("text", x = 1986, y = 150, hjust = 0, vjust = 1, family = font_note, size = pts(14),
-           colour = soft, label = "Regions over the severe line of 8 degree heating weeks") +
-  # El Niño is background knowledge from outside this data, not something calculated here.
-  plot_note(1986, 83, "Peaks follow El Niño, a Pacific warm-up") +
-  plot_note(year_window[1], 90, "Degree heating week:\none week at 1 °C above\nthe usual summer high", size = 13) +
+           colour = soft, label = "Number of reef regions with severe heat each year") +
+  plot_note(year_window[1], 90, "Severe heat: for example\n2 °C above the usual\nsummer high for 4 weeks", size = 13) +
   scale_x_continuous(breaks = year_breaks, expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = year_window, ylim = c(0, 171), clip = "off") +
@@ -72,12 +70,11 @@ stripes <- ggplot(plot_data, aes(year, row, fill = dhw_class)) +
   scale_x_continuous(breaks = year_breaks, expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   scale_fill_manual(values = heat_steps, drop = FALSE,
-                    name = "Highest degree heating weeks of the year") +
+                    name = "Worst heat stress of the year") +
   # Fixed limits: the notes below sit outside the rows and must not stretch the panel.
   coord_cartesian(xlim = year_window, ylim = c(min(region_rows$row) - 0.5, max(region_rows$row) + 0.5),
                   clip = "off") +
   plot_note(year_window[1], axis_row, "Each line: one region") +
-  plot_note(year_window[1], legend_row, "4 or more: coral bleaching likely. 8 or more: severe.") +
   guides(fill = guide_legend(nrow = 1, keywidth = unit(34, "pt"), keyheight = unit(10, "pt"),
                              label.position = "bottom")) +
   labs(x = NULL, y = NULL) +
@@ -86,16 +83,16 @@ stripes <- ggplot(plot_data, aes(year, row, fill = dhw_class)) +
         legend.position = "bottom", legend.justification = "right",
         legend.margin = margin(t = 2), legend.title = element_text(margin = margin(r = 12), vjust = 0.9),
         legend.key = element_rect(colour = rule, linewidth = 0.3),
-        legend.key.spacing.x = unit(2, "pt"),
+        legend.key.spacing.x = unit(8, "pt"),
         plot.margin = margin(0, 0, 0, 0))
 
 heat_plot <- count_strip / stripes +
   plot_layout(heights = c(1, 4.6)) +
   plot_annotation(
     title = "In 2024, four in five reef regions crossed the severe heat line",
-    subtitle = sprintf("In 1986 it was just %d of 214. Each line is one region, each column one year.\nThe peaks of 1998, 2010, 2016 and 2024 each followed an El Niño.",
+    subtitle = sprintf("In 1986 it was just %d of 214 regions. Each line is one region, each column one year. The brighter, the hotter.\nThe peaks of 1998, 2010, 2016 and 2024 each followed an El Niño, when the Pacific heats up.",
                        first_count),
-    caption = "214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Degree heating weeks measure accumulated heat stress, not coral death.",
+    caption = "214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Severe means at least 8 degree heating weeks. Heat stress is not the same as coral death.",
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 10)))
   )
 stopifnot(round(share_2024, 1) == 0.8)

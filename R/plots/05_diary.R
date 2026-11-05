@@ -40,7 +40,7 @@ rate_strip <- function(rates, window, width, heading) {
   peak <- slice_max(rates, rate, n = 1, with_ties = FALSE)
   ggplot(rates, aes(step, rate)) +
     geom_col(width = width, fill = spawn) +
-    geom_text(data = peak, aes(label = sprintf("%.0f%%", 100 * rate)), vjust = -0.35,
+    geom_text(data = peak, aes(label = sprintf("%.0f%% of days", 100 * rate)), vjust = -0.35,
               family = font_label, size = pts(14), colour = moon) +
     scale_x_continuous(expand = c(0, 0)) +
     scale_y_continuous(expand = c(0, 0)) +
@@ -88,21 +88,18 @@ by_moon <- ggplot(spawning_days, aes(lunar_day, year)) +
 
 # A key beside the calendar bars, drawn with the same marks as the rows below.
 key_x <- 193
-key_rows <- c(full_moon = 0.45, spawning = 0.335, bigger = 0.22, watched = 0.105)
-calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by the calendar: one clear peak") +
-  plot_note(calendar_window[1], 0.26, "Bars: share of watched\ndays with spawning", size = 13) +
+key_rows <- c(full_moon = 0.42, spawning = 0.29, bigger = 0.16)
+calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by date: one clear peak") +
+  plot_note(calendar_window[1], 0.26, "Bars: how often\ncorals spawned", size = 13) +
   annotate("point", x = key_x, y = key_rows[["full_moon"]], shape = 21, size = 2.6, stroke = 0.65,
            colour = moon, fill = NA) +
   annotate("point", x = key_x, y = key_rows[["spawning"]], shape = 21, size = 1.9, stroke = 0.25,
            colour = night, fill = spawn) +
   annotate("point", x = key_x, y = key_rows[["bigger"]], shape = 21, size = 4.4, stroke = 0.25,
            colour = night, fill = spawn) +
-  annotate("segment", x = key_x - 2, xend = key_x + 2, y = key_rows[["watched"]],
-           yend = key_rows[["watched"]], colour = rule, linewidth = 0.4) +
   plot_note(key_x + 3.6, key_rows[["full_moon"]], "Full moon", size = 13) +
   plot_note(key_x + 3.6, key_rows[["spawning"]], "A day with spawning", size = 13) +
-  plot_note(key_x + 3.6, key_rows[["bigger"]], "Bigger: more tanks", size = 13) +
-  plot_note(key_x + 3.6, key_rows[["watched"]], "Days watched that year", size = 13)
+  plot_note(key_x + 3.6, key_rows[["bigger"]], "Bigger dot: more tanks", size = 13)
 moon_strip <- rate_strip(lunar_rate, lunar_window, 0.8, "The same days, sorted by the Moon: much flatter")
 
 # A gap between the left and right panels, without indenting the plot's outer edges.
@@ -114,10 +111,10 @@ diary_plot <- (calendar_strip + left_gap + moon_strip + right_gap) /
   plot_layout(heights = c(1, 3.9)) +
   plot_annotation(
     title = "With every day watched, the season says far more than the Moon",
-    subtitle = sprintf("An aquarium in Okinawa kept a spawning diary for 1,350 days over 15 years. Predicting each year from the others, the\nseason cuts the error by %.0f%%. The Moon alone cuts nothing. Tank temperature and weather add nothing.",
+    subtitle = sprintf("An aquarium in Okinawa wrote down spawning every day of the season for 15 years. Knowing the time of\nyear cuts prediction errors by %.0f%%. Knowing the Moon alone does not help, and neither do temperature and weather.",
                        error_cut("season")),
-    caption = sprintf("Bars: share of watched days with spawning. Pink dot: a day with spawning, larger when more tanks spawned (1–17). Open circle: a full moon. Forecast test on 1,007 complete days, Brier error: no calendar %.3f,\nMoon %.3f, season %.3f, both %.3f, both plus weather %.3f. One aquarium, so this checks the field pattern and does not forecast a wild reef. Source: Sakai, Yamamoto & Maruyama (2024), reanalysed.",
-                      brier[["prevalence"]], brier[["moon"]], brier[["season"]], brier[["calendar"]], brier[["environment"]]),
+    caption = sprintf("Bars: days with spawning out of days watched. Each year was predicted from the other years, using 1,007 complete days. Prediction error: no calendar %.3f, Moon %.3f, time of year %.3f.\nOne aquarium, so this tests the pattern and does not predict a wild reef. Source: Sakai, Yamamoto & Maruyama (2024), reanalysed.",
+                      brier[["prevalence"]], brier[["moon"]], brier[["season"]]),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 14)))
   )
 

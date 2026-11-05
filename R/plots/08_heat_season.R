@@ -50,23 +50,22 @@ heat_season_plot <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
   geom_text(data = rows, aes(x = 2029.5, y = row, label = change_label), inherit.aes = FALSE,
             hjust = 1, family = font_note, size = pts(14.5), colour = moon) +
   annotate("text", x = 2029.5, y = 0.25, hjust = 1, vjust = 0, family = font_label, size = pts(13.5),
-           colour = soft, lineheight = 1, label = "Rise in % points\n1986–95 to 2015–24") +
+           colour = soft, lineheight = 1, label = "More of the season hit\nthan in 1986–95 (% points)") +
   plot_note(1985.1, 0.25, "Biggest rise at the top", hjust = 1, vjust = 0) +
-  plot_note(2005, mean(clear_rows$row), "These four regions had no heat stress\nin their spawning months, in any year",
-            hjust = 0.5) +
-  plot_note(year_window[1], -16.6, "Each box: one year with heat stress in the spawning months.\nHeat stress: the level where corals are likely to bleach.") +
+  plot_note(2005, clear_rows$row[2], "Never hit by heat during spawning", hjust = 0.5) +
+  plot_note(year_window[1], -16.6, "Each box: one year when heat hit the spawning season") +
   scale_fill_manual(values = setNames(heat_steps, exposure_classes), limits = exposure_classes[-1],
-                    name = "Share of spawning-season days under heat stress") +
+                    name = "Part of the spawning season hit by heat") +
   scale_x_continuous(breaks = c(1986, seq(1990, 2020, 5), 2024), expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = year_window, ylim = c(-14.55, 0.5), clip = "off") +
   guides(fill = guide_legend(nrow = 1, keywidth = unit(44, "pt"), keyheight = unit(10, "pt"),
                              label.position = "bottom")) +
   labs(title = "Heat now reaches the spawning months, unevenly",
-       subtitle = sprintf("We kept each region’s usual spawning months and looked at how much heat stress reaches them. In %d of %d regions\nit has grown. In Northern Taiwan and the Gulf of Aqaba it now hits about a quarter of a typical season. Four stay clear.",
+       subtitle = sprintf("We kept each region’s usual spawning months and asked: does heat reach them more often now? In %d of %d regions, yes.\nIn Northern Taiwan and the Gulf of Aqaba it hits about a quarter of a typical recent season. Four regions stay clear.",
                           sum(comparison$change > 0), nrow(comparison)),
        x = NULL, y = NULL,
-       caption = "Heat stress here means NOAA degree heating weeks of 4 or more. Each year’s share is weighted by the months in which spawning was recorded at that region’s well-sampled sites, and that calendar is held fixed.\nThis measures overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +
+       caption = "Heat here means 4 or more NOAA degree heating weeks, the level where corals are likely to bleach. The right column compares 2015–24 with 1986–95.\nThis shows overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         legend.position = "bottom", legend.justification = "right", legend.margin = margin(t = 2),

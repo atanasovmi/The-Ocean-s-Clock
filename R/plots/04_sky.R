@@ -45,15 +45,14 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
            colour = soft, lineheight = 1.05,
            label = sprintf("%.0f minutes later\nevery night", stats[["start_drift_minutes_per_night"]])) +
   annotate("text", x = -14.6, y = 7.8, hjust = 0, family = font_note, size = pts(14),
-           colour = soft, lineheight = 1.05, label = "Moon already set,\ndark until sunrise") +
+           colour = soft, label = "Moon has set") +
   annotate("text", x = -1.6, y = 7.2, family = font_label, size = pts(15), colour = night,
-           label = "Moon up") +
+           label = "Moon in the sky") +
   annotate("text", x = 8.55, y = 4.75, family = font_note, size = pts(14), colour = soft,
-           lineheight = 1.05, label = "Moon not up yet:\nstarts are in the dark") +
+           lineheight = 1.05, label = "Moon not up yet") +
   plot_note(-16.5, 8.72, "Time after sunset") +
-  plot_note(-1.6, 6.25, "Lighter sky:\nbrighter moonlight", hjust = 0.5, colour = night) +
   # One real dot stands in as the key.
-  plot_note(-14.6, 3.95, "Each dot: one coral group\nstarting to spawn on one night") +
+  plot_note(-14.6, 3.95, "Each dot: one coral type\nstarting to spawn") +
   note_line(-12, 3.42, -12, 3.05) +
   moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = top_hour + 0.5, width = 0.78, height = 0.66) +
   plot_note(-14.1, top_hour + 0.5, "New moon", size = 14) +
@@ -65,10 +64,11 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
                      expand = c(0, 0)) +
   coord_cartesian(xlim = c(-15, 14.9), ylim = c(0, top_hour), clip = "off") +
   labs(title = "Spawning keeps to the Sun, whatever the Moon is doing",
-       subtitle = sprintf("The Moon rises later each night, yet corals keep starting about %s after sunset, on almost any night of the month.\nSo after full moon, %.0f%% of them start in the dark, before the Moon is up.",
-                          clock_text(stats[["median_start_hours"]]), 100 * stats[["share_moon_down_after_full"]]),
+       subtitle = sprintf("The Moon rises about %.0f minutes later each night. Corals do not follow it: they start about %s after sunset,\nnight after night. After full moon, %.0f%% start before the Moon is even up.",
+                          stats[["moonrise_delay_minutes_per_night"]], clock_text(stats[["median_start_hours"]]),
+                          100 * stats[["share_moon_down_after_full"]]),
        x = "Days from full moon", y = NULL,
-       caption = sprintf("Each dot: one genus starting on one spawning night (%d exact evening starts, %d spawning nights, %d subsites). Lighter sky: more moonlight, meaning how full the Moon is times how high.\nStarts vary %.1f times less around sunset than around moonrise. Moon formulas agree with 12,897 NASA/JPL Horizons positions to 0.3°. Coral data: Baird et al. (2021).",
+       caption = sprintf("Lighter sky: more moonlight. %d starts on %d spawning nights at %d reef sites, spread sideways so the dots stay visible.\nStarts vary %.1f times less around sunset than around moonrise. Moon positions checked against NASA data. Coral data: Baird et al. (2021).",
                          nrow(starts), n_distinct(paste(starts$subsite_id, starts$date)), n_distinct(starts$subsite_id),
                          stats[["sd_from_moonrise_hours"]] / stats[["sd_from_sunset_hours"]])) +
   theme_plot() +

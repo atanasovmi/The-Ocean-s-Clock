@@ -1072,12 +1072,10 @@
 <text x='736.62' y='373.89' text-anchor='middle' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='87.44px' lengthAdjust='spacingAndGlyphs'>Great Barrier Reef</text>
 <text x='342.82' y='135.25' text-anchor='middle' style='font-size: 14.50px;fill: #0B1D2E; font-family: "Bahnschrift";' textLength='86.25px' lengthAdjust='spacingAndGlyphs'>Water warming</text>
 <text x='769.43' y='439.80' text-anchor='middle' style='font-size: 14.50px;fill: #0B1D2E; font-family: "Bahnschrift";' textLength='86.25px' lengthAdjust='spacingAndGlyphs'>Water warming</text>
-<text x='788.18' y='149.72' text-anchor='middle' style='font-size: 14.50px;fill: #0B1D2E; font-family: "Bahnschrift";' textLength='77.12px' lengthAdjust='spacingAndGlyphs'>Water cooling</text>
-<text x='380.33' y='423.32' text-anchor='middle' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='208.16px' lengthAdjust='spacingAndGlyphs'>Water cooling, no spawning recorded</text>
-<text x='614.73' y='310.11' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='142.92px' lengthAdjust='spacingAndGlyphs'>Near the equator the water</text>
-<text x='614.73' y='327.12' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='117.83px' lengthAdjust='spacingAndGlyphs'>hardly warms or cools</text>
-<text x='778.81' y='230.73' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='110.45px' lengthAdjust='spacingAndGlyphs'>Each dot: one reef on</text>
-<text x='778.81' y='247.74' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='115.03px' lengthAdjust='spacingAndGlyphs'>one night of spawning</text>
+<text x='380.33' y='423.32' text-anchor='middle' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='77.12px' lengthAdjust='spacingAndGlyphs'>Water cooling</text>
+<text x='614.73' y='318.62' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='159.59px' lengthAdjust='spacingAndGlyphs'>Near the equator: little change</text>
+<text x='778.81' y='230.73' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='113.00px' lengthAdjust='spacingAndGlyphs'>Each dot: one night of</text>
+<text x='778.81' y='247.74' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='112.48px' lengthAdjust='spacingAndGlyphs'>spawning on one reef</text>
 <line x1='776.46' y1='234.44' x2='769.43' y2='234.44' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
@@ -1103,21 +1101,21 @@
 <text x='747.16' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='15.81px' lengthAdjust='spacingAndGlyphs'>Oct</text>
 <text x='818.65' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='17.31px' lengthAdjust='spacingAndGlyphs'>Nov</text>
 <text x='890.15' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='17.41px' lengthAdjust='spacingAndGlyphs'>Dec</text>
-<text x='743.78' y='74.29' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='180.36px' lengthAdjust='spacingAndGlyphs'>Sea temperature change per month</text>
-<image width='169.36' height='8.97' x='743.78' y='81.11' preserveAspectRatio='none' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAABCAYAAABkOJMpAAAAmUlEQVQ4jZWPyQHDIAwERzSYIlNWevHmI4MsDsNL8h6DbJ/vT0hIAl0+hfDpetvjvICsBe/+TqychUmvu2XlPTMjr90zuCHc2mm6Kqv711Ge1ltz1XOXvKe25EzYR2+f+ClrQDEoZj6hABY0S5p5ruktVz0GmoUsJN9Sf6LHPCP+ouO39vmN7r2zkan721vnvXPWfue1W/YZf3RuT/IHq8trAAAAAElFTkSuQmCC'/>
-<polyline points='751.73,86.62 751.73,90.08 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
-<polyline points='828.46,86.62 828.46,90.08 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
-<polyline points='905.18,86.62 905.18,90.08 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
-<polyline points='751.73,84.57 751.73,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
-<polyline points='828.46,84.57 828.46,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
-<polyline points='905.18,84.57 905.18,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
-<text x='751.73' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='27.45px' lengthAdjust='spacingAndGlyphs'>−2 °C</text>
-<text x='828.46' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='6.28px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='905.18' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='25.42px' lengthAdjust='spacingAndGlyphs'>+2 °C</text>
-<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='586.19px' lengthAdjust='spacingAndGlyphs'>North and south spawn about half a year apart, yet both pick the same moment:</text>
-<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='572.36px' lengthAdjust='spacingAndGlyphs'>while the sea warms. 89% of spawning nights fall then, in just 47% of the year.</text>
+<text x='754.77' y='74.29' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='85.42px' lengthAdjust='spacingAndGlyphs'>Sea temperature</text>
+<image width='169.36' height='8.97' x='754.77' y='81.11' preserveAspectRatio='none' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAABCAYAAABkOJMpAAAAmUlEQVQ4jZWPyQHDIAwERzSYIlNWevHmI4MsDsNL8h6DbJ/vT0hIAl0+hfDpetvjvICsBe/+TqychUmvu2XlPTMjr90zuCHc2mm6Kqv711Ge1ltz1XOXvKe25EzYR2+f+ClrQDEoZj6hABY0S5p5ruktVz0GmoUsJN9Sf6LHPCP+ouO39vmN7r2zkan721vnvXPWfue1W/YZf3RuT/IHq8trAAAAAElFTkSuQmCC'/>
+<polyline points='762.72,86.62 762.72,90.08 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='839.45,86.62 839.45,90.08 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='916.18,86.62 916.18,90.08 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='762.72,84.57 762.72,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='839.45,84.57 839.45,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<polyline points='916.18,84.57 916.18,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
+<text x='762.72' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='37.52px' lengthAdjust='spacingAndGlyphs'>Cooling</text>
+<text x='839.45' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='53.14px' lengthAdjust='spacingAndGlyphs'>No change</text>
+<text x='916.18' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='44.81px' lengthAdjust='spacingAndGlyphs'>Warming</text>
+<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='600.81px' lengthAdjust='spacingAndGlyphs'>In the north, corals spawn around April to August. In the south, around October to</text>
+<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='691.06px' lengthAdjust='spacingAndGlyphs'>December. Different months, same moment: 89% of spawning nights fall while the sea warms.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='636.88px' lengthAdjust='spacingAndGlyphs'>Both hemispheres spawn while the water warms</text>
-<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='809.31px' lengthAdjust='spacingAndGlyphs'>Each dot: one recorded spawning night (1,026, 1978–2019). Backdrop: 39-year mean warming rate by latitude band, 214 NOAA regions. Warming share from the 884 nights inside NOAA regions.</text>
+<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='556.45px' lengthAdjust='spacingAndGlyphs'>1,026 spawning nights, 1978–2019, of which 884 lie inside NOAA reef regions. Background colour: 39-year average from 214 regions.</text>
 <text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='577.44px' lengthAdjust='spacingAndGlyphs'>People look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
 </g>
 </g>

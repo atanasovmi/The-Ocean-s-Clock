@@ -164,13 +164,11 @@
 <text x='922.53' y='377.10' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='7.02px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='922.53' y='396.18' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='7.02px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='922.53' y='415.26' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='7.02px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='922.53' y='122.02' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='70.44px' lengthAdjust='spacingAndGlyphs'>Rise in % points</text>
-<text x='922.53' y='138.22' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='86.78px' lengthAdjust='spacingAndGlyphs'>1986–95 to 2015–24</text>
+<text x='922.53' y='122.02' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='98.91px' lengthAdjust='spacingAndGlyphs'>More of the season hit</text>
+<text x='922.53' y='138.22' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='116.81px' lengthAdjust='spacingAndGlyphs'>than in 1986–95 (% points)</text>
 <text x='210.63' y='138.22' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='115.27px' lengthAdjust='spacingAndGlyphs'>Biggest rise at the top</text>
-<text x='529.70' y='377.78' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='197.09px' lengthAdjust='spacingAndGlyphs'>These four regions had no heat stress</text>
-<text x='529.70' y='394.79' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='196.45px' lengthAdjust='spacingAndGlyphs'>in their spawning months, in any year</text>
-<text x='35.87' y='456.01' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='316.72px' lengthAdjust='spacingAndGlyphs'>Each box: one year with heat stress in the spawning months.</text>
-<text x='35.87' y='473.02' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='288.83px' lengthAdjust='spacingAndGlyphs'>Heat stress: the level where corals are likely to bleach.</text>
+<text x='529.70' y='376.75' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='179.02px' lengthAdjust='spacingAndGlyphs'>Never hit by heat during spawning</text>
+<text x='35.87' y='464.51' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='286.23px' lengthAdjust='spacingAndGlyphs'>Each box: one year when heat hit the spawning season</text>
 <polyline points='225.06,425.59 225.06,420.61 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='289.20,425.59 289.20,420.61 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='369.37,425.59 369.37,420.61 ' style='stroke-width: 0.75; stroke: #8598A7;' />
@@ -189,7 +187,7 @@
 <text x='690.04' y='442.36' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='21.64px' lengthAdjust='spacingAndGlyphs'>2015</text>
 <text x='770.21' y='442.36' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.66px' lengthAdjust='spacingAndGlyphs'>2020</text>
 <text x='834.35' y='442.36' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.48px' lengthAdjust='spacingAndGlyphs'>2024</text>
-<text x='423.09' y='462.56' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='252.98px' lengthAdjust='spacingAndGlyphs'>Share of spawning-season days under heat stress</text>
+<text x='477.11' y='462.56' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='198.97px' lengthAdjust='spacingAndGlyphs'>Part of the spawning season hit by heat</text>
 <rect x='688.03' y='451.52' width='51.11' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
 <rect x='741.13' y='451.52' width='43.84' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A3A7A;' />
 <rect x='786.96' y='451.52' width='43.84' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D24C5F;' />
@@ -200,11 +198,11 @@
 <text x='808.88' y='476.19' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='39.27px' lengthAdjust='spacingAndGlyphs'>25–50%</text>
 <text x='854.71' y='476.19' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='38.62px' lengthAdjust='spacingAndGlyphs'>50–75%</text>
 <text x='901.38' y='476.19' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='45.52px' lengthAdjust='spacingAndGlyphs'>over 75%</text>
-<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='855.94px' lengthAdjust='spacingAndGlyphs'>We kept each region’s usual spawning months and looked at how much heat stress reaches them. In 10 of 14 regions</text>
-<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='866.27px' lengthAdjust='spacingAndGlyphs'>it has grown. In Northern Taiwan and the Gulf of Aqaba it now hits about a quarter of a typical season. Four stay clear.</text>
+<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='887.47px' lengthAdjust='spacingAndGlyphs'>We kept each region’s usual spawning months and asked: does heat reach them more often now? In 10 of 14 regions, yes.</text>
+<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='843.44px' lengthAdjust='spacingAndGlyphs'>In Northern Taiwan and the Gulf of Aqaba it hits about a quarter of a typical recent season. Four regions stay clear.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='649.56px' lengthAdjust='spacingAndGlyphs'>Heat now reaches the spawning months, unevenly</text>
-<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='903.44px' lengthAdjust='spacingAndGlyphs'>Heat stress here means NOAA degree heating weeks of 4 or more. Each year’s share is weighted by the months in which spawning was recorded at that region’s well-sampled sites, and that calendar is held fixed.</text>
-<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='539.31px' lengthAdjust='spacingAndGlyphs'>This measures overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
+<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='643.72px' lengthAdjust='spacingAndGlyphs'>Heat here means 4 or more NOAA degree heating weeks, the level where corals are likely to bleach. The right column compares 2015–24 with 1986–95.</text>
+<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='524.11px' lengthAdjust='spacingAndGlyphs'>This shows overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
 </g>
 </g>
 </svg>

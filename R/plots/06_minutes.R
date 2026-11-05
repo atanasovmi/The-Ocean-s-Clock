@@ -28,16 +28,13 @@ dots <- records |>
             relationship = "many-to-one")
 stopifnot(!anyNA(dots$row))
 
-loripes <- filter(summaries, group == "A. loripes")
-acropora <- filter(summaries, group == "Acropora")
 wild_top <- max(summaries$row[summaries$setting == "wild"])
 tank_top <- max(summaries$row[summaries$setting == "tank"])
 headers <- tibble(row = c(wild_top + 0.85, tank_top + 0.85),
-                  label = c("Wild reefs, by genus (number of records)", "Sea Simulator tanks, by species"))
+                  label = c("Wild reefs (number of dots)", "Research tanks (number of dots)"))
 
 label_x <- -7
 key_y <- wild_top + 0.85
-axis_row <- min(summaries$row) - 1.3
 spread_x <- 300
 
 minutes_plot <- ggplot(dots, aes(minutes, row)) +
@@ -56,29 +53,23 @@ minutes_plot <- ggplot(dots, aes(minutes, row)) +
   geom_text(data = summaries, aes(x = spread_x, label = spread_label), hjust = 1,
             family = font_note, size = pts(14.5), colour = moon) +
   annotate("text", x = spread_x, y = wild_top + 0.85, hjust = 1, family = font_label,
-           size = pts(14.5), colour = soft, label = "Middle half spans") +
+           size = pts(14.5), colour = soft, label = "Half the dots within") +
   # The key sits in the header row, drawn with the same marks as the rows below.
   annotate("point", x = 6, y = key_y, shape = 21, size = 2.2, stroke = 0.22, fill = spawn, colour = night) +
-  plot_note(10, key_y, "One record") +
+  plot_note(10, key_y, "One spawning") +
   annotate("segment", x = 62, xend = 80, y = key_y, yend = key_y, colour = moon, linewidth = 1.2,
            lineend = "round") +
-  plot_note(84, key_y, "Middle half of the records: a shorter bar means tighter timing") +
-  plot_note(spread_x, wild_top - 5.95, "Many places and species mixed: a wide spread", hjust = 1) +
-  plot_note(2, tank_top + 0.85, "Research tanks: every coral gets the same programmed sunset") +
-  plot_note(6, tank_top - 4, "Each species has its own\ntime slot after sunset", colour = moon, size = 14.5) +
-  plot_note(197, loripes$row, "Half of all releases fall within") +
-  plot_note(-96, axis_row, "A. = Acropora, M. = Montipora") +
-  plot_note(spread_x, axis_row, "Time after sunset", hjust = 1) +
+  plot_note(84, key_y, "White bar: half of the dots. A shorter bar means more exact timing") +
+  plot_note(2, tank_top + 0.85, "Every coral here gets the same sunset") +
   scale_x_continuous(breaks = seq(0, 240, 60), labels = c("Sunset", "+1 h", "+2 h", "+3 h", "+4 h"),
                      expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = c(-96, spread_x), ylim = c(min(summaries$row) - 0.6, wild_top + 1.3),
                   clip = "off") +
   labs(title = "In the tanks, each species keeps its own time",
-       subtitle = sprintf("Scientists moved these corals’ sunset by four hours and their seasons by six months, and the corals followed. Half of\nall A. loripes releases fall within %.0f minutes. On wild reefs, Acropora spreads over %.0f.",
-                          loripes$middle_half, acropora$middle_half),
+       subtitle = "Scientists moved the sunset in these tanks by four hours, and the corals moved with it. Each species spawns at its\nown time after sunset. Wild reefs, with many places and species mixed, are far more spread out.",
        x = NULL, y = NULL,
-       caption = "Dots: one genus on one spawning night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.\nA genus is a group of related species. Tank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
+       caption = "Wild dots: one coral type on one night. Tank dots: one tagged coral on one night, counted from the tanks’ sunset, 2022–23. Dots are nudged apart so they stay visible.\nA. = Acropora, M. = Montipora. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 12)))

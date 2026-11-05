@@ -12,7 +12,7 @@ PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 
 | Plot | Question | What to look for |
 | --- | --- | --- |
-| [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's hand is longest, the Moon's shortest. |
+| [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's white line is longest, the Moon's shortest. |
 | [2. The year](outputs/figures/02_season.png) | What does the season follow? | Both hemispheres sit on the warming part of the year. |
 | [3. The Moon](outputs/figures/03_moon.png) | Do all reefs follow the Moon equally? | Tight near the equator, loose beyond the tropics. |
 | [4. The sky](outputs/figures/04_sky.png) | Does the Sun or the Moon set the hour? | Moonrise climbs while the start of spawning stays flat. |

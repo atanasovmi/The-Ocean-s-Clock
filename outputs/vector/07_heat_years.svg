@@ -99,11 +99,10 @@
 <text x='644.74' y='141.28' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='11.97px' lengthAdjust='spacingAndGlyphs'>86</text>
 <text x='760.35' y='135.67' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='16.12px' lengthAdjust='spacingAndGlyphs'>103</text>
 <text x='914.50' y='113.21' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='13.78px' lengthAdjust='spacingAndGlyphs'>171</text>
-<text x='182.30' y='132.39' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='300.50px' lengthAdjust='spacingAndGlyphs'>Regions over the severe line of 8 degree heating weeks</text>
-<text x='182.30' y='149.38' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='208.59px' lengthAdjust='spacingAndGlyphs'>Peaks follow El Niño, a Pacific warm-up</text>
-<text x='35.87' y='130.51' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='109.06px' lengthAdjust='spacingAndGlyphs'>Degree heating week:</text>
-<text x='35.87' y='146.89' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='114.70px' lengthAdjust='spacingAndGlyphs'>one week at 1 °C above</text>
-<text x='35.87' y='163.27' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='116.50px' lengthAdjust='spacingAndGlyphs'>the usual summer high</text>
+<text x='182.30' y='132.39' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='276.64px' lengthAdjust='spacingAndGlyphs'>Number of reef regions with severe heat each year</text>
+<text x='35.87' y='130.51' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='126.42px' lengthAdjust='spacingAndGlyphs'>Severe heat: for example</text>
+<text x='35.87' y='146.89' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='102.42px' lengthAdjust='spacingAndGlyphs'>2 °C above the usual</text>
+<text x='35.87' y='163.27' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='128.84px' lengthAdjust='spacingAndGlyphs'>summer high for 4 weeks</text>
 <rect x='172.67' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
 <rect x='191.94' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
 <rect x='211.21' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
@@ -8461,7 +8460,6 @@
 <text x='164.96' y='407.92' text-anchor='end' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='36.39px' lengthAdjust='spacingAndGlyphs'>Pacific</text>
 <text x='164.96' y='425.56' text-anchor='end' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='57.77px' lengthAdjust='spacingAndGlyphs'>44 regions</text>
 <text x='35.87' y='457.50' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='109.12px' lengthAdjust='spacingAndGlyphs'>Each line: one region</text>
-<text x='35.87' y='479.33' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='269.47px' lengthAdjust='spacingAndGlyphs'>4 or more: coral bleaching likely. 8 or more: severe.</text>
 <polyline points='182.30,440.77 182.30,435.79 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='259.38,440.77 259.38,435.79 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='355.72,440.77 355.72,435.79 ' style='stroke-width: 0.75; stroke: #8598A7;' />
@@ -8480,28 +8478,28 @@
 <text x='741.09' y='457.54' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='21.64px' lengthAdjust='spacingAndGlyphs'>2015</text>
 <text x='837.43' y='457.54' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.66px' lengthAdjust='spacingAndGlyphs'>2020</text>
 <text x='914.50' y='457.54' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='23.48px' lengthAdjust='spacingAndGlyphs'>2024</text>
-<text x='467.72' y='477.74' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='209.45px' lengthAdjust='spacingAndGlyphs'>Highest degree heating weeks of the year</text>
-<rect x='689.13' y='466.70' width='36.53' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='689.13' y='466.70' width='36.53' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
-<rect x='727.66' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='727.66' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
-<rect x='763.52' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='763.52' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A3A7A;' />
-<rect x='799.39' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='799.39' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D24C5F;' />
-<rect x='835.25' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='835.25' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #F27F40;' />
-<rect x='871.12' y='466.70' width='53.02' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
-<rect x='871.12' y='466.70' width='53.02' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FDD78A;' />
-<text x='707.40' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='36.53px' lengthAdjust='spacingAndGlyphs'>under 1</text>
-<text x='744.59' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='16.77px' lengthAdjust='spacingAndGlyphs'>1–4</text>
-<text x='780.46' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='19.19px' lengthAdjust='spacingAndGlyphs'>4–8</text>
-<text x='816.32' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='22.36px' lengthAdjust='spacingAndGlyphs'>8–12</text>
-<text x='852.19' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='25.78px' lengthAdjust='spacingAndGlyphs'>12–16</text>
-<text x='897.63' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='53.02px' lengthAdjust='spacingAndGlyphs'>16 or more</text>
-<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='701.17px' lengthAdjust='spacingAndGlyphs'>214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Degree heating weeks measure accumulated heat stress, not coral death.</text>
-<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='539.19px' lengthAdjust='spacingAndGlyphs'>In 1986 it was just 5 of 214. Each line is one region, each column one year.</text>
-<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='469.38px' lengthAdjust='spacingAndGlyphs'>The peaks of 1998, 2010, 2016 and 2024 each followed an El Niño.</text>
+<text x='488.69' y='477.74' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='145.64px' lengthAdjust='spacingAndGlyphs'>Worst heat stress of the year</text>
+<rect x='646.29' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='646.29' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
+<rect x='688.13' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='688.13' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
+<rect x='729.98' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='729.98' y='466.70' width='33.87' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A3A7A;' />
+<rect x='771.82' y='466.70' width='34.98' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='771.82' y='466.70' width='34.98' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #D24C5F;' />
+<rect x='814.77' y='466.70' width='58.92' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='814.77' y='466.70' width='58.92' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #F27F40;' />
+<rect x='881.67' y='466.70' width='42.47' height='9.96' style='stroke-width: 0.64; stroke: #31475A;' />
+<rect x='881.67' y='466.70' width='42.47' height='9.96' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FDD78A;' />
+<text x='663.23' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='25.83px' lengthAdjust='spacingAndGlyphs'>None</text>
+<text x='705.07' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='20.59px' lengthAdjust='spacingAndGlyphs'>Low</text>
+<text x='746.91' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='22.56px' lengthAdjust='spacingAndGlyphs'>High</text>
+<text x='789.31' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='34.98px' lengthAdjust='spacingAndGlyphs'>Severe</text>
+<text x='844.23' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='58.92px' lengthAdjust='spacingAndGlyphs'>Very severe</text>
+<text x='902.90' y='491.37' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='42.47px' lengthAdjust='spacingAndGlyphs'>Extreme</text>
+<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='773.34px' lengthAdjust='spacingAndGlyphs'>214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Severe means at least 8 degree heating weeks. Heat stress is not the same as coral death.</text>
+<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='776.09px' lengthAdjust='spacingAndGlyphs'>In 1986 it was just 5 of 214 regions. Each line is one region, each column one year. The brighter, the hotter.</text>
+<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='666.20px' lengthAdjust='spacingAndGlyphs'>The peaks of 1998, 2010, 2016 and 2024 each followed an El Niño, when the Pacific heats up.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='787.06px' lengthAdjust='spacingAndGlyphs'>In 2024, four in five reef regions crossed the severe heat line</text>
 </g>
 </g>

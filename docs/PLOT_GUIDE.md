@@ -8,7 +8,7 @@ With two minutes per plot and five slides at most, the strongest route is 1, 4, 
 
 ## 1. Three clocks
 
-Each dial is one natural cycle, running clockwise. A bar is the number of records in that stretch of the cycle, and the thin circle is what an even spread would reach, so anything past it beats chance. The hand points at the typical moment. A longer hand means the records agree more.
+Each clock is one natural cycle, running clockwise. A pink bar is the number of records in that stretch of the cycle, and the thin ring is what random spawning would reach, so anything past it beats chance. The white line points at the usual time. A longer white line means the timing is more exact. Statisticians call its length the tightness.
 
 Say that the reef answers three separate questions: which season, which night and which hour. Then compare the hands. The Sun's is longest and the Moon's is shortest, which surprises people who know this topic as a full-moon story.
 
@@ -24,9 +24,9 @@ Be ready for the survey question. Teams go looking when they expect spawning, so
 
 ## 3. The Moon
 
-Each row is one place, ordered from the equator at the top to 33° at the bottom. Each column is a day of the lunar month, and a brighter cell means more of that place's records fell on that day. The frame marks the eight days from full moon. The strip on the right gives the tightness of each row.
+Each row is one place, ordered from the equator at the top to 33° at the bottom. Each column is a day of the lunar month, and a brighter cell means more of that place's records fell on that day. The box marks the eight days from full moon. The strip on the right shows how exact each place is, from spread out to exact.
 
-Read downwards. Near the equator the records pile up inside the frame. Past the edge of the tropics they spread out, and at Eilat and Kochi they cover almost the whole month. That is why the old headline of 68% was misleading: it is 88% inside the tropics and 51% beyond them.
+Read downwards. Near the equator the records pile up inside the box. Past the edge of the tropics they spread out, and at Eilat and Kochi they cover almost the whole month. That is why the old headline of 68% was misleading: it is 88% inside the tropics and 51% beyond them.
 
 The honest caveat is on the plot. Places with more recorded nights also look looser, so part of this may come from watching more closely. Latitude still matters after allowing for that, and the pattern shows up within genera.
 
@@ -48,7 +48,7 @@ Do not oversell this. It is one aquarium, and a tank could dull the Moon's signa
 
 ## 6. Minutes
 
-Each dot is one record, and the cream bar covers the middle half of each row. The top block is wild reefs by genus. The bottom block is tanks at Australia's Sea Simulator by species, all timed from one programmed sunset.
+Each dot is one spawning, and the white bar covers the middle half of the dots in each row. The top block is wild reefs by genus. The bottom block is tanks at Australia's Sea Simulator by species, all timed from one programmed sunset.
 
 The researchers moved the seasons by six months and the light cycle by four hours, and the corals followed. That is the closest thing here to an experiment. The contrast is in the width of the rows: Acropora in the wild spreads over 84 minutes, while A. loripes in a tank falls within 5, and each species keeps a different time.
 
