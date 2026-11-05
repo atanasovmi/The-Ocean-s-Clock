@@ -68,9 +68,9 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
   season_bracket(month_starts[10], 364, -25.8,
                  sprintf("South: %.0f%% spawn in Oct–Dec", 100 * share_south)) +
   # One real dot stands in as the key.
-  plot_note(6, 18.6, "Each dot: one night of
+  plot_note(6, -14.4, "Each dot: one night of
 spawning on one reef", size = 12) +
-  note_line(37, 15.8, 37, 13.4) +
+  note_line(18, -17.2, 18, -20.1) +
   scale_fill_gradient2(low = water, mid = "#12283B", high = warm_gold, midpoint = 0,
                        limits = c(-2.2, 2.2), oob = scales::squish, breaks = c(-2, 0, 2),
                        labels = c("−2 °C", "No change", "+2 °C"), name = "Sea temperature change per month",
