@@ -96,12 +96,12 @@ About 23.1 million source values sit behind this project, and 98.9% of them are 
 
 | Source | Values | Share |
 | --- | ---: | --- |
-| NOAA Coral Reef Watch | 22,877,449 | `████████` 98.90% |
-| Coral Spawning Database | 170,314 | `▏` 0.74% |
-| Churaumi Aquarium | 68,369 | `▏` 0.30% |
-| NASA/JPL Horizons | 12,897 | `▏` 0.06% |
-| Sea Simulator | 1,032 | `▏` <0.01% |
-| Maldives study | 972 | `▏` <0.01% |
+| [NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/data.php) | 22,877,449 | `████████` 98.90% |
+| [Coral Spawning Database](https://doi.org/10.25405/data.ncl.13082333.v1) | 170,314 | `▏` 0.74% |
+| [Churaumi Aquarium](https://doi.org/10.5281/zenodo.10974150) | 68,369 | `▏` 0.30% |
+| [NASA/JPL Horizons](https://ssd.jpl.nasa.gov/horizons/) | 12,897 | `▏` 0.06% |
+| [Sea Simulator](https://doi.org/10.1098/rspb.2025.1558) | 1,032 | `▏` <0.01% |
+| [Maldives study](https://doi.org/10.7717/peerj.19447) | 972 | `▏` <0.01% |
 | **Total** | **23,131,033** | |
 
 Every source is a saved copy in `data/raw/`, so `run.R` needs no live data service. Horizons came through an API, and the others are one-off file downloads.
@@ -122,12 +122,12 @@ Most NOAA values feed yearly and seasonal summaries. Of the 1,026 recorded reef-
 <details>
 <summary>Where each source is stored</summary>
 
-- **NOAA:** `data/raw/crw/` holds 214 regional `.txt.gz` files, fetched by `tools/fetch_crw.py`. The data runs to 1 Nov 2026.
-- **Coral Spawning Database:** `data/raw/coral/CSD_Tables.xlsx` is the Excel export of an Access database, version 1 from Dec 2020.
-- **Aquarium:** `data/raw/aquarium/` holds two CSVs and the source zip from Zenodo, published in Apr 2024.
-- **Horizons:** `data/raw/horizons/reef_moon_positions.zip` holds 35 JSON files, retrieved on 3 Nov 2026 by `tools/fetch_moon_positions.py`.
-- **Sea Simulator:** `data/raw/seasim/` holds the supplementary PDF, published in 2025. R reads Table S1 from it.
-- **Maldives:** `data/raw/maldives/` holds one CSV, published in 2025.
+- **NOAA:** [`data/raw/crw/`](data/raw/crw/) holds 214 regional `.txt.gz` files, fetched from the [station index](https://coralreefwatch.noaa.gov/product/vs/data.php) by [`tools/fetch_crw.py`](tools/fetch_crw.py). The data runs to 1 Nov 2026.
+- **Coral Spawning Database:** [`data/raw/coral/CSD_Tables.xlsx`](data/raw/coral/CSD_Tables.xlsx) is the Excel export of an Access database, version 1 from Dec 2020, from [Newcastle University's repository](https://outputs.ncl.ac.uk/articles/dataset/Coral_Spawning_Database/13082333).
+- **Aquarium:** [`data/raw/aquarium/`](data/raw/aquarium/) holds two CSVs and the source zip from [Zenodo](https://doi.org/10.5281/zenodo.10974150), published in Apr 2024.
+- **Horizons:** [`data/raw/horizons/reef_moon_positions.zip`](data/raw/horizons/reef_moon_positions.zip) holds 35 JSON files, retrieved on 3 Nov 2026 from the [Horizons file API](https://ssd-api.jpl.nasa.gov/doc/horizons_file.html) by [`tools/fetch_moon_positions.py`](tools/fetch_moon_positions.py).
+- **Sea Simulator:** [`data/raw/seasim/`](data/raw/seasim/) holds the [supplementary PDF](https://doi.org/10.6084/m9.figshare.29940717.v1), published in 2025. R reads Table S1 from it.
+- **Maldives:** [`data/raw/maldives/`](data/raw/maldives/) holds [one CSV](https://doi.org/10.7717/peerj.19447/supp-4), published in 2025.
 
 </details>
 
@@ -139,7 +139,7 @@ Values are rows × columns in the source files.
 - **NOAA:** 3,268,207 region-days × 7 measures, from 214 regions with about 15,272 days each. The analysis keeps the 3,203,007 days through 2025, and the partial 2026 stays in the raw files.
 - **Coral Spawning Database:** six distinct tables. The workbook has eight sheets, but three hold the same 6,178 observations, so they are counted once.
 - **Horizons:** one value per Moon position.
-- **US Naval Observatory:** not counted, because it is a single saved response used as a check.
+- **[US Naval Observatory](https://aa.usno.navy.mil/data/api.html):** not counted, because it is a single saved response used as a check.
 
 </details>
 
