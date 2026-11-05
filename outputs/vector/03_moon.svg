@@ -390,10 +390,6 @@
 <text x='307.44' y='129.48' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='195.11px' lengthAdjust='spacingAndGlyphs'>One row per place, equator at the top</text>
 <text x='592.38' y='116.38' text-anchor='middle' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='57.67px' lengthAdjust='spacingAndGlyphs'>8 days after</text>
 <text x='592.38' y='132.13' text-anchor='middle' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='45.66px' lengthAdjust='spacingAndGlyphs'>full moon</text>
-<text x='323.77' y='231.82' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='74.09px' lengthAdjust='spacingAndGlyphs'>In the tropics</text>
-<text x='323.77' y='250.09' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='126.52px' lengthAdjust='spacingAndGlyphs'>88% fall inside the box</text>
-<text x='323.77' y='347.20' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='105.78px' lengthAdjust='spacingAndGlyphs'>Outside the tropics</text>
-<text x='323.77' y='365.47' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='123.66px' lengthAdjust='spacingAndGlyphs'>51% fall inside the box</text>
 <text x='35.87' y='470.88' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='140.27px' lengthAdjust='spacingAndGlyphs'>Share of a place’s spawning</text>
 <text x='35.87' y='487.26' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='120.19px' lengthAdjust='spacingAndGlyphs'>nights on that lunar day</text>
 <text x='200.59' y='479.24' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='15.14px' lengthAdjust='spacingAndGlyphs'>0%</text>
@@ -474,8 +470,8 @@
 <text x='916.32' y='477.38' text-anchor='middle' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='3.91px' lengthAdjust='spacingAndGlyphs'>1</text>
 <text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='724.31px' lengthAdjust='spacingAndGlyphs'>White names and dots: separate studies. Only places with at least 12 spawning nights are shown. Latitude against tightness: Spearman ρ = -0.73, also found within genera.</text>
 <text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='744.30px' lengthAdjust='spacingAndGlyphs'>Places with more recorded nights also look more spread out, so closer watching may explain part of this. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).</text>
-<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='729.89px' lengthAdjust='spacingAndGlyphs'>In the tropics, 88% of spawning nights fall in the 8 days after full moon. Outside the tropics it is 51%.</text>
-<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='362.06px' lengthAdjust='spacingAndGlyphs'>If the Moon played no part, it would be about 27%.</text>
+<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='730.86px' lengthAdjust='spacingAndGlyphs'>In the tropics, 88% of spawning nights fall in the 8 days after full moon, just 27% of the lunar month.</text>
+<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='697.36px' lengthAdjust='spacingAndGlyphs'>Outside the tropics it drops to 51%. At Eilat and Kochi spawning spans almost the whole month.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='616.45px' lengthAdjust='spacingAndGlyphs'>The Moon’s hold loosens away from the equator</text>
 </g>
 </g>

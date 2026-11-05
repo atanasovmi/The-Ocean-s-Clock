@@ -33,7 +33,11 @@ severe_by_year <- annual |>
   summarise(n_regions = n(), n_severe = sum(max_dhw_c_weeks >= 8), .by = year) |>
   arrange(year)
 stopifnot(all(severe_by_year$n_regions == 214))
-peaks <- filter(severe_by_year, year %in% c(1998, 2010, 2016, 2024))
+peaks <- filter(severe_by_year, year %in% c(1998, 2010, 2016, 2024)) |>
+  # The last label names the unit once, so the strip needs no heading.
+  mutate(label = if_else(year == 2024, paste(n_severe, "regions"), as.character(n_severe)),
+         label_x = if_else(year == 2024, 2024.45, year),
+         label_hjust = if_else(year == 2024, 1, 0.5))
 
 ocean_labels <- region_rows |>
   summarise(row = mean(row), n = n(), .by = ocean) |>
@@ -44,17 +48,25 @@ year_breaks <- c(1986, seq(1990, 2020, 5), 2024)
 year_window <- c(1978.4, 2024.5)
 share_2024 <- severe_by_year$n_severe[severe_by_year$year == 2024] / 214
 first_count <- severe_by_year$n_severe[severe_by_year$year == 1986]
-# A row below the panel for the note level with the year labels.
-axis_row <- min(region_rows$row) - 16
+
+# The colour key sits in the quiet early years of the top strip, away from the year
+# labels. Each key is as wide as its label.
+heat_keys <- tibble(label = dhw_classes, colour = heat_steps,
+                    width = 0.255 * nchar(dhw_classes) + 0.45) |>
+  mutate(right = year_window[1] + cumsum(width), left = right - width)
 
 # Top strip: the count of regions over the severe threshold.
 count_strip <- ggplot(severe_by_year, aes(year, n_severe)) +
   geom_col(width = 0.74, fill = heat_steps[5]) +
-  geom_text(data = peaks, aes(label = n_severe, y = n_severe + 7), family = font_label,
-            size = pts(15), colour = moon, vjust = 0) +
-  annotate("text", x = 1986, y = 150, hjust = 0, vjust = 1, family = font_note, size = pts(14),
-           colour = soft, label = "Number of reef regions with severe heat each year") +
-  plot_note(year_window[1], 90, "Severe heat: 8 degree\nheating weeks, such as\n2 °C above the usual\nsummer high for 4 weeks", size = 13) +
+  geom_text(data = peaks, aes(label_x, n_severe + 7, label = label, hjust = label_hjust),
+            family = font_label, size = pts(15), colour = moon, vjust = 0) +
+  plot_note(year_window[1], 160, "Peak degree heating weeks of the year", size = 13) +
+  annotate("rect", xmin = heat_keys$left, xmax = heat_keys$right - 0.3, ymin = 112, ymax = 134,
+           fill = heat_keys$colour, colour = rule, linewidth = 0.3) +
+  annotate("text", x = heat_keys$left, y = 90, label = heat_keys$label, hjust = 0,
+           family = font_note, size = pts(12), colour = soft) +
+  plot_note(1999.6, 124, "Severe heat: 8+ degree heating weeks,\nsuch as 2 °C above the usual\nsummer high for 4 weeks", size = 12) +
+  note_line(1999.5, 84, 1998.45, 34) +
   scale_x_continuous(breaks = year_breaks, expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = year_window, ylim = c(0, 171), clip = "off") +
@@ -69,21 +81,11 @@ stripes <- ggplot(plot_data, aes(year, row, fill = dhw_class)) +
             hjust = 1, family = font_note, size = pts(14), lineheight = 1.05, colour = soft) +
   scale_x_continuous(breaks = year_breaks, expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
-  scale_fill_manual(values = heat_steps, drop = FALSE,
-                    name = "Peak degree heating weeks of the year") +
-  # Fixed limits: the notes below sit outside the rows and must not stretch the panel.
-  coord_cartesian(xlim = year_window, ylim = c(min(region_rows$row) - 0.5, max(region_rows$row) + 0.5),
-                  clip = "off") +
-  plot_note(year_window[1], axis_row, "Each line: one region") +
-  guides(fill = guide_legend(nrow = 1, keywidth = unit(34, "pt"), keyheight = unit(10, "pt"),
-                             label.position = "bottom")) +
+  scale_fill_manual(values = heat_steps, drop = FALSE, guide = "none") +
+  coord_cartesian(xlim = year_window, clip = "off") +
   labs(x = NULL, y = NULL) +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
-        legend.position = "bottom", legend.justification = "right",
-        legend.margin = margin(t = 2), legend.title = element_text(margin = margin(r = 12), vjust = 0.9),
-        legend.key = element_rect(colour = rule, linewidth = 0.3),
-        legend.key.spacing.x = unit(8, "pt"),
         plot.margin = margin(0, 0, 0, 0))
 
 heat_plot <- count_strip / stripes +
