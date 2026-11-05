@@ -90,9 +90,65 @@ The [R workspace snapshot](outputs/models/analysis_workspace.RData) contains sel
 | [NASA/JPL Horizons](https://ssd.jpl.nasa.gov/horizons/) | 12,897 Moon positions for 35 reef subsites, used to check our own Moon calculation. |
 | [US Naval Observatory](https://aa.usno.navy.mil/data/api.html) | A limited independent check of seven covered historical reef-nights. |
 
+### Where the 23 million values come from
+
+The project holds about 23.1 million source values, and 98.9% of them are NOAA temperature and heat-stress records. The 6,178 coral observations are far fewer, and they set the limit on what the biology can show. Every source is a saved copy in `data/raw/`, so `run.R` needs no live data service. Horizons was the only true API, and only when its positions were fetched.
+
+| Source | Local files | How it was obtained | Snapshot | Values |
+| --- | --- | --- | --- | ---: |
+| NOAA Coral Reef Watch | `data/raw/crw/`: 214 regional `.txt.gz` files | One plain text file per region, fetched by `tools/fetch_crw.py` | Data to 1 Nov 2026 | 22,877,449 |
+| Coral Spawning Database | `data/raw/coral/CSD_Tables.xlsx` | One-off download of the Excel export of an Access database | Version 1, Dec 2020 | 170,314 |
+| Churaumi Aquarium study | `data/raw/aquarium/`: two CSVs and the source zip | One-off Zenodo download | Published Apr 2024 | 68,369 |
+| NASA/JPL Horizons | `data/raw/horizons/reef_moon_positions.zip`: 35 JSON files | API calls by `tools/fetch_moon_positions.py` | Retrieved 3 Nov 2026 | 12,897 |
+| Sea Simulator experiment | `data/raw/seasim/`: supplementary PDF | One-off download; R reads Table S1 from the PDF | Published 2025 | 1,032 |
+| Maldives field study | `data/raw/maldives/`: one CSV | One-off download | Published 2025 | 972 |
+| **Total** | | | | **23,131,033** |
+
+Values are rows × columns in the source files, with these details:
+
+- **NOAA:** 3,268,207 region-days × 7 measures, from 214 regions with about 15,272 days each. The analysis keeps the 3,203,007 days through 2025, and the partial 2026 stays in the raw files.
+- **Coral Spawning Database:** six distinct tables. The workbook has eight sheets, but three hold the same 6,178 observations, so they are counted once.
+- **Horizons:** one value per Moon position.
+- **US Naval Observatory:** not counted, because it is a single saved response used as a check.
+
+The sources connect like this:
+
+```text
+Coral Spawning Database (6,178 observations)
+├─ NOAA            reef coordinates → region polygon, then region and date
+├─ Horizons        subsite and UTC minute, for 35 subsites
+├─ Aquarium        no shared key, analysed separately
+├─ Sea Simulator   no shared key, analysed separately
+└─ Maldives        no shared key, analysed separately
+```
+
+Most NOAA values feed yearly and seasonal summaries. Of the 1,026 recorded reef-nights, 751 match an exact NOAA day, 142 fall outside NOAA's regions and 133 predate its records.
+
+### Geography and limits
+
 NOAA publishes its region boundaries as GeoJSON. `sf::st_join()` uses those polygons to identify each reef's region. The [spatial folder](data/spatial/) contains Shapefile copies of all 214 region polygons and 102 reef coordinates, with their identifiers and WGS84 reference system. Read a layer with `sf::st_read("data/spatial/reef_sites.shp")`. The [spatial notes](data/spatial/README.md) explain the fields and source.
 
 Source definitions, licences and the main limitations are in [the research notes](docs/RESEARCH.md). The field data contain recorded occurrences with incomplete observation effort; the aquarium diary contains explicit zero days within its monitoring seasons. That difference determines which questions each source can answer.
+
+## Data sources worth exploring next
+
+These two sources are not in the project yet. Each could answer a question the current data cannot.
+
+### NASA POWER
+
+[NASA POWER](https://power.larc.nasa.gov/) offers daily weather for any coordinates through a [public API](https://power.larc.nasa.gov/docs/services/api/temporal/daily/), including [cloud amount, wind speed, rainfall and sunlight](https://power.larc.nasa.gov/api/system/manager/parameters?community=RE&temporal=daily).
+
+We would want it because the project has no weather data for the wild reefs. Cloud cover could show whether the Moon was actually visible on recorded spawning nights, while plate 4 only calculates where the Moon was. Wind and rain could show whether weather shifts spawning on real reefs, which we have so far tested only in the aquarium.
+
+Its [grid cells](https://power.larc.nasa.gov/docs/methodology/) are about ½° × ⅝° for weather and 1° for sunlight, so the values describe the wider area around a reef, not the reef itself. The daily API starts in 1981, but coverage may differ by parameter, so each one needs checking first.
+
+### Coral Trait Database
+
+The [Coral Trait Database](https://www.coraltraits.org) reports 172 traits and 244,324 trait entries across 5,112 species, as of November 2026. [Its traits](https://www.coraltraits.org/traits) include sexual system, mode of larval development, egg size, growth form and bleaching susceptibility. It is [released under CC0](https://www.coraltraits.org/procedures), and each trait or species can be read straight into R as a CSV.
+
+We would want it because our records say when each coral spawned, but hardly anything about its biology. Joined by species name, the traits could show whether species with tight timing share features such as egg size or growth form. Bleaching susceptibility could add a species view to the regional heat stress in plates 7 and 8.
+
+Species names would need matching to the coral database's current names. Traits come from many separate studies, so many species will have gaps. The database also has a `Spawning date` trait, but those records may repeat ones we already hold, so they need checking before they count as new data.
 
 ## Methods and submission
 
