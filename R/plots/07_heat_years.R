@@ -93,7 +93,7 @@ heat_plot <- count_strip / stripes +
   plot_layout(heights = c(1, 4.6)) +
   plot_annotation(
     title = "In 2024, four in five reef regions crossed the severe heat line",
-    subtitle = sprintf("In 1986 it was %d of 214. One row is one region, one column one year.\nThe years 1998, 2010, 2016 and 2024 each followed an El Niño.",
+    subtitle = sprintf("In 1986 it was just %d of 214. Each line is one region, each column one year.\nThe peaks of 1998, 2010, 2016 and 2024 each followed an El Niño.",
                        first_count),
     caption = "214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Degree heating weeks measure accumulated heat stress, not coral death.",
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 10)))

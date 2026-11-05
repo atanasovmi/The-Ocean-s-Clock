@@ -65,10 +65,10 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
                      expand = c(0, 0)) +
   coord_cartesian(xlim = c(-15, 14.9), ylim = c(0, top_hour), clip = "off") +
   labs(title = "Spawning keeps to the Sun, whatever the Moon is doing",
-       subtitle = sprintf("Moonrise slides through the evening, but corals start about %s after sunset on almost every lunar night.\nThat puts %.0f%% of starts after full moon in the dark, before the Moon is up.",
+       subtitle = sprintf("The Moon rises later each night, yet corals keep starting about %s after sunset, on almost any night of the month.\nSo after full moon, %.0f%% of them start in the dark, before the Moon is up.",
                           clock_text(stats[["median_start_hours"]]), 100 * stats[["share_moon_down_after_full"]]),
        x = "Days from full moon", y = NULL,
-       caption = sprintf("Each dot: one genus starting on one reef-night (%d exact evening starts, %d reef-nights, %d subsites). Lighter sky: more moonlight, meaning how full the Moon is times how high.\nStarts vary %.1f times less around sunset than around moonrise. Moon formulas agree with 12,897 NASA/JPL Horizons positions to 0.3°. Coral data: Baird et al. (2021).",
+       caption = sprintf("Each dot: one genus starting on one spawning night (%d exact evening starts, %d spawning nights, %d subsites). Lighter sky: more moonlight, meaning how full the Moon is times how high.\nStarts vary %.1f times less around sunset than around moonrise. Moon formulas agree with 12,897 NASA/JPL Horizons positions to 0.3°. Coral data: Baird et al. (2021).",
                          nrow(starts), n_distinct(paste(starts$subsite_id, starts$date)), n_distinct(starts$subsite_id),
                          stats[["sd_from_moonrise_hours"]] / stats[["sd_from_sunset_hours"]])) +
   theme_plot() +

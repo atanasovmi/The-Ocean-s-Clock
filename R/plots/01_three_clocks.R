@@ -113,7 +113,7 @@ dial_text <- tibble(
   # Each heading has its own width, so its follow-on text starts at its own offset.
   job_x = x + c(0.5, 0.58, 0.42),
   job = c("opens the season", "narrows the night", "sets the hour"),
-  detail = c(sprintf("%.0f%% of reef-nights fall while the local sea\nis warming, which is %.0f%% of the year",
+  detail = c(sprintf("%.0f%% of spawning nights fall while the local sea\nis warming, which is %.0f%% of the year",
                      100 * share_warming, 100 * expected_warming),
              sprintf("%.0f%% fall in the eight days from full moon,\nwhich is 27%% of the month",
                      100 * share_week),
@@ -164,9 +164,9 @@ clock_plot <- ggplot() +
   scale_linewidth_manual(values = c("FALSE" = 0.25, "TRUE" = 0.5), guide = "none") +
   coord_fixed(xlim = c(-4.25, 4.25), ylim = c(-2.2, 1.56), clip = "off", expand = FALSE) +
   labs(title = "The reef reads three clocks, and the Moon is the loosest",
-       subtitle = "Recorded spawning around the year, the lunar month and the day. Bars past the thin circle beat an even spread.",
+       subtitle = "Coral spawning on three natural clocks. The more the bars bunch up, the stronger that clock’s grip.",
        x = NULL, y = NULL,
-       caption = sprintf("Hand: the typical moment. Its length is the tightness, from 0 (an even spread) to 1 (all records at one moment): %.2f year, %.2f Moon, %.2f Sun. Year dial aligned to each region’s warmest week.\n%s reef-nights (one reef, one night) on the year dial, %s on the Moon dial, %d genus starts on the Sun dial. Survey effort is uneven. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+       caption = sprintf("Hand: the typical moment. Its length is the tightness, from 0 (an even spread) to 1 (all records at one moment): %.2f year, %.2f Moon, %.2f Sun. Year dial aligned to each region’s warmest week.\n%s spawning nights (one reef, one night) on the year dial, %s on the Moon dial, %d genus starts on the Sun dial. Survey effort is uneven. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          clocks$tightness[clocks$clock == "year"], clocks$tightness[clocks$clock == "moon"],
                          clocks$tightness[clocks$clock == "sun"], format(nrow(seasons), big.mark = ","),
                          format(nrow(nights), big.mark = ","), nrow(starts))) +

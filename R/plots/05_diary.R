@@ -114,7 +114,7 @@ diary_plot <- (calendar_strip + left_gap + moon_strip + right_gap) /
   plot_layout(heights = c(1, 3.9)) +
   plot_annotation(
     title = "With every day watched, the season says far more than the Moon",
-    subtitle = sprintf("Churaumi Aquarium in Okinawa kept a diary of 1,350 days over 15 years. Forecasting each year from the others, season\nalone cuts the error by %.0f%%. The Moon alone cuts nothing, and tank temperature, wind, rain and sunlight add nothing.",
+    subtitle = sprintf("An aquarium in Okinawa kept a spawning diary for 1,350 days over 15 years. Predicting each year from the others, the\nseason cuts the error by %.0f%%. The Moon alone cuts nothing. Tank temperature and weather add nothing.",
                        error_cut("season")),
     caption = sprintf("Bars: share of watched days with spawning. Pink dot: a day with spawning, larger when more tanks spawned (1–17). Open circle: a full moon. Forecast test on 1,007 complete days, Brier error: no calendar %.3f,\nMoon %.3f, season %.3f, both %.3f, both plus weather %.3f. One aquarium, so this checks the field pattern and does not forecast a wild reef. Source: Sakai, Yamamoto & Maruyama (2024), reanalysed.",
                       brier[["prevalence"]], brier[["moon"]], brier[["season"]], brier[["calendar"]], brier[["environment"]]),

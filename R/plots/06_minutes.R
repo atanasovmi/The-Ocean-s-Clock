@@ -75,10 +75,10 @@ minutes_plot <- ggplot(dots, aes(minutes, row)) +
   coord_cartesian(xlim = c(-96, spread_x), ylim = c(min(summaries$row) - 0.6, wild_top + 1.3),
                   clip = "off") +
   labs(title = "In the tanks, each species keeps its own time",
-       subtitle = sprintf("These colonies ran on a sunset moved by four hours and seasons moved by six months, and they followed it. Half of all\nA. loripes releases fall within %.0f minutes. In the wild, with places and species mixed, Acropora spreads over %.0f.",
+       subtitle = sprintf("Scientists moved these corals’ sunset by four hours and their seasons by six months, and the corals followed. Half of\nall A. loripes releases fall within %.0f minutes. On wild reefs, Acropora spreads over %.0f.",
                           loripes$middle_half, acropora$middle_half),
        x = NULL, y = NULL,
-       caption = "Dots: one genus on one reef-night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.\nA genus is a group of related species. Tank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
+       caption = "Dots: one genus on one spawning night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.\nA genus is a group of related species. Tank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 12)))

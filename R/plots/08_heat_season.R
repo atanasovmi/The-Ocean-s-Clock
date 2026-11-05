@@ -63,7 +63,7 @@ heat_season_plot <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
   guides(fill = guide_legend(nrow = 1, keywidth = unit(44, "pt"), keyheight = unit(10, "pt"),
                              label.position = "bottom")) +
   labs(title = "Heat now reaches the spawning months, unevenly",
-       subtitle = sprintf("Each region keeps its historical spawning months. In %d of %d regions those months now see more heat stress. In Northern\nTaiwan and the Gulf of Aqaba about a quarter of the season is under stress in a typical recent year. Four regions stay clear.",
+       subtitle = sprintf("We kept each region’s usual spawning months and looked at how much heat stress reaches them. In %d of %d regions\nit has grown. In Northern Taiwan and the Gulf of Aqaba it now hits about a quarter of a typical season. Four stay clear.",
                           sum(comparison$change > 0), nrow(comparison)),
        x = NULL, y = NULL,
        caption = "Heat stress here means NOAA degree heating weeks of 4 or more. Each year’s share is weighted by the months in which spawning was recorded at that region’s well-sampled sites, and that calendar is held fixed.\nThis measures overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +

@@ -61,10 +61,10 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
                      labels = c("30° S", "15° S", "0°", "15° N", "30° N"), expand = c(0, 0)) +
   coord_cartesian(xlim = c(1, 365), ylim = c(-33, 35)) +
   labs(title = "Both hemispheres spawn while the water warms",
-       subtitle = sprintf("Their calendar months are about half a year apart, but their place on the temperature\ncurve is the same: %.0f%% of reef-nights fall while the local sea warms, just %.0f%% of the year.",
+       subtitle = sprintf("North and south spawn about half a year apart, yet both pick the same moment:\nwhile the sea warms. %.0f%% of spawning nights fall then, in just %.0f%% of the year.",
                           100 * share_warming, 100 * share_of_year),
        x = NULL, y = NULL,
-       caption = sprintf("Each dot: one recorded reef-night (%s, 1978–2019). Backdrop: 39-year mean warming rate by latitude band, 214 NOAA regions. Warming share from the %s nights inside NOAA regions.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+       caption = sprintf("Each dot: one recorded spawning night (%s, 1978–2019). Backdrop: 39-year mean warming rate by latitude band, 214 NOAA regions. Warming share from the %s nights inside NOAA regions.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          format(nrow(nights), big.mark = ","), format(nrow(seasons), big.mark = ","))) +
   theme_plot() +
   theme(axis.ticks.x = element_blank(), legend.position = "top", legend.justification = "right",

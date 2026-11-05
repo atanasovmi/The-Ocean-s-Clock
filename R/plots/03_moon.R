@@ -85,9 +85,9 @@ moon_plot <- actogram + tightness_strip +
   plot_layout(widths = c(5.2, 1)) +
   plot_annotation(
     title = "The Moon’s hold loosens away from the equator",
-    subtitle = sprintf("Inside the tropics %.0f%% of reef-nights fall in the eight framed days after full moon. Beyond them it is %.0f%%, and an even\nspread would give %.0f%%. The two records with the most nights, Eilat and the aquarium, look loosest of all.",
+    subtitle = sprintf("In the tropics, %.0f%% of spawning nights land in the eight framed days after full moon. Farther out it is %.0f%%. By pure\nchance it would be %.0f%%. Eilat and the aquarium, the two records with the most nights, look loosest of all.",
                        100 * stats[["share_inside_tropics"]], 100 * stats[["share_outside_tropics"]], 100 * even_share),
-    caption = sprintf("Brighter cell: a larger share of that place’s records. Cream names and dots: records from outside the main database. Tightness: 1 means a single lunar night, 0 an even spread. Latitude trend:\nSpearman ρ = %.2f, also found within genera, though places with more recorded nights look looser too. Places with at least 12 reef-nights. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
+    caption = sprintf("Brighter cell: a larger share of that place’s records. Cream names and dots: records from outside the main database. Tightness: 1 means a single lunar night, 0 an even spread. Latitude trend:\nSpearman ρ = %.2f, also found within genera, though places with more recorded nights look looser too. Places with at least 12 spawning nights. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
                       stats[["spearman_rho"]]),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)))
   )
