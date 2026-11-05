@@ -67,6 +67,10 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
                  sprintf("North: %.0f%% spawn in Apr–Aug", 100 * share_north)) +
   season_bracket(month_starts[10], 364, -25.8,
                  sprintf("South: %.0f%% spawn in Oct–Dec", 100 * share_south)) +
+  # One real dot stands in as the key.
+  plot_note(303, 12.3, "Each dot: one night of
+spawning on one reef", size = 12) +
+  note_line(302, 12.3, 299, 12.3) +
   scale_fill_gradient2(low = water, mid = "#12283B", high = warm_gold, midpoint = 0,
                        limits = c(-2.2, 2.2), oob = scales::squish, breaks = c(-2, 0, 2),
                        labels = c("−2 °C", "No change", "+2 °C"), name = "Sea temperature change per month",
@@ -77,10 +81,10 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
                      labels = c("30° S", "15° S", "0°", "15° N", "30° N"), expand = c(0, 0)) +
   coord_cartesian(xlim = c(1, 365), ylim = c(-33, 35)) +
   labs(title = "Both hemispheres spawn while the water warms",
-       subtitle = sprintf("A year calendar for every latitude. Gold: the sea is warming. Blue: it is cooling.\n%.0f%% of spawning nights (dots) fall while the local sea warms, just %.0f%% of the year.",
+       subtitle = sprintf("A year calendar for every latitude. Gold: the sea is warming. Blue: it is cooling.\n%.0f%% of spawning nights fall while the local sea warms, just %.0f%% of the year.",
                           100 * share_warming, 100 * share_of_year),
        x = NULL, y = NULL, tag = "Latitude",
-       caption = sprintf("Each dot: one reef on one night. %s spawning nights, 1978–2019, of which %s lie inside NOAA reef regions. Background colour: 39-year average from 214 regions. North: above 15° N. South: below 10° S.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+       caption = sprintf("%s spawning nights, 1978–2019, of which %s lie inside NOAA reef regions. Background colour: 39-year average from 214 regions. North: above 15° N. South: below 10° S.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          format(nrow(nights), big.mark = ","), format(nrow(seasons), big.mark = ","))) +
   theme_plot() +
   theme(axis.ticks.x = element_blank(), legend.position = "top", legend.justification = "right",
