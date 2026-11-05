@@ -104,20 +104,26 @@ share_warming <- mean(seasons$warming)
 expected_warming <- mean(seasons$warming_share_of_year)
 share_week <- mean(between(nights$lunar_day, 0, 7))
 clock_text <- function(h) sprintf("%d h %02d", floor(h), round(60 * (h %% 1)))
+# The text under the dials calls the Moon loosest and the Sun tightest, so check that.
+hand_lengths <- clocks$tightness[match(c("year", "moon", "sun"), clocks$clock)]
+stopifnot(which.min(hand_lengths) == 2, which.max(hand_lengths) == 3)
 dial_text <- tibble(
   x = dial_centres - 1.08,
   heading = c("Year", "Moon", "Sun"),
   # Each heading has its own width, so its follow-on text starts at its own offset.
   job_x = x + c(0.5, 0.58, 0.42),
-  job = c("opens the season", "narrows the night", "sets the hour"),
-  detail = c(sprintf("%.0f%% of reef-nights fall while the local sea\nis warming, which is %.0f%% of the year",
+  job = c("picks the season", "picks the night", "picks the hour"),
+  detail = c(sprintf("%.0f%% of spawning nights fall while the sea\nis warming, just %.0f%% of the year",
                      100 * share_warming, 100 * expected_warming),
-             sprintf("%.0f%% fall in the eight days from full moon,\nwhich is 27%% of the month",
+             sprintf("%.0f%% fall in the 8 days after full moon,\njust 27%% of the month",
                      100 * share_week),
-             sprintf("Half of all starts fall between %s\nand %s after sunset",
+             sprintf("Half of all spawning starts between\n%s and %s after sunset",
                      clock_text(hours[["q25_start_hours"]]), clock_text(hours[["q75_start_hours"]]))),
-  tightness = sprintf("Tightness %.2f", clocks$tightness[match(c("year", "moon", "sun"), clocks$clock)])
+  timing = sprintf("R = %.2f%s", hand_lengths, c("", ", the loosest clock", ", the tightest clock"))
 )
+
+key_y <- 1.47
+key_ring <- mutate(circle(0.075, 2.15, "key"), y = y + key_y)
 
 clock_plot <- ggplot() +
   geom_polygon(data = rims, aes(x, y, group = id), fill = "#10263A", colour = rule, linewidth = 0.4) +
@@ -141,15 +147,26 @@ clock_plot <- ggplot() +
             size = pts(17), colour = moon) +
   geom_text(data = dial_text, aes(x, -1.72, label = detail), hjust = 0, vjust = 1, family = font_note,
             size = pts(14), colour = soft, lineheight = 1.08) +
+  geom_text(data = dial_text, aes(x, -2.06, label = timing), hjust = 0, vjust = 1, family = font_note,
+            size = pts(14), colour = moon) +
+  # One key row above the dials names each mark by what it looks like.
+  annotate("rect", xmin = -4.22, xmax = -4.06, ymin = key_y - 0.04, ymax = key_y + 0.04, fill = spawn) +
+  plot_note(-4, key_y, "Pink bar : share of records", size = 14) +
+  annotate("segment", x = -2.3, xend = -2.07, y = key_y, yend = key_y, colour = moon, linewidth = 1.5,
+           lineend = "round") +
+  plot_note(-2.01, key_y, "White line: average time. Length R: 0 = evenly spread, 1 = all at one moment", size = 14) +
+  geom_path(data = key_ring, aes(x, y), colour = moon, linewidth = 0.35) +
+  plot_note(2.28, key_y, "Thin ring: an even spread", size = 14) +
+  plot_note(0.17, 1.22, "Full moon", size = 14) +
+  plot_note(0.17, -1.22, "New moon", size = 14) +
   scale_linewidth_manual(values = c("FALSE" = 0.25, "TRUE" = 0.5), guide = "none") +
   coord_fixed(xlim = c(-4.25, 4.25), ylim = c(-2.2, 1.56), clip = "off", expand = FALSE) +
   labs(title = "The reef reads three clocks, and the Moon is the loosest",
-       subtitle = "Recorded spawning around the year, the lunar month and the day. Bars past the thin circle beat an even spread.",
+       subtitle = "Corals do not spawn at random. Each clock shows when they spawn: in the year, in the Moon’s cycle and in the day.",
        x = NULL, y = NULL,
-       caption = sprintf("Hand: the typical moment. Its length is the tightness, from 0 (an even spread) to 1 (all records at one moment): %.2f year, %.2f Moon, %.2f Sun. Year dial aligned to each region’s warmest week.\n%s reef-nights on the year dial, %s on the Moon dial, %d genus starts on the Sun dial. Survey effort is uneven. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
-                         clocks$tightness[clocks$clock == "year"], clocks$tightness[clocks$clock == "moon"],
-                         clocks$tightness[clocks$clock == "sun"], format(nrow(seasons), big.mark = ","),
-                         format(nrow(nights), big.mark = ","), nrow(starts))) +
+       caption = sprintf("R (mean resultant length) shows how concentrated the records are. It is not a confidence interval. Spawning is not watched equally at all times, so quiet times are under-recorded.\n%s spawning nights on the year clock, %s on the Moon clock, %d timed starts on the Sun clock. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
+                         format(nrow(seasons), big.mark = ","), format(nrow(nights), big.mark = ","),
+                         nrow(starts))) +
   theme_plot() +
   theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.ticks = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 6)))
