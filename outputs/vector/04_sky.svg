@@ -358,18 +358,12 @@
 <circle cx='637.04' cy='367.23' r='2.88' style='stroke-width: 0.43; stroke: #0B1D2E; fill: #FF7E8B;' />
 <polyline points='446.30,378.36 785.59,366.97 ' style='stroke-width: 5.55; stroke: #0B1D2E; stroke-linecap: butt;' />
 <polyline points='446.30,378.36 785.59,366.97 ' style='stroke-width: 2.35; stroke: #F1EAD7; stroke-linecap: butt;' />
-<text x='828.00' y='165.12' style='font-size: 16.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='88.81px' lengthAdjust='spacingAndGlyphs'>If moonrise were</text>
-<text x='828.00' y='184.32' style='font-size: 16.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='52.61px' lengthAdjust='spacingAndGlyphs'>the signal</text>
-<text x='828.00' y='202.83' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='93.14px' lengthAdjust='spacingAndGlyphs'>Dots would climb</text>
-<text x='828.00' y='220.47' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='72.67px' lengthAdjust='spacingAndGlyphs'>with this line:</text>
-<text x='828.00' y='238.11' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='95.31px' lengthAdjust='spacingAndGlyphs'>+46 min per night</text>
+<text transform='translate(761.57,230.66) rotate(-43)' text-anchor='middle' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='146.05px' lengthAdjust='spacingAndGlyphs'>If moonrise were the signal:</text>
+<text transform='translate(773.17,243.10) rotate(-43)' text-anchor='middle' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='91.91px' lengthAdjust='spacingAndGlyphs'>+46 min per night</text>
 <line x1='819.52' y1='284.38' x2='789.83' y2='360.73' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
 <text x='828.00' y='268.94' style='font-size: 16.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='89.86px' lengthAdjust='spacingAndGlyphs'>What we observe</text>
 <text x='828.00' y='285.40' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='74.17px' lengthAdjust='spacingAndGlyphs'>Dots stay flat:</text>
 <text x='828.00' y='303.04' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='88.44px' lengthAdjust='spacingAndGlyphs'>+2 min per night</text>
-<text x='750.25' y='264.94' text-anchor='middle' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='98.56px' lengthAdjust='spacingAndGlyphs'>After full moon, 88%</text>
-<text x='750.25' y='280.69' text-anchor='middle' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='69.89px' lengthAdjust='spacingAndGlyphs'>of starts come</text>
-<text x='750.25' y='296.44' text-anchor='middle' style='font-size: 12.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='79.44px' lengthAdjust='spacingAndGlyphs'>before moonrise</text>
 <text x='36.32' y='155.31' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='91.36px' lengthAdjust='spacingAndGlyphs'>Time after sunset</text>
 <text x='90.04' y='301.79' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='134.80px' lengthAdjust='spacingAndGlyphs'>Each dot: one coral genus</text>
 <text x='90.04' y='318.80' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='159.28px' lengthAdjust='spacingAndGlyphs'>starting to spawn on one night</text>

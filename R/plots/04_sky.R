@@ -38,13 +38,10 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
   geom_line(data = trend_line, aes(lunar_day, hours), colour = night, linewidth = 2.6) +
   geom_line(data = trend_line, aes(lunar_day, hours), colour = moon, linewidth = 1.1) +
   # The plot is a test, so the two lines are named as prediction and observation.
-  annotate("text", x = 11.5, y = 8.15, hjust = 0, family = font_label, size = pts(16),
-           colour = moon, lineheight = 1, label = "If moonrise were
-the signal") +
-  annotate("text", x = 11.5, y = 6.72, hjust = 0, family = font_note, size = pts(14),
-           colour = soft, lineheight = 1.05,
-           label = sprintf("Dots would climb
-with this line:
+  # The rising line carries its own label, written along it in the dark sky below.
+  annotate("text", x = 9.24, y = 6.17, angle = 43, family = font_note, size = pts(13.5), colour = moon,
+           lineheight = 1.05,
+           label = sprintf("If moonrise were the signal:
 +%.0f min per night", stats[["moonrise_delay_minutes_per_night"]])) +
   annotate("segment", x = 11.2, xend = 10.15, y = 4.6, yend = 2.25, colour = soft, linewidth = 0.35) +
   annotate("text", x = 11.5, y = 5.25, hjust = 0, family = font_label, size = pts(16),
@@ -53,10 +50,6 @@ with this line:
            colour = soft, lineheight = 1.05,
            label = sprintf("Dots stay flat:
 +%.0f min per night", stats[["start_drift_minutes_per_night"]])) +
-  plot_note(8.75, 4.85, sprintf("After full moon, %.0f%%
-of starts come
-before moonrise",
-                                100 * stats[["share_moon_down_after_full"]]), hjust = 0.5, size = 12.5) +
   plot_note(-16.5, 8.72, "Time after sunset") +
   # One real dot stands in as the key.
   plot_note(-14.6, 3.95, "Each dot: one coral genus
