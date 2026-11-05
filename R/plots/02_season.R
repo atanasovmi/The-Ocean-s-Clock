@@ -37,11 +37,18 @@ place_labels <- tribble(
   285, -14.6, "Great Barrier Reef", 0.5
 )
 
-# A thin bracket marking a stretch of the year at one latitude.
-season_bracket <- function(from, to, latitude, tick) {
-  list(note_line(from, latitude, to, latitude, colour = moon),
-       note_line(from, latitude, from, latitude + tick, colour = moon),
-       note_line(to, latitude, to, latitude + tick, colour = moon))
+# A faint bracket marking a stretch of the year at one latitude. Its label sits in a
+# gap in the middle of the line, because dots lie just above and below it.
+season_bracket <- function(from, to, latitude, label) {
+  faint_moon <- scales::alpha(moon, 0.45)
+  middle <- (from + to) / 2
+  gap <- 35
+  tick <- 0.9
+  list(note_line(from, latitude, middle - gap, latitude, colour = faint_moon),
+       note_line(middle + gap, latitude, to, latitude, colour = faint_moon),
+       note_line(from, latitude, from, latitude + tick, colour = faint_moon),
+       note_line(to, latitude, to, latitude + tick, colour = faint_moon),
+       plot_note(middle, latitude, label, hjust = 0.5, colour = moon, size = 12.5))
 }
 
 season_plot <- ggplot(field, aes(day_step, latitude_band)) +
@@ -56,12 +63,10 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
             family = font_label, size = pts(14.5), colour = moon) +
   plot_note(233, -3.6, "Near the equator: little change", hjust = 0.5) +
   # The two seasons, about half a year apart, marked on the calendar itself.
-  season_bracket(month_starts[4], month_starts[9] - 1, 18.7, 0.9) +
-  plot_note(month_starts[9] - 1, 16.9, sprintf("North: %.0f%% spawn in Apr–Aug", 100 * share_north),
-            hjust = 1, colour = moon) +
-  season_bracket(month_starts[10], 364, -25.8, 0.9) +
-  plot_note(319, -28, sprintf("South: %.0f%% spawn in Oct–Dec", 100 * share_south),
-            hjust = 0.5, colour = moon) +
+  season_bracket(month_starts[4], month_starts[9] - 1, 18.7,
+                 sprintf("North: %.0f%% spawn in Apr–Aug", 100 * share_north)) +
+  season_bracket(month_starts[10], 364, -25.8,
+                 sprintf("South: %.0f%% spawn in Oct–Dec", 100 * share_south)) +
   # One real dot stands in as the key.
   plot_note(303, 12.3, "Each dot: one night of\nspawning on one reef") +
   note_line(302, 12.3, 299, 12.3) +

@@ -1071,14 +1071,16 @@
 <text x='891.32' y='392.37' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='14.33px' lengthAdjust='spacingAndGlyphs'>Fiji</text>
 <text x='736.62' y='373.89' text-anchor='middle' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='87.44px' lengthAdjust='spacingAndGlyphs'>Great Barrier Reef</text>
 <text x='614.73' y='318.62' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='159.59px' lengthAdjust='spacingAndGlyphs'>Near the equator: little change</text>
-<line x1='281.88' y1='202.49' x2='638.17' y2='202.49' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<line x1='281.88' y1='202.49' x2='281.88' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<line x1='638.17' y1='202.49' x2='638.17' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<text x='638.17' y='216.27' text-anchor='end' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='154.31px' lengthAdjust='spacingAndGlyphs'>North: 98% spawn in Apr–Aug</text>
-<line x1='710.83' y1='424.66' x2='921.79' y2='424.66' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<line x1='710.83' y1='424.66' x2='710.83' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<line x1='921.79' y1='424.66' x2='921.79' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-linecap: butt;' />
-<text x='816.31' y='440.44' text-anchor='middle' style='font-size: 13.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='154.17px' lengthAdjust='spacingAndGlyphs'>South: 88% spawn in Oct–Dec</text>
+<line x1='281.88' y1='202.49' x2='377.98' y2='202.49' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='542.06' y1='202.49' x2='638.17' y2='202.49' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='281.88' y1='202.49' x2='281.88' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='638.17' y1='202.49' x2='638.17' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<text x='460.02' y='206.92' text-anchor='middle' style='font-size: 12.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='142.72px' lengthAdjust='spacingAndGlyphs'>North: 98% spawn in Apr–Aug</text>
+<line x1='710.83' y1='424.66' x2='734.27' y2='424.66' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='898.35' y1='424.66' x2='921.79' y2='424.66' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='710.83' y1='424.66' x2='710.83' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='921.79' y1='424.66' x2='921.79' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<text x='816.31' y='429.09' text-anchor='middle' style='font-size: 12.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='142.66px' lengthAdjust='spacingAndGlyphs'>South: 88% spawn in Oct–Dec</text>
 <text x='778.81' y='230.73' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='113.00px' lengthAdjust='spacingAndGlyphs'>Each dot: one night of</text>
 <text x='778.81' y='247.74' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='112.48px' lengthAdjust='spacingAndGlyphs'>spawning on one reef</text>
 <line x1='776.46' y1='234.44' x2='769.43' y2='234.44' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
