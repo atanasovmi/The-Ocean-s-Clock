@@ -1062,14 +1062,27 @@
 <circle cx='155.31' cy='233.82' r='2.01' style='stroke-width: 0.28; stroke: #0B1D2E; fill: #FF7E8B;' />
 <circle cx='183.43' cy='234.71' r='2.01' style='stroke-width: 0.28; stroke: #0B1D2E; fill: #FF7E8B;' />
 <circle cx='246.72' cy='231.55' r='2.01' style='stroke-width: 0.28; stroke: #0B1D2E; fill: #FF7E8B;' />
-<text x='77.95' y='289.86' style='font-size: 13.00px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='39.48px' lengthAdjust='spacingAndGlyphs'>Equator</text>
-<text x='659.26' y='136.24' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='25.94px' lengthAdjust='spacingAndGlyphs'>Kochi</text>
-<text x='666.30' y='153.22' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='21.34px' lengthAdjust='spacingAndGlyphs'>Eilat</text>
-<text x='656.92' y='170.19' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='41.11px' lengthAdjust='spacingAndGlyphs'>Okinawa</text>
-<text x='284.23' y='189.66' text-anchor='end' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='33.41px' lengthAdjust='spacingAndGlyphs'>Taiwan</text>
-<text x='361.58' y='294.51' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='48.30px' lengthAdjust='spacingAndGlyphs'>Singapore</text>
-<text x='891.32' y='392.37' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='14.33px' lengthAdjust='spacingAndGlyphs'>Fiji</text>
-<text x='736.62' y='373.89' text-anchor='middle' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='87.44px' lengthAdjust='spacingAndGlyphs'>Great Barrier Reef</text>
+<text x='77.95' y='289.86' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='143.42px' lengthAdjust='spacingAndGlyphs'>Equator: little seasonal change</text>
+<text x='659.26' y='135.36' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='25.66px' lengthAdjust='spacingAndGlyphs'>Kochi</text>
+<text x='666.30' y='152.33' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='20.80px' lengthAdjust='spacingAndGlyphs'>Eilat</text>
+<text x='656.92' y='169.31' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='39.88px' lengthAdjust='spacingAndGlyphs'>Okinawa</text>
+<text x='284.23' y='188.78' text-anchor='end' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='32.38px' lengthAdjust='spacingAndGlyphs'>Taiwan</text>
+<text x='361.58' y='293.62' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='47.23px' lengthAdjust='spacingAndGlyphs'>Singapore</text>
+<text x='891.32' y='391.48' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='14.00px' lengthAdjust='spacingAndGlyphs'>Fiji</text>
+<text x='736.62' y='373.01' text-anchor='middle' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='85.77px' lengthAdjust='spacingAndGlyphs'>Great Barrier Reef</text>
+<line x1='281.88' y1='202.49' x2='377.98' y2='202.49' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='542.06' y1='202.49' x2='638.17' y2='202.49' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='281.88' y1='202.49' x2='281.88' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='638.17' y1='202.49' x2='638.17' y2='198.00' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<text x='460.02' y='206.75' text-anchor='middle' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='137.20px' lengthAdjust='spacingAndGlyphs'>North: 98% spawn in Apr–Aug</text>
+<line x1='710.83' y1='424.66' x2='734.27' y2='424.66' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='898.35' y1='424.66' x2='921.79' y2='424.66' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='710.83' y1='424.66' x2='710.83' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<line x1='921.79' y1='424.66' x2='921.79' y2='420.17' style='stroke-width: 0.75; stroke: #F1EAD7; stroke-opacity: 0.45; stroke-linecap: butt;' />
+<text x='816.31' y='428.92' text-anchor='middle' style='font-size: 12.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='137.09px' lengthAdjust='spacingAndGlyphs'>South: 88% spawn in Oct–Dec</text>
+<text x='155.31' y='420.64' style='font-size: 11.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='92.03px' lengthAdjust='spacingAndGlyphs'>Each dot: one night of</text>
+<text x='155.31' y='434.50' style='font-size: 11.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='91.64px' lengthAdjust='spacingAndGlyphs'>spawning on one reef</text>
+<line x1='139.60' y1='408.19' x2='152.49' y2='421.67' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
 <text x='60.96' y='450.78' text-anchor='end' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='24.88px' lengthAdjust='spacingAndGlyphs'>30° S</text>
@@ -1103,13 +1116,14 @@
 <polyline points='828.46,84.57 828.46,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
 <polyline points='905.18,84.57 905.18,81.11 ' style='stroke-width: 0.38; stroke: #FFFFFF;' />
 <text x='751.73' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='27.45px' lengthAdjust='spacingAndGlyphs'>−2 °C</text>
-<text x='828.46' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='6.28px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='828.46' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='53.14px' lengthAdjust='spacingAndGlyphs'>No change</text>
 <text x='905.18' y='104.79' text-anchor='middle' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='25.42px' lengthAdjust='spacingAndGlyphs'>+2 °C</text>
-<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='628.28px' lengthAdjust='spacingAndGlyphs'>Their calendar months are about half a year apart, but their place on the temperature</text>
-<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='655.47px' lengthAdjust='spacingAndGlyphs'>curve is the same: 89% of reef-nights fall while the local sea warms, just 47% of the year.</text>
+<text x='35.87' y='73.32' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='574.09px' lengthAdjust='spacingAndGlyphs'>A year calendar for every latitude. Gold: the sea is warming. Blue: it is cooling.</text>
+<text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='553.72px' lengthAdjust='spacingAndGlyphs'>89% of spawning nights fall while the local sea warms, just 47% of the year.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='636.88px' lengthAdjust='spacingAndGlyphs'>Both hemispheres spawn while the water warms</text>
-<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='788.05px' lengthAdjust='spacingAndGlyphs'>Each dot: one recorded reef-night (1,026, 1978–2019). Backdrop: 39-year mean warming rate by latitude band, 214 NOAA regions. Warming share from the 884 nights inside NOAA regions.</text>
+<text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='720.84px' lengthAdjust='spacingAndGlyphs'>1,026 spawning nights, 1978–2019, of which 884 lie inside NOAA reef regions. Background colour: 39-year average from 214 regions. North: above 15° N. South: below 10° S.</text>
 <text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='577.44px' lengthAdjust='spacingAndGlyphs'>People look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
+<text transform='translate(29.47,293.67) rotate(-90)' text-anchor='middle' style='font-size: 12.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='38.06px' lengthAdjust='spacingAndGlyphs'>Latitude</text>
 </g>
 </g>
 </svg>

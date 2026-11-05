@@ -23,6 +23,11 @@ stopifnot(!anyNA(counts$row))
 tropic_row <- max(places$row[places$abs_latitude > tropic]) + 1
 row_limits <- c(min(places$row) - 0.6, -0.4)
 
+# A small brightness key, built from the same colours as the cells.
+cell_colours <- c("#1C2B41", "#57304F", "#A64562", spawn, "#FFE0DC")
+key_y <- row_limits[1] - 1.55
+key_cells <- tibble(left = -22.6 + 0.95 * 0:4, colour = cell_colours)
+
 actogram <- ggplot(counts, aes(lunar_day, row)) +
   geom_tile(aes(fill = share), width = 0.92, height = 0.82, linewidth = 0) +
   # A hairline frame around the eight-day window the percentages refer to
@@ -35,10 +40,18 @@ actogram <- ggplot(counts, aes(lunar_day, row)) +
   geom_text(data = places, aes(x = -15.7, y = row, label = label, colour = independent),
             hjust = 1, family = font_note, size = pts(13.5)) +
   moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = 0.65, width = 1.24, height = 1.5) +
+  plot_note(-15.7, 0.65, "One row per place, equator at the top", hjust = 1) +
+  plot_note(3.5, 1.05, "8 days after\nfull moon", hjust = 0.5, size = 12.5) +
+  plot_note(-34, key_y, "Share of a place’s spawning\nnights on that lunar day", size = 13) +
+  plot_note(-22.9, key_y, "0%", hjust = 1) +
+  annotate("rect", xmin = key_cells$left, xmax = key_cells$left + 0.87, ymin = key_y - 0.42,
+           ymax = key_y + 0.42, fill = key_cells$colour) +
+  plot_note(-17.6, key_y, "50%") +
   scale_colour_manual(values = c("FALSE" = soft, "TRUE" = moon), guide = "none") +
-  scale_fill_gradientn(colours = c("#1C2B41", "#57304F", "#A64562", spawn, "#FFE0DC"),
+  scale_fill_gradientn(colours = cell_colours,
                        transform = "sqrt", limits = c(0, 0.5), guide = "none") +
-  scale_x_continuous(breaks = c(-14, -7, 0, 7, 14), labels = c("−14", "−7", "Full moon", "+7", "+14"),
+  scale_x_continuous(breaks = c(-14, -7, 0, 7, 14),
+                     labels = c("−14", "7 days before", "Full moon", "7 days after", "+14"),
                      expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   # The window reaches left of the data to leave room for the place names.
@@ -57,8 +70,9 @@ tightness_strip <- ggplot(places, aes(tightness, row)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(ylim = row_limits, clip = "off") +
   labs(x = NULL, y = NULL) +
-  annotate("text", x = 0, y = 0.65, hjust = 0, family = font_label, size = pts(14), colour = soft,
-           label = "Tightness") +
+  annotate("text", x = 0, y = 2.45, hjust = 0, family = font_label, size = pts(14), colour = moon,
+           label = "Tightness R") +
+  plot_note(0, 0.6, "1 = all on the same lunar day\n0 = evenly spread", size = 12.5) +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(38, 0, 0, 16))
 
@@ -66,9 +80,9 @@ moon_plot <- actogram + tightness_strip +
   plot_layout(widths = c(5.2, 1)) +
   plot_annotation(
     title = "The Moon’s hold loosens away from the equator",
-    subtitle = sprintf("Inside the tropics %.0f%% of reef-nights fall in the eight framed days after full moon. Beyond them it is %.0f%%, and an even\nspread would give %.0f%%. The two records with the most nights, Eilat and the aquarium, look loosest of all.",
-                       100 * stats[["share_inside_tropics"]], 100 * stats[["share_outside_tropics"]], 100 * even_share),
-    caption = sprintf("Columns are days from full moon. Brighter cell: a larger share of that place’s records on that lunar day. Tightness: 1 means a single lunar night, 0 an even spread. Latitude trend: Spearman ρ = %.2f, also found\nwithin genera, though places with more recorded nights look looser too. Places with at least 12 reef-nights. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
+    subtitle = sprintf("In the tropics, %.0f%% of spawning nights fall in the 8 days after full moon, just %.0f%% of the lunar month.\nOutside the tropics it drops to %.0f%%. At Eilat and Kochi spawning spans almost the whole month.",
+                       100 * stats[["share_inside_tropics"]], 100 * even_share, 100 * stats[["share_outside_tropics"]]),
+    caption = sprintf("White names and dots: separate studies. Only places with at least 12 spawning nights are shown. Latitude against tightness: Spearman ρ = %.2f, also found within genera.\nPlaces with more recorded nights also look more spread out, so closer watching may explain part of this. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
                       stats[["spearman_rho"]]),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)))
   )

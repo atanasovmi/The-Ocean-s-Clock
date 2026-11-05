@@ -12,10 +12,11 @@ PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 
 | Plot | Question | What to look for |
 | --- | --- | --- |
-| [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's hand is longest, the Moon's shortest. |
+| [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's white line is longest, the Moon's shortest. |
 | [2. The year](outputs/figures/02_season.png) | What does the season follow? | Both hemispheres sit on the warming part of the year. |
 | [3. The Moon](outputs/figures/03_moon.png) | Do all reefs follow the Moon equally? | Tight near the equator, loose beyond the tropics. |
 | [4. The sky](outputs/figures/04_sky.png) | Does the Sun or the Moon set the hour? | Moonrise climbs while the start of spawning stays flat. |
+| [4.01 The sky, second version](outputs/figures/04.01_sky.png) | The same question, one row per evening | The moons step right while the dots stay near 2 hours. |
 | [5. The diary](outputs/figures/05_diary.png) | Does the pattern survive when every day is watched? | Spawning lines up with the calendar far more than with the Moon. |
 | [6. Minutes](outputs/figures/06_minutes.png) | How precise is the Sun clock? | Wide clouds in the wild, tight clusters in the tanks. |
 | [7. The heat](outputs/figures/07_heat_years.png) | How has heat stress changed? | Each stripe of heat, ending with 171 of 214 regions in 2024. |
@@ -171,6 +172,10 @@ The [Coral Trait Database](https://www.coraltraits.org) reports 172 traits and 2
 
 ## Methods and submission
 
-Tightness is the length of the average direction of all records around a cycle, from 0 (an even spread) to 1 (one moment). The heat-exposure index weights monthly heat stress by the recorded spawning calendar and holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
+Our timing data is circular. The year, the lunar month and the day are cycles with no real start or end, so the last point of each sits next to the first. Ordinary statistics fail on such data: day −14 and day +14 of the lunar month are neighbours, but their ordinary mean lands on full moon, the opposite side of the cycle. We therefore use circular statistics, also called directional statistics, and treat each record as an angle on a circle.
+
+Tightness is the mean resultant length, written R̄ (R on the plots). Each record becomes an arrow of length 1, and R̄ is the length of the average arrow, from 0 (an even spread) to 1 (all records at one moment). The direction of that arrow is the circular mean, the white line on plot 1. R̄ describes concentration: it is not a confidence interval, and it is not Pearson's r. Because it is always between 0 and 1, it lets us compare the year, the Moon and the Sun despite their different units. It is calculated by `circular_summary()` in `R/analyse_clocks.R`. For further reading, see Fisher, *Statistical Analysis of Circular Data* (1993), and Mardia & Jupp, *Directional Statistics* (2000).
+
+The heat-exposure index weights monthly heat stress by the recorded spawning calendar and holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
 
 Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`. Plots 1 to 3 have no earlier author and need one before export; `export_submission.R` stops until they are filled in. The students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.
