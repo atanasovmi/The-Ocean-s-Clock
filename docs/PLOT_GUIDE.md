@@ -80,4 +80,4 @@ The Red Sea row has only 10 nights, from three sites. The waves are smoothed by 
 
 ## Words you may need
 
-A reef-night, called a spawning night on the plots, is one reef subsite on one local date, however many species were recorded there. Tightness runs from 0 (spread evenly around the cycle) to 1 (everything at one moment). Degree heating weeks add up how far and how long the water stayed above its usual summer maximum over the last twelve weeks. The Brier error is the average squared gap between a predicted chance and what happened, so lower is better.
+A reef-night, called a spawning night on the plots, is one reef subsite on one local date, however many species were recorded there. On plot 9 a spawning night is one genus on one reef on one date, and a genus is a group of related species. Tightness runs from 0 (spread evenly around the cycle) to 1 (everything at one moment). Degree heating weeks add up how far and how long the water stayed above its usual summer maximum over the last twelve weeks. The Brier error is the average squared gap between a predicted chance and what happened, so lower is better.

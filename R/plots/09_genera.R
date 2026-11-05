@@ -53,6 +53,8 @@ moon_y <- row_limits[2] + 2.05
 window_y <- row_limits[2] + 0.75
 crowd_fill <- "#A64562"     # plot 3's middle cell colour; the outlier wears full spawn pink
 share_x <- month_end + 4.8
+scale_bottom <- -0.35
+even_share <- 8 / synodic_month     # the share an even spread would put in the frame
 
 # The plot's right edge is a quarter moon too, which the shared row cannot draw:
 # it shows days up to new moon, and this one comes after it.
@@ -81,6 +83,11 @@ wave_plot <- ggplot(waves, aes(day)) +
   geom_polygon(data = edge_moon, aes(x, y), inherit.aes = FALSE, fill = moon) +
   plot_note(3.5, window_y, "8 days after full moon", hjust = 0.5) +
   plot_note(month_start - 1.3, moon_y - 0.35, "One wave per genus\n(n) = spawning nights", hjust = 1) +
+  # The height key sits in the label column, drawn at the waves' own scale.
+  annotate("segment", x = month_start - 0.6, xend = month_start - 0.6, y = scale_bottom,
+           yend = scale_bottom + wave_height * 0.2, colour = soft, linewidth = 0.6) +
+  plot_note(month_start - 1.1, scale_bottom + wave_height * 0.1,
+            "This bar = 20% of a\ngenus’s nights in a day", hjust = 1, size = 12.5) +
   plot_note(share_x, headings$row, "Same genus, opposite moon", hjust = 1, colour = moon) +
   plot_note(share_x, 0.15, sprintf("Same peak, but not equally tight: %s down to %s",
                                    first(group_rows$share_label[!group_rows$outlier]),
@@ -91,9 +98,10 @@ wave_plot <- ggplot(waves, aes(day)) +
                      labels = c("Full moon", "+7 days", "New moon", "+22 days"), expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = c(-16.3, share_x), ylim = row_limits, clip = "off") +
-  labs(x = NULL, y = NULL) +
+  labs(x = "Days after full moon", y = NULL) +
   theme_plot() +
-  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(60, 0, 0, 0))
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(60, 0, 0, 0),
+        axis.title.x = element_text(hjust = 0.57, margin = margin(t = 6)))
 
 # Hour panel ----
 # Sunrise comes about 12 h after sunset, earlier or later with place and season, so
@@ -118,17 +126,18 @@ hour_plot <- ggplot(dots, aes(hours, row)) +
                      expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = c(-4, 20), ylim = row_limits, clip = "off") +
-  labs(x = NULL, y = NULL) +
+  labs(x = "Hours after sunset", y = NULL) +
   theme_plot() +
-  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(60, 0, 0, 26))
+  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(60, 0, 0, 26),
+        axis.title.x = element_text(margin = margin(t = 6)))
 
 genera_plot <- wave_plot + hour_plot +
   plot_layout(widths = c(2.55, 1)) +
   plot_annotation(
     title = "Most coral genera share one timetable. Pocillopora does not",
-    subtitle = "Each wave is one genus across the lunar month: the higher the wave, the more of its spawning nights fall on that day.\nEleven genera peak after full moon and start in the evening. Pocillopora spawns by day, and in the Red Sea at new moon.",
-    caption = sprintf("%.0f genera recorded; shown are those with 40 or more nights. A night is one genus on one reef. Waves are smoothed by about a day. Genera still differ on the same reef (labels shuffled within reefs, p < 0.001).\nPlatygyra also has a small new-moon peak (%.0f%% of its nights). Approximate start times are included. Field records show when people looked, not every night. Source: Baird et al. (2021).",
-                      stats[["genera_all"]], 100 * stats[["platygyra_share_near_new"]]),
+    subtitle = "A genus is a group of related species. Each wave is one genus over the lunar month: higher means more nights that day.\nEleven genera peak after full moon and start in the evening. Pocillopora spawns by day, and in the Red Sea at new moon.",
+    caption = sprintf("Spawning night: one genus on one reef on one date. Percentages: share of a genus’s nights inside the white frame; an even spread would give %.0f%%. Tight: packed into few days. Some times are approximate.\nBright pink: Pocillopora (cauliflower corals), split by sea. Shown: genera with 40+ nights, of %.0f recorded. Waves are smoothed by about a day. Sunrise comes about 12 h after sunset, varying by place and season.\np < 0.001: shuffling genus labels within reefs almost never gives gaps this large, so genera differ even on one reef. Platygyra has a small new-moon peak (%.0f%% of nights). Source: Baird et al. (2021).",
+                      100 * even_share, stats[["genera_all"]], 100 * stats[["platygyra_share_near_new"]]),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)))
   )
 
