@@ -70,7 +70,7 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
   # One real dot stands in as the key.
   plot_note(6, -14.4, "Each dot: one night of
 spawning on one reef", size = 12) +
-  note_line(18, -17.2, 18, -20.1) +
+  note_line(29, -17.2, 29, -20.7) +
   scale_fill_gradient2(low = water, mid = "#12283B", high = warm_gold, midpoint = 0,
                        limits = c(-2.2, 2.2), oob = scales::squish, breaks = c(-2, 0, 2),
                        labels = c("−2 °C", "No change", "+2 °C"), name = "Sea temperature change per month",
