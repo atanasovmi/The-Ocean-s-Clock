@@ -18,6 +18,9 @@ minutes <- read_csv("outputs/tables/06_minutes.csv", show_col_types = FALSE)
 colonies <- read_csv("outputs/tables/seasim_colony_pairs.csv", col_types = cols(colony_tag = col_character()))
 heat <- read_csv("outputs/tables/07_heat_years.csv", show_col_types = FALSE)
 heat_season <- read_csv("outputs/tables/08_heat_season.csv", show_col_types = FALSE)
+genera <- read_statistics("outputs/tables/genus_statistics.csv")
+genus_rows <- read_csv("outputs/tables/09_genera.csv", show_col_types = FALSE) |>
+  filter(!grepl("Pocillopora", group))
 
 tightness <- setNames(clocks$tightness, clocks$clock)
 brier <- setNames(scores$brier, scores$model)
@@ -79,6 +82,16 @@ report <- c(
   "",
   sprintf("Of the 28 tagged colonies timed in both years, %d started earlier in 2023, with a median shift of %.0f minutes. Both years used shifted cues, and shared tank conditions prevent isolating a cause.",
           sum(colonies$change_minutes < 0), -median(colonies$change_minutes)),
+  "",
+  "## Genera share a timetable, with one clear outlier", "",
+  sprintf("Across the %d genera with at least 20 reef-nights, the typical night falls %.0f to %.0f days after full moon. Tightness varies more than timing: among the %d genera with at least 40 nights, the share of nights in the eight days after full moon runs from %.0f%% to %.0f%% ([plot 9](figures/09_genera.png)). Those differences hold on the same reef (genus labels shuffled within reefs, p < 0.001, also without Pocillopora), so location alone does not explain them.",
+          genera[["genera_well_recorded"]], genera[["typical_day_min"]], genera[["typical_day_max"]], nrow(genus_rows),
+          100 * min(genus_rows$share_after_full), 100 * max(genus_rows$share_after_full)),
+  "",
+  sprintf("Pocillopora is the clear outlier. All %d of its timed starts come after sunrise, while %.1f%% of the other %s timed starts fall between 4 hours before and 6 hours after sunset. On the Moon, all %d of its nights outside the Red Sea fall in the eight days after full moon, and all %d inside the Red Sea, from %d sites, fall in the seven days around new moon. Platygyra also has a smaller new-moon peak (%.0f%% of its nights). The Red Sea sample is small, and these records describe recorded events, so they do not explain why the timing differs.",
+          genera[["pocillopora_timed"]], 100 * genera[["other_evening_share"]], format(genera[["other_timed"]], big.mark = ","),
+          genera[["pocillopora_other_nights"]], genera[["pocillopora_red_nights"]], genera[["pocillopora_red_sites"]],
+          100 * genera[["platygyra_share_near_new"]]),
   "",
   "## The heat is changing around these clocks", "",
   sprintf("NOAA's 214 reef regions are followed through 39 complete years. %d reached the severe level of 8 degree heating weeks in 1986 and %d in 2024, about four in five ([plot 7](figures/07_heat_years.png)). The years 1998, 2010, 2016 and 2024 each followed an El Niño. Regions count equally whatever their reef area, and degree heating weeks measure accumulated heat, not coral death.",

@@ -34,6 +34,12 @@ In the Australian Sea Simulator the seasons were moved by six months and the lig
 
 Of the 28 tagged colonies timed in both years, 24 started earlier in 2023, with a median shift of 8 minutes. Both years used shifted cues, and shared tank conditions prevent isolating a cause.
 
+## Genera share a timetable, with one clear outlier
+
+Across the 20 genera with at least 20 reef-nights, the typical night falls 3 to 7 days after full moon. Tightness varies more than timing: among the 11 genera with at least 40 nights, the share of nights in the eight days after full moon runs from 53% to 100% ([plot 9](figures/09_genera.png)). Those differences hold on the same reef (genus labels shuffled within reefs, p < 0.001, also without Pocillopora), so location alone does not explain them.
+
+Pocillopora is the clear outlier. All 22 of its timed starts come after sunrise, while 99.7% of the other 1,460 timed starts fall between 4 hours before and 6 hours after sunset. On the Moon, all 31 of its nights outside the Red Sea fall in the eight days after full moon, and all 10 inside the Red Sea, from 3 sites, fall in the seven days around new moon. Platygyra also has a smaller new-moon peak (19% of its nights). The Red Sea sample is small, and these records describe recorded events, so they do not explain why the timing differs.
+
 ## The heat is changing around these clocks
 
 NOAA's 214 reef regions are followed through 39 complete years. 5 reached the severe level of 8 degree heating weeks in 1986 and 171 in 2024, about four in five ([plot 7](figures/07_heat_years.png)). The years 1998, 2010, 2016 and 2024 each followed an El Niño. Regions count equally whatever their reef area, and degree heating weeks measure accumulated heat, not coral death.

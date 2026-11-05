@@ -21,6 +21,7 @@ PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 | [6. Minutes](outputs/figures/06_minutes.png) | How precise is the Sun clock? | Wide clouds in the wild, tight clusters in the tanks. |
 | [7. The heat](outputs/figures/07_heat_years.png) | How has heat stress changed? | Each stripe of heat, ending with 171 of 214 regions in 2024. |
 | [8. Heat in the season](outputs/figures/08_heat_season.png) | Does the heat reach the spawning months? | Ten of fourteen regions rose, four stayed clear. |
+| [9. The genera](outputs/figures/09_genera.png) | Do all genera keep the same time? | Eleven waves peak together; Pocillopora spawns by day and, in the Red Sea, at new moon. |
 
 The [findings](outputs/RESULTS.md) explain the results in words. The [plot guide](docs/PLOT_GUIDE.md) says how to read each plot, what to say about it and which questions to expect.
 

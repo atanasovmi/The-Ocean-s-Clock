@@ -70,6 +70,14 @@ This uses the same grammar as plot 7, counted only inside each region's historic
 
 Ten of fourteen regions rose, and four stayed clear. This measures overlap only. We did not measure whether spawning moved or failed, and the fixed calendar comes from when people happened to record it.
 
+## 9. The genera
+
+Every wave is one genus across the lunar month, and a higher wave means more of its spawning nights fall on that day. The month starts before full moon and runs past new moon, so a new-moon peak stays whole. The percentages count nights inside the white frame. The strip on the right shows the hour spawning starts, with one dot for one genus on one night.
+
+Read it from top to bottom. Eleven genera peak inside the frame and start in the evening, so their timing is alike, but their tightness is not: the share inside the frame falls from 100% to 53%. Those differences remain when genus labels are shuffled within reefs, so place alone does not explain them. Pocillopora is the outlier. All 22 of its timed starts come after sunrise, and its 10 Red Sea nights all fall near new moon, while its 31 nights elsewhere fall after full moon.
+
+The Red Sea row has only 10 nights, from three sites. The waves are smoothed by about a day, and the records show when people looked. The plot shows that timing differs, not why.
+
 ## Words you may need
 
 A reef-night, called a spawning night on the plots, is one reef subsite on one local date, however many species were recorded there. Tightness runs from 0 (spread evenly around the cycle) to 1 (everything at one moment). Degree heating weeks add up how far and how long the water stayed above its usual summer maximum over the last twelve weeks. The Brier error is the average squared gap between a predicted chance and what happened, so lower is better.

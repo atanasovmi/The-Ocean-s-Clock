@@ -18,6 +18,7 @@ The same pattern applies to the other questions:
 | Sea Simulator colony timings | `R/prepare_seasim.R` | `R/plots/06_minutes.R` |
 | Daily NOAA histories and spatial/date joins | `R/prepare_ocean.R` | `R/plots/07_heat_years.R` |
 | Fixed-calendar heat overlap | `R/analyse_heat_exposure.R` | `R/plots/08_heat_season.R` |
+| Timing genus by genus | `R/analyse_genera.R` | `R/plots/09_genera.R` |
 
 `R/check_lunar_reference.R` handles the small independent astronomy check. `R/export_spatial_data.R` writes the working Shapefiles and reads them back. `R/write_findings.R` generates the written results; `R/check_results.R` checks data totals, denominators and output names. The common plotting theme and save function are in `R/plots/style.R`.
 

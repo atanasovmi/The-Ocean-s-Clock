@@ -66,6 +66,18 @@ stopifnot(all(heat$n_regions == 214), nrow(heat) == 39,
           heat$n_severe[heat$year == 1986] == 5, heat$n_severe[heat$year == 2024] == 171,
           nrow(heat_season) == 14, sum(heat_season$change > 0) == 10)
 
+# Genera: each reef-night sits in one row, and the plot's outlier claims still hold.
+genus_groups <- read_csv("outputs/tables/09_genera.csv", show_col_types = FALSE)
+genus_stats <- read_csv("outputs/tables/genus_statistics.csv", show_col_types = FALSE)
+genus_stats <- setNames(genus_stats$value, genus_stats$measure)
+genus_group_nights <- read_csv("data/derived/genus_group_nights.csv", show_col_types = FALSE)
+stopifnot(!anyDuplicated(genus_group_nights[c("group", "subsite_id", "date")]),
+          sum(genus_groups$nights) == nrow(genus_group_nights),
+          genus_stats[["pocillopora_evening"]] == 0,
+          genus_stats[["pocillopora_red_near_new"]] == genus_stats[["pocillopora_red_nights"]],
+          genus_stats[["pocillopora_other_after_full"]] == genus_stats[["pocillopora_other_nights"]],
+          genus_stats[["same_reef_p"]] < 0.001)
+
 # Exports: one PNG and one SVG per plot, and no private font names left in the SVGs.
 authors <- read_csv("authors.csv", show_col_types = FALSE)
 svg_files <- list.files("outputs/vector", pattern = "\\.svg$", full.names = TRUE)
