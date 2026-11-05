@@ -85,8 +85,8 @@ compass <- function(centre, top, right, bottom, left) {
          y = on_dial(turn, label_radius - 0.07, centre)$y)
 }
 dial_labels <- bind_rows(
-  compass(dial_centres[["year"]], "Warmest week", "Sea\ncools", "Half a year later", "Sea\nwarms"),
-  compass(dial_centres[["sun"]], "Sunset", "Night", "About sunrise", "Day")
+  compass(dial_centres[["year"]], "Warmest week", "+3 mo", "6 months away", "−3 mo"),
+  compass(dial_centres[["sun"]], "Sunset", "+6 h", "About sunrise", "+18 h")
 )
 
 # Moons around the middle dial
@@ -151,7 +151,7 @@ clock_plot <- ggplot() +
             size = pts(14), colour = moon) +
   # One key row above the dials names each mark by what it looks like.
   annotate("rect", xmin = -4.22, xmax = -4.06, ymin = key_y - 0.04, ymax = key_y + 0.04, fill = spawn) +
-  plot_note(-4, key_y, "Pink bar: share of records", size = 14) +
+  plot_note(-4, key_y, "Pink bar : share of records", size = 14) +
   annotate("segment", x = -2.3, xend = -2.07, y = key_y, yend = key_y, colour = moon, linewidth = 1.5,
            lineend = "round") +
   plot_note(-2.01, key_y, "White line: average time. Length R: 0 = evenly spread, 1 = all at one moment", size = 14) +
