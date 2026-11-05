@@ -62,7 +62,7 @@ stopifnot(!anyNA(night_positions$smooth_sst_c), all(abs(night_positions$days_fro
 
 # Warming field ----
 # Average warming rate by latitude band and 5-day step across all 214 regions,
-# whether or not they have spawning records. This is the backdrop for plate 2.
+# whether or not they have spawning records. This is the backdrop for plot 2.
 warming_field <- typical_year |>
   left_join(select(regions, station_id, marker_latitude), by = "station_id",
             relationship = "many-to-one") |>

@@ -1,4 +1,4 @@
-# Plate 2. What does the year clock follow?
+# Plot 2. What does the year clock follow?
 # The backdrop shows when the sea warms and cools at each latitude, from all 214
 # NOAA regions. Every dot is a recorded reef-night at its own date and latitude.
 source("R/plots/style.R")
@@ -32,7 +32,7 @@ place_labels <- tribble(
   285, -14.6, "Great Barrier Reef", 0.5
 )
 
-season_plate <- ggplot(field, aes(day_step, latitude_band)) +
+season_plot <- ggplot(field, aes(day_step, latitude_band)) +
   geom_raster(aes(fill = warming_c_per_month), interpolate = TRUE) +
   geom_hline(yintercept = 0, colour = moon, linewidth = 0.3, alpha = 0.5) +
   geom_point(data = nights, aes(day_of_year, latitude),
@@ -57,11 +57,11 @@ season_plate <- ggplot(field, aes(day_step, latitude_band)) +
        x = NULL, y = NULL,
        caption = sprintf("Each dot: one recorded reef-night (%s, 1978–2019). Backdrop: 39-year mean warming rate by latitude band, 214 NOAA regions. Warming share from the %s nights inside NOAA regions.\nPeople look for spawning when they expect it, so quiet months are under-recorded. Sources: Baird et al. (2021), NOAA Coral Reef Watch.",
                          format(nrow(nights), big.mark = ","), format(nrow(seasons), big.mark = ","))) +
-  theme_plate() +
+  theme_plot() +
   theme(axis.ticks.x = element_blank(), legend.position = "top", legend.justification = "right",
         legend.margin = margin(t = -44, b = 8), legend.title = element_text(hjust = 0),
         plot.subtitle = element_text(margin = margin(b = 8)))
 
-save_plate(season_plate, "02_season")
+save_plot(season_plot, "02_season")
 write_csv(select(seasons, subsite_id, date, station_id, days_from_peak, warming_c_per_month, warming),
           "outputs/tables/02_season.csv")

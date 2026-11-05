@@ -1,4 +1,4 @@
-# Plate 1. Which natural cycles hold the spawning records, and how tightly?
+# Plot 1. Which natural cycles hold the spawning records, and how tightly?
 # Three dials, because year, lunar month and day are all circles. Each bar is a
 # stretch of the cycle, and the thin circle is what an even spread would reach.
 # The hand points at the typical moment; its length is the tightness.
@@ -119,7 +119,7 @@ dial_text <- tibble(
   tightness = sprintf("Tightness %.2f", clocks$tightness[match(c("year", "moon", "sun"), clocks$clock)])
 )
 
-clock_plate <- ggplot() +
+clock_plot <- ggplot() +
   geom_polygon(data = rims, aes(x, y, group = id), fill = "#10263A", colour = rule, linewidth = 0.4) +
   geom_polygon(data = all_bars, aes(x, y, group = id), fill = spawn) +
   geom_path(data = even_rings, aes(x, y, group = id), colour = moon, linewidth = 0.35) +
@@ -150,9 +150,9 @@ clock_plate <- ggplot() +
                          clocks$tightness[clocks$clock == "year"], clocks$tightness[clocks$clock == "moon"],
                          clocks$tightness[clocks$clock == "sun"], format(nrow(seasons), big.mark = ","),
                          format(nrow(nights), big.mark = ","), nrow(starts))) +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.ticks = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 6)))
 
-save_plate(clock_plate, "01_three_clocks")
+save_plot(clock_plot, "01_three_clocks")
 write_csv(clocks, "outputs/tables/01_three_clocks.csv")

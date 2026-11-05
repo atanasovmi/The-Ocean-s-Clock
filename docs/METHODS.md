@@ -2,7 +2,7 @@
 
 ## Counting an event
 
-The historical workbook contains separate observation, location and taxonomy tables. We join their published IDs and check that a many-to-one join leaves the observation count unchanged. A field record, a species record and a reef-night are different units. The lunar counts use one subsite-date; the evening plates use one median exact start per genus/subsite-date. Ex-situ records, missing-value codes and ambiguous midnight timing remain explicit in the preparation.
+The historical workbook contains separate observation, location and taxonomy tables. We join their published IDs and check that a many-to-one join leaves the observation count unchanged. A field record, a species record and a reef-night are different units. The lunar counts use one subsite-date; the evening plots use one median exact start per genus/subsite-date. Ex-situ records, missing-value codes and ambiguous midnight timing remain explicit in the preparation.
 
 ## Linking to NOAA
 
@@ -19,7 +19,7 @@ E_{r,y}=\sum_{m=1}^{12} w_{r,m}\,
 \frac{\#\{d\text{ in month }m:\mathrm{DHW}_{r,d}\geq4\}}{\#\{d\text{ in month }m\}}.
 $$
 
-The calendar weights $w_{r,m}$ are held fixed for every year. This lets us examine changing heat around the same recorded calendar. It cannot tell us whether coral behaviour changed or reproduction failed. Survey schedules can influence the recorded calendar. Plate 8 shows every year of the common period, 1986–2024, and compares decade means for 1986–1995 and 2015–2024.
+The calendar weights $w_{r,m}$ are held fixed for every year. This lets us examine changing heat around the same recorded calendar. It cannot tell us whether coral behaviour changed or reproduction failed. Survey schedules can influence the recorded calendar. Plot 8 shows every year of the common period, 1986–2024, and compares decade means for 1986–1995 and 2015–2024.
 
 ## Testing predictions
 
@@ -41,22 +41,22 @@ R=\sqrt{\bar{c}^{2}+\bar{s}^{2}},\qquad
 \bar{s}=\frac{1}{n}\sum_{i}\sin\theta_i.
 $$
 
-$R$ is the tightness (statisticians call it the mean resultant length). It runs from 0, an even spread, to 1, every record at one moment. The direction of the same average is the typical moment. Two opposite clusters can also cancel to a low $R$, so the plates show the records beside the number. `R/analyse_clocks.R` calculates both.
+$R$ is the tightness (statisticians call it the mean resultant length). It runs from 0, an even spread, to 1, every record at one moment. The direction of the same average is the typical moment. Two opposite clusters can also cancel to a low $R$, so the plots show the records beside the number. `R/analyse_clocks.R` calculates both.
 
 ## The local temperature year
 
 `R/prepare_seasons.R` averages NOAA's regional temperature by day of year over 1986–2024, smooths it with a 31-day moving average that wraps around the new year, and takes the change across a centred 30-day span as the warming rate. A reef-night counts as warming when that rate is above zero on its day of the year. The comparison figure is the warming share of each night's own region, averaged across nights. Five subsites outside NOAA polygons drop out, leaving 884 of 1,026 reef-nights. The typical year needs no same-date match, so nights before satellite coverage stay in.
 
-The backdrop of plate 2 averages the warming rate across all 214 regions by 2.5° latitude band and 5-day step. The band centred on 31.25° N is repeated once at 33.75° N so that the Kochi and Shikoku dots have a backdrop. NOAA has no region at that latitude.
+The backdrop of plot 2 averages the warming rate across all 214 regions by 2.5° latitude band and 5-day step. The band centred on 31.25° N is repeated once at 33.75° N so that the Kochi and Shikoku dots have a backdrop. NOAA has no region at that latitude.
 
 ## Rebuilding the sky
 
 `R/prepare_sky.R` calculates Moon and Sun height with the low-precision formulas of the Astronomical Almanac. The Moon's height agrees with all 12,897 cached NASA/JPL Horizons positions to within 0.3°. At the sunset the source reports, the Sun sits at a median of −0.73°, which also confirms the conversion from local clock time to UTC.
 
-For each of the 172 timed reef-nights the script steps through lunar days −15 to +14 around that night's full moon and through the hours after sunset, keeping its reef and its sunset clock time. Moonlight is the lit fraction of the disc times the sine of the Moon's height, averaged over nights. Clouds and water depth are ignored, and plate 4 shows the square root because the eye compresses brightness. Moonrise is the first upward crossing of an ideal horizon by the Moon's centre, without refraction, which matches the Horizons setting.
+For each of the 172 timed reef-nights the script steps through lunar days −15 to +14 around that night's full moon and through the hours after sunset, keeping its reef and its sunset clock time. Moonlight is the lit fraction of the disc times the sine of the Moon's height, averaged over nights. Clouds and water depth are ignored, and plot 4 shows the square root because the eye compresses brightness. Moonrise is the first upward crossing of an ideal horizon by the Moon's centre, without refraction, which matches the Horizons setting.
 
 The drift of the spawning start is the slope of hours after sunset on lunar day, with genus as a factor, for the eight best-recorded genera across lunar days −2 to +10, where nearly all records lie. The moonrise delay is the slope of median moonrise over lunar days 0 to 10.
 
 ## What the presentation leaves in the tables
 
-The eight plates show selected summaries. Full regional histories, all fourteen exposure comparisons, model predictions, fitting audits and source records remain available. `tools/check_climate.py` independently reconstructs the exposure calculation from original NOAA files; `tools/check_aquarium.py` checks lagged features and refits the models with a separate solver. The [validation record](VALIDATION.md) reports their results.
+The eight plots show selected summaries. Full regional histories, all fourteen exposure comparisons, model predictions, fitting audits and source records remain available. `tools/check_climate.py` independently reconstructs the exposure calculation from original NOAA files; `tools/check_aquarium.py` checks lagged features and refits the models with a separate solver. The [validation record](VALIDATION.md) reports their results.

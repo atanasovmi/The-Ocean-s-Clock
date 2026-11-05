@@ -1,4 +1,4 @@
-# Generate the report from the same prepared values used in the plates.
+# Generate the report from the same prepared values used in the plots.
 library(dplyr)
 library(readr)
 
@@ -34,16 +34,16 @@ maldives_share <- replication$share_week[grepl("atoll-days", replication$sample)
 
 report <- c(
   "# What we found", "",
-  sprintf("The records point to three natural cycles working at different scales: the yearly warming of the sea, the Moon and sunset. They do not hold spawning equally firmly. Measured on one scale from 0 (spread evenly around the cycle) to 1 (everything at one moment), the Sun scores %.2f, the year %.2f and the Moon %.2f ([plate 1](figures/01_three_clocks.png)). The full-moon story that usually leads this topic is the loosest of the three.",
+  sprintf("The records point to three natural cycles working at different scales: the yearly warming of the sea, the Moon and sunset. They do not hold spawning equally firmly. Measured on one scale from 0 (spread evenly around the cycle) to 1 (everything at one moment), the Sun scores %.2f, the year %.2f and the Moon %.2f ([plot 1](figures/01_three_clocks.png)). The full-moon story that usually leads this topic is the loosest of the three.",
           tightness[["sun"]], tightness[["year"]], tightness[["moon"]]),
   "",
   "## The year opens the season", "",
-  sprintf("Calendar months cannot be compared across the equator, so each NOAA region gets its own typical temperature year. Of the %s reef-nights inside a NOAA region, %.0f%% fall while the local sea is warming, a stretch that covers %.0f%% of the year. The typical reef-night sits %.0f days before the warmest week ([plate 2](figures/02_season.png)). Field teams look for spawning when they expect it, so quiet months are under-recorded and this share is likely too high.",
+  sprintf("Calendar months cannot be compared across the equator, so each NOAA region gets its own typical temperature year. Of the %s reef-nights inside a NOAA region, %.0f%% fall while the local sea is warming, a stretch that covers %.0f%% of the year. The typical reef-night sits %.0f days before the warmest week ([plot 2](figures/02_season.png)). Field teams look for spawning when they expect it, so quiet months are under-recorded and this share is likely too high.",
           format(nrow(seasons), big.mark = ","), 100 * mean(seasons$warming),
           100 * mean(seasons$warming_share_of_year), -clocks$typical[clocks$clock == "year"]),
   "",
   "## The Moon narrows the night, more in the tropics", "",
-  sprintf("Of 1,026 recorded reef-nights, %.1f%% fall in the eight days from full moon, where an even spread would give 27%%. That single figure hides two groups. Inside the tropics the share is %.0f%%; beyond them it is %.0f%% ([plate 3](figures/03_moon.png)). Without Eilat and Kochi it rises to %.0f%%.",
+  sprintf("Of 1,026 recorded reef-nights, %.1f%% fall in the eight days from full moon, where an even spread would give 27%%. That single figure hides two groups. Inside the tropics the share is %.0f%%; beyond them it is %.0f%% ([plot 3](figures/03_moon.png)). Without Eilat and Kochi it rises to %.0f%%.",
           100 * lunar[["share_all"]], 100 * lunar[["share_inside_tropics"]],
           100 * lunar[["share_outside_tropics"]], 100 * lunar[["share_without_eilat_kochi"]]),
   "",
@@ -54,7 +54,7 @@ report <- c(
           100 * acropora_share, 100 * maldives_share),
   "",
   "## The Sun sets the hour", "",
-  sprintf("We calculated moonrise for each timed reef-night and checked the formula against 12,897 NASA/JPL Horizons positions; the largest gap is 0.3°. Moonrise moves about %.0f minutes later each night in this sample. The start of spawning moves %.1f minutes a night (95%% interval %.1f to %.1f), comparing like with like within the eight best-recorded genera. Starts scatter %.1f times less around sunset than around moonrise ([plate 4](figures/04_sky.png)). Half of them fall between %.1f and %.1f hours after sunset.",
+  sprintf("We calculated moonrise for each timed reef-night and checked the formula against 12,897 NASA/JPL Horizons positions; the largest gap is 0.3°. Moonrise moves about %.0f minutes later each night in this sample. The start of spawning moves %.1f minutes a night (95%% interval %.1f to %.1f), comparing like with like within the eight best-recorded genera. Starts scatter %.1f times less around sunset than around moonrise ([plot 4](figures/04_sky.png)). Half of them fall between %.1f and %.1f hours after sunset.",
           sky[["moonrise_delay_minutes_per_night"]], sky[["start_drift_minutes_per_night"]],
           sky[["start_drift_low"]], sky[["start_drift_high"]],
           sky[["sd_from_moonrise_hours"]] / sky[["sd_from_sunset_hours"]],
@@ -64,7 +64,7 @@ report <- c(
           100 * sky[["share_moon_down_after_full"]], 100 * below_on_date$share_below, 100 * below_elsewhere),
   "",
   "## A diary with every day watched", "",
-  sprintf("The Churaumi Aquarium diary is the one record with its empty days written down, so it can check the field pattern for observer bias. It weakens the lunar story: %.0f%% of its 208 spawning days fall in the same eight days, against %.0f%% of the days watched ([plate 5](figures/05_diary.png)).",
+  sprintf("The Churaumi Aquarium diary is the one record with its empty days written down, so it can check the field pattern for observer bias. It weakens the lunar story: %.0f%% of its 208 spawning days fall in the same eight days, against %.0f%% of the days watched ([plot 5](figures/05_diary.png)).",
           100 * lunar[["aquarium_share"]], 100 * lunar[["aquarium_expected"]]),
   "",
   sprintf("We forecast each year from the others, on the same 1,007 complete days. With no calendar the Brier error is %.3f. The Moon alone gives %.3f, season alone %.3f, both %.3f, and both plus the previous week's tank temperature, wind, rain and sunlight %.3f. Season cuts the error by %.0f%%. Adding the Moon to season gains %.4f (95%% interval %.4f to %.4f), which includes zero.",
@@ -74,20 +74,20 @@ report <- c(
   "We cannot tell from this whether field records overstate the Moon, because teams go out near full moon, or whether a tank dulls the signal. This is one aquarium. Its result is a reason for caution about the field numbers and does not forecast a wild reef.",
   "",
   "## Each species keeps its own time", "",
-  sprintf("In the Australian Sea Simulator the seasons were moved by six months and the light cycle by four hours, and corals spawned on the moved schedule. Against one programmed sunset, half of the Acropora loripes releases fall within %.0f minutes; in the wild, with places and species mixed, Acropora spreads over %.0f ([plate 6](figures/06_minutes.png)). Tank species keep distinct times, from about 80 to about 210 minutes after sunset.",
+  sprintf("In the Australian Sea Simulator the seasons were moved by six months and the light cycle by four hours, and corals spawned on the moved schedule. Against one programmed sunset, half of the Acropora loripes releases fall within %.0f minutes; in the wild, with places and species mixed, Acropora spreads over %.0f ([plot 6](figures/06_minutes.png)). Tank species keep distinct times, from about 80 to about 210 minutes after sunset.",
           group_spread("A. loripes"), group_spread("Acropora")),
   "",
   sprintf("Of the 28 tagged colonies timed in both years, %d started earlier in 2023, with a median shift of %.0f minutes. Both years used shifted cues, and shared tank conditions prevent isolating a cause.",
           sum(colonies$change_minutes < 0), -median(colonies$change_minutes)),
   "",
   "## The heat is changing around these clocks", "",
-  sprintf("NOAA's 214 reef regions are followed through 39 complete years. %d reached the severe level of 8 degree heating weeks in 1986 and %d in 2024, about four in five ([plate 7](figures/07_heat_years.png)). The years 1998, 2010, 2016 and 2024 each followed an El Niño. Regions count equally whatever their reef area, and degree heating weeks measure accumulated heat, not coral death.",
+  sprintf("NOAA's 214 reef regions are followed through 39 complete years. %d reached the severe level of 8 degree heating weeks in 1986 and %d in 2024, about four in five ([plot 7](figures/07_heat_years.png)). The years 1998, 2010, 2016 and 2024 each followed an El Niño. Regions count equally whatever their reef area, and degree heating weeks measure accumulated heat, not coral death.",
           severe(1986), severe(2024)),
   "",
-  sprintf("Holding each region's historical spawning months fixed, ten of fourteen regions now see more heat stress in those months, and four stay clear ([plate 8](figures/08_heat_season.png)). Northern Taiwan rises from %.1f%% to %.1f%% of the season and the Gulf of Aqaba from %.1f%% to %.1f%%, comparing 1986–1995 with 2015–2024. The index uses DHW ≥4 and measures overlap only. It cannot show that spawning moved or that reproduction failed.",
+  sprintf("Holding each region's historical spawning months fixed, ten of fourteen regions now see more heat stress in those months, and four stay clear ([plot 8](figures/08_heat_season.png)). Northern Taiwan rises from %.1f%% to %.1f%% of the season and the Gulf of Aqaba from %.1f%% to %.1f%%, comparing 1986–1995 with 2015–2024. The index uses DHW ≥4 and measures overlap only. It cannot show that spawning moved or that reproduction failed.",
           100 * taiwan$early, 100 * taiwan$recent, 100 * aqaba$early, 100 * aqaba$recent),
   "",
-  "## What sits behind the plates", "",
+  "## What sits behind the plots", "",
   "The project uses 6,178 historical coral records, 3,203,007 daily NOAA regional records, fifteen aquarium seasons, the Maldives field table, 172 timed colony records from the Sea Simulator and 12,897 NASA ephemeris positions. Field percentages describe recorded events, so they are not the chance of spawning on an unobserved night. Sources, joins and full tables stay in the project."
 )
 writeLines(enc2utf8(report), "outputs/RESULTS.md", useBytes = TRUE)

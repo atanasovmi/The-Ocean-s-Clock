@@ -1,10 +1,10 @@
-# Explaining the plates
+# Explaining the plots
 
-The eight plates answer one question from the assignment: what tells a reef that tonight is the night, and how does that fit the rhythms of the ocean? Each plate has one job and fits a Prezi frame at 16:9.
+The eight plots answer one question from the assignment: what tells a reef that tonight is the night, and how does that fit the rhythms of the ocean? Each plot has one job and fits a Prezi frame at 16:9.
 
 Colour means the same thing everywhere. Pink is a spawning record. Cream is the Moon, or a line you should read. Gold and blue are warming and cooling water. The ramp from purple to pale yellow is heat stress.
 
-With two minutes per plate and five slides at most, the strongest route is 1, 4, 3, 5 and 7. Plate 1 sets up the three clocks, plate 4 is the clearest result, plates 3 and 5 complicate the Moon, and plate 7 says why any of this matters now. Plates 2, 6 and 8 are ready if you have time or get asked.
+With two minutes per plot and five slides at most, the strongest route is 1, 4, 3, 5 and 7. Plot 1 sets up the three clocks, plot 4 is the clearest result, plots 3 and 5 complicate the Moon, and plot 7 says why any of this matters now. Plots 2, 6 and 8 are ready if you have time or get asked.
 
 ## 1. Three clocks
 
@@ -28,11 +28,11 @@ Each row is one place, ordered from the equator at the top to 33° at the bottom
 
 Read downwards. Near the equator the records pile up inside the frame. Past the edge of the tropics they spread out, and at Eilat and Kochi they cover almost the whole month. That is why the old headline of 68% was misleading: it is 88% inside the tropics and 51% beyond them.
 
-The honest caveat is on the plate. Places with more recorded nights also look looser, so part of this may come from watching more closely. Latitude still matters after allowing for that, and the pattern shows up within genera.
+The honest caveat is on the plot. Places with more recorded nights also look looser, so part of this may come from watching more closely. Latitude still matters after allowing for that, and the pattern shows up within genera.
 
 ## 4. The sky
 
-This is the plate to spend time on. Time runs left to right through one lunar month. Hours after sunset run upward. The shading is the actual moonlight over these reefs: the bright band is when the Moon is up, and it slides up the chart as the Moon rises later each night.
+This is the plot to spend time on. Time runs left to right through one lunar month. Hours after sunset run upward. The shading is the actual moonlight over these reefs: the bright band is when the Moon is up, and it slides up the chart as the Moon rises later each night.
 
 Follow the cream line first: moonrise, about 46 minutes later every night. Then the flat line through the dots: the start of spawning, about 2 minutes later every night. If the Moon set the hour, the dots would climb with the line. They stay near two hours after sunset, whatever the sky is doing.
 
@@ -64,7 +64,7 @@ Regions count equally whatever their reef area, and degree heating weeks measure
 
 ## 8. Heat in the spawning season
 
-This uses the same grammar as plate 7, counted only inside each region's historical spawning months. Each row keeps those months fixed, so a brighter cell means more of that season was under heat stress that year. Heat stress here means 4 or more degree heating weeks, a lower line than plate 7. The numbers on the right compare 1986–1995 with 2015–2024.
+This uses the same grammar as plot 7, counted only inside each region's historical spawning months. Each row keeps those months fixed, so a brighter cell means more of that season was under heat stress that year. Heat stress here means 4 or more degree heating weeks, a lower line than plot 7. The numbers on the right compare 1986–1995 with 2015–2024.
 
 Ten of fourteen regions rose, and four stayed clear. This measures overlap only. We did not measure whether spawning moved or failed, and the fixed calendar comes from when people happened to record it.
 

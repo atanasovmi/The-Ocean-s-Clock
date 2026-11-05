@@ -1,4 +1,4 @@
-# Plate 4. Which clock sets the hour: the Sun or the Moon?
+# Plot 4. Which clock sets the hour: the Sun or the Moon?
 # Each lunar night is a column; hours after sunset run upward. The shading is the
 # moonlight those same reefs had, so the dots sit in the sky they actually had.
 source("R/plots/style.R")
@@ -23,7 +23,7 @@ trend_line <- tibble(lunar_day = c(-2, 10)) |>
 
 clock_text <- function(hours) sprintf("%d h %02d", floor(hours), round(60 * (hours %% 1)))
 
-sky_plate <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
+sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
   geom_raster(aes(fill = sky_brightness), interpolate = TRUE) +
   # The Moon's rising edge
   geom_line(data = moonrise, aes(lunar_day, moonrise_hours), colour = moon, linewidth = 0.9) +
@@ -64,9 +64,9 @@ sky_plate <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
        caption = sprintf("Each dot: one genus starting on one reef-night (%d exact evening starts, %d reef-nights, %d subsites). Lighter sky: more moonlight, meaning how full the Moon is times how high.\nStarts vary %.1f times less around sunset than around moonrise. Moon formulas agree with 12,897 NASA/JPL Horizons positions to 0.3°. Coral data: Baird et al. (2021).",
                          nrow(starts), n_distinct(paste(starts$subsite_id, starts$date)), n_distinct(starts$subsite_id),
                          stats[["sd_from_moonrise_hours"]] / stats[["sd_from_sunset_hours"]])) +
-  theme_plate() +
+  theme_plot() +
   theme(plot.subtitle = element_text(margin = margin(b = 42)))
 
-save_plate(sky_plate, "04_sky")
+save_plot(sky_plot, "04_sky")
 write_csv(select(starts, subsite_id, date, genus, lunar_day, hours_after_sunset, moonrise_hours, moon_deg),
           "outputs/tables/04_sky.csv")

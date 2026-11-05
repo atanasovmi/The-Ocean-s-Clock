@@ -6,11 +6,11 @@ The records point to three clocks. Warming water opens the season: 89% of record
 
 ![Moonlight, moonrise and the start of spawning across the lunar month](outputs/figures/04_sky.png)
 
-## The plates
+## The plots
 
 PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 
-| Plate | Question | What to look for |
+| Plot | Question | What to look for |
 | --- | --- | --- |
 | [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's hand is longest, the Moon's shortest. |
 | [2. The year](outputs/figures/02_season.png) | What does the season follow? | Both hemispheres sit on the warming part of the year. |
@@ -21,11 +21,11 @@ PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 | [7. The heat](outputs/figures/07_heat_years.png) | How has heat stress changed? | Each stripe of heat, ending with 171 of 214 regions in 2024. |
 | [8. Heat in the season](outputs/figures/08_heat_season.png) | Does the heat reach the spawning months? | Ten of fourteen regions rose, four stayed clear. |
 
-The [findings](outputs/RESULTS.md) explain the results in words. The [plot guide](docs/PLOT_GUIDE.md) says how to read each plate, what to say about it and which questions to expect.
+The [findings](outputs/RESULTS.md) explain the results in words. The [plot guide](docs/PLOT_GUIDE.md) says how to read each plot, what to say about it and which questions to expect.
 
 ## How the project is organised
 
-`run.R` is the entry point. It prepares the data, runs the analyses, then draws the eight plates. Data preparation and plotting are separate, so each plot script can be read on its own.
+`run.R` is the entry point. It prepares the data, runs the analyses, then draws the eight plots. Data preparation and plotting are separate, so each plot script can be read on its own.
 
 ```text
 The-Oceans-Clock.Rproj     Open this file in RStudio
@@ -48,7 +48,7 @@ data/
   spatial/                Shapefiles for inspection in R or GIS software
 outputs/
   figures/                The eight presentation PNGs
-  vector/                 SVG versions of the same plates
+  vector/                 SVG versions of the same plots
   tables/                 Plot values and model diagnostics
   models/                 Fitted models and a native R workspace snapshot
 docs/                     Methods, sources, course requirements and checks
@@ -68,13 +68,13 @@ source("setup.R")
 source("run.R", encoding = "UTF-8")
 ```
 
-Setup needs an internet connection for missing packages. The analysis then uses the included source caches. To redraw one plate from the prepared data, run its script, for example:
+Setup needs an internet connection for missing packages. The analysis then uses the included source caches. To redraw one plot from the prepared data, run its script, for example:
 
 ```r
 source("R/plots/04_sky.R", encoding = "UTF-8")
 ```
 
-The plates use Bahnschrift, the DIN typeface that ships with Windows. On another system they fall back to the default sans-serif, so text widths shift slightly. The committed PNGs are the reference.
+The plots use Bahnschrift, the DIN typeface that ships with Windows. On another system they fall back to the default sans-serif, so text widths shift slightly. The committed PNGs are the reference.
 
 The [R workspace snapshot](outputs/models/analysis_workspace.RData) contains selected analytical objects and fitted models; the [session history](outputs/session.Rhistory) records commands actually run. They can help when inspecting the work, but `run.R` starts from explicit input files. The large parsed NOAA RDS file is rebuilt locally from the included compressed sources.
 
@@ -158,7 +158,7 @@ These two sources are not in the project yet. Each could answer a question the c
 [NASA POWER](https://power.larc.nasa.gov/) gives daily weather for any coordinates through a [public API](https://power.larc.nasa.gov/docs/services/api/temporal/daily/).
 
 - **What it offers:** [cloud amount, wind speed, rainfall and sunlight](https://power.larc.nasa.gov/api/system/manager/parameters?community=RE&temporal=daily). The daily API starts in 1981.
-- **Why we want it:** the project has no weather data for the wild reefs. Cloud cover could show whether the Moon was actually visible on recorded spawning nights, while plate 4 only calculates where the Moon was. Wind and rain could show whether weather shifts spawning on real reefs, which we have so far tested only in the aquarium.
+- **Why we want it:** the project has no weather data for the wild reefs. Cloud cover could show whether the Moon was actually visible on recorded spawning nights, while plot 4 only calculates where the Moon was. Wind and rain could show whether weather shifts spawning on real reefs, which we have so far tested only in the aquarium.
 - **What to watch for:** [grid cells](https://power.larc.nasa.gov/docs/methodology/) of about ½° × ⅝° for weather and 1° for sunlight describe the wider area, not the reef itself. Coverage may differ by parameter, so each one needs checking first.
 
 ### Coral Trait Database
@@ -166,11 +166,11 @@ These two sources are not in the project yet. Each could answer a question the c
 The [Coral Trait Database](https://www.coraltraits.org) reports 172 traits and 244,324 trait entries across 5,112 species, as of November 2026.
 
 - **What it offers:** [traits](https://www.coraltraits.org/traits) such as sexual system, mode of larval development, egg size, growth form and bleaching susceptibility. It is [released under CC0](https://www.coraltraits.org/procedures), and each trait or species can be read straight into R as a CSV.
-- **Why we want it:** our records say when each coral spawned, but hardly anything about its biology. Joined by species name, the traits could show whether species with tight timing share features such as egg size or growth form. Bleaching susceptibility could add a species view to the regional heat stress in plates 7 and 8.
+- **Why we want it:** our records say when each coral spawned, but hardly anything about its biology. Joined by species name, the traits could show whether species with tight timing share features such as egg size or growth form. Bleaching susceptibility could add a species view to the regional heat stress in plots 7 and 8.
 - **What to watch for:** species names would need matching to the coral database's current names. Traits come from many separate studies, so many species will have gaps. The `Spawning date` trait may repeat records we already hold, so it needs checking before it counts as new data.
 
 ## Methods and submission
 
 Tightness is the length of the average direction of all records around a cycle, from 0 (an even spread) to 1 (one moment). The heat-exposure index weights monthly heat stress by the recorded spawning calendar and holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
 
-Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`. Plates 1 to 3 have no earlier author and need one before export; `export_submission.R` stops until they are filled in. The students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.
+Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`. Plots 1 to 3 have no earlier author and need one before export; `export_submission.R` stops until they are filled in. The students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.

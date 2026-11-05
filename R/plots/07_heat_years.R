@@ -1,4 +1,4 @@
-# Plate 7. How has heat stress changed across the world's reef regions?
+# Plot 7. How has heat stress changed across the world's reef regions?
 # Every one of the 214 NOAA regions in every year, instead of one summary line.
 source("R/plots/style.R")
 library(patchwork)
@@ -55,7 +55,7 @@ count_strip <- ggplot(severe_by_year, aes(year, n_severe)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = year_window, ylim = c(0, 171), clip = "off") +
   labs(x = NULL, y = NULL) +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.ticks = element_blank(),
         plot.margin = margin(6, 0, 4, 0))
 
@@ -71,7 +71,7 @@ stripes <- ggplot(plot_data, aes(year, row, fill = dhw_class)) +
   guides(fill = guide_legend(nrow = 1, keywidth = unit(34, "pt"), keyheight = unit(10, "pt"),
                              label.position = "bottom")) +
   labs(x = NULL, y = NULL) +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         legend.position = "bottom", legend.justification = "right",
         legend.margin = margin(t = 2), legend.title = element_text(margin = margin(r = 12), vjust = 0.9),
@@ -79,16 +79,16 @@ stripes <- ggplot(plot_data, aes(year, row, fill = dhw_class)) +
         legend.key.spacing.x = unit(2, "pt"),
         plot.margin = margin(0, 0, 0, 0))
 
-heat_plate <- count_strip / stripes +
+heat_plot <- count_strip / stripes +
   plot_layout(heights = c(1, 4.6)) +
   plot_annotation(
     title = "In 2024, four in five reef regions crossed the severe heat line",
     subtitle = sprintf("In 1986 it was %d of 214. One row is one region, one column one year.\nThe years 1998, 2010, 2016 and 2024 each followed an El Niño.",
                        first_count),
     caption = "214 NOAA Coral Reef Watch regions, 1986–2024, each counted once whatever its reef area. Degree heating weeks measure accumulated heat stress, not coral death.",
-    theme = theme_plate() + theme(plot.subtitle = element_text(margin = margin(b = 10)))
+    theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 10)))
   )
 stopifnot(round(share_2024, 1) == 0.8)
 
-save_plate(heat_plate, "07_heat_years")
+save_plot(heat_plot, "07_heat_years")
 write_csv(severe_by_year, "outputs/tables/07_heat_years.csv")

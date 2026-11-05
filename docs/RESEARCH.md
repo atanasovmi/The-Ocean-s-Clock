@@ -58,12 +58,12 @@ The course teaches tidyverse preparation and ggplot2 alongside packages such as 
 
 - `readxl`, `readr`, `dplyr` and `tidyr` read and prepare the tables.
 - [sf](https://r-spatial.github.io/sf/) performs the point-in-polygon join and exports the working Shapefiles.
-- [ggplot2](https://ggplot2.tidyverse.org/) draws every plate, with one shared theme in `R/plots/style.R`, and [patchwork](https://patchwork.data-imaginist.com/) joins the panels of plates 3, 5 and 7.
+- [ggplot2](https://ggplot2.tidyverse.org/) draws every plot, with one shared theme in `R/plots/style.R`, and [patchwork](https://patchwork.data-imaginist.com/) joins the panels of plots 3, 5 and 7.
 - [systemfonts](https://systemfonts.r-lib.org/) registers the named cuts of Windows' Bahnschrift typeface.
 - Base R's `stats` functions fit the binomial models and perform the lag calculations.
 - [ragg](https://ragg.r-lib.org/) and [svglite](https://svglite.r-lib.org/) provide reliable raster and vector exports.
 
-Each plate answers one question, in the form that suits its data: dials for cycles, a lunar actogram for rhythms across places, and year-by-region grids for heat. Detailed records and diagnostics stay in the tables. The separate Python utilities download the public NOAA histories and independently check numerical calculations; they are not required for the cached R workflow.
+Each plot answers one question, in the form that suits its data: dials for cycles, a lunar actogram for rhythms across places, and year-by-region grids for heat. Detailed records and diagnostics stay in the tables. The separate Python utilities download the public NOAA histories and independently check numerical calculations; they are not required for the cached R workflow.
 
 ## Contribution and limits
 

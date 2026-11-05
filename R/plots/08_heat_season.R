@@ -1,5 +1,5 @@
-# Plate 8. Does the heat now reach the months when corals spawn?
-# Same grammar as plate 7, but counted only inside each region's spawning months.
+# Plot 8. Does the heat now reach the months when corals spawn?
+# Same grammar as plot 7, but counted only inside each region's spawning months.
 # The spawning calendar is held fixed, so this measures overlap with the heat
 # record. It cannot show that spawning moved or that reproduction failed.
 source("R/plots/style.R")
@@ -31,7 +31,7 @@ plot_data <- yearly |>
 # The window reaches left of 1986 and right of 2024 for the two text columns.
 year_window <- c(1974.2, 2029.6)
 
-heat_season_plate <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
+heat_season_plot <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
   # Empty rows still need to read as rows, so each gets a faint track.
   annotate("rect", xmin = 1985.5, xmax = 2024.5, ymin = rows$row - 0.43, ymax = rows$row + 0.43,
            fill = "#10263A") +
@@ -55,12 +55,12 @@ heat_season_plate <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
                           sum(comparison$change > 0), nrow(comparison)),
        x = NULL, y = NULL,
        caption = "Heat stress here means NOAA degree heating weeks of 4 or more. Each year’s share is weighted by the months in which spawning was recorded at that region’s well-sampled sites, and that calendar is held fixed.\nThis measures overlap only: it cannot show that spawning moved or failed. Sources: Baird et al. (2021), NOAA Coral Reef Watch.") +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         legend.position = "bottom", legend.justification = "right", legend.margin = margin(t = 2),
         legend.title = element_text(margin = margin(r = 12), vjust = 0.9),
         legend.key.spacing.x = unit(2, "pt"),
         plot.subtitle = element_text(margin = margin(b = 34)))
 
-save_plate(heat_season_plate, "08_heat_season")
+save_plot(heat_season_plot, "08_heat_season")
 write_csv(select(rows, station_id, region, early, recent, change), "outputs/tables/08_heat_season.csv")

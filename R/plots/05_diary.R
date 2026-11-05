@@ -1,4 +1,4 @@
-# Plate 5. Is the lunar peak real, or a product of when people go looking?
+# Plot 5. Is the lunar peak real, or a product of when people go looking?
 # The aquarium is the one record with every day watched, so its empty days are true
 # zeros. The same spawning days are laid out twice: by calendar and by the Moon.
 source("R/plots/style.R")
@@ -46,7 +46,7 @@ rate_strip <- function(rates, window, width, heading) {
     scale_y_continuous(expand = c(0, 0)) +
     coord_cartesian(xlim = window, ylim = c(0, top_rate), clip = "off") +
     labs(title = heading, x = NULL, y = NULL) +
-    theme_plate() +
+    theme_plot() +
     theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.ticks = element_blank(),
           plot.title = element_text(family = font_label, size = 15, colour = soft,
                                     margin = margin(b = 14)),
@@ -60,7 +60,7 @@ year_rows <- function(window, x_scale, x_title) {
                        expand = expansion(add = 0.6)),
        coord_cartesian(xlim = window, clip = "off"),
        labs(x = x_title, y = NULL),
-       theme_plate(),
+       theme_plot(),
        theme(axis.ticks.y = element_blank(), plot.margin = margin(0, 0, 0, 0)))
 }
 
@@ -89,11 +89,11 @@ by_moon <- ggplot(spawning_days, aes(lunar_day, year)) +
 calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by the calendar")
 moon_strip <- rate_strip(lunar_rate, lunar_window, 0.8, "The same days, sorted by the Moon")
 
-# A gap between the left and right panels, without indenting the plate's outer edges.
+# A gap between the left and right panels, without indenting the plot's outer edges.
 left_gap <- theme(plot.margin = margin(0, 18, 0, 0))
 right_gap <- theme(plot.margin = margin(0, 0, 0, 18))
 
-diary_plate <- (calendar_strip + left_gap + moon_strip + right_gap) /
+diary_plot <- (calendar_strip + left_gap + moon_strip + right_gap) /
   (by_calendar + left_gap + by_moon + right_gap) +
   plot_layout(heights = c(1, 3.9)) +
   plot_annotation(
@@ -102,8 +102,8 @@ diary_plate <- (calendar_strip + left_gap + moon_strip + right_gap) /
                        error_cut("season")),
     caption = sprintf("Bars: share of watched days with spawning. Pink dot: a day with spawning, larger when more tanks spawned (1–17). Open circle: a full moon. Forecast test on 1,007 complete days, Brier error: no calendar %.3f,\nMoon %.3f, season %.3f, both %.3f, both plus weather %.3f. One aquarium, so this checks the field pattern and does not forecast a wild reef. Source: Sakai, Yamamoto & Maruyama (2024), reanalysed.",
                       brier[["prevalence"]], brier[["moon"]], brier[["season"]], brier[["calendar"]], brier[["environment"]]),
-    theme = theme_plate() + theme(plot.subtitle = element_text(margin = margin(b = 14)))
+    theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 14)))
   )
 
-save_plate(diary_plate, "05_diary")
+save_plot(diary_plot, "05_diary")
 write_csv(select(scores, model, brier, low, high), "outputs/tables/05_diary.csv")

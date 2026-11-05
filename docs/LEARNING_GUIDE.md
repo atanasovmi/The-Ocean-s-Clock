@@ -4,7 +4,7 @@ Open `The-Oceans-Clock.Rproj` in RStudio and run `setup.R` once, then `run.R`. T
 
 ## Follow one question through the files
 
-For the sky chart, begin with `R/prepare_coral.R`. It reads the separate observation, subsite and taxonomy tables, checks the keys and preserves the source row count through the joins. It then separates natural-reef records from ex-situ records. `R/prepare_sky.R` takes the exact evening starts, works out where the Moon and Sun were on every lunar night, and checks the result against NASA. `R/plots/04_sky.R` reads those tables and draws the plate. You can run a plot script alone from the project root once its prepared input exists.
+For the sky chart, begin with `R/prepare_coral.R`. It reads the separate observation, subsite and taxonomy tables, checks the keys and preserves the source row count through the joins. It then separates natural-reef records from ex-situ records. `R/prepare_sky.R` takes the exact evening starts, works out where the Moon and Sun were on every lunar night, and checks the result against NASA. `R/plots/04_sky.R` reads those tables and draws the plot. You can run a plot script alone from the project root once its prepared input exists.
 
 The same pattern applies to the other questions:
 
@@ -39,7 +39,7 @@ The heat-overlap and model equations are in [METHODS.md](METHODS.md). For the mo
 
 `outputs/models/analysis_workspace.RData` contains selected analytical objects and fitted models. Load it explicitly in a separate R session if useful. `outputs/session.Rhistory` records commands actually run. The local `.RData` and `.Rhistory` copies are also included in the submission ZIP; automatic workspace restoration remains disabled.
 
-`authors.csv` carries over the earlier assignments where a plate replaces an earlier figure: Mihael for plates 4, 5 and 7, Pirasanna for plates 6 and 8. Plates 1, 2 and 3 are new or merge both students' work, so they are left blank for you to decide. These are editable export assignments. Record actual work and understanding before presenting:
+`authors.csv` carries over the earlier assignments where a plot replaces an earlier figure: Mihael for plots 4, 5 and 7, Pirasanna for plots 6 and 8. Plots 1, 2 and 3 are new or merge both students' work, so they are left blank for you to decide. These are editable export assignments. Record actual work and understanding before presenting:
 
 | Student | Decisions reviewed or made | Code and findings understood and checked |
 | --- | --- | --- |

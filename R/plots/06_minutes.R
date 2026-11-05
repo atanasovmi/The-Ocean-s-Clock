@@ -1,4 +1,4 @@
-# Plate 6. How precise is the Sun clock?
+# Plot 6. How precise is the Sun clock?
 # Wild records mix places, years and species. In the Sea Simulator every colony
 # shares one programmed sunset, so the spread that remains is the coral's own.
 source("R/plots/style.R")
@@ -38,7 +38,7 @@ headers <- tibble(row = c(wild_top + 0.85, tank_top + 0.85),
 label_x <- -7
 spread_x <- 300
 
-minutes_plate <- ggplot(dots, aes(minutes, row)) +
+minutes_plot <- ggplot(dots, aes(minutes, row)) +
   geom_hline(data = summaries, aes(yintercept = row), colour = "#1B3044", linewidth = 0.3) +
   # Sideways nudges are small: tank times share round values, and dots would hide each other.
   geom_point(position = position_jitter(width = 1.4, height = 0.3, seed = 6),
@@ -65,10 +65,10 @@ minutes_plate <- ggplot(dots, aes(minutes, row)) +
                           loripes$middle_half, acropora$middle_half),
        x = NULL, y = NULL,
        caption = "Dots: one genus on one reef-night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.\nTank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 12)))
 
-save_plate(minutes_plate, "06_minutes")
+save_plot(minutes_plot, "06_minutes")
 write_csv(select(summaries, setting, group, n, median_minutes, q25, q75, middle_half),
           "outputs/tables/06_minutes.csv")

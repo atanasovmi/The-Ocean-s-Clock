@@ -30,7 +30,7 @@ stopifnot(!anyDuplicated(places$place), setequal(places$place, place_totals$plac
           all(place_totals$n == places$n[match(place_totals$place, places$place)]),
           all(c("Churaumi Aquarium", "Maldives atolls") %in% places$place))
 
-# Sky: the plate says starts barely move while moonrise moves a lot.
+# Sky: the plot says starts barely move while moonrise moves a lot.
 genus_starts <- read_csv("data/derived/genus_starts.csv", show_col_types = FALSE)
 sky <- read_csv("outputs/tables/sky_statistics.csv", show_col_types = FALSE)
 sky <- setNames(sky$value, sky$measure)
@@ -66,11 +66,11 @@ stopifnot(all(heat$n_regions == 214), nrow(heat) == 39,
           heat$n_severe[heat$year == 1986] == 5, heat$n_severe[heat$year == 2024] == 171,
           nrow(heat_season) == 14, sum(heat_season$change > 0) == 10)
 
-# Exports: one PNG and one SVG per plate, and no private font names left in the SVGs.
+# Exports: one PNG and one SVG per plot, and no private font names left in the SVGs.
 authors <- read_csv("authors.csv", show_col_types = FALSE)
 svg_files <- list.files("outputs/vector", pattern = "\\.svg$", full.names = TRUE)
 stopifnot(setequal(list.files("outputs/figures", pattern = "\\.png$"), authors$figure),
           setequal(sub("\\.svg$", ".png", basename(svg_files)), authors$figure),
-          !any(vapply(svg_files, function(file) any(grepl("Plate (Title|Text|Note|Tick|Label)",
+          !any(vapply(svg_files, function(file) any(grepl("Plot (Title|Text|Note|Tick|Label)",
                                                           readLines(file, warn = FALSE))), logical(1))))
 message("Data totals, clock summaries, sky statistics, model samples, colony pairing and exports passed.")

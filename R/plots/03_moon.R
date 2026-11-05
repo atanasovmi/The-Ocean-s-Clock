@@ -1,4 +1,4 @@
-# Plate 3. Do all reefs follow the Moon equally?
+# Plot 3. Do all reefs follow the Moon equally?
 # A lunar actogram: every place gets one row across the lunar month, ordered from
 # the equator outwards, and a brighter cell means more of that place's records.
 source("R/plots/style.R")
@@ -44,7 +44,7 @@ actogram <- ggplot(counts, aes(lunar_day, row)) +
   # The window reaches left of the data to leave room for the place names.
   coord_cartesian(xlim = c(-34, 15.3), ylim = row_limits, clip = "off") +
   labs(x = NULL, y = NULL) +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         plot.margin = margin(38, 0, 0, 0))
 
@@ -59,10 +59,10 @@ tightness_strip <- ggplot(places, aes(tightness, row)) +
   labs(x = NULL, y = NULL) +
   annotate("text", x = 0, y = 0.65, hjust = 0, family = font_label, size = pts(14), colour = soft,
            label = "Tightness") +
-  theme_plate() +
+  theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(38, 0, 0, 16))
 
-moon_plate <- actogram + tightness_strip +
+moon_plot <- actogram + tightness_strip +
   plot_layout(widths = c(5.2, 1)) +
   plot_annotation(
     title = "The Moon’s hold loosens away from the equator",
@@ -70,9 +70,9 @@ moon_plate <- actogram + tightness_strip +
                        100 * stats[["share_inside_tropics"]], 100 * stats[["share_outside_tropics"]], 100 * even_share),
     caption = sprintf("Columns are days from full moon. Brighter cell: a larger share of that place’s records on that lunar day. Tightness: 1 means a single lunar night, 0 an even spread. Latitude trend: Spearman ρ = %.2f, also found\nwithin genera, though places with more recorded nights look looser too. Places with at least 12 reef-nights. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
                       stats[["spearman_rho"]]),
-    theme = theme_plate() + theme(plot.subtitle = element_text(margin = margin(b = 0)))
+    theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)))
   )
 
-save_plate(moon_plate, "03_moon")
+save_plot(moon_plot, "03_moon")
 write_csv(select(places, place, country, latitude, n, years, tightness, typical, record),
           "outputs/tables/03_moon.csv")
