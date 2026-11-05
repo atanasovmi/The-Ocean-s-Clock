@@ -55,7 +55,7 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
            fill = sky_key$colour, colour = rule, linewidth = 0.25) +
   plot_note(-10.65, 7.3, "Strongest") +
   plot_note(-1.6, 7.2, "Around full moon,\nmoonlight fills the night", hjust = 0.5, colour = night, size = 14) +
-  plot_note(8.6, 4.8, "Dark interval:\nsunset to moonrise", hjust = 0.5, size = 14) +
+  plot_note(8.6, 4.8, "Dark period:\nsunset to moonrise", hjust = 0.5, size = 14) +
   plot_note(-16.5, 8.72, "Time after sunset") +
   # One real dot stands in as the key.
   plot_note(-14.6, 3.95, "Each dot: one coral genus\nstarting to spawn on one night") +
@@ -70,7 +70,7 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
                      expand = c(0, 0)) +
   coord_cartesian(xlim = c(-15, 14.9), ylim = c(0, top_hour), clip = "off") +
   labs(title = "Spawning keeps to the Sun, whatever the Moon is doing",
-       subtitle = sprintf("Moonrise shifts %.0f minutes later every night, yet spawning stays about %s after sunset.\nAfter full moon, %.0f%% of starts fall in the dark interval between sunset and moonrise.",
+       subtitle = sprintf("Moonrise shifts %.0f minutes later every night, yet spawning stays about %s after sunset.\nAfter full moon, %.0f%% of starts fall in the dark period between sunset and moonrise.",
                           stats[["moonrise_delay_minutes_per_night"]], clock_text(stats[["median_start_hours"]]),
                           100 * stats[["share_moon_down_after_full"]]),
        x = "Days from full moon", y = NULL,

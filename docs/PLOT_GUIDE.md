@@ -32,7 +32,7 @@ The honest caveat is on the plot. Places with more recorded nights also look loo
 
 ## 4. The sky
 
-Plot 1 shows that the hour is tight, measured from sunset. This plot tests why, by setting the two possible timers against each other: moonrise moves 46 minutes a night, spawning about 2, and after full moon most starts fall in the dark interval between sunset and moonrise. This is the plot to spend time on. Time runs left to right through one lunar month. Hours after sunset run upward. The shading is the actual moonlight over these reefs: the bright band is when the Moon is up, and it slides up the chart as the Moon rises later each night.
+Plot 1 shows that the hour is tight, measured from sunset. This plot tests why, by setting the two possible timers against each other: moonrise moves 46 minutes a night, spawning about 2, and after full moon most starts fall in the dark period between sunset and moonrise. This is the plot to spend time on. Time runs left to right through one lunar month. Hours after sunset run upward. The shading is the actual moonlight over these reefs: the bright band is when the Moon is up, and it slides up the chart as the Moon rises later each night.
 
 Follow the cream line first: moonrise, about 46 minutes later every night. Then the flat line through the dots: the start of spawning, about 2 minutes later every night. If the Moon set the hour, the dots would climb with the line. They stay near two hours after sunset, whatever the sky is doing.
 
