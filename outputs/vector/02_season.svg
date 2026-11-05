@@ -1070,6 +1070,15 @@
 <text x='361.58' y='294.51' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='48.30px' lengthAdjust='spacingAndGlyphs'>Singapore</text>
 <text x='891.32' y='392.37' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='14.33px' lengthAdjust='spacingAndGlyphs'>Fiji</text>
 <text x='736.62' y='373.89' text-anchor='middle' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='87.44px' lengthAdjust='spacingAndGlyphs'>Great Barrier Reef</text>
+<text x='342.82' y='135.25' text-anchor='middle' style='font-size: 14.50px;fill: #0B1D2E; font-family: "Bahnschrift";' textLength='86.25px' lengthAdjust='spacingAndGlyphs'>Water warming</text>
+<text x='769.43' y='439.80' text-anchor='middle' style='font-size: 14.50px;fill: #0B1D2E; font-family: "Bahnschrift";' textLength='86.25px' lengthAdjust='spacingAndGlyphs'>Water warming</text>
+<text x='788.18' y='149.72' text-anchor='middle' style='font-size: 14.50px;fill: #0B1D2E; font-family: "Bahnschrift";' textLength='77.12px' lengthAdjust='spacingAndGlyphs'>Water cooling</text>
+<text x='380.33' y='423.32' text-anchor='middle' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='208.16px' lengthAdjust='spacingAndGlyphs'>Water cooling, no spawning recorded</text>
+<text x='614.73' y='310.11' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='142.92px' lengthAdjust='spacingAndGlyphs'>Near the equator the water</text>
+<text x='614.73' y='327.12' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='117.83px' lengthAdjust='spacingAndGlyphs'>hardly warms or cools</text>
+<text x='778.81' y='230.73' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='110.45px' lengthAdjust='spacingAndGlyphs'>Each dot: one reef on</text>
+<text x='778.81' y='247.74' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='115.03px' lengthAdjust='spacingAndGlyphs'>one night of spawning</text>
+<line x1='776.46' y1='234.44' x2='769.43' y2='234.44' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHw5NjAuMDB8MC4wMHw1NDAuMDA=)'>
 <text x='60.96' y='450.78' text-anchor='end' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='24.88px' lengthAdjust='spacingAndGlyphs'>30° S</text>

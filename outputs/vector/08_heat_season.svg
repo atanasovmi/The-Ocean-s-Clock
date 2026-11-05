@@ -164,8 +164,13 @@
 <text x='922.53' y='377.10' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='7.02px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='922.53' y='396.18' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='7.02px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='922.53' y='415.26' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='7.02px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='922.53' y='122.02' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='65.09px' lengthAdjust='spacingAndGlyphs'>Change, points</text>
+<text x='922.53' y='122.02' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='70.44px' lengthAdjust='spacingAndGlyphs'>Rise in % points</text>
 <text x='922.53' y='138.22' text-anchor='end' style='font-size: 13.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='86.78px' lengthAdjust='spacingAndGlyphs'>1986–95 to 2015–24</text>
+<text x='210.63' y='138.22' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='115.27px' lengthAdjust='spacingAndGlyphs'>Biggest rise at the top</text>
+<text x='529.70' y='377.78' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='197.09px' lengthAdjust='spacingAndGlyphs'>These four regions had no heat stress</text>
+<text x='529.70' y='394.79' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='196.45px' lengthAdjust='spacingAndGlyphs'>in their spawning months, in any year</text>
+<text x='35.87' y='456.01' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='316.72px' lengthAdjust='spacingAndGlyphs'>Each box: one year with heat stress in the spawning months.</text>
+<text x='35.87' y='473.02' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='288.83px' lengthAdjust='spacingAndGlyphs'>Heat stress: the level where corals are likely to bleach.</text>
 <polyline points='225.06,425.59 225.06,420.61 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='289.20,425.59 289.20,420.61 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='369.37,425.59 369.37,420.61 ' style='stroke-width: 0.75; stroke: #8598A7;' />

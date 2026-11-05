@@ -48,9 +48,16 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
            colour = soft, lineheight = 1.05, label = "Moon already set,\ndark until sunrise") +
   annotate("text", x = -1.6, y = 7.2, family = font_label, size = pts(15), colour = night,
            label = "Moon up") +
-  annotate("text", x = 8.4, y = 4.45, family = font_note, size = pts(14), colour = soft,
-           lineheight = 1.05, label = "Moon not\nup yet") +
+  annotate("text", x = 8.55, y = 4.75, family = font_note, size = pts(14), colour = soft,
+           lineheight = 1.05, label = "Moon not up yet:\nstarts are in the dark") +
+  plot_note(-16.5, 8.72, "Time after sunset") +
+  plot_note(-1.6, 6.25, "Lighter sky:\nbrighter moonlight", hjust = 0.5, colour = night) +
+  # One real dot stands in as the key.
+  plot_note(-14.6, 3.95, "Each dot: one coral group\nstarting to spawn on one night") +
+  note_line(-12, 3.42, -12, 3.05) +
   moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = top_hour + 0.5, width = 0.78, height = 0.66) +
+  plot_note(-14.1, top_hour + 0.5, "New moon", size = 14) +
+  plot_note(14.1, top_hour + 0.5, "New moon", hjust = 1, size = 14) +
   scale_fill_gradientn(colours = c(night, "#16324A", "#3C6684", "#93B2BF", "#E9E3CF"), guide = "none") +
   scale_x_continuous(breaks = c(-14, -7, 0, 7, 14),
                      labels = c("−14", "−7", "Full moon", "+7", "+14"), expand = c(0, 0)) +

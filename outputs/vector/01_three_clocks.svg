@@ -229,10 +229,31 @@
 <text x='367.14' y='455.21' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='141.89px' lengthAdjust='spacingAndGlyphs'>which is 27% of the month</text>
 <text x='664.97' y='437.07' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='190.03px' lengthAdjust='spacingAndGlyphs'>Half of all starts fall between 1 h 31</text>
 <text x='664.97' y='455.21' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='125.31px' lengthAdjust='spacingAndGlyphs'>and 2 h 28 after sunset</text>
+<text x='69.31' y='472.60' style='font-size: 14.00px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='90.53px' lengthAdjust='spacingAndGlyphs'>Hand length 0.72</text>
+<text x='367.14' y='472.60' style='font-size: 14.00px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='162.62px' lengthAdjust='spacingAndGlyphs'>Hand length 0.57, the shortest</text>
+<text x='664.97' y='472.60' style='font-size: 14.00px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='157.44px' lengthAdjust='spacingAndGlyphs'>Hand length 0.90, the longest</text>
+<text x='628.92' y='373.40' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='106.70px' lengthAdjust='spacingAndGlyphs'>Time runs clockwise</text>
+<text x='652.43' y='124.54' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='140.91px' lengthAdjust='spacingAndGlyphs'>Long bar: a lot of spawning</text>
+<text x='652.43' y='141.55' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='59.22px' lengthAdjust='spacingAndGlyphs'>at this time</text>
+<line x1='605.40' y1='150.20' x2='557.33' y2='178.42' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
+<text x='328.47' y='356.39' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='126.28px' lengthAdjust='spacingAndGlyphs'>Thin circle: how far bars</text>
+<text x='328.47' y='373.40' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='127.56px' lengthAdjust='spacingAndGlyphs'>would reach if spawning</text>
+<text x='328.47' y='390.41' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='102.61px' lengthAdjust='spacingAndGlyphs'>were spread evenly</text>
+<line x1='380.72' y1='338.31' x2='439.24' y2='288.15' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
+<text x='331.08' y='118.13' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='116.38px' lengthAdjust='spacingAndGlyphs'>Hand: the typical time.</text>
+<text x='331.08' y='135.14' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='111.58px' lengthAdjust='spacingAndGlyphs'>A longer hand means</text>
+<text x='331.08' y='152.15' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='130.58px' lengthAdjust='spacingAndGlyphs'>spawning is more in step</text>
+<line x1='271.00' y1='161.70' x2='173.81' y2='237.98' style='stroke-width: 0.75; stroke: #B7C4CE; stroke-linecap: butt;' />
+<text x='497.77' y='124.87' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='53.97px' lengthAdjust='spacingAndGlyphs'>Full moon</text>
+<text x='497.77' y='379.85' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='57.09px' lengthAdjust='spacingAndGlyphs'>New moon</text>
+<text x='130.96' y='316.97' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='69.22px' lengthAdjust='spacingAndGlyphs'>Sea warming</text>
+<text x='233.37' y='316.97' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='60.70px' lengthAdjust='spacingAndGlyphs'>Sea cooling</text>
+<text x='706.77' y='252.18' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='19.28px' lengthAdjust='spacingAndGlyphs'>Day</text>
+<text x='848.89' y='278.31' text-anchor='middle' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='27.67px' lengthAdjust='spacingAndGlyphs'>Night</text>
 <text x='35.87' y='74.90' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='821.27px' lengthAdjust='spacingAndGlyphs'>Recorded spawning around the year, the lunar month and the day. Bars past the thin circle beat an even spread.</text>
 <text x='35.87' y='50.07' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='725.94px' lengthAdjust='spacingAndGlyphs'>The reef reads three clocks, and the Moon is the loosest</text>
 <text x='35.87' y='501.05' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='810.66px' lengthAdjust='spacingAndGlyphs'>Hand: the typical moment. Its length is the tightness, from 0 (an even spread) to 1 (all records at one moment): 0.72 year, 0.57 Moon, 0.90 Sun. Year dial aligned to each region’s warmest week.</text>
-<text x='35.87' y='516.23' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='704.83px' lengthAdjust='spacingAndGlyphs'>884 reef-nights on the year dial, 1,026 on the Moon dial, 346 genus starts on the Sun dial. Survey effort is uneven. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
+<text x='35.87' y='516.23' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='793.11px' lengthAdjust='spacingAndGlyphs'>884 reef-nights (one reef, one night) on the year dial, 1,026 on the Moon dial, 346 genus starts on the Sun dial. Survey effort is uneven. Sources: Baird et al. (2021), NOAA Coral Reef Watch.</text>
 </g>
 </g>
 </svg>

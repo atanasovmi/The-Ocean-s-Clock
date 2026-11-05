@@ -441,7 +441,7 @@
 <text x='235.50' y='399.08' text-anchor='end' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='69.17px' lengthAdjust='spacingAndGlyphs'>A. elseyi (19)</text>
 <text x='235.50' y='422.81' text-anchor='end' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='78.16px' lengthAdjust='spacingAndGlyphs'>A. loripes (90)</text>
 <text x='235.50' y='446.54' text-anchor='end' style='font-size: 14.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='93.34px' lengthAdjust='spacingAndGlyphs'>A. hyacinthus (9)</text>
-<text x='235.50' y='127.36' text-anchor='end' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='95.44px' lengthAdjust='spacingAndGlyphs'>Wild reefs, by genus</text>
+<text x='235.50' y='127.36' text-anchor='end' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='193.48px' lengthAdjust='spacingAndGlyphs'>Wild reefs, by genus (number of records)</text>
 <text x='235.50' y='307.71' text-anchor='end' style='font-size: 14.50px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='152.86px' lengthAdjust='spacingAndGlyphs'>Sea Simulator tanks, by species</text>
 <text x='924.13' y='147.53' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='38.64px' lengthAdjust='spacingAndGlyphs'>45 min</text>
 <text x='924.13' y='171.26' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='37.84px' lengthAdjust='spacingAndGlyphs'>32 min</text>
@@ -456,6 +456,17 @@
 <text x='924.13' y='422.81' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='31.39px' lengthAdjust='spacingAndGlyphs'>5 min</text>
 <text x='924.13' y='446.54' text-anchor='end' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='31.39px' lengthAdjust='spacingAndGlyphs'>5 min</text>
 <text x='924.13' y='127.36' text-anchor='end' style='font-size: 14.50px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='84.62px' lengthAdjust='spacingAndGlyphs'>Middle half spans</text>
+<circle cx='264.66' cy='122.21' r='2.50' style='stroke-width: 0.31; stroke: #0B1D2E; fill: #FF7E8B;' />
+<text x='273.63' y='127.00' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='57.89px' lengthAdjust='spacingAndGlyphs'>One record</text>
+<line x1='390.28' y1='122.21' x2='430.65' y2='122.21' style='stroke-width: 2.56; stroke: #F1EAD7;' />
+<text x='439.62' y='127.00' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='322.11px' lengthAdjust='spacingAndGlyphs'>Middle half of the records: a shorter bar means tighter timing</text>
+<text x='924.13' y='288.37' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='243.59px' lengthAdjust='spacingAndGlyphs'>Many places and species mixed: a wide spread</text>
+<text x='255.69' y='307.36' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='331.91px' lengthAdjust='spacingAndGlyphs'>Research tanks: every coral gets the same programmed sunset</text>
+<text x='264.66' y='413.67' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='140.00px' lengthAdjust='spacingAndGlyphs'>Each species has its own</text>
+<text x='264.66' y='431.94' style='font-size: 14.50px;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='120.72px' lengthAdjust='spacingAndGlyphs'>time slot after sunset</text>
+<text x='693.09' y='422.45' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='154.59px' lengthAdjust='spacingAndGlyphs'>Half of all releases fall within</text>
+<text x='35.87' y='477.03' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='151.28px' lengthAdjust='spacingAndGlyphs'>A. = Acropora, M. = Montipora</text>
+<text x='924.13' y='477.03' text-anchor='end' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='91.36px' lengthAdjust='spacingAndGlyphs'>Time after sunset</text>
 <polyline points='251.20,460.61 251.20,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='385.79,460.61 385.79,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='520.38,460.61 520.38,455.63 ' style='stroke-width: 0.75; stroke: #8598A7;' />
@@ -470,7 +481,7 @@
 <text x='35.87' y='96.09' style='font-size: 16.50px; font-weight: 350;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='815.27px' lengthAdjust='spacingAndGlyphs'>A. loripes releases fall within 5 minutes. In the wild, with places and species mixed, Acropora spreads over 84.</text>
 <text x='35.87' y='48.49' style='font-size: 29.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='585.95px' lengthAdjust='spacingAndGlyphs'>In the tanks, each species keeps its own time</text>
 <text x='35.87' y='502.63' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='828.27px' lengthAdjust='spacingAndGlyphs'>Dots: one genus on one reef-night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.</text>
-<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='586.97px' lengthAdjust='spacingAndGlyphs'>Tank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.</text>
+<text x='35.87' y='517.81' style='font-size: 11.00px;fill: #8598A7; font-family: "Bahnschrift";' textLength='749.02px' lengthAdjust='spacingAndGlyphs'>A genus is a group of related species. Tank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.</text>
 </g>
 </g>
 </svg>

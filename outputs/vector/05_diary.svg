@@ -104,7 +104,17 @@
 <rect x='431.22' y='201.00' width='9.16' height='0.00' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <rect x='441.78' y='201.00' width='9.16' height='0.00' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <text x='277.35' y='137.82' text-anchor='middle' style='font-size: 14.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='19.70px' lengthAdjust='spacingAndGlyphs'>49%</text>
-<text x='35.87' y='124.18' style='font-size: 15.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='113.34px' lengthAdjust='spacingAndGlyphs'>Sorted by the calendar</text>
+<text x='64.32' y='165.68' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='116.28px' lengthAdjust='spacingAndGlyphs'>Bars: share of watched</text>
+<text x='64.32' y='182.06' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='99.06px' lengthAdjust='spacingAndGlyphs'>days with spawning</text>
+<circle cx='370.66' cy='146.05' r='3.23' style='stroke-width: 0.92; stroke: #F1EAD7;' />
+<circle cx='370.66' cy='160.09' r='2.20' style='stroke-width: 0.35; stroke: #0B1D2E; fill: #FF7E8B;' />
+<circle cx='370.66' cy='174.13' r='4.87' style='stroke-width: 0.35; stroke: #0B1D2E; fill: #FF7E8B;' />
+<line x1='363.61' y1='188.18' x2='377.70' y2='188.18' style='stroke-width: 0.85; stroke: #31475A; stroke-linecap: butt;' />
+<text x='383.33' y='150.66' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='50.11px' lengthAdjust='spacingAndGlyphs'>Full moon</text>
+<text x='383.33' y='164.71' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='103.69px' lengthAdjust='spacingAndGlyphs'>A day with spawning</text>
+<text x='383.33' y='178.75' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='94.97px' lengthAdjust='spacingAndGlyphs'>Bigger: more tanks</text>
+<text x='383.33' y='192.79' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='118.58px' lengthAdjust='spacingAndGlyphs'>Days watched that year</text>
+<text x='35.87' y='124.18' style='font-size: 15.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='191.62px' lengthAdjust='spacingAndGlyphs'>Sorted by the calendar: one clear peak</text>
 <rect x='513.53' y='201.00' width='10.99' height='0.00' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <rect x='527.26' y='198.51' width='10.99' height='2.49' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <rect x='541.00' y='192.86' width='10.99' height='8.14' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
@@ -136,7 +146,7 @@
 <rect x='898.04' y='179.29' width='10.99' height='21.71' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <rect x='911.78' y='192.86' width='10.99' height='8.14' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF7E8B;' />
 <text x='697.55' y='159.53' text-anchor='middle' style='font-size: 14.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='17.58px' lengthAdjust='spacingAndGlyphs'>31%</text>
-<text x='512.16' y='124.18' style='font-size: 15.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='172.67px' lengthAdjust='spacingAndGlyphs'>The same days, sorted by the Moon</text>
+<text x='512.16' y='124.18' style='font-size: 15.00px; font-weight: 600;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='240.39px' lengthAdjust='spacingAndGlyphs'>The same days, sorted by the Moon: much flatter</text>
 </g>
 <defs>
   <clipPath id='cpNjQuMzJ8OTI0LjEzfDIwMS4wMHw0MzMuODQ='>

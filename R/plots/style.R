@@ -41,6 +41,20 @@ font_label <- type_cut("Plot Label", 14)
 # ggplot sizes text in millimetres and theme() in points; this converts.
 pts <- function(points) points / ggplot2::.pt
 
+# Notes ----
+# Short plain notes that sit on top of a plot and explain what is not obvious.
+# They share one look, so a reader learns once what a note is. Notes never move a
+# mark: position them with coordinates inside the plot's fixed window.
+plot_note <- function(x, y, label, hjust = 0, vjust = 0.5, colour = soft, size = 13.5) {
+  annotate("text", x = x, y = y, label = label, hjust = hjust, vjust = vjust, family = font_note,
+           size = pts(size), colour = colour, lineheight = 1.05)
+}
+
+# A thin line from a note to the thing it explains.
+note_line <- function(x, y, xend, yend, colour = soft) {
+  annotate("segment", x = x, y = y, xend = xend, yend = yend, colour = colour, linewidth = 0.35)
+}
+
 # Theme ----
 theme_plot <- function() {
   theme_void(base_family = font_text) +

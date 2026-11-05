@@ -43,6 +43,9 @@ year_breaks <- c(1986, seq(1990, 2020, 5), 2024)
 year_window <- c(1978.4, 2024.5)
 share_2024 <- severe_by_year$n_severe[severe_by_year$year == 2024] / 214
 first_count <- severe_by_year$n_severe[severe_by_year$year == 1986]
+# Rows below the panel for the two notes level with the year labels and the legend.
+axis_row <- min(region_rows$row) - 16
+legend_row <- min(region_rows$row) - 36
 
 # Top strip: the count of regions over the severe threshold.
 count_strip <- ggplot(severe_by_year, aes(year, n_severe)) +
@@ -51,6 +54,9 @@ count_strip <- ggplot(severe_by_year, aes(year, n_severe)) +
             size = pts(15), colour = moon, vjust = 0) +
   annotate("text", x = 1986, y = 150, hjust = 0, vjust = 1, family = font_note, size = pts(14),
            colour = soft, label = "Regions over the severe line of 8 degree heating weeks") +
+  # El Niño is background knowledge from outside this data, not something calculated here.
+  plot_note(1986, 83, "Peaks follow El Niño, a Pacific warm-up") +
+  plot_note(year_window[1], 90, "Degree heating week:\none week at 1 °C above\nthe usual summer high", size = 13) +
   scale_x_continuous(breaks = year_breaks, expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
   coord_cartesian(xlim = year_window, ylim = c(0, 171), clip = "off") +
@@ -67,7 +73,11 @@ stripes <- ggplot(plot_data, aes(year, row, fill = dhw_class)) +
   scale_y_continuous(expand = c(0, 0)) +
   scale_fill_manual(values = heat_steps, drop = FALSE,
                     name = "Highest degree heating weeks of the year") +
-  coord_cartesian(xlim = year_window, clip = "off") +
+  # Fixed limits: the notes below sit outside the rows and must not stretch the panel.
+  coord_cartesian(xlim = year_window, ylim = c(min(region_rows$row) - 0.5, max(region_rows$row) + 0.5),
+                  clip = "off") +
+  plot_note(year_window[1], axis_row, "Each line: one region") +
+  plot_note(year_window[1], legend_row, "4 or more: coral bleaching likely. 8 or more: severe.") +
   guides(fill = guide_legend(nrow = 1, keywidth = unit(34, "pt"), keyheight = unit(10, "pt"),
                              label.position = "bottom")) +
   labs(x = NULL, y = NULL) +

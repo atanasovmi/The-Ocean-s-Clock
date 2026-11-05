@@ -22,6 +22,14 @@ rows <- comparison |>
          change_label = if_else(change == 0, "0", sprintf("+%.1f", 100 * change)))
 stopifnot(!anyNA(rows$region), nrow(rows) == 14)
 
+# The note on the empty rows says these regions never saw heat stress in their
+# spawning months, so check that against every year.
+clear_regions <- yearly |>
+  summarise(peak = max(calendar_exposure), .by = station_id) |>
+  filter(peak == 0)
+clear_rows <- filter(rows, station_id %in% clear_regions$station_id)
+stopifnot(nrow(clear_rows) == 4, all(clear_rows$change == 0))
+
 exposure_classes <- c("none", "under 10%", "10–25%", "25–50%", "50–75%", "over 75%")
 plot_data <- yearly |>
   left_join(select(rows, station_id, row), by = "station_id", relationship = "many-to-one") |>
@@ -42,7 +50,11 @@ heat_season_plot <- ggplot(plot_data, aes(year, row, fill = exposure_class)) +
   geom_text(data = rows, aes(x = 2029.5, y = row, label = change_label), inherit.aes = FALSE,
             hjust = 1, family = font_note, size = pts(14.5), colour = moon) +
   annotate("text", x = 2029.5, y = 0.25, hjust = 1, vjust = 0, family = font_label, size = pts(13.5),
-           colour = soft, lineheight = 1, label = "Change, points\n1986–95 to 2015–24") +
+           colour = soft, lineheight = 1, label = "Rise in % points\n1986–95 to 2015–24") +
+  plot_note(1985.1, 0.25, "Biggest rise at the top", hjust = 1, vjust = 0) +
+  plot_note(2005, mean(clear_rows$row), "These four regions had no heat stress\nin their spawning months, in any year",
+            hjust = 0.5) +
+  plot_note(year_window[1], -16.6, "Each box: one year with heat stress in the spawning months.\nHeat stress: the level where corals are likely to bleach.") +
   scale_fill_manual(values = setNames(heat_steps, exposure_classes), limits = exposure_classes[-1],
                     name = "Share of spawning-season days under heat stress") +
   scale_x_continuous(breaks = c(1986, seq(1990, 2020, 5), 2024), expand = c(0, 0)) +

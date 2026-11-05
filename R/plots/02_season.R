@@ -42,6 +42,15 @@ season_plot <- ggplot(field, aes(day_step, latitude_band)) +
            colour = moon, label = "Equator") +
   geom_text(data = place_labels, aes(day, latitude, label = label, hjust = hjust),
             family = font_label, size = pts(14.5), colour = moon) +
+  # The two colours named where they happen, so the legend is not needed to read them.
+  plot_note(117, 33.2, "Water warming", hjust = 0.5, colour = night, size = 14.5) +
+  plot_note(299, -27.8, "Water warming", hjust = 0.5, colour = night, size = 14.5) +
+  plot_note(307, 30.3, "Water cooling", hjust = 0.5, colour = night, size = 14.5) +
+  plot_note(133, -24.5, "Water cooling, no spawning recorded", hjust = 0.5, colour = moon, size = 14.5) +
+  plot_note(233, -3.6, "Near the equator the water\nhardly warms or cools", hjust = 0.5) +
+  # One real dot stands in as the key.
+  plot_note(303, 12.3, "Each dot: one reef on\none night of spawning") +
+  note_line(302, 12.3, 299, 12.3) +
   scale_fill_gradient2(low = water, mid = "#12283B", high = warm_gold, midpoint = 0,
                        limits = c(-2.2, 2.2), oob = scales::squish, breaks = c(-2, 0, 2),
                        labels = c("−2 °C", "0", "+2 °C"), name = "Sea temperature change per month",

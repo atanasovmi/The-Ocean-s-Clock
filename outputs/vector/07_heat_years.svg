@@ -100,6 +100,10 @@
 <text x='760.35' y='135.67' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='16.12px' lengthAdjust='spacingAndGlyphs'>103</text>
 <text x='914.50' y='113.21' text-anchor='middle' style='font-size: 15.00px; font-weight: 600;fill: #F1EAD7; font-family: "Bahnschrift";' textLength='13.78px' lengthAdjust='spacingAndGlyphs'>171</text>
 <text x='182.30' y='132.39' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='300.50px' lengthAdjust='spacingAndGlyphs'>Regions over the severe line of 8 degree heating weeks</text>
+<text x='182.30' y='149.38' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='208.59px' lengthAdjust='spacingAndGlyphs'>Peaks follow El Niño, a Pacific warm-up</text>
+<text x='35.87' y='130.51' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='109.06px' lengthAdjust='spacingAndGlyphs'>Degree heating week:</text>
+<text x='35.87' y='146.89' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='114.70px' lengthAdjust='spacingAndGlyphs'>one week at 1 °C above</text>
+<text x='35.87' y='163.27' style='font-size: 13.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='116.50px' lengthAdjust='spacingAndGlyphs'>the usual summer high</text>
 <rect x='172.67' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0B1D2E;' />
 <rect x='191.94' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
 <rect x='211.21' y='204.37' width='19.27' height='1.09' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4D4580;' />
@@ -8456,6 +8460,8 @@
 <text x='164.96' y='381.90' text-anchor='end' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='56.78px' lengthAdjust='spacingAndGlyphs'>24 regions</text>
 <text x='164.96' y='407.92' text-anchor='end' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='36.39px' lengthAdjust='spacingAndGlyphs'>Pacific</text>
 <text x='164.96' y='425.56' text-anchor='end' style='font-size: 14.00px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='57.77px' lengthAdjust='spacingAndGlyphs'>44 regions</text>
+<text x='35.87' y='457.50' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='109.12px' lengthAdjust='spacingAndGlyphs'>Each line: one region</text>
+<text x='35.87' y='479.33' style='font-size: 13.50px;fill: #B7C4CE; font-family: "Bahnschrift";' textLength='269.47px' lengthAdjust='spacingAndGlyphs'>4 or more: coral bleaching likely. 8 or more: severe.</text>
 <polyline points='182.30,440.77 182.30,435.79 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='259.38,440.77 259.38,435.79 ' style='stroke-width: 0.75; stroke: #8598A7;' />
 <polyline points='355.72,440.77 355.72,435.79 ' style='stroke-width: 0.75; stroke: #8598A7;' />

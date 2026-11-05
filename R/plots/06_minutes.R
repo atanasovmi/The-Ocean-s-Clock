@@ -33,9 +33,11 @@ acropora <- filter(summaries, group == "Acropora")
 wild_top <- max(summaries$row[summaries$setting == "wild"])
 tank_top <- max(summaries$row[summaries$setting == "tank"])
 headers <- tibble(row = c(wild_top + 0.85, tank_top + 0.85),
-                  label = c("Wild reefs, by genus", "Sea Simulator tanks, by species"))
+                  label = c("Wild reefs, by genus (number of records)", "Sea Simulator tanks, by species"))
 
 label_x <- -7
+key_y <- wild_top + 0.85
+axis_row <- min(summaries$row) - 1.3
 spread_x <- 300
 
 minutes_plot <- ggplot(dots, aes(minutes, row)) +
@@ -55,6 +57,18 @@ minutes_plot <- ggplot(dots, aes(minutes, row)) +
             family = font_note, size = pts(14.5), colour = moon) +
   annotate("text", x = spread_x, y = wild_top + 0.85, hjust = 1, family = font_label,
            size = pts(14.5), colour = soft, label = "Middle half spans") +
+  # The key sits in the header row, drawn with the same marks as the rows below.
+  annotate("point", x = 6, y = key_y, shape = 21, size = 2.2, stroke = 0.22, fill = spawn, colour = night) +
+  plot_note(10, key_y, "One record") +
+  annotate("segment", x = 62, xend = 80, y = key_y, yend = key_y, colour = moon, linewidth = 1.2,
+           lineend = "round") +
+  plot_note(84, key_y, "Middle half of the records: a shorter bar means tighter timing") +
+  plot_note(spread_x, wild_top - 5.95, "Many places and species mixed: a wide spread", hjust = 1) +
+  plot_note(2, tank_top + 0.85, "Research tanks: every coral gets the same programmed sunset") +
+  plot_note(6, tank_top - 4, "Each species has its own\ntime slot after sunset", colour = moon, size = 14.5) +
+  plot_note(197, loripes$row, "Half of all releases fall within") +
+  plot_note(-96, axis_row, "A. = Acropora, M. = Montipora") +
+  plot_note(spread_x, axis_row, "Time after sunset", hjust = 1) +
   scale_x_continuous(breaks = seq(0, 240, 60), labels = c("Sunset", "+1 h", "+2 h", "+3 h", "+4 h"),
                      expand = c(0, 0)) +
   scale_y_continuous(expand = c(0, 0)) +
@@ -64,7 +78,7 @@ minutes_plot <- ggplot(dots, aes(minutes, row)) +
        subtitle = sprintf("These colonies ran on a sunset moved by four hours and seasons moved by six months, and they followed it. Half of all\nA. loripes releases fall within %.0f minutes. In the wild, with places and species mixed, Acropora spreads over %.0f.",
                           loripes$middle_half, acropora$middle_half),
        x = NULL, y = NULL,
-       caption = "Dots: one genus on one reef-night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.\nTank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
+       caption = "Dots: one genus on one reef-night (wild) or one tagged colony on one night (tanks), nudged apart so they stay visible; the number of records is in brackets. Cream bar: the middle half of each row.\nA genus is a group of related species. Tank times count from the programmed sunset, 2022–23. Sources: Baird et al. (2021); Koukoumaftsis et al. (2025), supplementary Table S1.") +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 12)))

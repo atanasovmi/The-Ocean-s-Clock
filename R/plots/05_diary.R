@@ -86,8 +86,24 @@ by_moon <- ggplot(spawning_days, aes(lunar_day, year)) +
             "Days from full moon") +
   theme(axis.text.y = element_blank())
 
-calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by the calendar")
-moon_strip <- rate_strip(lunar_rate, lunar_window, 0.8, "The same days, sorted by the Moon")
+# A key beside the calendar bars, drawn with the same marks as the rows below.
+key_x <- 193
+key_rows <- c(full_moon = 0.45, spawning = 0.335, bigger = 0.22, watched = 0.105)
+calendar_strip <- rate_strip(calendar_rate, calendar_window, 2.6, "Sorted by the calendar: one clear peak") +
+  plot_note(calendar_window[1], 0.26, "Bars: share of watched\ndays with spawning", size = 13) +
+  annotate("point", x = key_x, y = key_rows[["full_moon"]], shape = 21, size = 2.6, stroke = 0.65,
+           colour = moon, fill = NA) +
+  annotate("point", x = key_x, y = key_rows[["spawning"]], shape = 21, size = 1.9, stroke = 0.25,
+           colour = night, fill = spawn) +
+  annotate("point", x = key_x, y = key_rows[["bigger"]], shape = 21, size = 4.4, stroke = 0.25,
+           colour = night, fill = spawn) +
+  annotate("segment", x = key_x - 2, xend = key_x + 2, y = key_rows[["watched"]],
+           yend = key_rows[["watched"]], colour = rule, linewidth = 0.4) +
+  plot_note(key_x + 3.6, key_rows[["full_moon"]], "Full moon", size = 13) +
+  plot_note(key_x + 3.6, key_rows[["spawning"]], "A day with spawning", size = 13) +
+  plot_note(key_x + 3.6, key_rows[["bigger"]], "Bigger: more tanks", size = 13) +
+  plot_note(key_x + 3.6, key_rows[["watched"]], "Days watched that year", size = 13)
+moon_strip <- rate_strip(lunar_rate, lunar_window, 0.8, "The same days, sorted by the Moon: much flatter")
 
 # A gap between the left and right panels, without indenting the plot's outer edges.
 left_gap <- theme(plot.margin = margin(0, 18, 0, 0))
