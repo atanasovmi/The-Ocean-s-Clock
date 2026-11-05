@@ -21,9 +21,9 @@ start_trend <- lm(hours_after_sunset ~ lunar_day, data = filter(starts, between(
 trend_line <- tibble(lunar_day = c(-2, 10)) |>
   mutate(hours = predict(start_trend, newdata = pick(lunar_day)))
 
-# A small moonlight key, built from the same colours as the sky.
+# The sky colours, from no moonlight to the strongest.
 sky_colours <- c(night, "#16324A", "#3C6684", "#93B2BF", "#E9E3CF")
-sky_key <- tibble(left = -13.55 + 0.55 * 0:4, colour = sky_colours)
+sky_range <- range(sky$sky_brightness)
 
 clock_text <- function(hours) sprintf("%d h %02d", floor(hours), round(60 * (hours %% 1)))
 
@@ -48,38 +48,38 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
   annotate("text", x = 11.5, y = 4.2, hjust = 0, family = font_note, size = pts(14),
            colour = soft, lineheight = 1.05,
            label = sprintf("Linear fit to dots:\n+%.0f min per night,\nalmost constant", stats[["start_drift_minutes_per_night"]])) +
-  # Moonlight key in the dark corner, where nothing else is drawn.
-  plot_note(-14.6, 7.95, "Moonlight at the reef") +
-  plot_note(-14.6, 7.3, "None") +
-  annotate("rect", xmin = sky_key$left, xmax = sky_key$left + 0.5, ymin = 7.14, ymax = 7.46,
-           fill = sky_key$colour, colour = rule, linewidth = 0.25) +
-  plot_note(-10.65, 7.3, "Strongest") +
   plot_note(-1.6, 7.2, "Around full moon,\nmoonlight fills the night", hjust = 0.5, colour = night, size = 14) +
   plot_note(8.6, 4.8, "Dark period:\nsunset to moonrise", hjust = 0.5, size = 14) +
   plot_note(-16.5, 8.72, "Time after sunset") +
-  # One real dot stands in as the key.
-  plot_note(-14.6, 3.95, "Each dot: one coral genus\nstarting to spawn on one night") +
-  note_line(-12, 3.42, -12, 3.05) +
   moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = top_hour + 0.5, width = 0.78, height = 0.66) +
   plot_note(-14.1, top_hour + 0.5, "New moon", size = 14) +
   plot_note(14.1, top_hour + 0.5, "New moon", hjust = 1, size = 14) +
-  scale_fill_gradientn(colours = sky_colours, guide = "none") +
+  scale_fill_gradientn(colours = sky_colours, limits = sky_range, name = "Moonlight at the reef",
+                       breaks = sky_range[1] + diff(sky_range) * c(0.07, 0.86),
+                       labels = c("None", "Strongest"),
+                       guide = guide_colourbar(direction = "horizontal", barwidth = unit(170, "pt"), barheight = unit(9, "pt"),
+                                               title.position = "top", ticks = FALSE)) +
   scale_x_continuous(breaks = c(-14, -7, 0, 7, 14),
                      labels = c("−14", "−7", "Full moon", "+7", "+14"), expand = c(0, 0)) +
   scale_y_continuous(breaks = seq(0, 8, 2), labels = c("Sunset", paste0("+", seq(2, 8, 2), " h")),
                      expand = c(0, 0)) +
   coord_cartesian(xlim = c(-15, 14.9), ylim = c(0, top_hour), clip = "off") +
   labs(title = "Spawning keeps to the Sun, whatever the Moon is doing",
-       subtitle = sprintf("Moonrise shifts %.0f minutes later every night, yet spawning stays about %s after sunset.\nAfter full moon, %.0f%% of starts fall in the dark period between sunset and moonrise.",
+       subtitle = sprintf("Moonrise shifts %.0f minutes later every night, yet spawning stays about %s after sunset.\nAfter full moon, %.0f%% of starts (dots) fall in the dark period between sunset and moonrise.",
                           stats[["moonrise_delay_minutes_per_night"]], clock_text(stats[["median_start_hours"]]),
                           100 * stats[["share_moon_down_after_full"]]),
        x = "Days from full moon", y = NULL,
-       caption = sprintf("Moonlight: lit share of the Moon × its height. %d starts on %d spawning nights at %d reef sites, spread sideways so the dots stay visible.\nTrend with genus controlled: +%.1f min per night (95%% CI %.1f to %.1f). Starts vary %.1f times less around sunset than around moonrise. Moon formula checked against NASA. Data: Baird et al. (2021).",
+       caption = sprintf("Each dot: one genus starting on one night. Moonlight: lit share of the Moon × its height. %d starts on %d spawning nights at %d reef sites, spread sideways so the dots stay visible.\nTrend with genus controlled: +%.1f min per night (95%% CI %.1f to %.1f). Starts vary %.1f times less around sunset than around moonrise. Moon formula checked against NASA. Data: Baird et al. (2021).",
                          nrow(starts), n_distinct(paste(starts$subsite_id, starts$date)), n_distinct(starts$subsite_id),
                          stats[["start_drift_minutes_per_night"]], stats[["start_drift_low"]], stats[["start_drift_high"]],
                          stats[["sd_from_moonrise_hours"]] / stats[["sd_from_sunset_hours"]])) +
   theme_plot() +
-  theme(plot.subtitle = element_text(margin = margin(b = 42)))
+  # The legend sits above the panel, beside the subtitle, so nothing covers the sky.
+  # An inside position with a value above 1 keeps it out of the layout, so the panel stays put.
+  theme(plot.subtitle = element_text(margin = margin(b = 42)),
+        legend.position = "inside", legend.position.inside = c(1, 1.105),
+        legend.justification.inside = c(1, 0), legend.title = element_text(hjust = 0), legend.ticks = element_blank(),
+        legend.frame = element_rect(colour = rule, linewidth = 0.3, fill = NA))
 
 save_plot(sky_plot, "04_sky")
 write_csv(select(starts, subsite_id, date, genus, lunar_day, hours_after_sunset, moonrise_hours, moon_deg),
