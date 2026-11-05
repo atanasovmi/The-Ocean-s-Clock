@@ -2,7 +2,7 @@
 
 The eight plots answer one question from the assignment: what tells a reef that tonight is the night, and how does that fit the rhythms of the ocean? Each plot has one job and fits a Prezi frame at 16:9.
 
-Colour means the same thing everywhere. Pink is a spawning record. Cream is the Moon, or a line you should read. Gold and blue are warming and cooling water. The ramp from purple to pale yellow is heat stress.
+Colour means the same thing everywhere. Pink is a spawning record. Cream is the Moon, or a line you should read. Orange and violet are warming and cooling water on plot 2. The ramp from purple to pale yellow is heat stress.
 
 With two minutes per plot and five slides at most, the strongest route is 1, 4, 3, 5 and 7. Plot 1 sets up the three clocks, plot 4 is the clearest result, plots 3 and 5 complicate the Moon, and plot 7 says why any of this matters now. Plots 2, 6 and 8 are ready if you have time or get asked.
 
@@ -16,7 +16,7 @@ If someone asks why you used circles: the end of each cycle runs straight into i
 
 ## 2. The year
 
-The backdrop shows how fast the sea warms (gold) or cools (blue) at each latitude through the year, from all 214 NOAA regions. Each pink dot is one recorded reef-night at its real date and latitude.
+The backdrop shows how fast the sea warms (orange) or cools (violet) at each latitude through the year, from all 214 NOAA regions. Each pink dot is one recorded reef-night at its real date and latitude.
 
 Point at the northern cluster around April to August and the southern one around October to December. The months are about half a year apart, and both clusters sit on gold. Then give the number: 89% of reef-nights fall in the warming part of the local year, which is 47% of it.
 
