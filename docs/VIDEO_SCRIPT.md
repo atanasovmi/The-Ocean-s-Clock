@@ -2,7 +2,7 @@
 
 A short film about the project, told in eight scenes. Every number below comes from [the findings](../outputs/RESULTS.md).
 
-Visuals: illustrated underwater scenes only. Show no plots, charts, tables or data figures, because those live in the repository's README.
+Visuals: hand-drawn ink and watercolour illustrations, cute but professional, on white paper. Show no plots, charts, tables or data figures, because those live in the repository's README.
 
 ## Scene 1: The question
 
