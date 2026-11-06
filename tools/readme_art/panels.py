@@ -9,7 +9,7 @@ import math
 import random
 import re
 
-from PIL import Image, ImageChops, ImageDraw
+from PIL import Image, ImageDraw
 from playwright.sync_api import sync_playwright
 
 import hero
@@ -307,60 +307,31 @@ def seabed():
 </svg>""")
 
 
-def faded(crop, side):
-    """Lets a reef crop dissolve towards the middle of the page."""
-    width, height = crop.size
-    ramp = Image.new("L", (width, 1))
-    for x in range(width):
-        distance = x if side == "right" else width - 1 - x
-        ramp.putpixel((x, 0), min(255, int(255 * distance / (width * .34))))
-    alpha = ImageChops.multiply(crop.getchannel("A"), ramp.resize((width, height)))
-    crop.putalpha(alpha)
-    return crop
-
-
-def side_band(name, seed):
-    """A section break with reef on both sides of the page and open water between."""
-    width, height = 1280, 132
-    reef = reef_image()
-    scale = 1.5
-    left = faded(reef.crop((0, int(250 * scale), int(452 * scale), reef.height)), "left")
-    right = faded(reef.crop((int(828 * scale), int(250 * scale), reef.width, reef.height)), "right")
-    shown_h = height
-    shown_w = round(452 * shown_h / 370)
-    size = (shown_w * 2, shown_h * 2)
-    left_uri = data_uri(left.resize(size, Image.LANCZOS), quality=74)
-    right_uri = data_uri(right.resize(size, Image.LANCZOS), quality=74)
-
+def water_band(name, seed):
+    """A section break: a band of moving water with bubbles rising through it."""
+    width, height = 1280, 84
     r = random.Random(seed)
     specks = ""
-    for x in [r.uniform(30, 150) for _ in range(4)] + [r.uniform(1130, 1250) for _ in range(4)] + [r.uniform(300, 980) for _ in range(5)]:
-        size_b = r.uniform(2.4, 6.5)
+    for x in [r.uniform(60, 1220) for _ in range(11)]:
+        size = r.uniform(2.4, 6.5)
         seconds = r.uniform(5, 9)
-        specks += (f'<circle cx="{x:.0f}" cy="{height - 8}" r="{size_b:.1f}" fill="url(#bubble)" stroke="#7fe8ff" stroke-opacity=".8" stroke-width=".8" '
+        specks += (f'<circle cx="{x:.0f}" cy="{height - 8}" r="{size:.1f}" fill="url(#bubble)" stroke="#7fe8ff" stroke-opacity=".8" stroke-width=".8" '
                    f'style="animation:up {seconds:.1f}s ease-in {-r.uniform(0, seconds):.1f}s infinite"/>')
-    weed = "".join([
-        hero.kelp(16, height, 112, 8, 12, 6.4, "kelpA", seed), hero.kelp(36, height, 78, 6, 9, 5.2, "kelpB", seed + 1),
-        hero.kelp(1264, height, 118, 8, 12, 6.8, "kelpA", seed + 2), hero.kelp(1244, height, 82, 6, 9, 5.6, "kelpB", seed + 3)])
     length = 80
     wave = "".join(f"q{length / 2},{7 if i % 2 == 0 else -7} {length},0 " for i in range(22))
     write(name, f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" role="presentation" aria-hidden="true">
 <defs>
-<linearGradient id="kelpA" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#056b3f"/><stop offset=".6" stop-color="#12ad62"/><stop offset="1" stop-color="#7ff0a8"/></linearGradient>
-<linearGradient id="kelpB" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0a7a4a"/><stop offset=".6" stop-color="#2fd17a"/><stop offset="1" stop-color="#c4ff9c"/></linearGradient>
 <radialGradient id="bubble" cx=".34" cy=".3" r=".78"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".35" stop-color="#bff4ff" stop-opacity=".3"/><stop offset="1" stop-color="#27c2f0" stop-opacity=".5"/></radialGradient>
 <linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset=".15" stop-color="#27b4ee"/><stop offset="1" stop-color="#0a7fd6" stop-opacity="0"/></linearGradient>
-<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0"><stop offset=".08" stop-color="#000"/><stop offset=".24" stop-color="#fff"/><stop offset=".76" stop-color="#fff"/><stop offset=".92" stop-color="#000"/></linearGradient>
+<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".08" stop-color="#fff"/><stop offset=".92" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
 <mask id="m"><rect width="{width}" height="{height}" fill="url(#mg)"/></mask>
 </defs>
 <style>.w{{animation:w 11s linear infinite}}
 @keyframes w{{to{{transform:translateX(160px)}}}}
-@keyframes up{{0%{{transform:translateY(0);opacity:0}}18%{{opacity:1}}100%{{transform:translateY(-112px);opacity:0}}}}
+@keyframes up{{0%{{transform:translateY(0);opacity:0}}18%{{opacity:1}}100%{{transform:translateY(-66px);opacity:0}}}}
 @media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}</style>
 <g mask="url(#m)"><path class="w" d="M-160,{height - 40} {wave} V{height} H-160 Z" fill="url(#w)" opacity=".85"/></g>
-<image href="{left_uri}" x="0" y="0" width="{shown_w}" height="{shown_h}"/>
-<image href="{right_uri}" x="{width - shown_w}" y="0" width="{shown_w}" height="{shown_h}"/>
-{weed}{specks}
+{specks}
 </svg>""")
 
 
@@ -498,8 +469,8 @@ def build():
     button("btn_checks.svg", "Validation", 160, "#4fd4f7", "#0a7fd6")
     icons()
     fhnw_plate()
-    side_band("band_a.svg", 1)
-    side_band("band_b.svg", 21)
+    water_band("band_a.svg", 1)
+    water_band("band_b.svg", 21)
     values_chart()
     project_map()
     seabed()

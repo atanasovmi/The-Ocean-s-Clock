@@ -378,7 +378,7 @@ The harness was a looping workflow with a good number of agents, working to clea
 
 **Mihael Atanasov** (lead) and **Pirasanna Siva** built this project for the [Applied Data Science](https://modulbeschreibungen.webapps.fhnw.ch/detail/26HS_9400805?uiLanguage=de&semester=26HS) blockweek at the [University of Applied Sciences and Arts Northwestern Switzerland](https://www.fhnw.ch/en), presented on 6 November 2026.
 
-We thank our lecturers [Dr. Martin Sterchi](https://www.fhnw.ch/de/personen/martin-sterchi) ([GitHub](https://github.com/martinSter)), [Prof. Dr. Fabian Heimsch](https://www.fhnw.ch/de/personen/fabian-heimsch) and [Nathan Brack](https://www.fhnw.ch/de/personen/nathan-brack) for their help and guidance. For the course assessors, [this page](docs/COURSE_CRITERIA.md) (in German) maps each published criterion to where it can be checked.
+We thank our lecturers [Dr. Martin Sterchi](https://www.fhnw.ch/de/personen/martin-sterchi), [Prof. Dr. Fabian Heimsch](https://www.fhnw.ch/de/personen/fabian-heimsch) and [Nathan Brack](https://www.fhnw.ch/de/personen/nathan-brack) for their help and guidance. For the course assessors, [this page](docs/COURSE_CRITERIA.md) (in German) maps each published criterion to where it can be checked.
 
 We also thank the researchers and agencies whose open data made this possible: Baird and colleagues for the Coral Spawning Database, Sakai, Yamamoto and Maruyama for the Churaumi Aquarium records, Sheridan and colleagues for the Maldives observations, the authors of the Sea Simulator study, NOAA Coral Reef Watch, NASA/JPL and the US Naval Observatory.
 
