@@ -2,6 +2,8 @@
 
 A short film about the project, told in eight scenes. Every number below comes from [the findings](../outputs/RESULTS.md).
 
+Visuals: illustrated underwater scenes only. Show no plots, charts, tables or data figures, because those live in the repository's README.
+
 ## Scene 1: The question
 
 On a few nights each year, a coral reef does something remarkable. Animals with no brain, fixed to the rock, release their eggs and sperm into the sea within the same few hours. Pink bundles drift up through the dark water, and a reef that looked still is suddenly spawning all at once.
@@ -10,7 +12,7 @@ So what tells a coral reef that tonight is the night?
 
 ## Scene 2: Why we asked
 
-We are Mihael Atanasov and Pirasanna Siva, two students at the University of Applied Sciences and Arts Northwestern Switzerland. In our Applied Data Science blockweek we could have picked a business case. We chose a niche question from nature instead, with no business value to chase, and treated the week as an experimental lab.
+We are Mihael Atanasov and Pirasanna Siva, two students at the University of Applied Sciences and Arts Northwestern Switzerland studying in different fields. In our Applied Data Science blockweek we could have picked a business case. We chose a niche question from nature instead, with no business value to chase, and treated the week as an experimental lab.
 
 ## Scene 3: Six sources that were never meant to meet
 
@@ -46,7 +48,7 @@ That measures overlap. It does not show that corals moved or that spawning faile
 
 ## Scene 7: What this is, and what it is not
 
-This is exploratory student work. It describes recorded events and shows associations, without proving a cause. NOAA values are regional, and the forecast test comes from one aquarium. What we can offer is a reproducible analysis: one command rebuilds every table and plot on a clean machine.
+This is exploratory student work. It describes recorded events and shows associations, without proving a cause. NOAA values are regional, and the forecast test comes from one aquarium. What we can offer is a reproducible analysis: one command rebuilds every result on a clean machine.
 
 ## Scene 8: From history to forecast
 

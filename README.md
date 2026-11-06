@@ -371,7 +371,13 @@ This is exploratory student work from a one-week course. It has not been peer re
 </tr>
 </table>
 
-Some comparisons were chosen after seeing the data, such as the split of *Pocillopora* by sea, so their p-values are descriptive. The [research notes](docs/RESEARCH.md) and [interpretation checks](docs/SCIENCE_REVIEW.md) give the full reasoning. Claude was used as a coding assistant, and its commits are marked in the history.
+Some comparisons were chosen after seeing the data, such as the split of *Pocillopora* by sea, so their p-values are descriptive. The [research notes](docs/RESEARCH.md) and [interpretation checks](docs/SCIENCE_REVIEW.md) give the full reasoning.
+
+### How we used AI
+
+The work ran on a harness engine we built ourselves, in Docker sandboxes (`sbx`). It used Claude Code with Opus 5.5, Codex with GPT 6.1 Sol, and open-source models such as Qwen and DeepSeek from Hugging Face.
+
+The harness was a looping workflow with a good number of agents, working to clear goals and a clear structure. It ran for **18 hours, 21 minutes and 43 seconds** straight, through many iterations, with the two of us steering throughout.
 
 <img src="docs/assets/wave_b.svg" width="100%" alt="">
 
