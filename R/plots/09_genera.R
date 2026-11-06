@@ -85,7 +85,7 @@ wave_plot <- ggplot(waves, aes(day)) +
   geom_text(data = outlier_rows, aes(x = share_x, y = row + 0.12, label = share_label),
             hjust = 1, family = font_label, size = pts(18), colour = moon) +
   annotate("text", x = share_x, y = window_y + 0.75, hjust = 1, vjust = 0.5, family = font_note,
-           size = pts(12), colour = soft, lineheight = 1, label = "Nights in\nthe frame") +
+           size = pts(12), colour = soft, lineheight = 1, label = "Real nights\nin the frame") +
   moon_phase_row(c(month_start, 0, -month_start, new_moon), y = moon_y, width = 1.2, height = 1.2) +
   geom_polygon(data = edge_disc, aes(x, y), inherit.aes = FALSE, fill = "#1F3549") +
   geom_polygon(data = edge_moon, aes(x, y), inherit.aes = FALSE, fill = moon) +
@@ -189,9 +189,9 @@ genera_plot <- wave_plot + hour_plot +
     title = "Most coral genera share one timetable. Pocillopora does not",
     subtitle = "Eleven genera peak in the week after full moon and start around sunset.\nPocillopora spawns by day, and in the Red Sea at new moon.",
     caption = paste(
-      sprintf("The 12 genera with 40+ nights, of %.0f recorded. Waves smoothed by about a day. Some start times are approximate. Pocillopora (cauliflower corals) split by sea after seeing the data.",
+      sprintf("The 12 genera with 40+ nights, of %.0f recorded. Waves smoothed by about a day, so they spill past the frame; percentages count real nights. Pocillopora (cauliflower corals) split by sea after seeing the data.",
               stats[["genera_all"]]),
-      sprintf("Gaps between genera mostly reflect recording sites (shuffling labels within reefs: p = %.2f without Eilat). Records show when people looked. Sources: Baird et al. (2021), Bouwmeester et al. (2021).",
+      sprintf("Gaps between genera mostly reflect recording sites (shuffling labels within reefs: p = %.2f without Eilat). Records show when people looked. Some start times are approximate. Sources: Baird et al. (2021), Bouwmeester et al. (2021).",
               stats[["same_reef_p_without_eilat"]]),
       sep = "\n"),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)),
