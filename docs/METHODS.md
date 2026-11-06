@@ -63,4 +63,4 @@ The headline sample is natural reefs with exact and approximate times. Exact tim
 
 ## What the presentation leaves in the tables
 
-The eight plots show selected summaries. Full regional histories, all fourteen exposure comparisons, model predictions, fitting audits and source records remain available. `tools/check_climate.py` independently reconstructs the exposure calculation from original NOAA files; `tools/check_aquarium.py` checks lagged features and refits the models with a separate solver. The [validation record](VALIDATION.md) reports their results.
+The plots show selected summaries. Full regional histories, all fourteen exposure comparisons, model predictions, fitting audits and source records remain available. `tools/check_climate.py` independently reconstructs the exposure calculation from original NOAA files; `tools/check_aquarium.py` checks lagged features and refits the models with a separate solver. The [validation record](VALIDATION.md) reports their results.

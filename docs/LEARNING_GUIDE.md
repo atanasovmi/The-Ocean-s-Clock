@@ -32,19 +32,10 @@ A **NOAA region** is broader than an individual reef. The spatial join identifie
 
 ## Reading the results aloud
 
-Use the [plot guide](PLOT_GUIDE.md) before rehearsing. Start with the question, point to the axes, explain one mark, then state the main finding. The [findings](../outputs/RESULTS.md) provide concrete examples and the main limitations. If a word such as DHW or Brier score is necessary, explain it in one sentence before quoting a number.
+Use the [plot guide](PLOT_GUIDE.md) alongside this page. Start with the question, point to the axes, explain one mark, then state the main finding. The [findings](../outputs/RESULTS.md) provide concrete examples and the main limitations. If a word such as DHW or Brier score is necessary, explain it in one sentence before quoting a number.
 
 The heat-overlap and model equations are in [METHODS.md](METHODS.md). For the model, follow how a whole year is removed from fitting and how the seven-day inputs are calculated before each response date. Those are the important safeguards; knowing the package names is not enough.
 
-## Native R files and responsibility
+## Native R files
 
-`outputs/models/analysis_workspace.RData` contains selected analytical objects and fitted models. Load it explicitly in a separate R session if useful. `outputs/session.Rhistory` records commands actually run. The local `.RData` and `.Rhistory` copies are also included in the submission ZIP; automatic workspace restoration remains disabled.
-
-`authors.csv` carries over the earlier assignments where a plot replaces an earlier figure: Mihael for plots 4, 5 and 7, Pirasanna for plots 6 and 8. Plots 1, 2 and 3 are new or merge both students' work, so they are left blank for you to decide. These are editable export assignments. Record actual work and understanding before presenting:
-
-| Student | Decisions reviewed or made | Code and findings understood and checked |
-| --- | --- | --- |
-| Mihael | To be completed from actual work | To be completed after review |
-| Pirasanna | To be completed from actual work | To be completed after review |
-
-After reviewing ownership, run `export_submission.R` to create named PNGs and the project ZIP. The [course requirements](COURSE_REQUIREMENTS.md) retain the attendance, presentation and upload instructions.
+`outputs/models/analysis_workspace.RData` contains selected analytical objects and fitted models. Load it explicitly in a separate R session if useful. `outputs/session.Rhistory` records commands actually run. Automatic workspace restoration stays disabled.

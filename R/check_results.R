@@ -96,11 +96,12 @@ stopifnot(!anyDuplicated(genus_group_nights[c("group", "subsite_id", "date")]),
           genus_stats[["pocillopora_other_after_full"]] == genus_stats[["pocillopora_other_nights"]],
           genus_stats[["same_reef_p_without_eilat"]] > 0.05)
 
-# Exports: one PNG and one SVG per plot, and no private font names left in the SVGs.
-authors <- read_csv("authors.csv", show_col_types = FALSE)
+# Exports: one PNG and one SVG per plot script, and no private font names left in the SVGs.
+plot_scripts <- setdiff(list.files("R/plots", pattern = "\\.R$"), "style.R")
+expected_figures <- sub("\\.R$", ".png", plot_scripts)
 svg_files <- list.files("outputs/vector", pattern = "\\.svg$", full.names = TRUE)
-stopifnot(setequal(list.files("outputs/figures", pattern = "\\.png$"), authors$figure),
-          setequal(sub("\\.svg$", ".png", basename(svg_files)), authors$figure),
+stopifnot(setequal(list.files("outputs/figures", pattern = "\\.png$"), expected_figures),
+          setequal(sub("\\.svg$", ".png", basename(svg_files)), expected_figures),
           !any(vapply(svg_files, function(file) any(grepl("Plot (Title|Text|Note|Tick|Label)",
                                                           readLines(file, warn = FALSE))), logical(1))))
 message("Data totals, clock summaries, sky statistics, model samples, colony pairing and exports passed.")

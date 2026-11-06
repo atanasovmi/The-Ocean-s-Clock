@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 56" width="1280" height="56" preserveAspectRatio="none" role="presentation" aria-hidden="true">
+<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#27c2f0" stop-opacity="0"/><stop offset=".12" stop-color="#27c2f0"/><stop offset=".88" stop-color="#0a7fd6"/><stop offset="1" stop-color="#0a7fd6" stop-opacity="0"/></linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7fe8ff" stop-opacity="0"/><stop offset=".14" stop-color="#7fe8ff" stop-opacity=".75"/><stop offset=".86" stop-color="#27c2f0" stop-opacity=".75"/><stop offset="1" stop-color="#27c2f0" stop-opacity="0"/></linearGradient>
+<linearGradient id="v" x1="0" y1="0" x2="0" y2="1"><stop offset=".3" stop-color="#0a8fe0"/><stop offset="1" stop-color="#0a8fe0" stop-opacity="0"/></linearGradient>
+<linearGradient id="v2" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="#7fe8ff"/><stop offset=".9" stop-color="#7fe8ff" stop-opacity="0"/></linearGradient>
+<mask id="m"><rect width="1280" height="56" fill="url(#mg)"/></mask>
+<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".1" stop-color="#fff"/><stop offset=".9" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+</defs>
+<style>.w1{animation:w1 10s linear infinite}.w2{animation:w2 14s linear infinite}
+@keyframes w1{to{transform:translateX(160px)}}@keyframes w2{to{transform:translateX(-240px)}}
+@keyframes up{0%{transform:translateY(10px);opacity:0}30%{opacity:1}100%{transform:translateY(-24px);opacity:0}}
+@keyframes cross{from{transform:translateX(-60px)}to{transform:translateX(1340px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<g mask="url(#m)">
+<path class="w2" d="M-240,22 q60.0,9 120,0 q60.0,-9 120,0 q60.0,9 120,0 q60.0,-9 120,0 q60.0,9 120,0 q60.0,-9 120,0 q60.0,9 120,0 q60.0,-9 120,0 q60.0,9 120,0 q60.0,-9 120,0 q60.0,9 120,0 q60.0,-9 120,0 q60.0,9 120,0 q60.0,-9 120,0  V66 H-240 Z" fill="url(#v2)" opacity=".7"/>
+
+<path class="w1" d="M-160,32 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0 q40.0,7 80,0 q40.0,-7 80,0  V66 H-160 Z" fill="url(#v)"/>
+<circle cx="1187" cy="43" r="2.1" fill="#ffffff" fill-opacity=".85" style="animation:up 4.3s ease-in -5.0s infinite"/><circle cx="923" cy="38" r="2.7" fill="#ffffff" fill-opacity=".85" style="animation:up 6.4s ease-in -3.6s infinite"/><circle cx="737" cy="29" r="3.0" fill="#ffffff" fill-opacity=".85" style="animation:up 5.6s ease-in -4.3s infinite"/><circle cx="1234" cy="43" r="3.3" fill="#ffffff" fill-opacity=".85" style="animation:up 5.8s ease-in -1.6s infinite"/><circle cx="83" cy="26" r="3.1" fill="#ffffff" fill-opacity=".85" style="animation:up 5.3s ease-in -2.3s infinite"/><circle cx="1110" cy="35" r="3.3" fill="#ffffff" fill-opacity=".85" style="animation:up 4.9s ease-in -0.1s infinite"/><circle cx="430" cy="28" r="3.2" fill="#ffffff" fill-opacity=".85" style="animation:up 8.0s ease-in -4.0s infinite"/>
+</g>
+</svg>

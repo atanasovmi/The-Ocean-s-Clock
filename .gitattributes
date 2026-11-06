@@ -16,3 +16,6 @@ outputs/** linguist-generated
 *.shp binary
 *.shx binary
 *.dbf binary
+# README artwork is generated; keep it out of the language statistics.
+docs/assets/** linguist-generated
+tools/readme_art/** linguist-documentation

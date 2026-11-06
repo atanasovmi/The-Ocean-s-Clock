@@ -1,10 +1,10 @@
 # Explaining the plots
 
-The eight plots answer one question from the assignment: what tells a reef that tonight is the night, and how does that fit the rhythms of the ocean? Each plot has one job and fits a Prezi frame at 16:9.
+The plots answer one question: what tells a reef that tonight is the night, and how does that fit the rhythms of the ocean? Each plot has one job and is drawn at 16:9.
 
 Colour means the same thing everywhere. Pink is a spawning record. Cream is the Moon, or a line you should read. Gold and blue are warming and cooling water. The ramp from purple to pale yellow is heat stress.
 
-With two minutes per plot and five slides at most, the strongest route is 1, 4, 3, 5 and 7. Plot 1 sets up the three clocks, plot 4 is the clearest result, plots 3 and 5 complicate the Moon, and plot 7 says why any of this matters now. Plots 2, 6 and 8 are ready if you have time or get asked.
+We presented plots 1, 2, 3, 7 and 9 live. The others are the supporting evidence and are explained here in the same way.
 
 ## 1. Three clocks
 

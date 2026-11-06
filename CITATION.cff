@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Ocean's Clock: what tells a coral reef that tonight is the night?"
+type: software
+version: 1.0.0
+date-released: 2026-11-06
+license: MIT
+repository-code: "https://github.com/atanasovmi/the-oceans-clock"
+abstract: >-
+  An exploratory R analysis of coral spawning timing. Historical reef
+  observations are joined with NOAA regional heat stress and NASA Moon
+  positions, then read against an aquarium diary with recorded zero days and a
+  tank experiment. Built during the Applied Data Science blockweek at FHNW.
+authors:
+  - given-names: Mihael
+    family-names: Atanasov
+    affiliation: "University of Applied Sciences and Arts Northwestern Switzerland (FHNW)"
+  - given-names: Pirasanna
+    family-names: Siva
+    affiliation: "University of Applied Sciences and Arts Northwestern Switzerland (FHNW)"
+keywords:
+  - coral spawning
+  - circular statistics
+  - reproducible research
+  - R
+  - data science
