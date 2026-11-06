@@ -179,7 +179,9 @@ Tightness is the mean resultant length, written R̄ (R on the plots). Each recor
 
 ![Animation: spawning records become arrows on a lunar circle, and the length of their average arrow is R](docs/r_explainer.svg)
 
-The animation loops through three real places and one made-up example. Each pink dot is a record and each thin line its arrow. The blue and gold lines are the mean east and north parts, and the white arrow built from them has length R.
+The animation loops through three real places and one made-up example. Each pink dot is a record and each thin line its arrow. The blue and gold lines are C̄ and S̄, the mean east and north parts, and the white arrow built from them has length R̄.
+
+The `circular` package has the same measure as [`rho.circular()`](https://search.r-project.org/CRAN/refmans/circular/html/rho.circular.html). We write the calculation out in `circular_summary()` so each step stays visible. For Raffles Lighthouse, Akajima and Eilat, both give the same value to six decimals.
 
 The heat-exposure index weights monthly heat stress by the recorded spawning calendar and holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
 
