@@ -1,0 +1,40 @@
+# Rebuilds every table and plot from the saved source files on a clean machine.
+# R/check_results.R runs last inside run.R, so a green run means the totals,
+# denominators and exports all passed. This is a research compendium, which is
+# why it runs the analysis instead of the R CMD check of the "R package" template.
+name: Reproduce the analysis
+
+on:
+  push:
+    branches: [main, showcase]
+    paths:
+      - "R/**"
+      - "run.R"
+      - "DESCRIPTION"
+      - "data/raw/**"
+      - ".github/workflows/reproduce.yml"
+  workflow_dispatch:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+
+      - name: Run the whole pipeline from the saved sources
+        run: Rscript run.R
+
+      - name: Keep the rebuilt plots for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: rebuilt-plots
+          path: outputs/figures/

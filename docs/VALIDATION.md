@@ -22,7 +22,7 @@ Every validation fit and both full-data aquarium fits converge with full rank an
 
 The lunar counts use all 1,026 reef-nights once, and each place's shares sum to one. Calendar weights sum to one within each region. Genuine dawn observations 3975/3976 remain more than twelve hours before the same-date sunset; midnight record 6153 is flagged separately. The limited cached USNO sample matches seven historical reef-nights exactly.
 
-Eight plots are exported as 300 dpi PNGs and scalable SVGs, and each was inspected at full size for label collisions, clipping and overflow. Bars start at zero. Regional selections, counting units and the two DHW thresholds are stated, and every plot has its plotted values in a CSV.
+All plots are exported as 300 dpi PNGs and scalable SVGs, and each was inspected at full size for label collisions, clipping and overflow. Bars start at zero. Regional selections, counting units and the two DHW thresholds are stated, and every plot has its plotted values in a CSV.
 
 The colour roles were tested with a palette validator on the plot background. The five heat classes pass as an ordered ramp: lightness rises steadily, neighbouring steps stay distinct, and the lowest class reaches 2:1 contrast with the page. Pink, gold and blue stay apart under simulated colour blindness (worst ΔE 9.4 for deuteranopia). Plots never rely on colour alone: rows, positions and direct labels carry the same information.
 
@@ -32,8 +32,6 @@ The exported Shapefiles are read back: they contain all 214 region polygons and 
 
 ## Reproduction and native R files
 
-The full workflow was run in a fresh native R terminal without restoring an earlier workspace. A genuine command history and a selected-object `.RData` snapshot accompany the delivery. Neither is needed to rebuild the analysis. The large parsed regional RDS cache is rebuilt from the included original archives and excluded from the submission ZIP to avoid duplicating the data.
+The full workflow was run in a fresh native R terminal without restoring an earlier workspace. A genuine command history and a selected-object `.RData` snapshot are stored under `outputs/`. Neither is needed to rebuild the analysis. The large parsed regional RDS cache is rebuilt from the included original archives, so it is not stored in the repository.
 
-The current data and model calculations have passed the independent checks after the code was separated from plotting. The submission archive preserves directory paths and includes the author-named PNGs, the R project and all source inputs. Package installation on a new computer uses `setup.R`; cached data do not need a live service. `run.R` was rerun from a clean session for these eight plots; `R/check_results.R` confirms the totals and exports.
-
-The student-dependent requirements—actual contribution review, attendance, accepted group/presentation format and Moodle upload—remain outside these numerical checks.
+The current data and model calculations have passed the independent checks after the code was separated from plotting. Package installation on a new computer uses `setup.R`; cached data do not need a live service. `run.R` was rerun from a clean session; `R/check_results.R` confirms the totals and exports.

@@ -1,0 +1,28 @@
+Package: theoceansclock
+Title: What Tells a Coral Reef That Tonight Is the Night?
+Version: 1.0.0
+Authors@R: c(
+    person("Mihael", "Atanasov", role = c("aut", "cre")),
+    person("Pirasanna", "Siva", role = "aut"))
+Description: A research compendium, not an installable package. It joins historical
+    coral spawning records with NOAA regional heat stress, NASA Moon positions,
+    an aquarium diary and a tank experiment, then tests how spawning fits the
+    yearly, lunar and daily cycles of the ocean. Run run.R from the project root.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.3)
+Imports:
+    dplyr,
+    ggplot2,
+    jsonlite,
+    patchwork,
+    pdftools,
+    ragg,
+    readr,
+    readxl,
+    scales,
+    sf,
+    svglite,
+    systemfonts,
+    tibble,
+    tidyr
