@@ -36,12 +36,12 @@ Lower scores are better. Whole-year bootstrap intervals retain within-year depen
 Year, lunar month and day are circles, so an ordinary mean fails: day −14 and day +14 are neighbours. Each record with value $v_i$ on a cycle of period $P$ becomes a unit arrow at angle $\theta_i = 2\pi v_i / P$, and the arrows are averaged:
 
 $$
-R=\sqrt{\bar{c}^{2}+\bar{s}^{2}},\qquad
+\bar{R}=\sqrt{\bar{c}^{2}+\bar{s}^{2}},\qquad
 \bar{c}=\frac{1}{n}\sum_{i}\cos\theta_i,\qquad
 \bar{s}=\frac{1}{n}\sum_{i}\sin\theta_i.
 $$
 
-$R$ is the tightness (statisticians call it the mean resultant length). It runs from 0, an even spread, to 1, every record at one moment. The direction of the same average is the typical moment. Two opposite clusters can also cancel to a low $R$, so the plots show the records beside the number. `R/analyse_clocks.R` calculates both.
+$\bar{R}$ is the tightness, known as the mean resultant length. The plots write it as R for short. It runs from 0, an even spread, to 1, every record at one moment. The direction of the same average is the typical moment. Two opposite clusters can also cancel to a low $\bar{R}$, so the plots show the records beside the number. `R/analyse_clocks.R` calculates both.
 
 ## The local temperature year
 

@@ -8,7 +8,7 @@ We presented plots 1, 2, 3, 7 and 9 live. The others are the supporting evidence
 
 ## 1. Three clocks
 
-Each clock is one natural cycle, running clockwise. A pink bar is the number of records in that stretch of the cycle, and the thin ring is what random spawning would reach, so anything past it beats chance. The white line points at the average time on the circle. Its length R, the mean resultant length, is what we call tightness: 0 means evenly spread, 1 means all records at one moment. R describes how concentrated the records are. It is not a confidence interval.
+Each clock is one natural cycle, running clockwise. A pink bar is the number of records in that stretch of the cycle, and the thin ring is what random spawning would reach, so anything past it beats chance. The white line points at the average time on the circle. Its length, the mean resultant length R̄ (written R on the plots), is what we call tightness: 0 means evenly spread, 1 means all records at one moment. R describes how concentrated the records are. It is not a confidence interval.
 
 Say that the reef answers three separate questions: which season, which night and which hour. Then compare the hands. The Sun's is longest and the Moon's is shortest, which surprises people who know this topic as a full-moon story.
 

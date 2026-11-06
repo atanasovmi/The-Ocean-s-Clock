@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" width="1280" role="img" aria-labelledby="t d">
+<title id="t">Where the 23.1 million values come from</title>
+<desc id="d">Bubbles drawn to one scale. NOAA Coral Reef Watch has 22,877,449 values, 98.90 percent. The Coral Spawning Database has 170,314, the Churaumi Aquarium 68,369, NASA/JPL Horizons 12,897, the Sea Simulator 1,032 and the Maldives study 972. The total is 23,131,033.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a7cd4"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
+<radialGradient id="noaa" cx=".42" cy=".3" r=".82"><stop offset="0" stop-color="#57dcf9"/><stop offset=".6" stop-color="#1596e6"/><stop offset="1" stop-color="#0a5cb4"/></radialGradient>
+<radialGradient id="coral" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#ffc4cc"/><stop offset="1" stop-color="#FF7E8B"/></radialGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity=".02"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".26"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<style>
+text{font-family:'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;fill:#fff}
+.row{font-size:23px} .num{font-size:23px;text-anchor:end;font-variant-numeric:tabular-nums}
+.col{font-size:17px;fill:#d7f4ff;text-anchor:end} .side{font-size:17px;fill:#d7f4ff}
+.big{text-anchor:middle} .name{font-size:27px;font-weight:600} .value{font-size:48px;font-weight:300} .share{font-size:22px;fill:#e3f8ff}
+.total{font-size:23px;font-weight:600} .totalnum{font-size:23px;font-weight:600;text-anchor:end;font-variant-numeric:tabular-nums}
+</style>
+<rect width="1280" height="560" rx="26" fill="url(#bg)"/>
+<path d="M0,26 Q0,0 26,0 H1254 Q1280,0 1280,26 V62 C900,104 380,104 0,68 Z" fill="url(#top)"/>
+<circle cx="300" cy="280" r="226" fill="url(#noaa)" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+<path d="M126,216 C176,84 424,84 474,216 C400,150 200,150 126,216Z" fill="url(#gloss)"/>
+<text x="300" y="256" class="big name">NOAA Coral Reef Watch</text>
+<text x="300" y="312" class="big value">22,877,449</text>
+<text x="300" y="350" class="big share">98.90% of all values</text>
+<text x="630" y="92" class="side">Bubble area shows the number of values</text>
+<text x="1110" y="92" class="col">Values</text><text x="1228" y="92" class="col">Share</text>
+<circle cx="668" cy="150" r="19.50" fill="url(#coral)"/><text x="716" y="157" class="row">Coral Spawning Database</text><text x="1110" y="157" class="num">170,314</text><text x="1228" y="157" class="num">0.74%</text><line x1="630" x2="1228" y1="184" y2="184" stroke="#fff" stroke-opacity=".14"/><circle cx="668" cy="218" r="12.35" fill="#d7f7ff"/><text x="716" y="225" class="row">Churaumi Aquarium</text><text x="1110" y="225" class="num">68,369</text><text x="1228" y="225" class="num">0.30%</text><line x1="630" x2="1228" y1="252" y2="252" stroke="#fff" stroke-opacity=".14"/><circle cx="668" cy="286" r="5.37" fill="#d7f7ff"/><text x="716" y="293" class="row">NASA/JPL Horizons</text><text x="1110" y="293" class="num">12,897</text><text x="1228" y="293" class="num">0.06%</text><line x1="630" x2="1228" y1="320" y2="320" stroke="#fff" stroke-opacity=".14"/><circle cx="668" cy="354" r="1.52" fill="#d7f7ff"/><text x="716" y="361" class="row">Sea Simulator</text><text x="1110" y="361" class="num">1,032</text><text x="1228" y="361" class="num">&lt;0.01%</text><line x1="630" x2="1228" y1="388" y2="388" stroke="#fff" stroke-opacity=".14"/><circle cx="668" cy="422" r="1.47" fill="#d7f7ff"/><text x="716" y="429" class="row">Maldives study</text><text x="1110" y="429" class="num">972</text><text x="1228" y="429" class="num">&lt;0.01%</text>
+<line x1="630" x2="1228" y1="470" y2="470" stroke="#fff" stroke-opacity=".5"/>
+<text x="630" y="506" class="total">Total</text><text x="1110" y="506" class="totalnum">23,131,033</text><text x="1228" y="506" class="totalnum">100%</text>
+<rect x="1.5" y="1.5" width="1277" height="557" rx="25" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+</svg>

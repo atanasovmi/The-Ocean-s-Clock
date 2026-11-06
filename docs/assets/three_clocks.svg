@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" width="1280" role="img" aria-labelledby="t d">
 <title id="t">Three clocks on one scale</title>
-<desc id="d">Three glass dials show recorded spawning around the year, the lunar month and the day. Pink bars count the records. A cream arrow shows the tightness R: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun.</desc>
+<desc id="d">Three glass dials show recorded spawning around the year, the lunar month and the day. Pink bars count the records. A cream arrow shows the mean resultant length, R-bar: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun.</desc>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a7cd4"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
 <radialGradient id="sphere" cx=".5" cy=".36" r=".72"><stop offset="0" stop-color="#1383dd"/><stop offset=".72" stop-color="#084d9f"/><stop offset="1" stop-color="#042a66"/></radialGradient>
@@ -62,6 +62,6 @@ text{font-family:'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;text-anc
       <circle r="7" fill="#F1EAD7"/>
       <path d="M-118,-62 C-90,-140 90,-140 118,-62 C60,-104 -60,-104 -118,-62Z" fill="#ffffff" opacity=".2"/>
     </g>
-<text x="213" y="414" class="head">The year opens the season</text><text x="213" y="456" class="value">R = 0.72</text><text x="213" y="488" class="note">89% of reef-nights fall while the local</text><text x="213" y="513" class="note">sea warms</text><text x="640" y="414" class="head">The Moon narrows the night</text><text x="640" y="456" class="value">R = 0.57</text><text x="640" y="488" class="note">88% in the tropics and 51% beyond them, in</text><text x="640" y="513" class="note">the eight days from full moon</text><text x="1067" y="414" class="head">The Sun sets the hour</text><text x="1067" y="456" class="value">R = 0.90</text><text x="1067" y="488" class="note">Half of all starts come 1.5 to 2.5 hours</text><text x="1067" y="513" class="note">after sunset</text>
+<text x="213" y="414" class="head">The year opens the season</text><text x="213" y="456" class="value">R̄ = 0.72</text><text x="213" y="488" class="note">89% of reef-nights fall while the local</text><text x="213" y="513" class="note">sea warms</text><text x="640" y="414" class="head">The Moon narrows the night</text><text x="640" y="456" class="value">R̄ = 0.57</text><text x="640" y="488" class="note">88% in the tropics and 51% beyond them, in</text><text x="640" y="513" class="note">the eight days from full moon</text><text x="1067" y="414" class="head">The Sun sets the hour</text><text x="1067" y="456" class="value">R̄ = 0.90</text><text x="1067" y="488" class="note">Half of all starts come 1.5 to 2.5 hours</text><text x="1067" y="513" class="note">after sunset</text>
 <rect x="1.5" y="1.5" width="1277" height="557" rx="25" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
 </svg>

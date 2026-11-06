@@ -9,11 +9,11 @@
   <a href="docs/LICENSES.md"><img src="https://img.shields.io/badge/licence-MIT%20%2B%20CC%20BY%204.0-ff7e8b" alt="Licence: MIT for code, CC BY 4.0 for plots and text"></a>
 </p>
 
-On a few nights each year, whole reefs of corals release their eggs and sperm into the sea within the same hours. We wanted to know how much of that timing shows up in the records. So we joined **6,178 historical coral observations** with **3.2 million daily NOAA ocean records**, NASA Moon positions, a fifteen-year aquarium diary and a tank experiment, then measured the year, the Moon and the Sun on one scale.
+On a few nights each year, whole reefs of corals release their eggs and sperm into the sea within the same hours. We wanted to know how much of that timing shows up in the records. So we joined **6,178 historical coral observations** with **3.2 million daily NOAA ocean records**, NASA Moon positions, a fifteen-year aquarium diary and a tank experiment, about **23 million values** in all, then measured the year, the Moon and the Sun on one scale.
 
 The full-moon story that usually leads this topic turned out to be the loosest of the three clocks. Warming water opens the season, the Moon narrows the night, and sunset sets the hour. Around all three, the ocean is changing: severe heat stress reached **171 of 214 NOAA reef regions in 2024**, against five in 1986.
 
-We chose this topic because we wanted to work on something connected to nature, with no business value to chase. The blockweek at FHNW gave us a lab setting for following a niche question for its own sake.
+We chose this topic because we wanted to work on something connected to nature, with no business value to chase. The [Applied Data Science](https://modulbeschreibungen.webapps.fhnw.ch/detail/26HS_9400805?uiLanguage=de&semester=26HS) blockweek at FHNW gave us a lab setting for following a niche question for its own sake.
 
 <p align="center">
   <a href="https://github.com/atanasovmi/the-oceans-clock/releases/latest/download/Korallen-das-Weltspektakel.pptx"><img src="docs/assets/btn_deck.svg" height="46" alt="Final presentation"></a>
@@ -34,23 +34,25 @@ We chose this topic because we wanted to work on something connected to nature, 
   <a href="#team-and-thanks"><kbd>Team</kbd></a>
 </p>
 
-<img src="docs/assets/wave_a.svg" width="100%" alt="">
+<img src="docs/assets/band_a.svg" width="100%" alt="">
 
 ## Three clocks on one scale
 
-<p align="center"><img src="docs/assets/three_clocks.svg" width="100%" alt="Three glass dials. Pink bars count the recorded spawning events around each cycle and a cream arrow shows the tightness R: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun."></p>
+<p align="center"><img src="docs/assets/three_clocks.svg" width="100%" alt="Three glass dials. Pink bars count the recorded spawning events around each cycle and a cream arrow shows the mean resultant length R̄: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun."></p>
 
-A year, a lunar month and a day have different units, so we needed one measure that works on all of them. Each record becomes an arrow on a circle, and **R** is the length of the average arrow: 0 means the records are spread evenly around the cycle, 1 means they all fall at one moment. On that scale the Sun holds spawning most tightly and the Moon least.
+A year, a lunar month and a day have different units, so we needed one measure that works on all of them. Each record becomes an arrow on a circle, and the **mean resultant length R̄** (R-bar) is the length of the average arrow: 0 means the records are spread evenly around the cycle, 1 means they all fall at one moment. On that scale the Sun holds spawning most tightly and the Moon least.
 
 <details>
-<summary><b>Why ordinary statistics fail here, and how R works</b></summary>
+<summary><b>Why ordinary statistics fail here, and how R̄ works</b></summary>
 <br>
 
 Our timing data is circular. The year, the lunar month and the day have no real start or end, so the last point of each sits next to the first. Day −14 and day +14 of the lunar month are neighbours, yet their ordinary mean lands on full moon, the opposite side of the cycle. We therefore use circular statistics, also called directional statistics.
 
-Tightness is the mean resultant length, written R̄ (R on the plots). It describes concentration. It is neither a confidence interval nor Pearson's r. Two opposite clusters can cancel to a low R, so the plots show the records beside the number. For further reading, see Fisher, *Statistical Analysis of Circular Data* (1993), and Mardia & Jupp, *Directional Statistics* (2000).
+Tightness is the mean resultant length, written R̄. Add up the unit arrows and the length of the total is the resultant length R. Dividing by the number of records gives R̄, which always lies between 0 and 1. Our plots write it as R for short, and some fields use r, as in a [Raleigh plot](https://en.wikipedia.org/wiki/Raleigh_plot) (also spelled Rayleigh), the circular histogram with a mean vector that our dials resemble.
 
-![Animation: spawning records become arrows on a lunar circle, and the length of their average arrow is R](docs/r_explainer.svg)
+R̄ describes concentration. It is neither a confidence interval nor Pearson's r. Two opposite clusters can cancel to a low R̄, so the plots show the records beside the number. For further reading, see Fisher, *Statistical Analysis of Circular Data* (1993), and Mardia & Jupp, *Directional Statistics* (2000).
+
+![Animation: spawning records become arrows on a lunar circle, and the length of their average arrow is R̄](docs/r_explainer.svg)
 
 The animation loops through three real places and one made-up example. Each pink dot is a record and each thin line its arrow. The blue and gold lines are C̄ and S̄, the mean east and north parts, and the white arrow built from them has length R̄.
 
@@ -58,7 +60,7 @@ The `circular` package has the same measure as [`rho.circular()`](https://search
 
 </details>
 
-<img src="docs/assets/wave_b.svg" width="100%" alt="">
+<img src="docs/assets/band_b.svg" width="100%" alt="">
 
 ## The plots
 
@@ -142,7 +144,7 @@ These five test the story from other angles.
 </tr>
 </table>
 
-<img src="docs/assets/wave_a.svg" width="100%" alt="">
+<img src="docs/assets/band_a.svg" width="100%" alt="">
 
 ## How the sources connect
 
@@ -161,17 +163,9 @@ No single source can answer the question, because each one has a blind spot. The
 
 The main connection runs **observation ID → reef coordinates → NOAA region polygon → region and date**. Of the 1,026 recorded reef-nights, 751 match an exact NOAA day, 142 fall outside NOAA's regions and 133 predate its records. A limited [US Naval Observatory](https://aa.usno.navy.mil/data/api.html) check covers seven of those nights.
 
-About 23.1 million source values sit behind the project, and 98.9% of them are NOAA records. The 6,178 coral observations are far fewer, and they set the limit on what the biology can show.
+About 23.1 million source values sit behind the project, and NOAA supplies 98.9% of them. The 6,178 coral observations are far fewer, and they set the limit on what the biology can show.
 
-| Source | Values | Share |
-| --- | ---: | --- |
-| NOAA Coral Reef Watch | 22,877,449 | `████████` 98.90% |
-| Coral Spawning Database | 170,314 | `▏` 0.74% |
-| Churaumi Aquarium | 68,369 | `▏` 0.30% |
-| NASA/JPL Horizons | 12,897 | `▏` 0.06% |
-| Sea Simulator | 1,032 | `▏` <0.01% |
-| Maldives study | 972 | `▏` <0.01% |
-| **Total** | **23,131,033** | |
+<p align="center"><img src="docs/assets/values_chart.svg" width="100%" alt="Bubbles drawn to one scale. NOAA Coral Reef Watch has 22,877,449 values, 98.90 percent. The Coral Spawning Database has 170,314, the Churaumi Aquarium 68,369, NASA/JPL Horizons 12,897, the Sea Simulator 1,032 and the Maldives study 972, for a total of 23,131,033."></p>
 
 <details>
 <summary><b>Where each source is stored</b></summary>
@@ -190,12 +184,24 @@ About 23.1 million source values sit behind the project, and 98.9% of them are N
 <summary><b>How the values are counted</b></summary>
 <br>
 
-Values are rows × columns in the source files.
+Values are rows × columns in the source files, counting the measures and distinct tables we use.
+
+| Source | Values | Share |
+| --- | ---: | ---: |
+| NOAA Coral Reef Watch | 22,877,449 | 98.90% |
+| Coral Spawning Database | 170,314 | 0.74% |
+| Churaumi Aquarium | 68,369 | 0.30% |
+| NASA/JPL Horizons | 12,897 | 0.06% |
+| Sea Simulator | 1,032 | <0.01% |
+| Maldives study | 972 | <0.01% |
+| **Total** | **23,131,033** | **100%** |
 
 - **NOAA:** 3,268,207 region-days × 7 measures, from 214 regions with about 15,272 days each. The analysis keeps the 3,203,007 days through 2025, and the partial 2026 stays in the raw files.
 - **Coral Spawning Database:** six distinct tables. The workbook has eight sheets, but three hold the same 6,178 observations, so they are counted once.
 - **Horizons:** one value per Moon position.
 - **US Naval Observatory:** not counted, because it is a single saved response used as a check.
+
+Counting every column of every raw file, with dates and the repeated workbook sheets included, gives about 33.3 million values. NOAA's regional values are themselves summaries of 5-km satellite pixels, so the measurements underneath are far more numerous, but the files do not record how many.
 
 </details>
 
@@ -207,7 +213,7 @@ NOAA publishes its region boundaries as GeoJSON, and `sf::st_join()` uses those 
 
 </details>
 
-<img src="docs/assets/wave_b.svg" width="100%" alt="">
+<img src="docs/assets/band_b.svg" width="100%" alt="">
 
 ## The decisions that shaped it
 
@@ -220,7 +226,7 @@ Eight design decisions define what this project can and cannot say.
 </tr>
 <tr>
 <td align="center"><img src="docs/assets/icon_circle.svg" width="64" alt=""></td>
-<td><b>Treat time as a circle.</b> Circular statistics keep day −14 and day +14 together as neighbours. They also give one measure, R, that compares cycles counted in days, lunar days and hours.</td>
+<td><b>Treat time as a circle.</b> Circular statistics keep day −14 and day +14 together as neighbours. They also give one measure, R̄, that compares cycles counted in days, lunar days and hours.</td>
 </tr>
 <tr>
 <td align="center"><img src="docs/assets/icon_year.svg" width="64" alt=""></td>
@@ -250,7 +256,7 @@ Eight design decisions define what this project can and cannot say.
 
 What sets the work apart is this cross-examination. The field records alone would have told the classic full-moon story. Reading them against a diary with its empty days written down, and against tanks where the sky could be moved, turned it into a more careful one.
 
-<img src="docs/assets/wave_a.svg" width="100%" alt="">
+<img src="docs/assets/band_a.svg" width="100%" alt="">
 
 ## From history to forecast
 
@@ -285,7 +291,7 @@ Every candidate would face the same rules. Validation runs forward in time, trai
 
 The questions worth chasing are whether synchrony itself is eroding, as reported on Red Sea reefs ([Shlesinger & Loya 2019](https://doi.org/10.1126/science.aax0110)), and how much of the heat overlap in plot 8 corals can avoid by shifting their timing.
 
-<img src="docs/assets/wave_b.svg" width="100%" alt="">
+<img src="docs/assets/band_b.svg" width="100%" alt="">
 
 ## Run it yourself
 
@@ -304,36 +310,21 @@ The plots use Bahnschrift, which ships with Windows. Other systems fall back to 
 <summary><b>How the project is organised</b></summary>
 <br>
 
-```text
-The-Oceans-Clock.Rproj     Open this file in RStudio
-run.R                      Run the complete project
-setup.R                    Install missing R packages once
-DESCRIPTION                Authors and R dependencies (a research compendium, not a package)
-R/
-  prepare_*.R              Read and join the sources; build each region's temperature year and the sky
-  analyse_*.R              Measure the clocks, the genera and the heat exposure
-  fit_aquarium_models.R    Fit and test models with whole years held out
-  compare_field_studies.R  Summarise the independent Maldives observations
-  check_*.R                Check the lunar reference, data totals and exports
-  plots/                   One ggplot script per plot, plus the shared style
-data/
-  raw/                     Original downloaded files and source notes
-  derived/                 Joined data and full analytical results
-  spatial/                 Shapefiles for R or GIS software
-outputs/
-  figures/                 Presentation PNGs at 300 dpi
-  vector/                  SVG versions of the same plots
-  tables/                  Plot values and model diagnostics
-  models/                  Fitted models and a native R workspace snapshot
-docs/                      Methods, sources, validation and a guide to the plots
-tools/                     Download utilities, independent checks and the README artwork
-```
+<p align="center"><img src="docs/assets/project_map.svg" width="100%" alt="Data flows from the data folder through the R scripts into the outputs folder. run.R runs everything, setup.R installs packages, docs holds methods and checks, tools holds downloads and artwork."></p>
+
+<p align="center">
+  <a href="data"><kbd>data/</kbd></a>
+  <a href="R"><kbd>R/</kbd></a>
+  <a href="outputs"><kbd>outputs/</kbd></a>
+  <a href="docs"><kbd>docs/</kbd></a>
+  <a href="tools"><kbd>tools/</kbd></a>
+</p>
 
 Data preparation and plotting are separate, so each plot script can be read on its own. The [walkthrough](docs/LEARNING_GUIDE.md) follows one question through the files. The [R workspace snapshot](outputs/models/analysis_workspace.RData) and [session history](outputs/session.Rhistory) can help when inspecting the work, but `run.R` starts from explicit input files.
 
 </details>
 
-<img src="docs/assets/wave_a.svg" width="100%" alt="">
+<img src="docs/assets/band_a.svg" width="100%" alt="">
 
 ## What this work is, and is not
 
@@ -377,7 +368,7 @@ The work ran on a harness engine we built ourselves, in Docker sandboxes (`sbx`)
 
 The harness was a looping workflow with a good number of agents, working to clear goals and a clear structure. It ran for **18 hours, 21 minutes and 43 seconds** straight, through many iterations, with the two of us steering throughout.
 
-<img src="docs/assets/wave_b.svg" width="100%" alt="">
+<img src="docs/assets/band_b.svg" width="100%" alt="">
 
 ## Team and thanks
 
@@ -385,9 +376,9 @@ The harness was a looping workflow with a good number of agents, working to clea
   <a href="https://www.fhnw.ch/en"><img src="docs/assets/fhnw_plate.svg" width="380" alt="University of Applied Sciences and Arts Northwestern Switzerland FHNW"></a>
 </p>
 
-**Mihael Atanasov** (lead) and **Pirasanna Siva** built this project for the Applied Data Science blockweek at the [University of Applied Sciences and Arts Northwestern Switzerland](https://www.fhnw.ch/en), presented on 6 November 2026.
+**Mihael Atanasov** (lead) and **Pirasanna Siva** built this project for the [Applied Data Science](https://modulbeschreibungen.webapps.fhnw.ch/detail/26HS_9400805?uiLanguage=de&semester=26HS) blockweek at the [University of Applied Sciences and Arts Northwestern Switzerland](https://www.fhnw.ch/en), presented on 6 November 2026.
 
-We thank our professors **Martin Sterchi**, **Fabian Heimsch** and **Nathan Brack** for their help and guidance. For the course assessors, [this page](docs/COURSE_CRITERIA.md) (in German) maps each published criterion to where it can be checked.
+We thank our lecturers [Dr. Martin Sterchi](https://www.fhnw.ch/de/personen/martin-sterchi) ([GitHub](https://github.com/martinSter)), [Prof. Dr. Fabian Heimsch](https://www.fhnw.ch/de/personen/fabian-heimsch) and [Nathan Brack](https://www.fhnw.ch/de/personen/nathan-brack) for their help and guidance. For the course assessors, [this page](docs/COURSE_CRITERIA.md) (in German) maps each published criterion to where it can be checked.
 
 We also thank the researchers and agencies whose open data made this possible: Baird and colleagues for the Coral Spawning Database, Sakai, Yamamoto and Maruyama for the Churaumi Aquarium records, Sheridan and colleagues for the Maldives observations, the authors of the Sea Simulator study, NOAA Coral Reef Watch, NASA/JPL and the US Naval Observatory.
 

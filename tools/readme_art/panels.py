@@ -9,7 +9,7 @@ import math
 import random
 import re
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageChops, ImageDraw
 from playwright.sync_api import sync_playwright
 
 import hero
@@ -18,6 +18,8 @@ from common import ASSETS, ROOT, data_uri, render_svg
 FONT = "'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif"
 PINK = "#FF7E8B"
 MOON = "#F1EAD7"
+R_BAR = "R\u0304"  # the mean resultant length: R with a bar
+MONO = "Consolas,'SF Mono',Menlo,'DejaVu Sans Mono',monospace"
 
 
 def write(name, svg):
@@ -41,7 +43,7 @@ def histogram(values, period, bins):
 
 
 def dial(cx, cy, counts, tightness, mean_fraction, top_label, bottom_label, delay):
-    """Pink bars are the records around the cycle, the cream arrow is R."""
+    """Pink bars are the records around the cycle, the cream arrow is R-bar."""
     inner, reach = 58, 72
     peak = max(counts)
     step = 2 * math.pi / len(counts)
@@ -95,9 +97,9 @@ def three_clocks():
         dial(1067, 212, histogram(starts, 24, 48), r("sun"), fraction("sun"), "sunset", "12 hours later", 1),
     ]
     labels = [
-        (213, "The year opens the season", f"R = {r('year'):.2f}", "89% of reef-nights fall while the local sea warms"),
-        (640, "The Moon narrows the night", f"R = {r('moon'):.2f}", "88% in the tropics and 51% beyond them, in the eight days from full moon"),
-        (1067, "The Sun sets the hour", f"R = {r('sun'):.2f}", "Half of all starts come 1.5 to 2.5 hours after sunset"),
+        (213, "The year opens the season", f"{R_BAR} = {r('year'):.2f}", "89% of reef-nights fall while the local sea warms"),
+        (640, "The Moon narrows the night", f"{R_BAR} = {r('moon'):.2f}", "88% in the tropics and 51% beyond them, in the eight days from full moon"),
+        (1067, "The Sun sets the hour", f"{R_BAR} = {r('sun'):.2f}", "Half of all starts come 1.5 to 2.5 hours after sunset"),
     ]
     text = ""
     for x, head, value, note in labels:
@@ -107,7 +109,7 @@ def three_clocks():
             text += f'<text x="{x}" y="{488 + i * 25}" class="note">{line}</text>'
     write("three_clocks.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" role="img" aria-labelledby="t d">
 <title id="t">Three clocks on one scale</title>
-<desc id="d">Three glass dials show recorded spawning around the year, the lunar month and the day. Pink bars count the records. A cream arrow shows the tightness R: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun.</desc>
+<desc id="d">Three glass dials show recorded spawning around the year, the lunar month and the day. Pink bars count the records. A cream arrow shows the mean resultant length, R-bar: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun.</desc>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a7cd4"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
 <radialGradient id="sphere" cx=".5" cy=".36" r=".72"><stop offset="0" stop-color="#1383dd"/><stop offset=".72" stop-color="#084d9f"/><stop offset="1" stop-color="#042a66"/></radialGradient>
@@ -276,49 +278,18 @@ def fhnw_plate():
 
 # Dividers and footer ---------------------------------------------------------
 
-def wave(name, seed, swimmer):
-    width, height = 1280, 56
+_reef = {}
 
-    def line(y, amplitude, length):
-        count = int(width / length) + 4
-        segments = "".join(f"q{length / 2},{amplitude if i % 2 == 0 else -amplitude} {length},0 " for i in range(count))
-        return f"M{-2 * length},{y} {segments} V{height + 10} H{-2 * length} Z"
 
-    r = random.Random(seed)
-    specks = "".join(
-        f'<circle cx="{r.uniform(40, 1240):.0f}" cy="{r.uniform(26, 44):.0f}" r="{r.uniform(2, 4.4):.1f}" fill="#ffffff" fill-opacity=".85" style="animation:up {r.uniform(4, 8):.1f}s ease-in {-r.uniform(0, 6):.1f}s infinite"/>'
-        for _ in range(7))
-    fish = ""
-    if swimmer:
-        fish = (f'<g style="animation:cross 26s linear {-seed * 5}s infinite"><g transform="translate(0,26) scale(.34)">'
-                f'<path d="{hero.TAIL}" fill="#ff7a1a"/><path d="{hero.BODY}" fill="#ff8a2e"/>'
-                f'<path d="M4,-27 C11,-9 11,9 4,27 L15,25 C21,8 21,-8 15,-25Z" fill="#fff"/><circle cx="29" cy="-5" r="6" fill="#fff"/><circle cx="30.5" cy="-5" r="3.4" fill="#0a1a2a"/></g></g>')
-    write(name, f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}" preserveAspectRatio="none" role="presentation" aria-hidden="true">
-<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#27c2f0" stop-opacity="0"/><stop offset=".12" stop-color="#27c2f0"/><stop offset=".88" stop-color="#0a7fd6"/><stop offset="1" stop-color="#0a7fd6" stop-opacity="0"/></linearGradient>
-<linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7fe8ff" stop-opacity="0"/><stop offset=".14" stop-color="#7fe8ff" stop-opacity=".75"/><stop offset=".86" stop-color="#27c2f0" stop-opacity=".75"/><stop offset="1" stop-color="#27c2f0" stop-opacity="0"/></linearGradient>
-<linearGradient id="v" x1="0" y1="0" x2="0" y2="1"><stop offset=".3" stop-color="#0a8fe0"/><stop offset="1" stop-color="#0a8fe0" stop-opacity="0"/></linearGradient>
-<linearGradient id="v2" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="#7fe8ff"/><stop offset=".9" stop-color="#7fe8ff" stop-opacity="0"/></linearGradient>
-<mask id="m"><rect width="{width}" height="{height}" fill="url(#mg)"/></mask>
-<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".1" stop-color="#fff"/><stop offset=".9" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
-</defs>
-<style>.w1{{animation:w1 10s linear infinite}}.w2{{animation:w2 14s linear infinite}}
-@keyframes w1{{to{{transform:translateX(160px)}}}}@keyframes w2{{to{{transform:translateX(-240px)}}}}
-@keyframes up{{0%{{transform:translateY(10px);opacity:0}}30%{{opacity:1}}100%{{transform:translateY(-24px);opacity:0}}}}
-@keyframes cross{{from{{transform:translateX(-60px)}}to{{transform:translateX(1340px)}}}}
-@media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}</style>
-<g mask="url(#m)">
-<path class="w2" d="{line(22, 9, 120)}" fill="url(#v2)" opacity=".7"/>
-{fish}
-<path class="w1" d="{line(32, 7, 80)}" fill="url(#v)"/>
-{specks}
-</g>
-</svg>""")
+def reef_image():
+    if "image" not in _reef:
+        _reef["image"] = render_svg(hero.reef_layer([]), 1280, 620, scale=1.5, transparent=True)
+    return _reef["image"]
 
 
 def seabed():
     """The reef again at the very end of the page, on a transparent background."""
-    tips = []
-    reef = render_svg(hero.reef_layer(tips), 1280, 620, scale=1.5, transparent=True)
+    reef = reef_image()
     top = 236
     uri = data_uri(reef.crop((0, int(top * 1.5), reef.width, reef.height)), quality=74)
     height = 620 - top
@@ -333,6 +304,154 @@ def seabed():
 </defs>
 <image href="{uri}" width="1280" height="{height}"/>
 {weed}
+</svg>""")
+
+
+def faded(crop, side):
+    """Lets a reef crop dissolve towards the middle of the page."""
+    width, height = crop.size
+    ramp = Image.new("L", (width, 1))
+    for x in range(width):
+        distance = x if side == "right" else width - 1 - x
+        ramp.putpixel((x, 0), min(255, int(255 * distance / (width * .34))))
+    alpha = ImageChops.multiply(crop.getchannel("A"), ramp.resize((width, height)))
+    crop.putalpha(alpha)
+    return crop
+
+
+def side_band(name, seed):
+    """A section break with reef on both sides of the page and open water between."""
+    width, height = 1280, 132
+    reef = reef_image()
+    scale = 1.5
+    left = faded(reef.crop((0, int(250 * scale), int(452 * scale), reef.height)), "left")
+    right = faded(reef.crop((int(828 * scale), int(250 * scale), reef.width, reef.height)), "right")
+    shown_h = height
+    shown_w = round(452 * shown_h / 370)
+    size = (shown_w * 2, shown_h * 2)
+    left_uri = data_uri(left.resize(size, Image.LANCZOS), quality=74)
+    right_uri = data_uri(right.resize(size, Image.LANCZOS), quality=74)
+
+    r = random.Random(seed)
+    specks = ""
+    for x in [r.uniform(30, 150) for _ in range(4)] + [r.uniform(1130, 1250) for _ in range(4)] + [r.uniform(300, 980) for _ in range(5)]:
+        size_b = r.uniform(2.4, 6.5)
+        seconds = r.uniform(5, 9)
+        specks += (f'<circle cx="{x:.0f}" cy="{height - 8}" r="{size_b:.1f}" fill="url(#bubble)" stroke="#7fe8ff" stroke-opacity=".8" stroke-width=".8" '
+                   f'style="animation:up {seconds:.1f}s ease-in {-r.uniform(0, seconds):.1f}s infinite"/>')
+    weed = "".join([
+        hero.kelp(16, height, 112, 8, 12, 6.4, "kelpA", seed), hero.kelp(36, height, 78, 6, 9, 5.2, "kelpB", seed + 1),
+        hero.kelp(1264, height, 118, 8, 12, 6.8, "kelpA", seed + 2), hero.kelp(1244, height, 82, 6, 9, 5.6, "kelpB", seed + 3)])
+    length = 80
+    wave = "".join(f"q{length / 2},{7 if i % 2 == 0 else -7} {length},0 " for i in range(22))
+    write(name, f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" role="presentation" aria-hidden="true">
+<defs>
+<linearGradient id="kelpA" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#056b3f"/><stop offset=".6" stop-color="#12ad62"/><stop offset="1" stop-color="#7ff0a8"/></linearGradient>
+<linearGradient id="kelpB" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0a7a4a"/><stop offset=".6" stop-color="#2fd17a"/><stop offset="1" stop-color="#c4ff9c"/></linearGradient>
+<radialGradient id="bubble" cx=".34" cy=".3" r=".78"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset=".35" stop-color="#bff4ff" stop-opacity=".3"/><stop offset="1" stop-color="#27c2f0" stop-opacity=".5"/></radialGradient>
+<linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset=".15" stop-color="#27b4ee"/><stop offset="1" stop-color="#0a7fd6" stop-opacity="0"/></linearGradient>
+<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0"><stop offset=".08" stop-color="#000"/><stop offset=".24" stop-color="#fff"/><stop offset=".76" stop-color="#fff"/><stop offset=".92" stop-color="#000"/></linearGradient>
+<mask id="m"><rect width="{width}" height="{height}" fill="url(#mg)"/></mask>
+</defs>
+<style>.w{{animation:w 11s linear infinite}}
+@keyframes w{{to{{transform:translateX(160px)}}}}
+@keyframes up{{0%{{transform:translateY(0);opacity:0}}18%{{opacity:1}}100%{{transform:translateY(-112px);opacity:0}}}}
+@media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}</style>
+<g mask="url(#m)"><path class="w" d="M-160,{height - 40} {wave} V{height} H-160 Z" fill="url(#w)" opacity=".85"/></g>
+<image href="{left_uri}" x="0" y="0" width="{shown_w}" height="{shown_h}"/>
+<image href="{right_uri}" x="{width - shown_w}" y="0" width="{shown_w}" height="{shown_h}"/>
+{weed}{specks}
+</svg>""")
+
+
+def values_chart():
+    """Every bubble is drawn to one scale, so the area shows the number of values."""
+    sources = [("Coral Spawning Database", 170314, "0.74%"), ("Churaumi Aquarium", 68369, "0.30%"),
+               ("NASA/JPL Horizons", 12897, "0.06%"), ("Sea Simulator", 1032, "&lt;0.01%"), ("Maldives study", 972, "&lt;0.01%")]
+    noaa, total = 22877449, 23131033
+    assert noaa + sum(v for _, v, _ in sources) == total
+    width, height, big = 1280, 560, 226
+    rows = ""
+    for i, (name, value, share) in enumerate(sources):
+        y = 150 + i * 68
+        radius = big * math.sqrt(value / noaa)
+        fill = "url(#coral)" if i == 0 else "#d7f7ff"
+        rows += (f'<circle cx="668" cy="{y}" r="{radius:.2f}" fill="{fill}"/>'
+                 f'<text x="716" y="{y + 7}" class="row">{name}</text>'
+                 f'<text x="1110" y="{y + 7}" class="num">{value:,}</text>'
+                 f'<text x="1228" y="{y + 7}" class="num">{share}</text>')
+        if i < 4:
+            rows += f'<line x1="630" x2="1228" y1="{y + 34}" y2="{y + 34}" stroke="#fff" stroke-opacity=".14"/>'
+    write("values_chart.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" role="img" aria-labelledby="t d">
+<title id="t">Where the 23.1 million values come from</title>
+<desc id="d">Bubbles drawn to one scale. NOAA Coral Reef Watch has 22,877,449 values, 98.90 percent. The Coral Spawning Database has 170,314, the Churaumi Aquarium 68,369, NASA/JPL Horizons 12,897, the Sea Simulator 1,032 and the Maldives study 972. The total is 23,131,033.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a7cd4"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
+<radialGradient id="noaa" cx=".42" cy=".3" r=".82"><stop offset="0" stop-color="#57dcf9"/><stop offset=".6" stop-color="#1596e6"/><stop offset="1" stop-color="#0a5cb4"/></radialGradient>
+<radialGradient id="coral" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#ffc4cc"/><stop offset="1" stop-color="{PINK}"/></radialGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity=".02"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".26"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<style>
+text{{font-family:{FONT};fill:#fff}}
+.row{{font-size:23px}} .num{{font-size:23px;text-anchor:end;font-variant-numeric:tabular-nums}}
+.col{{font-size:17px;fill:#d7f4ff;text-anchor:end}} .side{{font-size:17px;fill:#d7f4ff}}
+.big{{text-anchor:middle}} .name{{font-size:27px;font-weight:600}} .value{{font-size:48px;font-weight:300}} .share{{font-size:22px;fill:#e3f8ff}}
+.total{{font-size:23px;font-weight:600}} .totalnum{{font-size:23px;font-weight:600;text-anchor:end;font-variant-numeric:tabular-nums}}
+</style>
+<rect width="{width}" height="{height}" rx="26" fill="url(#bg)"/>
+<path d="M0,26 Q0,0 26,0 H{width - 26} Q{width},0 {width},26 V62 C900,104 380,104 0,68 Z" fill="url(#top)"/>
+<circle cx="300" cy="280" r="{big}" fill="url(#noaa)" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+<path d="M126,216 C176,84 424,84 474,216 C400,150 200,150 126,216Z" fill="url(#gloss)"/>
+<text x="300" y="256" class="big name">NOAA Coral Reef Watch</text>
+<text x="300" y="312" class="big value">22,877,449</text>
+<text x="300" y="350" class="big share">98.90% of all values</text>
+<text x="630" y="92" class="side">Bubble area shows the number of values</text>
+<text x="1110" y="92" class="col">Values</text><text x="1228" y="92" class="col">Share</text>
+{rows}
+<line x1="630" x2="1228" y1="470" y2="470" stroke="#fff" stroke-opacity=".5"/>
+<text x="630" y="506" class="total">Total</text><text x="1110" y="506" class="totalnum">{total:,}</text><text x="1228" y="506" class="totalnum">100%</text>
+<rect x="1.5" y="1.5" width="{width - 3}" height="{height - 3}" rx="25" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+</svg>""")
+
+
+def project_map():
+    """Three folders in the order the data flows through them."""
+    width, height = 1280, 470
+    columns = [
+        (40, "data/", "What goes in", [("raw/", "original files, unchanged"), ("derived/", "joined data and results"), ("spatial/", "Shapefiles for GIS")]),
+        (460, "R/", "What happens", [("prepare_*.R", "read, join, build the sky"), ("analyse_*.R", "clocks, genera, heat"), ("fit_aquarium_models.R", "whole years held out"), ("check_*.R", "totals and exports"), ("plots/", "one script per plot")]),
+        (880, "outputs/", "What comes out", [("figures/", "PNGs at 300 dpi"), ("vector/", "SVG copies"), ("tables/", "plot values, diagnostics"), ("models/", "fitted models"), ("RESULTS.md", "the findings in words")]),
+    ]
+    cards = ""
+    for x, name, role, items in columns:
+        lines = ""
+        for i, (path, note) in enumerate(items):
+            y = 128 + i * 46
+            lines += f'<text x="{x + 26}" y="{y}" class="path">{path}</text><text x="{x + 26}" y="{y + 20}" class="note">{note}</text>'
+        cards += (f'<rect x="{x}" y="28" width="360" height="346" rx="22" fill="url(#card)" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/>'
+                  f'<path d="M{x + 10},52 Q{x + 10},38 {x + 26},38 H{x + 334} Q{x + 350},38 {x + 350},52 Q{x + 180},78 {x + 10},52Z" fill="#fff" opacity=".16"/>'
+                  f'<text x="{x + 26}" y="70" class="folder">{name}</text><text x="{x + 334}" y="70" class="role">{role}</text>{lines}')
+    tubes, droplets = "", ""
+    for i, (x1, x2) in enumerate([(400, 460), (820, 880)]):
+        tubes += f'<path id="t{i}" d="M{x1},200 H{x2}" stroke="#bff4ff" stroke-width="6" stroke-linecap="round"/>'
+        droplets += "".join(f'<circle r="5" fill="#fff"><animateMotion dur="2.6s" begin="{-n * 1.3:.1f}s" repeatCount="indefinite"><mpath href="#t{i}"/></animateMotion></circle>' for n in range(2))
+    pills = ""
+    for x, w, path, note in [(40, 290, "run.R", "runs everything"), (350, 290, "setup.R", "installs packages"), (660, 280, "docs/", "methods, checks"), (960, 280, "tools/", "downloads, artwork")]:
+        pills += (f'<rect x="{x}" y="394" width="{w}" height="50" rx="25" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".45"/>'
+                  f'<text x="{x + 24}" y="425" class="pillpath">{path}</text><text x="{x + w - 22}" y="425" class="pillnote">{note}</text>')
+    write("project_map.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" role="img" aria-labelledby="t d">
+<title id="t">How the project is organised</title>
+<desc id="d">Data flows from the data folder through the R scripts into the outputs folder. run.R runs everything, setup.R installs packages, docs holds methods and checks, tools holds downloads and artwork.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a7cd4"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
+<linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2aa7ee" stop-opacity=".6"/><stop offset="1" stop-color="#0a5cb4" stop-opacity=".6"/></linearGradient></defs>
+<style>text{{font-family:{FONT};fill:#fff}}
+.folder{{font-family:{MONO};font-size:27px;font-weight:600}} .role{{font-size:16px;fill:#d7f4ff;text-anchor:end}}
+.path{{font-family:{MONO};font-size:18px}} .note{{font-size:15.5px;fill:#d7f4ff}}
+.pillpath{{font-family:{MONO};font-size:18px;font-weight:600}} .pillnote{{font-size:15.5px;fill:#e3f8ff;text-anchor:end}}</style>
+<rect width="{width}" height="{height}" rx="26" fill="url(#bg)"/>
+{tubes}{cards}{droplets}{pills}
+<rect x="1.5" y="1.5" width="{width - 3}" height="{height - 3}" rx="25" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
 </svg>""")
 
 
@@ -379,8 +498,10 @@ def build():
     button("btn_checks.svg", "Validation", 160, "#4fd4f7", "#0a7fd6")
     icons()
     fhnw_plate()
-    wave("wave_a.svg", 1, True)
-    wave("wave_b.svg", 2, False)
+    side_band("band_a.svg", 1)
+    side_band("band_b.svg", 21)
+    values_chart()
+    project_map()
     seabed()
     plot_previews()
     social_card()
