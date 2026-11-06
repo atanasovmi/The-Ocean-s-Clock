@@ -8,7 +8,7 @@
   <a href="https://github.com/atanasovmi/the-oceans-clock/actions/workflows/reproduce.yml"><img src="https://github.com/atanasovmi/the-oceans-clock/actions/workflows/reproduce.yml/badge.svg" alt="Reproduce the analysis"></a>
   <a href="https://github.com/atanasovmi/the-oceans-clock/releases/latest"><img src="https://img.shields.io/github/v/release/atanasovmi/the-oceans-clock?color=0a7fd6&label=release" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/R-4.6-27c2f0?logo=r&logoColor=white" alt="R 4.6">
-  <a href="LICENSE-CONTENT.md"><img src="https://img.shields.io/badge/licence-MIT%20%2B%20CC%20BY%204.0-ff7e8b" alt="Licence: MIT for code, CC BY 4.0 for plots and text"></a>
+  <a href="docs/LICENSES.md"><img src="https://img.shields.io/badge/licence-MIT%20%2B%20CC%20BY%204.0-ff7e8b" alt="Licence: MIT for code, CC BY 4.0 for plots and text"></a>
 </p>
 
 On a few nights each year, whole reefs of corals release their eggs and sperm into the sea within the same hours. We wanted to know how much of that timing shows up in the records. So we joined **6,178 historical coral observations** with **3.2 million daily NOAA ocean records**, NASA Moon positions, a fifteen-year aquarium diary and a tank experiment, then measured the year, the Moon and the Sun on one scale.
@@ -387,6 +387,6 @@ We thank our professors **Martin Sterchi**, **Fabian Heimsch** and **Nathan Brac
 
 We also thank the researchers and agencies whose open data made this possible: Baird and colleagues for the Coral Spawning Database, Sakai, Yamamoto and Maruyama for the Churaumi Aquarium records, Sheridan and colleagues for the Maldives observations, the authors of the Sea Simulator study, NOAA Coral Reef Watch, NASA/JPL and the US Naval Observatory.
 
-To cite this work, use **Cite this repository** in the sidebar, which reads [`CITATION.cff`](CITATION.cff). Code is under the [MIT licence](LICENSE), plots and text under CC BY 4.0, and source data stays under its own terms, as set out in [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md).
+To cite this work, use **Cite this repository** in the sidebar, which reads [`CITATION.cff`](CITATION.cff). Code is under the [MIT licence](LICENSE), plots and text under CC BY 4.0, and source data stays under its own terms, as set out in [`docs/LICENSES.md`](docs/LICENSES.md).
 
 <p align="center"><img src="docs/assets/seabed.svg" width="100%" alt=""></p>

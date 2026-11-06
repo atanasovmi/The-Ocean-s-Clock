@@ -365,7 +365,7 @@ def social_card():
         page.wait_for_timeout(500)
         page.evaluate("() => { for (const a of document.getAnimations()) { a.pause(); a.currentTime = 4800; } }")
         page.wait_for_timeout(200)
-        page.screenshot(path=str(ASSETS / "social_preview.png"))
+        page.screenshot(path=str(ASSETS / "social_preview.jpg"), type="jpeg", quality=90)
         browser.close()
 
 
