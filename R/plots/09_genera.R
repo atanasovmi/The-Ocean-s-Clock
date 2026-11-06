@@ -85,22 +85,27 @@ wave_plot <- ggplot(waves, aes(day)) +
   geom_text(data = outlier_rows, aes(x = share_x, y = row + 0.12, label = share_label),
             hjust = 1, family = font_label, size = pts(18), colour = moon) +
   annotate("text", x = share_x, y = window_y + 0.75, hjust = 1, vjust = 0.5, family = font_note,
-           size = pts(12), colour = soft, lineheight = 1, label = "Nights in\nthose 8 days") +
+           size = pts(12), colour = soft, lineheight = 1, label = "Nights in\nthe frame") +
   moon_phase_row(c(month_start, 0, -month_start, new_moon), y = moon_y, width = 1.2, height = 1.2) +
   geom_polygon(data = edge_disc, aes(x, y), inherit.aes = FALSE, fill = "#1F3549") +
   geom_polygon(data = edge_moon, aes(x, y), inherit.aes = FALSE, fill = moon) +
-  plot_note(3.5, window_y, "8 days after full moon", hjust = 0.5, size = 12) +
-  plot_note(month_start - 1.3, moon_y - 0.35, "One wave per genus\n(n) = spawning nights", hjust = 1, size = 12) +
   # The height key sits in the label column, drawn at the waves' own scale.
   annotate("segment", x = month_start - 0.6, xend = month_start - 0.6, y = scale_bottom,
            yend = scale_bottom + wave_height * 0.2, colour = soft, linewidth = 0.6) +
   plot_note(month_start - 1.1, scale_bottom + wave_height * 0.1,
             "This bar = 20% of a\ngenus’s nights in a day", hjust = 1, size = 11.5) +
-  plot_note(share_x, 0.15, sprintf("Same week, but not equally tight: %s down to %s",
-                                   first(crowd_rows$share_label), last(crowd_rows$share_label)),
-            hjust = 1, size = 12) +
-  annotate("text", x = share_x, y = headings$row, hjust = 1, family = font_label, size = pts(16),
-           colour = moon, label = "Same genus, opposite moon") +
+  # An arrow down the percentages: the same week, spreading wider row by row.
+  plot_note(share_x, 0.2, "Same week, but some spread wider", hjust = 1, size = 12) +
+  annotate("segment", x = share_x - 2.35, xend = share_x - 2.35, y = -0.9, yend = -11,
+           colour = soft, linewidth = 0.4, arrow = arrow(length = unit(6, "pt"), type = "closed")) +
+  # What the height of a wave means, pointing at the first wave.
+  plot_note(month_start + 0.2, 0.75, "Higher = more nights\non that lunar day", size = 11.5) +
+  note_line(-1.6, 0.45, 1.9, -0.55) +
+  # Pocillopora's two peaks, with the label between them and a line to each.
+  annotate("text", x = 10.2, y = -12.2, family = font_label, size = pts(15), colour = moon,
+           lineheight = 1, label = "Same genus,\nopposite moon") +
+  note_line(7.8, -12.2, 3.9, -12.2, colour = moon) +
+  note_line(12.6, -12.2, 13.4, -12.2, colour = moon) +
   scale_fill_manual(values = c("FALSE" = crowd_fill, "TRUE" = spawn), guide = "none") +
   scale_colour_manual(values = c("FALSE" = crowd_share, "TRUE" = moon), guide = "none") +
   scale_x_continuous(breaks = c(month_start, 0, -month_start, new_moon, month_end),
@@ -117,24 +122,57 @@ wave_plot <- ggplot(waves, aes(day)) +
 # the daylight fades in over three hours instead of starting at one sharp line.
 daylight <- colorRampPalette(c(night, "#2A4A63"))(30)
 daylight <- matrix(c(daylight, rep("#2A4A63", 70)), nrow = 1)
+
+# Legend ----
+# It sits top right, beside the subtitle and outside the data, on the hour panel's
+# coordinates. Each row shows the real mark from the plot.
+legend_x <- -8.1
+legend_y <- c(6.5, 5.66, 4.82, 3.98)
+key_wave <- function(y, fill, line) {
+  x <- seq(legend_x, legend_x + 1.5, by = 0.05)
+  annotate("polygon", x = x, y = y - 0.28 + 0.6 * exp(-((x - legend_x - 0.75) / 0.35)^2),
+           fill = fill, colour = line, linewidth = 0.4)
+}
+
 hour_plot <- ggplot(dots, aes(hours, row)) +
   annotation_raster(daylight, xmin = 10, xmax = 20, ymin = row_limits[1], ymax = row_limits[2],
                     interpolate = TRUE) +
   geom_hline(data = group_rows, aes(yintercept = row), colour = "#1B3044", linewidth = 0.3) +
   geom_point(aes(fill = outlier), position = position_jitter(width = 0.1, height = 0.22, seed = 9),
              shape = 21, size = 1.9, stroke = 0.16, colour = night) +
-  annotate("text", x = -4, y = window_y + 1.3, hjust = 0, family = font_note, size = pts(13),
+  annotate("text", x = -4, y = window_y + 0.75, hjust = 0, family = font_note, size = pts(13),
            colour = soft, label = "Hour spawning starts") +
-  plot_note(-4, window_y, "One dot: one genus starting on one night", size = 12) +
   plot_note(16.5, 0.4, "Daylight", hjust = 0.5, size = 12) +
-  annotate("text", x = 9.6, y = mean(outlier_rows$row), hjust = 1, family = font_label, size = pts(16),
+  # A bracket over the first six hours, where nearly all exact times fall.
+  note_line(0, -0.15, 6, -0.15) +
+  note_line(0, -0.15, 0, -0.4) +
+  note_line(6, -0.15, 6, -0.4) +
+  plot_note(3, 0.25, sprintf("%.0f%% of exact times", 100 * stats[["other_exact_after_sunset_share"]]),
+            hjust = 0.5, size = 11.5) +
+  # The rare start after sunrise, with a line to the one in the top rows.
+  plot_note(15.5, -5.5, sprintf("Only %.0f of %s\nother starts here", stats[["other_daytime"]],
+                                format(stats[["other_timed"]], big.mark = ",")),
+            hjust = 0.5, size = 11.5) +
+  note_line(16, -4.75, 16.4, -2.25) +
+  # A bracket holds Pocillopora's two rows of dots.
+  annotate("text", x = 9.2, y = mean(outlier_rows$row), hjust = 1, family = font_label, size = pts(16),
            colour = moon, lineheight = 1.05,
            label = sprintf("%d of %d start\nafter sunrise", stats[["pocillopora_daytime"]], stats[["pocillopora_timed"]])) +
-  # Definitions sit top right, beside the subtitle and outside the data, as on plots 2 and 4.
-  plot_note(-8.3, 5.72, paste("Spawning: corals release eggs and sperm into the water",
-                              "Genus: a group of closely related species",
-                              "Spawning night: one genus on one reef on one date",
-                              "Lunar month: 29.5 days, from full moon to full moon", sep = "\n"), size = 11.5) +
+  note_line(9.6, outlier_rows$row[1], 9.6, outlier_rows$row[2], colour = moon) +
+  note_line(9.6, outlier_rows$row[1], 10.1, outlier_rows$row[1], colour = moon) +
+  note_line(9.6, outlier_rows$row[2], 10.1, outlier_rows$row[2], colour = moon) +
+  # The legend, one row per mark.
+  key_wave(legend_y[1], crowd_fill, crowd_share) +
+  key_wave(legend_y[2], spawn, moon) +
+  annotate("point", x = legend_x + 0.75, y = legend_y[3], shape = 21, size = 2.6, stroke = 0.16,
+           fill = crowd_fill, colour = night) +
+  annotate("rect", xmin = legend_x + 0.1, xmax = legend_x + 1.4, ymin = legend_y[4] - 0.26,
+           ymax = legend_y[4] + 0.26, fill = NA, colour = soft, linewidth = 0.4) +
+  plot_note(legend_x + 2, legend_y,
+            c("One genus, (n) = spawning nights", "Pocillopora, split by sea",
+              "One genus starting on one night",
+              sprintf("8 days after full moon, %.0f%% of the month", 100 * even_share)),
+            size = 12) +
   scale_fill_manual(values = c("FALSE" = crowd_fill, "TRUE" = spawn), guide = "none") +
   scale_x_continuous(breaks = c(0, 6, 12, 18), labels = c("Sunset", "+6 h", "About sunrise", "+18 h"),
                      expand = c(0, 0)) +
@@ -151,15 +189,9 @@ genera_plot <- wave_plot + hour_plot +
     title = "Most coral genera share one timetable. Pocillopora does not",
     subtitle = "Eleven genera peak in the week after full moon and start around sunset.\nPocillopora spawns by day, and in the Red Sea at new moon.",
     caption = paste(
-      sprintf("Percentages: share of a genus’s nights inside the white frame (an even spread gives %.0f%%). Tight: packed into few days. Bright pink: Pocillopora (cauliflower corals), split by sea after seeing the data. Waves smoothed by about a day.",
-              100 * even_share),
-      sprintf("Shown: the 12 genera with 40+ nights, of %.0f recorded. Red Sea wave: %.0f nights, %.0f spawning events, %.0f sites, 2 studies, all within 2 days of new moon, as in Bouwmeester et al. (2021). Platygyra has a small new-moon peak (%.0f%%).",
-              stats[["genera_all"]], stats[["pocillopora_red_nights"]], stats[["pocillopora_red_events"]],
-              stats[["pocillopora_red_sites"]], 100 * stats[["platygyra_share_near_new"]]),
-      sprintf("Dots: %s timed starts, some approximate. Of exact times in other genera, %.0f%% fall in the 6 h after sunset. Daytime starts in other genera: %.0f of %s. Sunrise comes about 12 h after sunset, varying by place and season.",
-              format(stats[["other_timed"]] + stats[["pocillopora_timed"]], big.mark = ","),
-              100 * stats[["other_exact_after_sunset_share"]], stats[["other_daytime"]], format(stats[["other_timed"]], big.mark = ",")),
-      sprintf("Gaps in tightness mostly reflect where a genus was recorded: shuffling genus labels within reefs finds no clear gap without Eilat (p = %.2f). Records show when people looked, not every night. Source: Baird et al. (2021).",
+      sprintf("The 12 genera with 40+ nights, of %.0f recorded. Waves smoothed by about a day. Some start times are approximate. Pocillopora (cauliflower corals) split by sea after seeing the data.",
+              stats[["genera_all"]]),
+      sprintf("Gaps between genera mostly reflect recording sites (shuffling labels within reefs: p = %.2f without Eilat). Records show when people looked. Sources: Baird et al. (2021), Bouwmeester et al. (2021).",
               stats[["same_reef_p_without_eilat"]]),
       sep = "\n"),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)),
