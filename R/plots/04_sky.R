@@ -16,10 +16,13 @@ sky <- sky |>
   filter(hours_after_sunset <= top_hour + 0.2) |>
   mutate(sky_brightness = sqrt(moonlight))
 
-# One straight line through the starts, across the nights holding nearly all of them.
-start_trend <- lm(hours_after_sunset ~ lunar_day, data = filter(starts, between(lunar_day, -2, 10)))
+# The trend line has the same-reef slope from R/analyse_clocks.R, which uses more start
+# times than the dots. It is drawn through the centre of the dots, across the nights
+# holding nearly all of them, so its tilt is the only thing it reports.
+dots_in_window <- filter(starts, between(lunar_day, -2, 10))
 trend_line <- tibble(lunar_day = c(-2, 10)) |>
-  mutate(hours = predict(start_trend, newdata = pick(lunar_day)))
+  mutate(hours = mean(dots_in_window$hours_after_sunset) + stats[["same_reef_drift_minutes_per_night"]] / 60 *
+           (lunar_day - mean(dots_in_window$lunar_day)))
 
 # The sky colours, from no moonlight to the strongest.
 sky_colours <- c(night, "#16324A", "#3C6684", "#93B2BF", "#E9E3CF")
@@ -43,19 +46,21 @@ sky_plot <- ggplot(sky, aes(lunar_day, hours_after_sunset)) +
            lineheight = 1.05,
            label = sprintf("If moonrise were the signal:
 +%.0f min per night", stats[["moonrise_delay_minutes_per_night"]])) +
-  annotate("segment", x = 11.2, xend = 10.15, y = 4.6, yend = 2.25, colour = soft, linewidth = 0.35) +
-  annotate("text", x = 11.5, y = 5.25, hjust = 0, family = font_label, size = pts(16),
+  annotate("segment", x = 10.4, xend = 10.15, y = 4.35, yend = 2.25, colour = soft, linewidth = 0.35) +
+  annotate("text", x = 9.8, y = 5.7, hjust = 0, family = font_label, size = pts(16),
            colour = moon, label = "What we observe") +
-  annotate("text", x = 11.5, y = 4.45, hjust = 0, family = font_note, size = pts(14),
+  annotate("text", x = 9.8, y = 4.85, hjust = 0, family = font_note, size = pts(13.5),
            colour = soft, lineheight = 1.05,
-           label = sprintf("Dots stay flat:
-+%.0f min per night", stats[["start_drift_minutes_per_night"]])) +
+           label = sprintf("Same reef: +%.0f min per night
+All reefs mixed: +%.0f min",
+                           stats[["same_reef_drift_minutes_per_night"]],
+                           stats[["all_reefs_drift_minutes_per_night"]])) +
   plot_note(-16.5, 8.72, "Time after sunset") +
   # One real dot stands in as the key.
   plot_note(-14.6, 3.95, "Each dot: one coral genus
 starting to spawn on one night") +
   note_line(-12, 3.42, -12, 3.05) +
-  moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = top_hour + 0.5, width = 0.78, height = 0.66) +
+  moon_phase_row(c(-14.77, -7.38, 0, 7.38, 14.77), y = top_hour + 0.5, width = 0.78, height = 0.69) +
   plot_note(-14.1, top_hour + 0.5, "New moon", size = 14) +
   plot_note(14.1, top_hour + 0.5, "New moon", hjust = 1, size = 14) +
   scale_fill_gradientn(colours = sky_colours, limits = sky_range, name = "Moonlight at the reef",
@@ -69,12 +74,16 @@ starting to spawn on one night") +
                      expand = c(0, 0)) +
   coord_cartesian(xlim = c(-15, 14.9), ylim = c(0, top_hour), clip = "off") +
   labs(title = "Spawning keeps to the Sun, whatever the Moon is doing",
-       subtitle = sprintf("Does moonrise tell corals when to spawn? If it did, the dots would climb with the line.\nInstead they stay flat, about %s after sunset, on almost every night.",
+       subtitle = sprintf("Does moonrise tell corals when to spawn? If it did, the dots would climb with the line.\nInstead they stay nearly flat, about %s after sunset, on almost every night.",
                           clock_text(stats[["median_start_hours"]])),
        x = "Days from full moon", y = NULL,
-       caption = sprintf("Dots are nudged sideways so they stay visible. Rising line: median moonrise across reefs. Flat line: linear fit to the dots. Moonlight: lit share of the Moon × its height.\n%d starts, %d spawning nights, %d reef sites. Trend with genus controlled: +%.1f min per night (95%% CI %.1f to %.1f). Starts vary %.1f times less around sunset than around moonrise. Data: Baird et al. (2021).",
+       caption = sprintf("Dots are nudged sideways to stay visible. Rising line: median moonrise across reefs. Nearly flat line: same-reef trend through the dots. Moonlight: lit share of the Moon × its height. Data: Baird et al. (2021).\nDots: %d exact starts, %d spawning nights, %d reef sites. Trend: %.0f natural-reef starts, exact and approximate, each genus against itself on its own reef: +%.1f min per night (95%% CI %.1f to %.1f).\nOne linear fit across reefs: +%.1f (CI %.1f to %.1f), partly as reefs keep different hours. Five start-time samples: +%.1f to +%.1f same reef, +%.1f to +%.1f mixed. Starts vary %.1f× less around sunset than moonrise.",
                          nrow(starts), n_distinct(paste(starts$subsite_id, starts$date)), n_distinct(starts$subsite_id),
-                         stats[["start_drift_minutes_per_night"]], stats[["start_drift_low"]], stats[["start_drift_high"]],
+                         stats[["same_reef_drift_starts"]], stats[["same_reef_drift_minutes_per_night"]],
+                         stats[["same_reef_drift_low"]], stats[["same_reef_drift_high"]],
+                         stats[["all_reefs_drift_minutes_per_night"]], stats[["all_reefs_drift_low"]], stats[["all_reefs_drift_high"]],
+                         stats[["same_reef_drift_smallest_layer"]], stats[["same_reef_drift_largest_layer"]],
+                         stats[["all_reefs_drift_smallest_layer"]], stats[["all_reefs_drift_largest_layer"]],
                          stats[["sd_from_moonrise_hours"]] / stats[["sd_from_sunset_hours"]])) +
   theme_plot() +
   # The legend sits above the panel, beside the subtitle, so nothing covers the sky.

@@ -118,10 +118,10 @@ starts", 100 * peak_share), hjust = 1, size = 12) +
                           100 * peak_share),
        x = NULL, y = NULL,
        caption = sprintf("A pattern, not proof of a trigger: people also chose which nights to watch. At the same reefs and clock times the Moon is down for %.0f%% of starts, against %.0f%% on the 28 surrounding dates.
-%d of %d timed starts shown, %d reef sites. Sky and moonrise: typical values across those reefs. Start time against night, genus controlled: +%.1f min per night (95%% CI %.1f to %.1f). Data: Baird et al. (2021).",
+%d of %d timed starts shown, %d reef sites. Sky and moonrise: typical values across those reefs. Same-reef trend, approximate times included: +%.1f min per night (95%% CI %.1f to %.1f). Data: Baird et al. (2021).",
                          100 * moon_down_on_date, 100 * moon_down_elsewhere,
                          nrow(starts), nrow(all_starts), n_distinct(all_starts$subsite_id),
-                         stats[["start_drift_minutes_per_night"]], stats[["start_drift_low"]], stats[["start_drift_high"]])) +
+                         stats[["same_reef_drift_minutes_per_night"]], stats[["same_reef_drift_low"]], stats[["same_reef_drift_high"]])) +
   theme_plot() +
   theme(axis.ticks.y = element_blank(),
         plot.subtitle = element_text(margin = margin(b = 34)),
