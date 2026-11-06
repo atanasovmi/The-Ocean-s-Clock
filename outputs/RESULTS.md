@@ -10,7 +10,7 @@ Calendar months cannot be compared across the equator, so each NOAA region gets 
 
 Of 1,026 recorded reef-nights, 67.7% fall in the eight days from full moon, where an even spread would give 27%. That single figure hides two groups. Inside the tropics the share is 88%; beyond them it is 51% ([plot 3](figures/03_moon.png)). Without Eilat and Kochi it rises to 83%.
 
-Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = -0.73, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. Sites with more recorded nights also look looser, even after allowing for latitude (p = 0.004), so heavier monitoring probably explains part of the pattern. This describes the records. It does not show why the Moon matters less at higher latitudes.
+Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = -0.73, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. The share of nights in the eight-day box falls with latitude too (ρ = -0.66), and cutting every site to 12 reef-nights leaves the pattern in place (median ρ = -0.71), so sample size alone does not explain it. Whether sites with more nights look looser depends on the test: a linear model allowing for latitude says yes (p = 0.004), a rank version says no (p = 0.61). Equal sample sizes cannot correct for when people chose to look. The aquarium, watched every day, has R = 0.21, against 0.66 at Sesoko and 0.81 at Akajima nearby, so field records may overstate tightness. This describes the records. It does not show why the Moon matters less at higher latitudes.
 
 For Acropora, 69.8% of 400 historical genus/reef-dates and 70.4% of 81 spawning atoll-days from a separate Maldives study fall in those eight days. The two studies use different units and are kept apart.
 
@@ -33,6 +33,12 @@ We cannot tell from this whether field records overstate the Moon, because teams
 In the Australian Sea Simulator the seasons were moved by six months and the light cycle by four hours, and corals spawned on the moved schedule. Against one programmed sunset, half of the Acropora loripes releases fall within 5 minutes; in the wild, with places and species mixed, Acropora spreads over 84 ([plot 6](figures/06_minutes.png)). Tank species keep distinct times, from about 80 to about 210 minutes after sunset.
 
 Of the 28 tagged colonies timed in both years, 24 started earlier in 2023, with a median shift of 8 minutes. Both years used shifted cues, and shared tank conditions prevent isolating a cause.
+
+## Genera share a timetable, with one clear outlier
+
+Across the 20 genera with at least 20 reef-nights, the typical night falls 3 to 7 days after full moon. Tightness varies more than timing: among the 11 genera with at least 40 nights, the share of nights in the eight days after full moon runs from 53% to 100% ([plot 9](figures/09_genera.png)). Much of that gap reflects where each genus was recorded: shuffling genus labels within reefs gives p < 0.001, but p = 0.25 once Eilat is left out, so on most shared reefs genera look alike.
+
+Pocillopora is the clear outlier. All 22 of its timed starts come after sunrise, while only 4 of the other 1,460 timed starts fall in daylight, and 97% of their exact times come in the 6 hours after sunset. On the Moon, all 31 of its nights outside the Red Sea fall in the eight days after full moon. All 10 inside the Red Sea, in 6 spawning events at 3 sites, fall within 2 days of new moon, which matches published Red Sea work ([Bouwmeester et al. 2021](https://doi.org/10.1002/ecs2.3340)). The split by sea was chosen after seeing the data. Platygyra also has a smaller new-moon peak (19% of its nights). The Red Sea sample is small, and these records describe recorded events, so they do not explain why the timing differs.
 
 ## The heat is changing around these clocks
 

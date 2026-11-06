@@ -72,7 +72,7 @@ tightness_strip <- ggplot(places, aes(tightness, row)) +
   labs(x = NULL, y = NULL) +
   annotate("text", x = 0, y = 2.45, hjust = 0, family = font_label, size = pts(14), colour = moon,
            label = "Tightness R") +
-  plot_note(0, 0.6, "1 = all on the same lunar day\n0 = evenly spread", size = 12.5) +
+  plot_note(0, 0.6, "Near 1 = one tight cluster\nNear 0 = no single cluster", size = 12.5) +
   theme_plot() +
   theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), plot.margin = margin(38, 0, 0, 16))
 
@@ -82,11 +82,12 @@ moon_plot <- actogram + tightness_strip +
     title = "The Moon’s hold loosens away from the equator",
     subtitle = sprintf("In the tropics, %.0f%% of spawning nights fall in the 8 days after full moon, just %.0f%% of the lunar month.\nOutside the tropics it drops to %.0f%%. At Eilat and Kochi spawning spans almost the whole month.",
                        100 * stats[["share_inside_tropics"]], 100 * even_share, 100 * stats[["share_outside_tropics"]]),
-    caption = sprintf("White names and dots: separate studies. Only places with at least 12 spawning nights are shown. Latitude against tightness: Spearman ρ = %.2f, also found within genera.\nPlaces with more recorded nights also look more spread out, so closer watching may explain part of this. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
-                      stats[["spearman_rho"]]),
+    caption = sprintf("R: mean resultant length. White names and dots: separate studies. Only places with at least 12 spawning nights. Latitude against R at field sites: Spearman ρ = %.2f, or %.2f with each cut to 12 nights.\nAlso found within genera. The aquarium, watched every day, is far less tight than nearby reefs, so field records may overstate tightness. Sources: Baird et al. (2021), Sheridan et al. (2025), Sakai et al. (2024).",
+                      stats[["spearman_rho"]], stats[["spearman_rho_equal_nights"]]),
     theme = theme_plot() + theme(plot.subtitle = element_text(margin = margin(b = 0)))
   )
 
 save_plot(moon_plot, "03_moon")
-write_csv(select(places, place, country, latitude, n, years, tightness, typical, record),
+write_csv(select(places, place, country, latitude, n, years, tightness, tightness_low, tightness_high,
+                 typical, record),
           "outputs/tables/03_moon.csv")

@@ -18,8 +18,13 @@ minutes <- read_csv("outputs/tables/06_minutes.csv", show_col_types = FALSE)
 colonies <- read_csv("outputs/tables/seasim_colony_pairs.csv", col_types = cols(colony_tag = col_character()))
 heat <- read_csv("outputs/tables/07_heat_years.csv", show_col_types = FALSE)
 heat_season <- read_csv("outputs/tables/08_heat_season.csv", show_col_types = FALSE)
+genera <- read_statistics("outputs/tables/genus_statistics.csv")
+genus_rows <- read_csv("outputs/tables/09_genera.csv", show_col_types = FALSE) |>
+  filter(!grepl("Pocillopora", group))
 
 tightness <- setNames(clocks$tightness, clocks$clock)
+places <- read_csv("outputs/tables/lunar_tightness_by_place.csv", show_col_types = FALSE)
+place_tightness <- setNames(places$tightness, places$place)
 brier <- setNames(scores$brier, scores$model)
 season_cut <- 100 * (1 - brier[["season"]] / brier[["prevalence"]])
 moon_gain <- filter(increments, grepl("^Season", comparison))
@@ -47,8 +52,10 @@ report <- c(
           100 * lunar[["share_all"]], 100 * lunar[["share_inside_tropics"]],
           100 * lunar[["share_outside_tropics"]], 100 * lunar[["share_without_eilat_kochi"]]),
   "",
-  sprintf("Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = %.2f, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. Sites with more recorded nights also look looser, even after allowing for latitude (p = %.3f), so heavier monitoring probably explains part of the pattern. This describes the records. It does not show why the Moon matters less at higher latitudes.",
-          lunar[["spearman_rho"]], lunar[["effort_p_given_latitude"]]),
+  sprintf("Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = %.2f, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. The share of nights in the eight-day box falls with latitude too (ρ = %.2f), and cutting every site to 12 reef-nights leaves the pattern in place (median ρ = %.2f), so sample size alone does not explain it. Whether sites with more nights look looser depends on the test: a linear model allowing for latitude says yes (p = %.3f), a rank version says no (p = %.2f). Equal sample sizes cannot correct for when people chose to look. The aquarium, watched every day, has R = %.2f, against %.2f at Sesoko and %.2f at Akajima nearby, so field records may overstate tightness. This describes the records. It does not show why the Moon matters less at higher latitudes.",
+          lunar[["spearman_rho"]], lunar[["spearman_rho_box_share"]], lunar[["spearman_rho_equal_nights"]],
+          lunar[["effort_p_given_latitude"]], lunar[["effort_rank_p_given_latitude"]],
+          place_tightness[["Churaumi Aquarium"]], place_tightness[["Sesoko"]], place_tightness[["Akajima"]]),
   "",
   sprintf("For Acropora, %.1f%% of 400 historical genus/reef-dates and %.1f%% of 81 spawning atoll-days from a separate Maldives study fall in those eight days. The two studies use different units and are kept apart.",
           100 * acropora_share, 100 * maldives_share),
@@ -79,6 +86,18 @@ report <- c(
   "",
   sprintf("Of the 28 tagged colonies timed in both years, %d started earlier in 2023, with a median shift of %.0f minutes. Both years used shifted cues, and shared tank conditions prevent isolating a cause.",
           sum(colonies$change_minutes < 0), -median(colonies$change_minutes)),
+  "",
+  "## Genera share a timetable, with one clear outlier", "",
+  sprintf("Across the %d genera with at least 20 reef-nights, the typical night falls %.0f to %.0f days after full moon. Tightness varies more than timing: among the %d genera with at least 40 nights, the share of nights in the eight days after full moon runs from %.0f%% to %.0f%% ([plot 9](figures/09_genera.png)). Much of that gap reflects where each genus was recorded: shuffling genus labels within reefs gives p < 0.001, but p = %.2f once Eilat is left out, so on most shared reefs genera look alike.",
+          genera[["genera_well_recorded"]], genera[["typical_day_min"]], genera[["typical_day_max"]], nrow(genus_rows),
+          100 * min(genus_rows$share_after_full), 100 * max(genus_rows$share_after_full),
+          genera[["same_reef_p_without_eilat"]]),
+  "",
+  sprintf("Pocillopora is the clear outlier. All %d of its timed starts come after sunrise, while only %d of the other %s timed starts fall in daylight, and %.0f%% of their exact times come in the 6 hours after sunset. On the Moon, all %d of its nights outside the Red Sea fall in the eight days after full moon. All %d inside the Red Sea, in %d spawning events at %d sites, fall within 2 days of new moon, which matches published Red Sea work ([Bouwmeester et al. 2021](https://doi.org/10.1002/ecs2.3340)). The split by sea was chosen after seeing the data. Platygyra also has a smaller new-moon peak (%.0f%% of its nights). The Red Sea sample is small, and these records describe recorded events, so they do not explain why the timing differs.",
+          genera[["pocillopora_timed"]], genera[["other_daytime"]], format(genera[["other_timed"]], big.mark = ","),
+          100 * genera[["other_exact_after_sunset_share"]], genera[["pocillopora_other_nights"]],
+          genera[["pocillopora_red_nights"]], genera[["pocillopora_red_events"]], genera[["pocillopora_red_sites"]],
+          100 * genera[["platygyra_share_near_new"]]),
   "",
   "## The heat is changing around these clocks", "",
   sprintf("NOAA's 214 reef regions are followed through 39 complete years. %d reached the severe level of 8 degree heating weeks in 1986 and %d in 2024, about four in five ([plot 7](figures/07_heat_years.png)). The years 1998, 2010, 2016 and 2024 each followed an El Niño. Regions count equally whatever their reef area, and degree heating weeks measure accumulated heat, not coral death.",

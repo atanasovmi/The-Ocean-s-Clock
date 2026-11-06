@@ -28,7 +28,14 @@ place_totals <- lunar_counts |> summarise(n = sum(n), share = sum(share), .by = 
 stopifnot(!anyDuplicated(places$place), setequal(places$place, place_totals$place),
           all(abs(place_totals$share - 1) < 1e-10),
           all(place_totals$n == places$n[match(place_totals$place, places$place)]),
-          all(c("Churaumi Aquarium", "Maldives atolls") %in% places$place))
+          all(c("Churaumi Aquarium", "Maldives atolls") %in% places$place),
+          all(between(places$tightness_low, 0, 1)), all(between(places$tightness_high, 0, 1)),
+          all(places$tightness_low <= places$tightness_high))
+
+# Plot 3 says the latitude pattern survives equal sample sizes and a second measure.
+lunar <- read_csv("outputs/tables/lunar_statistics.csv", show_col_types = FALSE)
+lunar <- setNames(lunar$value, lunar$measure)
+stopifnot(lunar[["spearman_rho_equal_nights_high"]] < 0, lunar[["spearman_rho_box_share"]] < 0)
 
 # Sky: the plot says starts barely move while moonrise moves a lot.
 genus_starts <- read_csv("data/derived/genus_starts.csv", show_col_types = FALSE)
@@ -65,6 +72,19 @@ heat_season <- read_csv("outputs/tables/08_heat_season.csv", show_col_types = FA
 stopifnot(all(heat$n_regions == 214), nrow(heat) == 39,
           heat$n_severe[heat$year == 1986] == 5, heat$n_severe[heat$year == 2024] == 171,
           nrow(heat_season) == 14, sum(heat_season$change > 0) == 10)
+
+# Genera: each reef-night sits in one row, and the plot's outlier claims still hold.
+genus_groups <- read_csv("outputs/tables/09_genera.csv", show_col_types = FALSE)
+genus_stats <- read_csv("outputs/tables/genus_statistics.csv", show_col_types = FALSE)
+genus_stats <- setNames(genus_stats$value, genus_stats$measure)
+genus_group_nights <- read_csv("data/derived/genus_group_nights.csv", show_col_types = FALSE)
+stopifnot(!anyDuplicated(genus_group_nights[c("group", "subsite_id", "date")]),
+          sum(genus_groups$nights) == nrow(genus_group_nights),
+          genus_stats[["pocillopora_daytime"]] == genus_stats[["pocillopora_timed"]],
+          genus_stats[["pocillopora_red_near_new"]] == genus_stats[["pocillopora_red_nights"]],
+          genus_stats[["pocillopora_red_max_days_from_new"]] < 2,
+          genus_stats[["pocillopora_other_after_full"]] == genus_stats[["pocillopora_other_nights"]],
+          genus_stats[["same_reef_p_without_eilat"]] > 0.05)
 
 # Exports: one PNG and one SVG per plot, and no private font names left in the SVGs.
 authors <- read_csv("authors.csv", show_col_types = FALSE)

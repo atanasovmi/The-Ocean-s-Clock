@@ -83,6 +83,22 @@ lunar_counts <- bind_rows(
   mutate(lunar_day = if_else(lunar_day > 14, lunar_day - 30L, as.integer(lunar_day))) |>
   summarise(n = sum(n), .by = c(place, lunar_day)) |>
   mutate(share = n / sum(n), .by = place)
+
+# A 95% bootstrap interval for each place's tightness. Nights from one spawning event
+# are not independent, so these intervals may be too narrow, especially with few nights.
+set.seed(20261106)
+tightness_of <- function(days) circular_summary(days, synodic_month)$tightness
+days_by_place <- lunar_counts |> uncount(n)
+days_by_place <- split(days_by_place$lunar_day, days_by_place$place)
+tightness_intervals <- lapply(names(days_by_place), function(place) {
+  days <- days_by_place[[place]]
+  resampled <- replicate(2000, tightness_of(sample(days, replace = TRUE)))
+  tibble(place = place, tightness_low = quantile(resampled, 0.025, names = FALSE),
+         tightness_high = quantile(resampled, 0.975, names = FALSE))
+}) |> bind_rows()
+place_tightness <- left_join(place_tightness, tightness_intervals, by = "place",
+                             relationship = "one-to-one")
+stopifnot(!anyNA(place_tightness$tightness_low))
 write_csv(place_tightness, "outputs/tables/lunar_tightness_by_place.csv")
 write_csv(lunar_counts, "outputs/tables/lunar_counts_by_place.csv")
 
@@ -91,13 +107,34 @@ field_sites <- filter(place_tightness, record == "field database")
 latitude_test <- cor.test(field_sites$tightness, field_sites$abs_latitude,
                           method = "spearman", exact = FALSE)
 effort_model <- summary(lm(tightness ~ abs_latitude + log(n), data = field_sites))$coefficients
+# The same question on ranks, so Eilat and Kochi cannot dominate through their size.
+effort_rank_model <- summary(lm(rank(tightness) ~ rank(abs_latitude) + rank(n),
+                                data = field_sites))$coefficients
+
+# Few nights can look tight by chance, so cut every field site to the same 12 nights
+# and repeat the test. This equalises sample size only. It cannot correct for when
+# people chose to look.
+field_days <- split(nights$lunar_day, nights$site)[field_sites$place]
+equal_nights_rho <- replicate(2000, {
+  thinned_tightness <- sapply(field_days, function(days) tightness_of(sample(days, 12)))
+  cor(thinned_tightness, field_sites$abs_latitude, method = "spearman")
+})
+
+# The same test with a second measure, the share of nights in the eight-day box.
+box_share <- lunar_counts |>
+  summarise(box_share = sum(share[between(lunar_day, 0, 7)]), .by = place)
+field_box_share <- left_join(field_sites, box_share, by = "place", relationship = "one-to-one")
+
 tropic <- 23.44
 lunar_week <- function(day) between(day, 0, 7)
 lunar_statistics <- tibble(
   measure = c("share_all", "share_inside_tropics", "share_outside_tropics",
               "nights_inside_tropics", "nights_outside_tropics", "share_without_eilat_kochi",
               "aquarium_share", "aquarium_expected", "spearman_rho", "spearman_p",
-              "latitude_p_given_effort", "effort_p_given_latitude"),
+              "latitude_p_given_effort", "effort_p_given_latitude", "effort_rank_p_given_latitude",
+              "spearman_nights_tightness", "spearman_rho_equal_nights",
+              "spearman_rho_equal_nights_low", "spearman_rho_equal_nights_high",
+              "spearman_rho_box_share"),
   value = c(mean(lunar_week(nights$lunar_day)),
             mean(lunar_week(nights$lunar_day[abs(nights$latitude) <= tropic])),
             mean(lunar_week(nights$lunar_day[abs(nights$latitude) > tropic])),
@@ -106,7 +143,11 @@ lunar_statistics <- tibble(
             mean(lunar_week(aquarium$DAFM[aquarium$any_spawning == 1])),
             mean(lunar_week(aquarium$DAFM)),
             unname(latitude_test$estimate), latitude_test$p.value,
-            effort_model["abs_latitude", 4], effort_model["log(n)", 4]))
+            effort_model["abs_latitude", 4], effort_model["log(n)", 4],
+            effort_rank_model["rank(n)", 4],
+            cor(field_sites$n, field_sites$tightness, method = "spearman"),
+            median(equal_nights_rho), quantile(equal_nights_rho, c(0.025, 0.975), names = FALSE),
+            cor(field_box_share$box_share, field_box_share$abs_latitude, method = "spearman")))
 write_csv(lunar_statistics, "outputs/tables/lunar_statistics.csv")
 
 # Sun or Moon for the hour? ----

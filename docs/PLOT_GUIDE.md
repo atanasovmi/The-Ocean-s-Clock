@@ -24,11 +24,13 @@ Be ready for the survey question. Teams go looking when they expect spawning, so
 
 ## 3. The Moon
 
-Each row is one place, ordered from the equator at the top to 33° at the bottom. Each column is a day of the lunar month, and a brighter cell means more of that place's records fell on that day. The box marks the eight days from full moon. The strip on the right gives each place its tightness R: 1 means all on the same lunar day, 0 means evenly spread over the month.
+Each row is one place, ordered from the equator at the top to 33° at the bottom. Each column is a day of the lunar month, and a brighter cell means more of that place's records fell on that day. The box marks the eight days from full moon. The strip on the right gives each place its tightness R (the mean resultant length), measured over the whole lunar month without using the box. Near 1 means one tight cluster. Near 0 means no single cluster: the nights are spread out, or two clusters on opposite sides of the month cancel out. Exactly 1 would need every night on one lunar day, so Raffles Lighthouse reaches 0.97 with its nights on six different days.
+
+R is not a percentage and its scale is not even. It is an average of cosines, so it falls slowly while the nights stay close and faster as they spread: nights spread evenly over 3, 6, 8 and 15 days give about 0.98, 0.94, 0.89 and 0.63. Differences near the top of the strip are bigger than they look.
 
 Read downwards. Near the equator the records pile up inside the box. Past the edge of the tropics they spread out, and at Eilat and Kochi they cover almost the whole month. That is why the old headline of 68% was misleading: it is 88% inside the tropics and 51% beyond them.
 
-The honest caveat is on the plot. Places with more recorded nights also look looser, so part of this may come from watching more closely. Latitude still matters after allowing for that, and the pattern shows up within genera.
+The honest caveat is on the plot. These are records of when people looked. The aquarium, watched every day, has R = 0.21, while nearby Sesoko and Akajima have 0.66 and 0.81, so field records may overstate tightness. The latitude pattern itself survives the checks we can run: cutting every field site to 12 nights gives ρ = −0.71, the share in the box gives ρ = −0.66, and it shows up within genera. A 95% bootstrap interval for each place's R is in `outputs/tables/03_moon.csv`; it is wide for places with few nights, such as Amakusa.
 
 ## 4. The sky
 
@@ -70,6 +72,22 @@ This uses the same grammar as plot 7, counted only inside each region's historic
 
 Ten of fourteen regions rose, and four stayed clear. This measures overlap only. We did not measure whether spawning moved or failed, and the fixed calendar comes from when people happened to record it.
 
+## 9. The genera
+
+Every wave is one genus across the lunar month, and a higher wave means more of its spawning nights fall on that day. The month starts before full moon and runs past new moon, so a new-moon peak stays whole. The percentages count nights inside the white frame. The strip on the right shows the hour spawning starts, with one dot for one genus on one night.
+
+Read it from top to bottom. Eleven genera peak in the week after full moon and start around sunset, so their timing is alike. The share inside the frame still falls from 100% to 53%, but much of that gap comes from where each genus was recorded. Pocillopora is the outlier. All 22 of its timed starts come after sunrise, and its 10 Red Sea nights all fall within 2 days of new moon, while its 31 nights elsewhere fall after full moon.
+
+Questions to expect:
+
+- **Is 10 nights enough?** It is few. They are 6 spawning events at 3 sites from 2 studies, 30 years apart. Published Red Sea work reports the same morning spawning just before new moon ([Bouwmeester et al. 2021](https://doi.org/10.1002/ecs2.3340)), and morning spawning after full moon is reported at Lizard Island ([Schmidt-Roach et al. 2012](https://researchonline.jcu.edu.au/24820/1/24820_Schmidt-Roach_et_al_2012.pdf)). This is known biology that our data shows again, not a new discovery.
+- **Do genera differ on the same reef?** Mostly not. Shuffling genus labels within reefs gives p < 0.001, but p = 0.25 without Eilat, so that result rests on one reef. On most shared reefs, genera look alike.
+- **Why split Pocillopora by sea?** We chose that after seeing the data, and the caption says so. The genus may also hide look-alike species, so "same genus" does not mean the same species everywhere.
+- **Do people only look near full moon?** Partly, and plot 5 shows the Moon's signal shrinks when every day is watched. That bias would hide new-moon spawning, so it cannot create the Red Sea wave, but it may make the eleven waves look tighter than they are.
+- **Is Pocillopora the only one?** It is the only well-recorded genus that always spawns by day. Other genera have 4 daytime starts out of 1,460, and Platygyra has a small new-moon peak.
+
+The waves are smoothed by about a day. The plot shows that timing differs, not why.
+
 ## Words you may need
 
-A reef-night, called a spawning night on the plots, is one reef subsite on one local date, however many species were recorded there. Tightness runs from 0 (spread evenly around the cycle) to 1 (everything at one moment). Degree heating weeks add up how far and how long the water stayed above its usual summer maximum over the last twelve weeks. The Brier error is the average squared gap between a predicted chance and what happened, so lower is better.
+A reef-night, called a spawning night on the plots, is one reef subsite on one local date, however many species were recorded there. On plot 9 a spawning night is one genus on one reef on one date, and a genus is a group of related species. Tightness runs from 0 (spread evenly around the cycle) to 1 (everything at one moment). Degree heating weeks add up how far and how long the water stayed above its usual summer maximum over the last twelve weeks. The Brier error is the average squared gap between a predicted chance and what happened, so lower is better.
