@@ -1,5 +1,3 @@
-<!-- The video introduction goes directly above the aquarium once it is rendered. -->
-
 <p align="center">
   <img src="docs/assets/hero.svg" width="100%" alt="An animated aquarium titled The Ocean's Clock. Each loop is one night on the reef: the sun sets, pink gamete bundles rise from the corals about two hours later, and the Moon rises afterwards.">
 </p>
