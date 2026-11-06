@@ -177,6 +177,10 @@ Our timing data is circular. The year, the lunar month and the day are cycles wi
 
 Tightness is the mean resultant length, written R̄ (R on the plots). Each record becomes an arrow of length 1, and R̄ is the length of the average arrow, from 0 (an even spread) to 1 (all records at one moment). The direction of that arrow is the circular mean, the white line on plot 1. R̄ describes concentration: it is not a confidence interval, and it is not Pearson's r. Because it is always between 0 and 1, it lets us compare the year, the Moon and the Sun despite their different units. It is calculated by `circular_summary()` in `R/analyse_clocks.R`. For further reading, see Fisher, *Statistical Analysis of Circular Data* (1993), and Mardia & Jupp, *Directional Statistics* (2000).
 
+![Animation: spawning records become arrows on a lunar circle, and the length of their average arrow is R](docs/r_explainer.svg)
+
+The animation loops through three real places and one made-up example. Each pink dot is a record and each thin line its arrow. The blue and gold lines are the mean east and north parts, and the white arrow built from them has length R.
+
 The heat-exposure index weights monthly heat stress by the recorded spawning calendar and holds that calendar fixed, so it describes environmental overlap rather than a shift in spawning or reproductive failure. The prediction comparison excludes one whole year before testing it. Equations and numerical checks are in the [methods](docs/METHODS.md), [aquarium analysis](docs/AQUARIUM_METHODS.md) and [validation record](docs/VALIDATION.md).
 
 Mihael and Pirasanna are the project team. Main-author export assignments are in `authors.csv`. Plots 1 to 3 have no earlier author and need one before export; `export_submission.R` stops until they are filled in. The students still need to review their actual contributions and understand the calculations. Run `source("export_submission.R")` to create named PNGs and the complete R-project ZIP under `submission/`. The [course requirements](docs/COURSE_REQUIREMENTS.md) retain the presentation, attendance, group-format and Moodle details.

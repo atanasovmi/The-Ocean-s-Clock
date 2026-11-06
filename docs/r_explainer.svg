@@ -1,0 +1,502 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 464" width="840" role="img" aria-labelledby="t d">
+<title id="t">How the mean resultant length R is calculated</title>
+<desc id="d">Spawning records become arrows on a lunar circle. Their mean east and north parts give an average arrow, and its length is R. The loop shows Raffles Lighthouse, Akajima, Eilat and a made-up example with two opposite groups.</desc>
+<defs><marker id="head" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#F1EAD7" stroke-width="2"/></marker></defs>
+<style>.scene,.legs,.result{opacity:0;animation-duration:28s;animation-iteration-count:infinite;animation-fill-mode:both;animation-timing-function:linear}.scene{animation-name:scene}.legs{animation-name:legs}.result{animation-name:result}@keyframes scene{0%,0.00%{opacity:0}1.43%,23.93%{opacity:1}25.00%,100%{opacity:0}}@keyframes legs{0%,5.71%{opacity:0}7.14%,23.93%{opacity:1}25.00%,100%{opacity:0}}@keyframes result{0%,11.43%{opacity:0}12.86%,23.93%{opacity:1}25.00%,100%{opacity:0}}@media (prefers-reduced-motion:reduce){.scene,.legs,.result{animation:none}.scene:first-of-type,.scene:first-of-type .legs,.scene:first-of-type .result{opacity:1}}text{font-family:Bahnschrift,'Segoe UI',Helvetica,Arial,sans-serif}.title{font-size:20px;fill:#F1EAD7}.soft{font-size:15px;fill:#B7C4CE}.axis{font-size:13px;fill:#8598A7}.big{font-size:38px;fill:#F1EAD7}.eastnum{font-size:15px;fill:#4FA3DB}.northnum{font-size:15px;fill:#FDD78A}.ring{fill:none;stroke:#31475A;stroke-width:1.2}.hair{stroke:#31475A;stroke-width:.7}.ray{stroke:#8598A7;stroke-width:.8;opacity:.6}.dot{fill:#FF7E8B}.east{stroke:#4FA3DB;stroke-width:3.5}.north{stroke:#FDD78A;stroke-width:3.5}.mean{stroke:#F1EAD7;stroke-width:3.5}.meandot{fill:#F1EAD7}</style>
+<rect width="840" height="464" fill="#0B1D2E"/>
+<circle cx="270" cy="232" r="125" class="ring"/>
+<line x1="145.0" y1="232.0" x2="395.0" y2="232.0" class="hair"/>
+<line x1="270.0" y1="107.0" x2="270.0" y2="357.0" class="hair"/>
+<text x="468.0" y="224.0" class="axis" text-anchor="start">Full moon</text>
+<text x="98.0" y="224.0" class="axis" text-anchor="end">New moon</text>
+<text x="270.0" y="16.0" class="axis" text-anchor="middle">7 days after</text>
+<text x="270.0" y="456.0" class="axis" text-anchor="middle">7 days before</text>
+<text x="556.0" y="56.0" class="soft" text-anchor="start">θ = 2π · day / 29.53</text>
+<g class="scene" style="animation-delay:0s">
+<line x1="270.0" y1="232.0" x2="383.9" y2="180.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="370.4" y2="157.5" class="ray"/>
+<line x1="270.0" y1="232.0" x2="352.4" y2="138.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="330.7" y2="122.7" class="ray"/>
+<line x1="270.0" y1="232.0" x2="306.2" y2="112.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="280.2" y2="107.4" class="ray"/>
+<circle cx="390.2" cy="177.5" r="2.2" class="dot"/>
+<circle cx="376.0" cy="153.3" r="2.2" class="dot"/>
+<circle cx="380.0" cy="150.4" r="2.2" class="dot"/>
+<circle cx="384.0" cy="147.4" r="2.2" class="dot"/>
+<circle cx="388.1" cy="144.4" r="2.2" class="dot"/>
+<circle cx="392.1" cy="141.4" r="2.2" class="dot"/>
+<circle cx="396.1" cy="138.5" r="2.2" class="dot"/>
+<circle cx="400.1" cy="135.5" r="2.2" class="dot"/>
+<circle cx="404.1" cy="132.5" r="2.2" class="dot"/>
+<circle cx="408.1" cy="129.5" r="2.2" class="dot"/>
+<circle cx="412.1" cy="126.5" r="2.2" class="dot"/>
+<circle cx="357.0" cy="132.7" r="2.2" class="dot"/>
+<circle cx="360.3" cy="129.0" r="2.2" class="dot"/>
+<circle cx="363.6" cy="125.2" r="2.2" class="dot"/>
+<circle cx="366.9" cy="121.5" r="2.2" class="dot"/>
+<circle cx="370.2" cy="117.7" r="2.2" class="dot"/>
+<circle cx="373.5" cy="113.9" r="2.2" class="dot"/>
+<circle cx="376.8" cy="110.2" r="2.2" class="dot"/>
+<circle cx="380.1" cy="106.4" r="2.2" class="dot"/>
+<circle cx="383.4" cy="102.7" r="2.2" class="dot"/>
+<circle cx="386.7" cy="98.9" r="2.2" class="dot"/>
+<circle cx="390.0" cy="95.1" r="2.2" class="dot"/>
+<circle cx="334.1" cy="116.6" r="2.2" class="dot"/>
+<circle cx="336.5" cy="112.2" r="2.2" class="dot"/>
+<circle cx="338.9" cy="107.9" r="2.2" class="dot"/>
+<circle cx="341.4" cy="103.5" r="2.2" class="dot"/>
+<circle cx="343.8" cy="99.1" r="2.2" class="dot"/>
+<circle cx="346.2" cy="94.7" r="2.2" class="dot"/>
+<circle cx="348.7" cy="90.4" r="2.2" class="dot"/>
+<circle cx="351.1" cy="86.0" r="2.2" class="dot"/>
+<circle cx="353.5" cy="81.6" r="2.2" class="dot"/>
+<circle cx="355.9" cy="77.3" r="2.2" class="dot"/>
+<circle cx="358.4" cy="72.9" r="2.2" class="dot"/>
+<circle cx="308.3" cy="105.7" r="2.2" class="dot"/>
+<circle cx="309.7" cy="100.9" r="2.2" class="dot"/>
+<circle cx="311.2" cy="96.1" r="2.2" class="dot"/>
+<circle cx="312.6" cy="91.3" r="2.2" class="dot"/>
+<circle cx="314.1" cy="86.5" r="2.2" class="dot"/>
+<circle cx="315.5" cy="81.7" r="2.2" class="dot"/>
+<circle cx="317.0" cy="77.0" r="2.2" class="dot"/>
+<circle cx="280.7" cy="100.4" r="2.2" class="dot"/>
+<text x="556.0" y="104.0" class="title" text-anchor="start">Raffles Lighthouse, Singapore</text>
+<text x="556.0" y="128.0" class="soft" text-anchor="start">41 nights, one arrow each</text>
+<g class="legs" style="animation-delay:0s">
+<line x1="270.0" y1="232.0" x2="342.1" y2="232.0" class="east"/>
+<line x1="342.1" y1="232.0" x2="342.1" y2="134.6" class="north"/>
+<text x="556.0" y="176.0" class="soft" text-anchor="start">East: mean of cos θ</text>
+<text x="800.0" y="176.0" class="eastnum" text-anchor="end">0.577</text>
+<text x="556.0" y="204.0" class="soft" text-anchor="start">North: mean of sin θ</text>
+<text x="800.0" y="204.0" class="northnum" text-anchor="end">0.779</text>
+</g>
+<g class="result" style="animation-delay:0s">
+<line x1="270" y1="232" x2="342.1" y2="134.6" class="mean" marker-end="url(#head)"/>
+<text x="556.0" y="252.0" class="soft" text-anchor="start">R = √(east² + north²)</text>
+<text x="556.0" y="304.0" class="big" text-anchor="start">R = 0.97</text>
+<text x="556.0" y="336.0" class="soft" text-anchor="start">The arrows agree, so little cancels</text>
+</g>
+</g>
+<g class="scene" style="animation-delay:7s">
+<line x1="270.0" y1="232.0" x2="352.4" y2="326.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="370.4" y2="306.5" class="ray"/>
+<line x1="270.0" y1="232.0" x2="383.9" y2="283.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="392.2" y2="258.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="395.0" y2="232.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="392.2" y2="205.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="383.9" y2="180.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="370.4" y2="157.5" class="ray"/>
+<line x1="270.0" y1="232.0" x2="352.4" y2="138.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="330.7" y2="122.7" class="ray"/>
+<line x1="270.0" y1="232.0" x2="306.2" y2="112.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="280.2" y2="107.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="227.8" y2="114.3" class="ray"/>
+<line x1="270.0" y1="232.0" x2="166.0" y2="162.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="153.7" y2="186.2" class="ray"/>
+<circle cx="357.0" cy="331.3" r="2.2" class="dot"/>
+<circle cx="376.0" cy="310.7" r="2.2" class="dot"/>
+<circle cx="390.2" cy="286.5" r="2.2" class="dot"/>
+<circle cx="394.8" cy="288.6" r="2.2" class="dot"/>
+<circle cx="399.0" cy="259.9" r="2.2" class="dot"/>
+<circle cx="403.9" cy="260.9" r="2.2" class="dot"/>
+<circle cx="402.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="407.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="399.0" cy="204.1" r="2.2" class="dot"/>
+<circle cx="403.9" cy="203.1" r="2.2" class="dot"/>
+<circle cx="390.2" cy="177.5" r="2.2" class="dot"/>
+<circle cx="394.8" cy="175.4" r="2.2" class="dot"/>
+<circle cx="399.3" cy="173.4" r="2.2" class="dot"/>
+<circle cx="403.9" cy="171.3" r="2.2" class="dot"/>
+<circle cx="408.4" cy="169.3" r="2.2" class="dot"/>
+<circle cx="413.0" cy="167.2" r="2.2" class="dot"/>
+<circle cx="376.0" cy="153.3" r="2.2" class="dot"/>
+<circle cx="380.0" cy="150.4" r="2.2" class="dot"/>
+<circle cx="384.0" cy="147.4" r="2.2" class="dot"/>
+<circle cx="388.1" cy="144.4" r="2.2" class="dot"/>
+<circle cx="392.1" cy="141.4" r="2.2" class="dot"/>
+<circle cx="396.1" cy="138.5" r="2.2" class="dot"/>
+<circle cx="400.1" cy="135.5" r="2.2" class="dot"/>
+<circle cx="404.1" cy="132.5" r="2.2" class="dot"/>
+<circle cx="408.1" cy="129.5" r="2.2" class="dot"/>
+<circle cx="412.1" cy="126.5" r="2.2" class="dot"/>
+<circle cx="357.0" cy="132.7" r="2.2" class="dot"/>
+<circle cx="360.3" cy="129.0" r="2.2" class="dot"/>
+<circle cx="363.6" cy="125.2" r="2.2" class="dot"/>
+<circle cx="366.9" cy="121.5" r="2.2" class="dot"/>
+<circle cx="370.2" cy="117.7" r="2.2" class="dot"/>
+<circle cx="373.5" cy="113.9" r="2.2" class="dot"/>
+<circle cx="376.8" cy="110.2" r="2.2" class="dot"/>
+<circle cx="334.1" cy="116.6" r="2.2" class="dot"/>
+<circle cx="336.5" cy="112.2" r="2.2" class="dot"/>
+<circle cx="338.9" cy="107.9" r="2.2" class="dot"/>
+<circle cx="341.4" cy="103.5" r="2.2" class="dot"/>
+<circle cx="343.8" cy="99.1" r="2.2" class="dot"/>
+<circle cx="346.2" cy="94.7" r="2.2" class="dot"/>
+<circle cx="348.7" cy="90.4" r="2.2" class="dot"/>
+<circle cx="351.1" cy="86.0" r="2.2" class="dot"/>
+<circle cx="308.3" cy="105.7" r="2.2" class="dot"/>
+<circle cx="309.7" cy="100.9" r="2.2" class="dot"/>
+<circle cx="311.2" cy="96.1" r="2.2" class="dot"/>
+<circle cx="312.6" cy="91.3" r="2.2" class="dot"/>
+<circle cx="314.1" cy="86.5" r="2.2" class="dot"/>
+<circle cx="315.5" cy="81.7" r="2.2" class="dot"/>
+<circle cx="317.0" cy="77.0" r="2.2" class="dot"/>
+<circle cx="318.4" cy="72.2" r="2.2" class="dot"/>
+<circle cx="319.9" cy="67.4" r="2.2" class="dot"/>
+<circle cx="321.3" cy="62.6" r="2.2" class="dot"/>
+<circle cx="322.8" cy="57.8" r="2.2" class="dot"/>
+<circle cx="324.2" cy="53.0" r="2.2" class="dot"/>
+<circle cx="325.7" cy="48.2" r="2.2" class="dot"/>
+<circle cx="280.7" cy="100.4" r="2.2" class="dot"/>
+<circle cx="281.1" cy="95.5" r="2.2" class="dot"/>
+<circle cx="281.5" cy="90.5" r="2.2" class="dot"/>
+<circle cx="282.0" cy="85.5" r="2.2" class="dot"/>
+<circle cx="282.4" cy="80.5" r="2.2" class="dot"/>
+<circle cx="282.8" cy="75.5" r="2.2" class="dot"/>
+<circle cx="283.2" cy="70.5" r="2.2" class="dot"/>
+<circle cx="225.5" cy="107.7" r="2.2" class="dot"/>
+<circle cx="160.2" cy="158.7" r="2.2" class="dot"/>
+<circle cx="147.2" cy="183.6" r="2.2" class="dot"/>
+<text x="556.0" y="104.0" class="title" text-anchor="start">Akajima, Japan</text>
+<text x="556.0" y="128.0" class="soft" text-anchor="start">64 nights, one arrow each</text>
+<g class="legs" style="animation-delay:7s">
+<line x1="270.0" y1="232.0" x2="335.3" y2="232.0" class="east"/>
+<line x1="335.3" y1="232.0" x2="335.3" y2="154.3" class="north"/>
+<text x="556.0" y="176.0" class="soft" text-anchor="start">East: mean of cos θ</text>
+<text x="800.0" y="176.0" class="eastnum" text-anchor="end">0.522</text>
+<text x="556.0" y="204.0" class="soft" text-anchor="start">North: mean of sin θ</text>
+<text x="800.0" y="204.0" class="northnum" text-anchor="end">0.622</text>
+</g>
+<g class="result" style="animation-delay:7s">
+<line x1="270" y1="232" x2="335.3" y2="154.3" class="mean" marker-end="url(#head)"/>
+<text x="556.0" y="252.0" class="soft" text-anchor="start">R = √(east² + north²)</text>
+<text x="556.0" y="304.0" class="big" text-anchor="start">R = 0.81</text>
+<text x="556.0" y="336.0" class="soft" text-anchor="start">Most arrows agree, a few pull away</text>
+</g>
+</g>
+<g class="scene" style="animation-delay:14s">
+<line x1="270.0" y1="232.0" x2="145.2" y2="225.8" class="ray"/>
+<line x1="270.0" y1="232.0" x2="146.7" y2="252.3" class="ray"/>
+<line x1="270.0" y1="232.0" x2="153.7" y2="277.8" class="ray"/>
+<line x1="270.0" y1="232.0" x2="166.0" y2="301.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="183.0" y2="321.8" class="ray"/>
+<line x1="270.0" y1="232.0" x2="203.9" y2="338.1" class="ray"/>
+<line x1="270.0" y1="232.0" x2="227.8" y2="349.7" class="ray"/>
+<line x1="270.0" y1="232.0" x2="253.6" y2="355.9" class="ray"/>
+<line x1="270.0" y1="232.0" x2="280.2" y2="356.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="306.2" y2="351.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="330.7" y2="341.3" class="ray"/>
+<line x1="270.0" y1="232.0" x2="352.4" y2="326.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="370.4" y2="306.5" class="ray"/>
+<line x1="270.0" y1="232.0" x2="383.9" y2="283.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="392.2" y2="258.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="395.0" y2="232.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="392.2" y2="205.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="383.9" y2="180.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="370.4" y2="157.5" class="ray"/>
+<line x1="270.0" y1="232.0" x2="352.4" y2="138.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="330.7" y2="122.7" class="ray"/>
+<line x1="270.0" y1="232.0" x2="306.2" y2="112.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="280.2" y2="107.4" class="ray"/>
+<line x1="270.0" y1="232.0" x2="253.6" y2="108.1" class="ray"/>
+<line x1="270.0" y1="232.0" x2="227.8" y2="114.3" class="ray"/>
+<line x1="270.0" y1="232.0" x2="203.9" y2="125.9" class="ray"/>
+<line x1="270.0" y1="232.0" x2="183.0" y2="142.2" class="ray"/>
+<line x1="270.0" y1="232.0" x2="166.0" y2="162.6" class="ray"/>
+<line x1="270.0" y1="232.0" x2="153.7" y2="186.2" class="ray"/>
+<line x1="270.0" y1="232.0" x2="146.7" y2="211.7" class="ray"/>
+<circle cx="138.2" cy="225.4" r="2.2" class="dot"/>
+<circle cx="133.2" cy="225.2" r="2.2" class="dot"/>
+<circle cx="128.2" cy="224.9" r="2.2" class="dot"/>
+<circle cx="123.2" cy="224.7" r="2.2" class="dot"/>
+<circle cx="118.2" cy="224.4" r="2.2" class="dot"/>
+<circle cx="113.2" cy="224.2" r="2.2" class="dot"/>
+<circle cx="139.7" cy="253.4" r="2.2" class="dot"/>
+<circle cx="134.8" cy="254.2" r="2.2" class="dot"/>
+<circle cx="129.9" cy="255.0" r="2.2" class="dot"/>
+<circle cx="124.9" cy="255.8" r="2.2" class="dot"/>
+<circle cx="120.0" cy="256.6" r="2.2" class="dot"/>
+<circle cx="115.1" cy="257.4" r="2.2" class="dot"/>
+<circle cx="110.1" cy="258.3" r="2.2" class="dot"/>
+<circle cx="105.2" cy="259.1" r="2.2" class="dot"/>
+<circle cx="100.3" cy="259.9" r="2.2" class="dot"/>
+<circle cx="147.2" cy="280.4" r="2.2" class="dot"/>
+<circle cx="142.5" cy="282.2" r="2.2" class="dot"/>
+<circle cx="137.9" cy="284.1" r="2.2" class="dot"/>
+<circle cx="133.2" cy="285.9" r="2.2" class="dot"/>
+<circle cx="128.6" cy="287.8" r="2.2" class="dot"/>
+<circle cx="123.9" cy="289.6" r="2.2" class="dot"/>
+<circle cx="119.3" cy="291.4" r="2.2" class="dot"/>
+<circle cx="114.6" cy="293.3" r="2.2" class="dot"/>
+<circle cx="110.0" cy="295.1" r="2.2" class="dot"/>
+<circle cx="105.3" cy="296.9" r="2.2" class="dot"/>
+<circle cx="160.2" cy="305.3" r="2.2" class="dot"/>
+<circle cx="156.0" cy="308.0" r="2.2" class="dot"/>
+<circle cx="151.9" cy="310.8" r="2.2" class="dot"/>
+<circle cx="147.7" cy="313.6" r="2.2" class="dot"/>
+<circle cx="143.6" cy="316.4" r="2.2" class="dot"/>
+<circle cx="139.4" cy="319.1" r="2.2" class="dot"/>
+<circle cx="135.2" cy="321.9" r="2.2" class="dot"/>
+<circle cx="131.1" cy="324.7" r="2.2" class="dot"/>
+<circle cx="126.9" cy="327.5" r="2.2" class="dot"/>
+<circle cx="178.1" cy="326.8" r="2.2" class="dot"/>
+<circle cx="174.7" cy="330.4" r="2.2" class="dot"/>
+<circle cx="171.2" cy="334.0" r="2.2" class="dot"/>
+<circle cx="167.7" cy="337.6" r="2.2" class="dot"/>
+<circle cx="164.2" cy="341.2" r="2.2" class="dot"/>
+<circle cx="160.7" cy="344.7" r="2.2" class="dot"/>
+<circle cx="157.3" cy="348.3" r="2.2" class="dot"/>
+<circle cx="200.2" cy="344.1" r="2.2" class="dot"/>
+<circle cx="197.6" cy="348.3" r="2.2" class="dot"/>
+<circle cx="194.9" cy="352.5" r="2.2" class="dot"/>
+<circle cx="192.3" cy="356.8" r="2.2" class="dot"/>
+<circle cx="189.7" cy="361.0" r="2.2" class="dot"/>
+<circle cx="187.0" cy="365.3" r="2.2" class="dot"/>
+<circle cx="225.5" cy="356.3" r="2.2" class="dot"/>
+<circle cx="223.8" cy="361.0" r="2.2" class="dot"/>
+<circle cx="222.1" cy="365.7" r="2.2" class="dot"/>
+<circle cx="220.4" cy="370.4" r="2.2" class="dot"/>
+<circle cx="218.7" cy="375.1" r="2.2" class="dot"/>
+<circle cx="217.0" cy="379.8" r="2.2" class="dot"/>
+<circle cx="252.7" cy="362.9" r="2.2" class="dot"/>
+<circle cx="252.1" cy="367.8" r="2.2" class="dot"/>
+<circle cx="251.4" cy="372.8" r="2.2" class="dot"/>
+<circle cx="250.7" cy="377.7" r="2.2" class="dot"/>
+<circle cx="280.7" cy="363.6" r="2.2" class="dot"/>
+<circle cx="281.1" cy="368.5" r="2.2" class="dot"/>
+<circle cx="281.5" cy="373.5" r="2.2" class="dot"/>
+<circle cx="282.0" cy="378.5" r="2.2" class="dot"/>
+<circle cx="308.3" cy="358.3" r="2.2" class="dot"/>
+<circle cx="309.7" cy="363.1" r="2.2" class="dot"/>
+<circle cx="311.2" cy="367.9" r="2.2" class="dot"/>
+<circle cx="312.6" cy="372.7" r="2.2" class="dot"/>
+<circle cx="334.1" cy="347.4" r="2.2" class="dot"/>
+<circle cx="336.5" cy="351.8" r="2.2" class="dot"/>
+<circle cx="338.9" cy="356.1" r="2.2" class="dot"/>
+<circle cx="341.4" cy="360.5" r="2.2" class="dot"/>
+<circle cx="357.0" cy="331.3" r="2.2" class="dot"/>
+<circle cx="360.3" cy="335.0" r="2.2" class="dot"/>
+<circle cx="363.6" cy="338.8" r="2.2" class="dot"/>
+<circle cx="366.9" cy="342.5" r="2.2" class="dot"/>
+<circle cx="376.0" cy="310.7" r="2.2" class="dot"/>
+<circle cx="380.0" cy="313.6" r="2.2" class="dot"/>
+<circle cx="384.0" cy="316.6" r="2.2" class="dot"/>
+<circle cx="388.1" cy="319.6" r="2.2" class="dot"/>
+<circle cx="390.2" cy="286.5" r="2.2" class="dot"/>
+<circle cx="394.8" cy="288.6" r="2.2" class="dot"/>
+<circle cx="399.3" cy="290.6" r="2.2" class="dot"/>
+<circle cx="403.9" cy="292.7" r="2.2" class="dot"/>
+<circle cx="408.4" cy="294.7" r="2.2" class="dot"/>
+<circle cx="413.0" cy="296.8" r="2.2" class="dot"/>
+<circle cx="399.0" cy="259.9" r="2.2" class="dot"/>
+<circle cx="403.9" cy="260.9" r="2.2" class="dot"/>
+<circle cx="408.8" cy="262.0" r="2.2" class="dot"/>
+<circle cx="413.7" cy="263.0" r="2.2" class="dot"/>
+<circle cx="418.6" cy="264.1" r="2.2" class="dot"/>
+<circle cx="423.5" cy="265.2" r="2.2" class="dot"/>
+<circle cx="428.3" cy="266.2" r="2.2" class="dot"/>
+<circle cx="433.2" cy="267.3" r="2.2" class="dot"/>
+<circle cx="438.1" cy="268.3" r="2.2" class="dot"/>
+<circle cx="402.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="407.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="412.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="417.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="422.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="427.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="432.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="437.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="442.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="447.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="452.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="457.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="399.0" cy="204.1" r="2.2" class="dot"/>
+<circle cx="403.9" cy="203.1" r="2.2" class="dot"/>
+<circle cx="408.8" cy="202.0" r="2.2" class="dot"/>
+<circle cx="413.7" cy="201.0" r="2.2" class="dot"/>
+<circle cx="418.6" cy="199.9" r="2.2" class="dot"/>
+<circle cx="423.5" cy="198.8" r="2.2" class="dot"/>
+<circle cx="428.3" cy="197.8" r="2.2" class="dot"/>
+<circle cx="433.2" cy="196.7" r="2.2" class="dot"/>
+<circle cx="438.1" cy="195.7" r="2.2" class="dot"/>
+<circle cx="443.0" cy="194.6" r="2.2" class="dot"/>
+<circle cx="447.9" cy="193.6" r="2.2" class="dot"/>
+<circle cx="452.8" cy="192.5" r="2.2" class="dot"/>
+<circle cx="457.7" cy="191.5" r="2.2" class="dot"/>
+<circle cx="390.2" cy="177.5" r="2.2" class="dot"/>
+<circle cx="394.8" cy="175.4" r="2.2" class="dot"/>
+<circle cx="399.3" cy="173.4" r="2.2" class="dot"/>
+<circle cx="403.9" cy="171.3" r="2.2" class="dot"/>
+<circle cx="408.4" cy="169.3" r="2.2" class="dot"/>
+<circle cx="413.0" cy="167.2" r="2.2" class="dot"/>
+<circle cx="417.6" cy="165.1" r="2.2" class="dot"/>
+<circle cx="422.1" cy="163.1" r="2.2" class="dot"/>
+<circle cx="426.7" cy="161.0" r="2.2" class="dot"/>
+<circle cx="376.0" cy="153.3" r="2.2" class="dot"/>
+<circle cx="380.0" cy="150.4" r="2.2" class="dot"/>
+<circle cx="384.0" cy="147.4" r="2.2" class="dot"/>
+<circle cx="388.1" cy="144.4" r="2.2" class="dot"/>
+<circle cx="392.1" cy="141.4" r="2.2" class="dot"/>
+<circle cx="396.1" cy="138.5" r="2.2" class="dot"/>
+<circle cx="400.1" cy="135.5" r="2.2" class="dot"/>
+<circle cx="404.1" cy="132.5" r="2.2" class="dot"/>
+<circle cx="408.1" cy="129.5" r="2.2" class="dot"/>
+<circle cx="412.1" cy="126.5" r="2.2" class="dot"/>
+<circle cx="416.2" cy="123.6" r="2.2" class="dot"/>
+<circle cx="420.2" cy="120.6" r="2.2" class="dot"/>
+<circle cx="357.0" cy="132.7" r="2.2" class="dot"/>
+<circle cx="360.3" cy="129.0" r="2.2" class="dot"/>
+<circle cx="363.6" cy="125.2" r="2.2" class="dot"/>
+<circle cx="366.9" cy="121.5" r="2.2" class="dot"/>
+<circle cx="370.2" cy="117.7" r="2.2" class="dot"/>
+<circle cx="373.5" cy="113.9" r="2.2" class="dot"/>
+<circle cx="376.8" cy="110.2" r="2.2" class="dot"/>
+<circle cx="380.1" cy="106.4" r="2.2" class="dot"/>
+<circle cx="383.4" cy="102.7" r="2.2" class="dot"/>
+<circle cx="386.7" cy="98.9" r="2.2" class="dot"/>
+<circle cx="390.0" cy="95.1" r="2.2" class="dot"/>
+<circle cx="393.3" cy="91.4" r="2.2" class="dot"/>
+<circle cx="396.6" cy="87.6" r="2.2" class="dot"/>
+<circle cx="334.1" cy="116.6" r="2.2" class="dot"/>
+<circle cx="336.5" cy="112.2" r="2.2" class="dot"/>
+<circle cx="338.9" cy="107.9" r="2.2" class="dot"/>
+<circle cx="341.4" cy="103.5" r="2.2" class="dot"/>
+<circle cx="343.8" cy="99.1" r="2.2" class="dot"/>
+<circle cx="346.2" cy="94.7" r="2.2" class="dot"/>
+<circle cx="348.7" cy="90.4" r="2.2" class="dot"/>
+<circle cx="351.1" cy="86.0" r="2.2" class="dot"/>
+<circle cx="353.5" cy="81.6" r="2.2" class="dot"/>
+<circle cx="355.9" cy="77.3" r="2.2" class="dot"/>
+<circle cx="358.4" cy="72.9" r="2.2" class="dot"/>
+<circle cx="360.8" cy="68.5" r="2.2" class="dot"/>
+<circle cx="363.2" cy="64.1" r="2.2" class="dot"/>
+<circle cx="365.6" cy="59.8" r="2.2" class="dot"/>
+<circle cx="308.3" cy="105.7" r="2.2" class="dot"/>
+<circle cx="309.7" cy="100.9" r="2.2" class="dot"/>
+<circle cx="311.2" cy="96.1" r="2.2" class="dot"/>
+<circle cx="312.6" cy="91.3" r="2.2" class="dot"/>
+<circle cx="314.1" cy="86.5" r="2.2" class="dot"/>
+<circle cx="315.5" cy="81.7" r="2.2" class="dot"/>
+<circle cx="317.0" cy="77.0" r="2.2" class="dot"/>
+<circle cx="318.4" cy="72.2" r="2.2" class="dot"/>
+<circle cx="319.9" cy="67.4" r="2.2" class="dot"/>
+<circle cx="321.3" cy="62.6" r="2.2" class="dot"/>
+<circle cx="322.8" cy="57.8" r="2.2" class="dot"/>
+<circle cx="324.2" cy="53.0" r="2.2" class="dot"/>
+<circle cx="325.7" cy="48.2" r="2.2" class="dot"/>
+<circle cx="327.1" cy="43.5" r="2.2" class="dot"/>
+<circle cx="328.6" cy="38.7" r="2.2" class="dot"/>
+<circle cx="280.7" cy="100.4" r="2.2" class="dot"/>
+<circle cx="281.1" cy="95.5" r="2.2" class="dot"/>
+<circle cx="281.5" cy="90.5" r="2.2" class="dot"/>
+<circle cx="282.0" cy="85.5" r="2.2" class="dot"/>
+<circle cx="282.4" cy="80.5" r="2.2" class="dot"/>
+<circle cx="282.8" cy="75.5" r="2.2" class="dot"/>
+<circle cx="283.2" cy="70.5" r="2.2" class="dot"/>
+<circle cx="283.6" cy="65.6" r="2.2" class="dot"/>
+<circle cx="284.0" cy="60.6" r="2.2" class="dot"/>
+<circle cx="284.4" cy="55.6" r="2.2" class="dot"/>
+<circle cx="284.8" cy="50.6" r="2.2" class="dot"/>
+<circle cx="285.2" cy="45.6" r="2.2" class="dot"/>
+<circle cx="285.6" cy="40.6" r="2.2" class="dot"/>
+<circle cx="286.0" cy="35.7" r="2.2" class="dot"/>
+<circle cx="252.7" cy="101.1" r="2.2" class="dot"/>
+<circle cx="252.1" cy="96.2" r="2.2" class="dot"/>
+<circle cx="251.4" cy="91.2" r="2.2" class="dot"/>
+<circle cx="250.7" cy="86.3" r="2.2" class="dot"/>
+<circle cx="250.1" cy="81.3" r="2.2" class="dot"/>
+<circle cx="249.4" cy="76.4" r="2.2" class="dot"/>
+<circle cx="248.8" cy="71.4" r="2.2" class="dot"/>
+<circle cx="248.1" cy="66.4" r="2.2" class="dot"/>
+<circle cx="247.5" cy="61.5" r="2.2" class="dot"/>
+<circle cx="246.8" cy="56.5" r="2.2" class="dot"/>
+<circle cx="225.5" cy="107.7" r="2.2" class="dot"/>
+<circle cx="223.8" cy="103.0" r="2.2" class="dot"/>
+<circle cx="222.1" cy="98.3" r="2.2" class="dot"/>
+<circle cx="220.4" cy="93.6" r="2.2" class="dot"/>
+<circle cx="218.7" cy="88.9" r="2.2" class="dot"/>
+<circle cx="217.0" cy="84.2" r="2.2" class="dot"/>
+<circle cx="215.3" cy="79.5" r="2.2" class="dot"/>
+<circle cx="213.7" cy="74.8" r="2.2" class="dot"/>
+<circle cx="200.2" cy="119.9" r="2.2" class="dot"/>
+<circle cx="197.6" cy="115.7" r="2.2" class="dot"/>
+<circle cx="194.9" cy="111.5" r="2.2" class="dot"/>
+<circle cx="192.3" cy="107.2" r="2.2" class="dot"/>
+<circle cx="189.7" cy="103.0" r="2.2" class="dot"/>
+<circle cx="187.0" cy="98.7" r="2.2" class="dot"/>
+<circle cx="178.1" cy="137.2" r="2.2" class="dot"/>
+<circle cx="174.7" cy="133.6" r="2.2" class="dot"/>
+<circle cx="171.2" cy="130.0" r="2.2" class="dot"/>
+<circle cx="167.7" cy="126.4" r="2.2" class="dot"/>
+<circle cx="160.2" cy="158.7" r="2.2" class="dot"/>
+<circle cx="156.0" cy="156.0" r="2.2" class="dot"/>
+<circle cx="151.9" cy="153.2" r="2.2" class="dot"/>
+<circle cx="147.7" cy="150.4" r="2.2" class="dot"/>
+<circle cx="147.2" cy="183.6" r="2.2" class="dot"/>
+<circle cx="142.5" cy="181.8" r="2.2" class="dot"/>
+<circle cx="137.9" cy="179.9" r="2.2" class="dot"/>
+<circle cx="133.2" cy="178.1" r="2.2" class="dot"/>
+<circle cx="128.6" cy="176.2" r="2.2" class="dot"/>
+<circle cx="123.9" cy="174.4" r="2.2" class="dot"/>
+<circle cx="119.3" cy="172.6" r="2.2" class="dot"/>
+<circle cx="114.6" cy="170.7" r="2.2" class="dot"/>
+<circle cx="139.7" cy="210.6" r="2.2" class="dot"/>
+<circle cx="134.8" cy="209.8" r="2.2" class="dot"/>
+<circle cx="129.9" cy="209.0" r="2.2" class="dot"/>
+<circle cx="124.9" cy="208.2" r="2.2" class="dot"/>
+<circle cx="120.0" cy="207.4" r="2.2" class="dot"/>
+<circle cx="115.1" cy="206.6" r="2.2" class="dot"/>
+<circle cx="110.1" cy="205.7" r="2.2" class="dot"/>
+<circle cx="105.2" cy="204.9" r="2.2" class="dot"/>
+<circle cx="100.3" cy="204.1" r="2.2" class="dot"/>
+<circle cx="95.3" cy="203.3" r="2.2" class="dot"/>
+<circle cx="90.4" cy="202.5" r="2.2" class="dot"/>
+<text x="556.0" y="104.0" class="title" text-anchor="start">Eilat, Israel</text>
+<text x="556.0" y="128.0" class="soft" text-anchor="start">245 nights, one arrow each</text>
+<g class="legs" style="animation-delay:14s">
+<line x1="270.0" y1="232.0" x2="276.7" y2="232.0" class="east"/>
+<line x1="276.7" y1="232.0" x2="276.7" y2="208.7" class="north"/>
+<text x="556.0" y="176.0" class="soft" text-anchor="start">East: mean of cos θ</text>
+<text x="800.0" y="176.0" class="eastnum" text-anchor="end">0.053</text>
+<text x="556.0" y="204.0" class="soft" text-anchor="start">North: mean of sin θ</text>
+<text x="800.0" y="204.0" class="northnum" text-anchor="end">0.186</text>
+</g>
+<g class="result" style="animation-delay:14s">
+<line x1="270" y1="232" x2="276.7" y2="208.7" class="mean" marker-end="url(#head)"/>
+<text x="556.0" y="252.0" class="soft" text-anchor="start">R = √(east² + north²)</text>
+<text x="556.0" y="304.0" class="big" text-anchor="start">R = 0.19</text>
+<text x="556.0" y="336.0" class="soft" text-anchor="start">Arrows point all round and cancel</text>
+</g>
+</g>
+<g class="scene" style="animation-delay:21s">
+<line x1="270.0" y1="232.0" x2="395.0" y2="232.0" class="ray"/>
+<line x1="270.0" y1="232.0" x2="145.2" y2="225.8" class="ray"/>
+<circle cx="402.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="407.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="412.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="417.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="422.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="427.0" cy="232.0" r="2.2" class="dot"/>
+<circle cx="138.2" cy="225.4" r="2.2" class="dot"/>
+<circle cx="133.2" cy="225.2" r="2.2" class="dot"/>
+<circle cx="128.2" cy="224.9" r="2.2" class="dot"/>
+<circle cx="123.2" cy="224.7" r="2.2" class="dot"/>
+<circle cx="118.2" cy="224.4" r="2.2" class="dot"/>
+<circle cx="113.2" cy="224.2" r="2.2" class="dot"/>
+<text x="556.0" y="104.0" class="title" text-anchor="start">Made-up example</text>
+<text x="556.0" y="128.0" class="soft" text-anchor="start">12 records, one arrow each</text>
+<g class="legs" style="animation-delay:21s">
+<line x1="270.0" y1="232.0" x2="270.1" y2="232.0" class="east"/>
+<line x1="270.1" y1="232.0" x2="270.1" y2="228.9" class="north"/>
+<text x="556.0" y="176.0" class="soft" text-anchor="start">East: mean of cos θ</text>
+<text x="800.0" y="176.0" class="eastnum" text-anchor="end">0.001</text>
+<text x="556.0" y="204.0" class="soft" text-anchor="start">North: mean of sin θ</text>
+<text x="800.0" y="204.0" class="northnum" text-anchor="end">0.025</text>
+</g>
+<g class="result" style="animation-delay:21s">
+<circle cx="270.1" cy="228.9" r="4" class="meandot"/>
+<text x="556.0" y="252.0" class="soft" text-anchor="start">R = √(east² + north²)</text>
+<text x="556.0" y="304.0" class="big" text-anchor="start">R = 0.02</text>
+<text x="556.0" y="336.0" class="soft" text-anchor="start">Two tight groups, yet they cancel</text>
+</g>
+</g>
+</svg>
