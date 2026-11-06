@@ -24,11 +24,13 @@ Be ready for the survey question. Teams go looking when they expect spawning, so
 
 ## 3. The Moon
 
-Each row is one place, ordered from the equator at the top to 33° at the bottom. Each column is a day of the lunar month, and a brighter cell means more of that place's records fell on that day. The box marks the eight days from full moon. The strip on the right gives each place its tightness R: 1 means all on the same lunar day, 0 means evenly spread over the month.
+Each row is one place, ordered from the equator at the top to 33° at the bottom. Each column is a day of the lunar month, and a brighter cell means more of that place's records fell on that day. The box marks the eight days from full moon. The strip on the right gives each place its tightness R (the mean resultant length), measured over the whole lunar month without using the box. Near 1 means one tight cluster. Near 0 means no single cluster: the nights are spread out, or two clusters on opposite sides of the month cancel out. Exactly 1 would need every night on one lunar day, so Raffles Lighthouse reaches 0.97 with its nights on six different days.
+
+R is not a percentage and its scale is not even. It is an average of cosines, so it falls slowly while the nights stay close and faster as they spread: nights spread evenly over 3, 6, 8 and 15 days give about 0.98, 0.94, 0.89 and 0.63. Differences near the top of the strip are bigger than they look.
 
 Read downwards. Near the equator the records pile up inside the box. Past the edge of the tropics they spread out, and at Eilat and Kochi they cover almost the whole month. That is why the old headline of 68% was misleading: it is 88% inside the tropics and 51% beyond them.
 
-The honest caveat is on the plot. Places with more recorded nights also look looser, so part of this may come from watching more closely. Latitude still matters after allowing for that, and the pattern shows up within genera.
+The honest caveat is on the plot. These are records of when people looked. The aquarium, watched every day, has R = 0.21, while nearby Sesoko and Akajima have 0.66 and 0.81, so field records may overstate tightness. The latitude pattern itself survives the checks we can run: cutting every field site to 12 nights gives ρ = −0.71, the share in the box gives ρ = −0.66, and it shows up within genera. A 95% bootstrap interval for each place's R is in `outputs/tables/03_moon.csv`; it is wide for places with few nights, such as Amakusa.
 
 ## 4. The sky
 

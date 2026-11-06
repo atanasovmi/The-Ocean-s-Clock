@@ -11,3 +11,9 @@ spearman_rho,-0.7312252964426876
 spearman_p,7.373818328580402e-5
 latitude_p_given_effort,3.636401202088645e-4
 effort_p_given_latitude,0.003909870899978248
+effort_rank_p_given_latitude,0.6083314187230029
+spearman_nights_tightness,0.002977697195928281
+spearman_rho_equal_nights,-0.7114624505928854
+spearman_rho_equal_nights_low,-0.7934782608695652
+spearman_rho_equal_nights_high,-0.6373270750988143
+spearman_rho_box_share,-0.6560583164729885

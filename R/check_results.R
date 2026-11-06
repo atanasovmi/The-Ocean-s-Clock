@@ -28,7 +28,14 @@ place_totals <- lunar_counts |> summarise(n = sum(n), share = sum(share), .by = 
 stopifnot(!anyDuplicated(places$place), setequal(places$place, place_totals$place),
           all(abs(place_totals$share - 1) < 1e-10),
           all(place_totals$n == places$n[match(place_totals$place, places$place)]),
-          all(c("Churaumi Aquarium", "Maldives atolls") %in% places$place))
+          all(c("Churaumi Aquarium", "Maldives atolls") %in% places$place),
+          all(between(places$tightness_low, 0, 1)), all(between(places$tightness_high, 0, 1)),
+          all(places$tightness_low <= places$tightness_high))
+
+# Plot 3 says the latitude pattern survives equal sample sizes and a second measure.
+lunar <- read_csv("outputs/tables/lunar_statistics.csv", show_col_types = FALSE)
+lunar <- setNames(lunar$value, lunar$measure)
+stopifnot(lunar[["spearman_rho_equal_nights_high"]] < 0, lunar[["spearman_rho_box_share"]] < 0)
 
 # Sky: the plot says starts barely move while moonrise moves a lot.
 genus_starts <- read_csv("data/derived/genus_starts.csv", show_col_types = FALSE)

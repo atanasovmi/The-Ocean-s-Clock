@@ -23,6 +23,8 @@ genus_rows <- read_csv("outputs/tables/09_genera.csv", show_col_types = FALSE) |
   filter(!grepl("Pocillopora", group))
 
 tightness <- setNames(clocks$tightness, clocks$clock)
+places <- read_csv("outputs/tables/lunar_tightness_by_place.csv", show_col_types = FALSE)
+place_tightness <- setNames(places$tightness, places$place)
 brier <- setNames(scores$brier, scores$model)
 season_cut <- 100 * (1 - brier[["season"]] / brier[["prevalence"]])
 moon_gain <- filter(increments, grepl("^Season", comparison))
@@ -50,8 +52,10 @@ report <- c(
           100 * lunar[["share_all"]], 100 * lunar[["share_inside_tropics"]],
           100 * lunar[["share_outside_tropics"]], 100 * lunar[["share_without_eilat_kochi"]]),
   "",
-  sprintf("Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = %.2f, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. Sites with more recorded nights also look looser, even after allowing for latitude (p = %.3f), so heavier monitoring probably explains part of the pattern. This describes the records. It does not show why the Moon matters less at higher latitudes.",
-          lunar[["spearman_rho"]], lunar[["effort_p_given_latitude"]]),
+  sprintf("Across the 23 sites with at least 12 reef-nights, lunar tightness falls with distance from the equator (Spearman ρ = %.2f, p < 0.001). Seven common genera each look looser beyond 26°, and the trend holds with Eilat and Kochi removed and within Acropora alone. The share of nights in the eight-day box falls with latitude too (ρ = %.2f), and cutting every site to 12 reef-nights leaves the pattern in place (median ρ = %.2f), so sample size alone does not explain it. Whether sites with more nights look looser depends on the test: a linear model allowing for latitude says yes (p = %.3f), a rank version says no (p = %.2f). Equal sample sizes cannot correct for when people chose to look. The aquarium, watched every day, has R = %.2f, against %.2f at Sesoko and %.2f at Akajima nearby, so field records may overstate tightness. This describes the records. It does not show why the Moon matters less at higher latitudes.",
+          lunar[["spearman_rho"]], lunar[["spearman_rho_box_share"]], lunar[["spearman_rho_equal_nights"]],
+          lunar[["effort_p_given_latitude"]], lunar[["effort_rank_p_given_latitude"]],
+          place_tightness[["Churaumi Aquarium"]], place_tightness[["Sesoko"]], place_tightness[["Akajima"]]),
   "",
   sprintf("For Acropora, %.1f%% of 400 historical genus/reef-dates and %.1f%% of 81 spawning atoll-days from a separate Maldives study fall in those eight days. The two studies use different units and are kept apart.",
           100 * acropora_share, 100 * maldives_share),
