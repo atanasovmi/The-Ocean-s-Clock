@@ -6,7 +6,7 @@ name: Reproduce the analysis
 
 on:
   push:
-    branches: [main, showcase]
+    branches: [main]
     paths:
       - "R/**"
       - "run.R"

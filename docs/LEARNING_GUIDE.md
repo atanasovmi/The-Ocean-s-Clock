@@ -32,7 +32,7 @@ A **NOAA region** is broader than an individual reef. The spatial join identifie
 
 ## Reading the results aloud
 
-Use the [plot guide](PLOT_GUIDE.md) before rehearsing. Start with the question, point to the axes, explain one mark, then state the main finding. The [findings](../outputs/RESULTS.md) provide concrete examples and the main limitations. If a word such as DHW or Brier score is necessary, explain it in one sentence before quoting a number.
+Use the [plot guide](PLOT_GUIDE.md) alongside this page. Start with the question, point to the axes, explain one mark, then state the main finding. The [findings](../outputs/RESULTS.md) provide concrete examples and the main limitations. If a word such as DHW or Brier score is necessary, explain it in one sentence before quoting a number.
 
 The heat-overlap and model equations are in [METHODS.md](METHODS.md). For the model, follow how a whole year is removed from fitting and how the seven-day inputs are calculated before each response date. Those are the important safeguards; knowing the package names is not enough.
 
