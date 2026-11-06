@@ -7,6 +7,7 @@
   <a href="https://github.com/atanasovmi/the-oceans-clock/releases/latest"><img src="https://img.shields.io/github/v/release/atanasovmi/the-oceans-clock?color=0a7fd6&label=release" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/R-4.6-27c2f0?logo=r&logoColor=white" alt="R 4.6">
   <a href="docs/LICENSES.md"><img src="https://img.shields.io/badge/licence-MIT%20%2B%20CC%20BY%204.0-ff7e8b" alt="Licence: MIT for code, CC BY 4.0 for plots and text"></a>
+  <img src="docs/assets/fhnw_mark.png" height="40" alt="FHNW">
 </p>
 
 On a few nights each year, whole reefs of corals release their eggs and sperm into the sea within the same hours. We wanted to know how much of that timing shows up in the records. So we joined **6,178 historical coral observations** with **3.2 million daily NOAA ocean records**, NASA Moon positions, a fifteen-year aquarium diary and a tank experiment, about **23 million values** in all, then measured the year, the Moon and the Sun on one scale.
