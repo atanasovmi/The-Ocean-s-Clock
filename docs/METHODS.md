@@ -55,7 +55,11 @@ The backdrop of plot 2 averages the warming rate across all 214 regions by 2.5°
 
 For each of the 172 timed reef-nights the script steps through lunar days −15 to +14 around that night's full moon and through the hours after sunset, keeping its reef and its sunset clock time. Moonlight is the lit fraction of the disc times the sine of the Moon's height, averaged over nights. Clouds and water depth are ignored, and plot 4 shows the square root because the eye compresses brightness. Moonrise is the first upward crossing of an ideal horizon by the Moon's centre, without refraction, which matches the Horizons setting.
 
-The drift of the spawning start is the slope of hours after sunset on lunar day, with genus as a factor, for the eight best-recorded genera across lunar days −2 to +10, where nearly all records lie. The moonrise delay is the slope of median moonrise over lunar days 0 to 10.
+The drift of the spawning start uses all timed starts after sunset, without the ambiguous after-midnight records. One genus on one reef-night in one setting is one row, so a genus with an exact and an approximate record on the same night counts once. The fit keeps the eight best-recorded genera across lunar days −2 to +10, where nearly all records lie.
+
+Two slopes are reported for each of five samples of start times in `outputs/tables/start_drift.csv`. The same-reef drift compares each genus with itself on its own reef, which is the slope `lm()` gives with one level per genus and reef. It is the headline, because a drift is a change on one reef from night to night. A stricter version also holds the year fixed. The all-reefs slope is one line through every reef with genus as a factor, and it also picks up which reefs were recorded on which nights. The 95% intervals resample whole reefs 2,000 times, because records from one reef are not independent.
+
+The headline sample is natural reefs with exact and approximate times. Exact times alone are too few to pin the slope down, 38% of approximate natural-reef times fall on a whole or half hour, and tanks are a different setting, so the table keeps these layers apart. The moonrise delay is the slope of median moonrise over lunar days 0 to 10.
 
 ## What the presentation leaves in the tables
 

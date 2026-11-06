@@ -15,7 +15,7 @@ PNGs are exported at 300 dpi; SVG copies are available for resizing in Prezi.
 | [1. Three clocks](outputs/figures/01_three_clocks.png) | Which cycles hold the records, and how tightly? | The Sun's white line is longest, the Moon's shortest. |
 | [2. The year](outputs/figures/02_season.png) | What does the season follow? | Both hemispheres sit on the warming part of the year. |
 | [3. The Moon](outputs/figures/03_moon.png) | Do all reefs follow the Moon equally? | Tight near the equator, loose beyond the tropics. |
-| [4. The sky](outputs/figures/04_sky.png) | Does the Sun or the Moon set the hour? | Moonrise climbs while the start of spawning stays flat. |
+| [4. The sky](outputs/figures/04_sky.png) | Does the Sun or the Moon set the hour? | Moonrise climbs while the start of spawning stays nearly flat. |
 | [4.01 The sky, second version](outputs/figures/04.01_sky.png) | The same question, one row per evening | The moons step right while the dots stay near 2 hours. |
 | [5. The diary](outputs/figures/05_diary.png) | Does the pattern survive when every day is watched? | Spawning lines up with the calendar far more than with the Moon. |
 | [6. Minutes](outputs/figures/06_minutes.png) | How precise is the Sun clock? | Wide clouds in the wild, tight clusters in the tanks. |

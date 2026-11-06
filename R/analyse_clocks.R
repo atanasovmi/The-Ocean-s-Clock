@@ -151,21 +151,121 @@ lunar_statistics <- tibble(
 write_csv(lunar_statistics, "outputs/tables/lunar_statistics.csv")
 
 # Sun or Moon for the hour? ----
-# If moonrise set the hour, starts would move later with the Moon, by about
-# 50 minutes a night. Fit the drift over the days holding nearly all the records,
-# comparing like with like inside the eight best-recorded genera.
-main_window <- filter(genus_starts, between(lunar_day, -2, 10))
-main_genera <- names(sort(table(main_window$genus), decreasing = TRUE))[1:8]
-drift_model <- lm(hours_after_sunset ~ lunar_day + genus,
-                  data = filter(main_window, genus %in% main_genera))
+# If moonrise set the hour, a reef's starts would move later with the Moon, by about
+# 50 minutes a night. So the test is how much later the same corals start each night.
+#
+# Every timed evening start joins in here, by the rule of prepare_sky.R: after sunset,
+# without the ambiguous after-midnight records. Many approximate times are rounded to
+# the hour or half hour, and tanks are a different setting, so no single sample is
+# trusted: the drift is measured on each layer of start times separately.
+all_records <- read_csv("data/derived/joined_observations.csv", show_col_types = FALSE,
+                        guess_max = 10000)
+evening_starts <- filter(all_records, !is.na(start_minutes), !midnight_ambiguous,
+                         start_minutes >= sunset_minutes)
+natural_starts <- filter(evening_starts, setting == "In situ")
+tank_starts <- filter(evening_starts, setting == "Ex situ")
+start_layers <- list(
+  "Natural reefs, exact" = filter(natural_starts, exact_start),
+  "Natural reefs, exact and approximate" = natural_starts,
+  "Natural reefs and tanks, exact" = filter(evening_starts, exact_start),
+  "Tanks, exact and approximate" = tank_starts,
+  "All start times" = evening_starts
+)
+
+# The unit is one genus on one reef-night in one setting, so a genus with an exact and
+# an approximate record on the same night still counts once. A tank is kept apart from
+# the reef its colonies came from. Lunar days -2 to +10 hold nearly all the records.
+genus_nights_in_window <- function(records) {
+  records |>
+    summarise(hours_after_sunset = median(sunset_offset_hours), lunar_day = first(lunar_day),
+              site = first(site), year = first(year),
+              .by = c(subsite_id, date, genus, setting)) |>
+    filter(between(lunar_day, -2, 10)) |>
+    mutate(reef = paste(site, setting))
+}
+
+# The eight best-recorded genera of a layer, so like is compared with like.
+main_genera_only <- function(window) {
+  main_genera <- names(sort(table(window$genus), decreasing = TRUE))[1:8]
+  filter(window, genus %in% main_genera)
+}
+
+# One line through all reefs at once, with genus as a factor. Reefs keep different
+# hours, so this slope also picks up which reefs happened to be recorded on which nights.
+all_reefs_slope <- function(starts) {
+  60 * coef(lm(hours_after_sunset ~ lunar_day + genus, data = starts))[["lunar_day"]]
+}
+
+# Each genus compared only with itself on its own reef: subtract the group's own
+# averages, then take the slope. This equals lm() with one level per group. It is
+# written out because each reef's two sums can then be resampled directly, which keeps
+# the bootstrap fast. A group seen on one lunar day only says nothing about drift.
+reef_sums <- function(starts, group) {
+  starts |>
+    filter(n_distinct(lunar_day) > 1, .by = all_of(group)) |>
+    mutate(day_gap = lunar_day - mean(lunar_day),
+           hour_gap = hours_after_sunset - mean(hours_after_sunset), .by = all_of(group)) |>
+    summarise(starts = n(), cross = sum(day_gap * hour_gap), spread = sum(day_gap^2), .by = reef)
+}
+slope_of_sums <- function(sums) 60 * sum(sums$cross) / sum(sums$spread)
+
+# Records from one reef are not independent: they share observers, nights and colonies.
+# So the 95% intervals resample whole reefs. They are wider than the interval lm()
+# prints, which treats every genus start as a separate piece of evidence.
+interval_of <- function(draws) quantile(draws, c(0.025, 0.975), names = FALSE)
+resample_reef_sums <- function(sums) {
+  interval_of(replicate(2000, slope_of_sums(sums[sample(nrow(sums), replace = TRUE), ])))
+}
+measure_drift <- function(records, layer) {
+  window <- genus_nights_in_window(records)
+  starts <- main_genera_only(window)
+  rows_by_reef <- split(seq_len(nrow(starts)), starts$reef)
+  all_reefs_interval <- interval_of(replicate(2000, {
+    all_reefs_slope(starts[unlist(sample(rows_by_reef, replace = TRUE)), ])
+  }))
+  same_reef <- reef_sums(starts, c("reef", "genus"))
+  same_year <- reef_sums(starts, c("reef", "genus", "year"))
+  same_reef_interval <- resample_reef_sums(same_reef)
+  same_year_interval <- resample_reef_sums(same_year)
+  tibble(layer = layer, starts_in_window = nrow(window), starts_fitted = nrow(starts),
+         reefs_fitted = n_distinct(starts$reef),
+         all_reefs = all_reefs_slope(starts),
+         all_reefs_low = all_reefs_interval[1], all_reefs_high = all_reefs_interval[2],
+         same_reef_starts = sum(same_reef$starts), same_reef_reefs = nrow(same_reef),
+         same_reef = slope_of_sums(same_reef),
+         same_reef_low = same_reef_interval[1], same_reef_high = same_reef_interval[2],
+         same_year = slope_of_sums(same_year),
+         same_year_low = same_year_interval[1], same_year_high = same_year_interval[2])
+}
+set.seed(20261106)
+start_drift <- bind_rows(Map(measure_drift, start_layers, names(start_layers)))
+write_csv(start_drift, "outputs/tables/start_drift.csv")
+
+# The natural reefs carry the headline: the largest sample from the real setting.
+# The written-out slope must equal the model it stands for.
+headline <- filter(start_drift, layer == "Natural reefs, exact and approximate")
+headline_starts <- main_genera_only(genus_nights_in_window(natural_starts))
+same_reef_model <- lm(hours_after_sunset ~ lunar_day + interaction(reef, genus, drop = TRUE),
+                      data = headline_starts)
+stopifnot(abs(60 * coef(same_reef_model)[["lunar_day"]] - headline$same_reef) < 1e-8)
+
 moonrise_model <- lm(moonrise_hours ~ lunar_day, data = filter(moonrise, between(lunar_day, 0, 10)))
 with_moonrise <- filter(genus_starts, !is.na(moonrise_hours))
 sky_statistics <- tibble(
-  measure = c("start_drift_minutes_per_night", "start_drift_low", "start_drift_high",
+  measure = c("same_reef_drift_minutes_per_night", "same_reef_drift_low", "same_reef_drift_high",
+              "same_reef_drift_starts", "same_reef_drift_reefs",
+              "same_year_drift_minutes_per_night", "same_year_drift_low", "same_year_drift_high",
+              "all_reefs_drift_minutes_per_night", "all_reefs_drift_low", "all_reefs_drift_high",
+              "same_reef_drift_smallest_layer", "same_reef_drift_largest_layer",
+              "all_reefs_drift_smallest_layer", "all_reefs_drift_largest_layer",
               "moonrise_delay_minutes_per_night", "median_start_hours", "q25_start_hours",
               "q75_start_hours", "sd_from_sunset_hours", "sd_from_moonrise_hours",
               "share_moon_down", "share_moon_down_after_full"),
-  value = c(60 * coef(drift_model)[["lunar_day"]], 60 * confint(drift_model)["lunar_day", ],
+  value = c(headline$same_reef, headline$same_reef_low, headline$same_reef_high,
+            headline$same_reef_starts, headline$same_reef_reefs,
+            headline$same_year, headline$same_year_low, headline$same_year_high,
+            headline$all_reefs, headline$all_reefs_low, headline$all_reefs_high,
+            range(start_drift$same_reef), range(start_drift$all_reefs),
             60 * coef(moonrise_model)[["lunar_day"]],
             quantile(genus_starts$hours_after_sunset, c(0.5, 0.25, 0.75), names = FALSE),
             sd(with_moonrise$hours_after_sunset),

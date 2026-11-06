@@ -34,9 +34,13 @@ The honest caveat is on the plot. These are records of when people looked. The a
 
 ## 4. The sky
 
-Plot 1 shows that the hour is tight, measured from sunset. This plot tests why, by setting the two possible timers against each other: moonrise moves 46 minutes a night, spawning about 2. This is the plot to spend time on. Time runs left to right through one lunar month. Hours after sunset run upward. The shading is the actual moonlight over these reefs: the bright band is when the Moon is up, and it slides up the chart as the Moon rises later each night.
+Plot 1 shows that the hour is tight, measured from sunset. This plot tests why, by setting the two possible timers against each other: moonrise moves 46 minutes a night, spawning about 2 on the same reef. This is the plot to spend time on. Time runs left to right through one lunar month. Hours after sunset run upward. The shading is the actual moonlight over these reefs: the bright band is when the Moon is up, and it slides up the chart as the Moon rises later each night.
 
-Follow the cream line first: moonrise, about 46 minutes later every night. Then the flat line through the dots: the start of spawning, about 2 minutes later every night. If the Moon set the hour, the dots would climb with the line. They stay near two hours after sunset, whatever the sky is doing.
+Follow the cream line first: moonrise, about 46 minutes later every night. Then the nearly flat line through the dots: the start of spawning, about 2 minutes later every night when each genus is compared with itself on its own reef (1.7 minutes, 95% interval 0.5 to 3.4). If the Moon set the hour, the dots would climb with the line. They stay near two hours after sunset, whatever the sky is doing.
+
+Expect a question about the two numbers in the label. One line through all reefs at once climbs about 4 minutes a night (3.9, interval −0.8 to 7.5). Reefs keep different hours, though: Lyudao spawns about 3.1 hours after sunset and Eilat about 1.0, so that slope also depends on which reefs were recorded on which nights. "Later every night" is a question about one reef, so the line on the plot has the same-reef slope.
+
+The dots are the 327 exact natural-reef starts. The line also uses approximate times, 776 starts in all, because exact times alone are too few to pin the slope down (0.6, interval −1.0 to 2.6). Many approximate times are rounded to the hour or half hour and tanks are a different setting, so `outputs/tables/start_drift.csv` lists five samples of start times: +0.6 to +1.8 minutes on the same reef, +2.2 to +4.6 across reefs. Even the steepest is about a tenth of the pace of moonrise.
 
 The second point is the dark wedge at the lower right. After full moon the evening starts dark, because the Moon has not risen yet, and that is where the dots sit. Lin et al. (2021) tested this dark gap in experiments. Our chart shows the geometry and does not prove a cue.
 

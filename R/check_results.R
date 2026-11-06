@@ -37,14 +37,24 @@ lunar <- read_csv("outputs/tables/lunar_statistics.csv", show_col_types = FALSE)
 lunar <- setNames(lunar$value, lunar$measure)
 stopifnot(lunar[["spearman_rho_equal_nights_high"]] < 0, lunar[["spearman_rho_box_share"]] < 0)
 
-# Sky: the plot says starts barely move while moonrise moves a lot.
+# Sky: the plot says starts barely move on one reef while moonrise moves a lot, and
+# that mixing reefs gives a steeper line. Each must hold in every layer of start times.
+# The window counts catch a genus-night being counted twice, once per time quality.
 genus_starts <- read_csv("data/derived/genus_starts.csv", show_col_types = FALSE)
 sky <- read_csv("outputs/tables/sky_statistics.csv", show_col_types = FALSE)
 sky <- setNames(sky$value, sky$measure)
+start_drift <- read_csv("outputs/tables/start_drift.csv", show_col_types = FALSE)
+window_starts <- setNames(start_drift$starts_in_window, start_drift$layer)
 moon_calendar <- read_csv("outputs/tables/moon_calendar.csv", show_col_types = FALSE)
 stopifnot(nrow(genus_starts) == 327, n_distinct(paste(genus_starts$subsite_id, genus_starts$date)) == 172,
           sky[["moonrise_delay_minutes_per_night"]] > 40,
-          sky[["start_drift_low"]] < 0, sky[["start_drift_high"]] < 10,
+          nrow(start_drift) == 5, window_starts[["Natural reefs, exact"]] == 311,
+          window_starts[["Natural reefs, exact and approximate"]] == 1184,
+          all(start_drift$same_reef < start_drift$all_reefs),
+          all(start_drift$same_reef_low < start_drift$same_reef),
+          all(start_drift$same_reef < start_drift$same_reef_high),
+          sky[["same_reef_drift_high"]] < sky[["moonrise_delay_minutes_per_night"]] / 10,
+          max(start_drift$all_reefs) < sky[["moonrise_delay_minutes_per_night"]] / 8,
           sky[["sd_from_sunset_hours"]] < sky[["sd_from_moonrise_hours"]],
           identical(moon_calendar$shift_days, as.numeric(-14:14)),
           all(moon_calendar$reef_nights == 172), all(moon_calendar$start_times == 538),
