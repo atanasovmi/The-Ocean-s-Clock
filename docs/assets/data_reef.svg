@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 680" width="1280" role="img" aria-labelledby="t d">
+<title id="t">How the sources connect</title>
+<desc id="d">The Coral Spawning Database is the hub. NOAA, NASA Horizons and the US Naval Observatory join it through real keys. The aquarium, the Sea Simulator and the Maldives study share no key with it and are compared side by side.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d8fe0"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
+<linearGradient id="capsule" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2aa7ee" stop-opacity=".92"/><stop offset="1" stop-color="#0a5cb4" stop-opacity=".92"/></linearGradient>
+<radialGradient id="hub" cx=".42" cy=".3" r=".8"><stop offset="0" stop-color="#ffb3bc"/><stop offset=".6" stop-color="#FF7E8B"/><stop offset="1" stop-color="#c8355a"/></radialGradient>
+<radialGradient id="drop" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#7fe8ff"/></radialGradient>
+<radialGradient id="halo"><stop offset=".8" stop-color="#ffb3bc" stop-opacity=".4"/><stop offset="1" stop-color="#ffb3bc" stop-opacity="0"/></radialGradient>
+</defs>
+<style>
+text{font-family:'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;text-anchor:middle;fill:#fff}
+.name{font-size:21px;font-weight:600} .how{font-size:15.5px;fill:#e3f8ff}
+.key{font-size:15px;fill:#fff;font-style:italic}
+.col{font-size:21px;font-weight:600;fill:#d7f4ff} .sub{font-size:16px;fill:#d7f4ff}
+.hubname{font-size:25px;font-weight:600;fill:#4a0d22} .hubtext{font-size:18px;fill:#4a0d22}
+.pulse{animation:pulse 6s ease-in-out infinite;transform-origin:640px 340px}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+</style>
+<rect width="1280" height="680" rx="26" fill="url(#bg)"/>
+<text x="186" y="62" class="col">Joined by a real key</text>
+<text x="1094" y="62" class="col">Side by side, no shared key</text>
+<path id="k0" d="M342,150 C476,150 400,273.5 512,286.8" fill="none" stroke="#bff4ff" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"/><path id="k1" d="M342,340 C476,340 400,340.0 512,340.0" fill="none" stroke="#bff4ff" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"/><path id="k2" d="M342,530 C476,530 400,406.5 512,393.2" fill="none" stroke="#bff4ff" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"/><path d="M938,150 C804,150 880,273.5 768,286.8" fill="none" stroke="#bff4ff" stroke-opacity=".6" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round"/><path d="M938,340 C804,340 880,340.0 768,340.0" fill="none" stroke="#bff4ff" stroke-opacity=".6" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round"/><path d="M938,530 C804,530 880,406.5 768,393.2" fill="none" stroke="#bff4ff" stroke-opacity=".6" stroke-width="3" stroke-dasharray="3 12" stroke-linecap="round"/><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="0.0s" repeatCount="indefinite"><mpath href="#k0"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-1.5s" repeatCount="indefinite"><mpath href="#k0"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-3.0s" repeatCount="indefinite"><mpath href="#k0"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-0.4s" repeatCount="indefinite"><mpath href="#k1"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-1.9s" repeatCount="indefinite"><mpath href="#k1"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-3.4s" repeatCount="indefinite"><mpath href="#k1"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-0.8s" repeatCount="indefinite"><mpath href="#k2"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-2.3s" repeatCount="indefinite"><mpath href="#k2"/></animateMotion></circle><circle r="6" fill="url(#drop)"><animateMotion dur="4.5s" begin="-3.8s" repeatCount="indefinite"><mpath href="#k2"/></animateMotion></circle><text x="368" y="106" class="key" style="text-anchor:start">coordinates in a region</text><text x="368" y="125" class="key" style="text-anchor:start">polygon, then the date</text><text x="368" y="318" class="key" style="text-anchor:start">reef site and minute</text><text x="368" y="564" class="key" style="text-anchor:start">full-moon dates</text>
+<g class="pulse"><circle cx="640" cy="340" r="160" fill="url(#halo)"/>
+<circle cx="640" cy="340" r="128" fill="url(#hub)" stroke="#fff" stroke-opacity=".8" stroke-width="2"/>
+<path d="M540,290 C564,222 716,222 740,290 C690,252 590,252 540,290Z" fill="#fff" opacity=".42"/>
+<text x="640" y="324" class="hubname">Coral Spawning</text><text x="640" y="354" class="hubname">Database</text>
+<text x="640" y="386" class="hubtext">6,178 records</text><text x="640" y="410" class="hubtext">1,026 reef-nights</text></g>
+
+    <g transform="translate(186,150)">
+      <rect x="-156" y="-52" width="312" height="104" rx="22" fill="url(#capsule)" stroke="#fff" stroke-opacity=".65" stroke-width="1.5"/>
+      <path d="M-146,-30 Q-146,-44 -130,-44 H130 Q146,-44 146,-30 Q0,-6 -146,-30Z" fill="#fff" opacity=".2"/>
+      <text y="-16" class="name">NOAA Coral Reef Watch</text><text y="10" class="how">214 regional files, bulk download</text><text y="34" class="how">22.9 million values</text>
+    </g>
+    <g transform="translate(186,340)">
+      <rect x="-156" y="-52" width="312" height="104" rx="22" fill="url(#capsule)" stroke="#fff" stroke-opacity=".65" stroke-width="1.5"/>
+      <path d="M-146,-30 Q-146,-44 -130,-44 H130 Q146,-44 146,-30 Q0,-6 -146,-30Z" fill="#fff" opacity=".2"/>
+      <text y="-16" class="name">NASA/JPL Horizons</text><text y="10" class="how">API, queried once and saved</text><text y="34" class="how">12,897 Moon positions</text>
+    </g>
+    <g transform="translate(186,530)">
+      <rect x="-156" y="-52" width="312" height="104" rx="22" fill="url(#capsule)" stroke="#fff" stroke-opacity=".65" stroke-width="1.5"/>
+      <path d="M-146,-30 Q-146,-44 -130,-44 H130 Q146,-44 146,-30 Q0,-6 -146,-30Z" fill="#fff" opacity=".2"/>
+      <text y="-16" class="name">US Naval Observatory</text><text y="10" class="how">API, one saved response</text><text y="34" class="how">7 reef-nights checked</text>
+    </g>
+    <g transform="translate(1094,150)">
+      <rect x="-156" y="-52" width="312" height="104" rx="22" fill="url(#capsule)" stroke="#fff" stroke-opacity=".65" stroke-width="1.5"/>
+      <path d="M-146,-30 Q-146,-44 -130,-44 H130 Q146,-44 146,-30 Q0,-6 -146,-30Z" fill="#fff" opacity=".2"/>
+      <text y="-16" class="name">Churaumi Aquarium</text><text y="10" class="how">Zenodo archive with zero days</text><text y="34" class="how">1,350 watched days</text>
+    </g>
+    <g transform="translate(1094,340)">
+      <rect x="-156" y="-52" width="312" height="104" rx="22" fill="url(#capsule)" stroke="#fff" stroke-opacity=".65" stroke-width="1.5"/>
+      <path d="M-146,-30 Q-146,-44 -130,-44 H130 Q146,-44 146,-30 Q0,-6 -146,-30Z" fill="#fff" opacity=".2"/>
+      <text y="-16" class="name">Sea Simulator</text><text y="10" class="how">Table S1, read from a PDF in R</text><text y="34" class="how">172 timed records</text>
+    </g>
+    <g transform="translate(1094,530)">
+      <rect x="-156" y="-52" width="312" height="104" rx="22" fill="url(#capsule)" stroke="#fff" stroke-opacity=".65" stroke-width="1.5"/>
+      <path d="M-146,-30 Q-146,-44 -130,-44 H130 Q146,-44 146,-30 Q0,-6 -146,-30Z" fill="#fff" opacity=".2"/>
+      <text y="-16" class="name">Maldives field study</text><text y="10" class="how">Journal supplement, one CSV</text><text y="34" class="how">81 spawning atoll-days</text>
+    </g>
+<text x="640" y="640" class="sub">Every source is a saved copy in data/raw, so a run needs no live service</text>
+<rect x="1.5" y="1.5" width="1277" height="677" rx="25" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+</svg>

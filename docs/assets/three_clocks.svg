@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" width="1280" role="img" aria-labelledby="t d">
+<title id="t">Three clocks on one scale</title>
+<desc id="d">Three glass dials show recorded spawning around the year, the lunar month and the day. Pink bars count the records. A cream arrow shows the tightness R: 0.72 for the year, 0.57 for the Moon and 0.90 for the Sun.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a7cd4"/><stop offset="1" stop-color="#053f8e"/></linearGradient>
+<radialGradient id="sphere" cx=".5" cy=".36" r=".72"><stop offset="0" stop-color="#1383dd"/><stop offset=".72" stop-color="#084d9f"/><stop offset="1" stop-color="#042a66"/></radialGradient>
+<radialGradient id="halo"><stop offset=".85" stop-color="#7fe8ff" stop-opacity=".35"/><stop offset="1" stop-color="#7fe8ff" stop-opacity="0"/></radialGradient>
+<linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<style>
+text{font-family:'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;text-anchor:middle;fill:#fff}
+.dial{font-size:15px;fill:#d7f4ff}
+.head{font-size:26px;font-weight:600}
+.value{font-size:30px;font-weight:300;fill:#F1EAD7}
+.note{font-size:18px;fill:#d7f4ff}
+.hand{animation:hand 12s ease-in-out infinite;transform-origin:0 0}
+@keyframes hand{0%{transform:scale(0);opacity:0}16%{transform:scale(1);opacity:1}88%{transform:scale(1);opacity:1}100%{transform:scale(0);opacity:0}}
+@media (prefers-reduced-motion:reduce){.hand{animation:none}}
+</style>
+<rect width="1280" height="560" rx="26" fill="url(#bg)"/>
+<path d="M0,26 Q0,0 26,0 H1254 Q1280,0 1280,26 V70 C900,120 380,120 0,76 Z" fill="url(#gloss)"/>
+
+    <g transform="translate(213,212)">
+      <circle r="168" fill="url(#halo)"/>
+      <circle r="150" fill="url(#sphere)" stroke="#ffffff" stroke-opacity=".55" stroke-width="2"/>
+      <circle r="58" fill="none" stroke="#ffffff" stroke-opacity=".22"/>
+      <path d="M0.0,-58.0 L0.0,-97.0 L16.8,-95.5 L10.1,-57.1 Z M10.1,-57.1 L17.5,-99.3 L34.5,-94.7 L19.8,-54.5 Z M19.8,-54.5 L30.3,-83.4 L44.4,-76.8 L29.0,-50.2 Z M29.0,-50.2 L34.1,-59.1 L43.9,-52.3 L37.3,-44.4 Z M37.3,-44.4 L41.9,-50.0 L50.0,-41.9 L44.4,-37.3 Z M44.4,-37.3 L50.0,-41.9 L56.5,-32.6 L50.2,-29.0 Z M57.1,-10.1 L67.2,-11.8 L68.2,0.0 L58.0,0.0 Z M57.1,10.1 L64.2,11.3 L61.3,22.3 L54.5,19.8 Z M54.5,19.8 L69.7,25.4 L64.2,37.1 L50.2,29.0 Z M44.4,37.3 L50.0,41.9 L41.9,50.0 L37.3,44.4 Z M37.3,44.4 L43.9,52.3 L34.1,59.1 L29.0,50.2 Z M29.0,50.2 L32.6,56.5 L22.3,61.3 L19.8,54.5 Z M19.8,54.5 L22.3,61.3 L11.3,64.2 L10.1,57.1 Z M0.0,58.0 L0.0,79.7 L-13.8,78.5 L-10.1,57.1 Z M-10.1,57.1 L-14.0,79.7 L-27.7,76.0 L-19.8,54.5 Z M-19.8,54.5 L-28.8,79.0 L-42.0,72.8 L-29.0,50.2 Z M-29.0,50.2 L-45.6,78.9 L-58.6,69.8 L-37.3,44.4 Z M-37.3,44.4 L-55.3,65.9 L-65.9,55.3 L-44.4,37.3 Z M-44.4,37.3 L-54.0,45.3 L-61.1,35.3 L-50.2,29.0 Z M-50.2,29.0 L-85.7,49.5 L-93.0,33.8 L-54.5,19.8 Z M-54.5,19.8 L-87.1,31.7 L-91.3,16.1 L-57.1,10.1 Z M-57.1,10.1 L-92.0,16.2 L-93.5,0.0 L-58.0,0.0 Z M-58.0,0.0 L-109.2,0.0 L-107.5,-19.0 L-57.1,-10.1 Z M-57.1,-10.1 L-120.1,-21.2 L-114.6,-41.7 L-54.5,-19.8 Z M-54.5,-19.8 L-120.8,-44.0 L-111.3,-64.3 L-50.2,-29.0 Z M-50.2,-29.0 L-100.8,-58.2 L-89.1,-74.8 L-44.4,-37.3 Z M-44.4,-37.3 L-99.6,-83.6 L-83.6,-99.6 L-37.3,-44.4 Z M-37.3,-44.4 L-79.1,-94.3 L-61.6,-106.6 L-29.0,-50.2 Z M-29.0,-50.2 L-58.4,-101.1 L-39.9,-109.7 L-19.8,-54.5 Z M-19.8,-54.5 L-36.8,-101.1 L-18.7,-106.0 L-10.1,-57.1 Z M-10.1,-57.1 L-19.3,-109.5 L-0.0,-111.2 L-0.0,-58.0 Z" fill="#FF7E8B"/>
+      <text y="-124" class="dial">warmest week</text>
+      <text y="136" class="dial">half a year away</text>
+      <g style="animation-delay:0s" class="hand">
+        <line x1="0" y1="0" x2="-78.5" y2="-61.3" stroke="#F1EAD7" stroke-width="6" stroke-linecap="round"/>
+        <path d="M-64.6,-59.6 L-78.5,-61.3 L-73.5,-48.2" fill="none" stroke="#F1EAD7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <circle r="7" fill="#F1EAD7"/>
+      <path d="M-118,-62 C-90,-140 90,-140 118,-62 C60,-104 -60,-104 -118,-62Z" fill="#ffffff" opacity=".2"/>
+    </g>
+    <g transform="translate(640,212)">
+      <circle r="168" fill="url(#halo)"/>
+      <circle r="150" fill="url(#sphere)" stroke="#ffffff" stroke-opacity=".55" stroke-width="2"/>
+      <circle r="58" fill="none" stroke="#ffffff" stroke-opacity=".22"/>
+      <path d="M0.0,-58.0 L0.0,-99.6 L20.7,-97.4 L12.1,-56.7 Z M12.1,-56.7 L21.9,-102.8 L42.8,-96.0 L23.6,-53.0 Z M23.6,-53.0 L46.6,-104.7 L67.4,-92.8 L34.1,-46.9 Z M34.1,-46.9 L72.4,-99.6 L91.5,-82.4 L43.1,-38.8 Z M43.1,-38.8 L90.3,-81.3 L105.2,-60.7 L50.2,-29.0 Z M50.2,-29.0 L112.6,-65.0 L123.6,-40.2 L55.2,-17.9 Z M55.2,-17.9 L122.0,-39.6 L127.6,-13.4 L57.7,-6.1 Z M57.7,-6.1 L112.6,-11.8 L112.6,11.8 L57.7,6.1 Z M57.7,6.1 L97.5,10.2 L93.3,30.3 L55.2,17.9 Z M55.2,17.9 L86.9,28.2 L79.1,45.7 L50.2,29.0 Z M50.2,29.0 L75.1,43.3 L64.4,58.0 L43.1,38.8 Z M43.1,38.8 L61.6,55.4 L48.7,67.0 L34.1,46.9 Z M34.1,46.9 L46.0,63.3 L31.8,71.5 L23.6,53.0 Z M23.6,53.0 L33.0,74.1 L16.9,79.4 L12.1,56.7 Z M12.1,56.7 L19.0,89.3 L0.0,91.3 L0.0,58.0 Z M0.0,58.0 L0.0,83.7 L-17.4,81.8 L-12.1,56.7 Z M-12.1,56.7 L-17.6,82.6 L-34.3,77.1 L-23.6,53.0 Z M-23.6,53.0 L-33.7,75.7 L-48.7,67.0 L-34.1,46.9 Z M-34.1,46.9 L-48.2,66.3 L-60.9,54.9 L-43.1,38.8 Z M-43.1,38.8 L-59.6,53.7 L-69.5,40.1 L-50.2,29.0 Z M-50.2,29.0 L-69.5,40.1 L-76.3,24.8 L-55.2,17.9 Z M-55.2,17.9 L-71.3,23.2 L-74.6,7.8 L-57.7,6.1 Z M-57.7,6.1 L-74.6,7.8 L-74.6,-7.8 L-57.7,-6.1 Z M-57.7,-6.1 L-73.3,-7.7 L-70.1,-22.8 L-55.2,-17.9 Z M-55.2,-17.9 L-74.5,-24.2 L-67.8,-39.1 L-50.2,-29.0 Z M-50.2,-29.0 L-66.9,-38.6 L-57.4,-51.7 L-43.1,-38.8 Z M-43.1,-38.8 L-59.6,-53.7 L-47.2,-64.9 L-34.1,-46.9 Z M-34.1,-46.9 L-49.2,-67.7 L-34.0,-76.4 L-23.6,-53.0 Z M-23.6,-53.0 L-37.1,-83.4 L-19.0,-89.3 L-12.1,-56.7 Z" fill="#FF7E8B"/>
+      <text y="-124" class="dial">full moon</text>
+      <text y="136" class="dial">new moon</text>
+      <g style="animation-delay:0.5s" class="hand">
+        <line x1="0" y1="0" x2="64.5" y2="-44.6" stroke="#F1EAD7" stroke-width="6" stroke-linecap="round"/>
+        <path d="M58.8,-31.8 L64.5,-44.6 L50.6,-43.7" fill="none" stroke="#F1EAD7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <circle r="7" fill="#F1EAD7"/>
+      <path d="M-118,-62 C-90,-140 90,-140 118,-62 C60,-104 -60,-104 -118,-62Z" fill="#ffffff" opacity=".2"/>
+    </g>
+    <g transform="translate(1067,212)">
+      <circle r="168" fill="url(#halo)"/>
+      <circle r="150" fill="url(#sphere)" stroke="#ffffff" stroke-opacity=".55" stroke-width="2"/>
+      <circle r="58" fill="none" stroke="#ffffff" stroke-opacity=".22"/>
+      <path d="M0.0,-58.0 L0.0,-90.7 L11.8,-89.9 L7.6,-57.5 Z M7.6,-57.5 L12.4,-94.5 L24.7,-92.0 L15.0,-56.0 Z M15.0,-56.0 L25.9,-96.6 L38.3,-92.4 L22.2,-53.6 Z M22.2,-53.6 L49.7,-120.1 L65.0,-112.6 L29.0,-50.2 Z M29.0,-50.2 L60.0,-104.0 L73.1,-95.2 L35.3,-46.0 Z M35.3,-46.0 L66.1,-86.2 L76.8,-76.8 L41.0,-41.0 Z M41.0,-41.0 L63.5,-63.5 L71.3,-54.7 L46.0,-35.3 Z M46.0,-35.3 L64.4,-49.4 L70.3,-40.6 L50.2,-29.0 Z M50.2,-29.0 L56.6,-32.7 L60.3,-25.0 L53.6,-22.2 Z M22.2,53.6 L25.0,60.3 L16.9,63.1 L15.0,56.0 Z M0.0,58.0 L0.0,68.3 L-8.9,67.8 L-7.6,57.5 Z M-41.0,41.0 L-48.3,48.3 L-54.2,41.6 L-46.0,35.3 Z M-46.0,35.3 L-56.1,43.0 L-61.2,35.3 L-50.2,29.0 Z M-50.2,29.0 L-62.9,36.3 L-67.1,27.8 L-53.6,22.2 Z M-53.6,22.2 L-60.3,25.0 L-63.1,16.9 L-56.0,15.0 Z M-35.3,-46.0 L-41.6,-54.2 L-34.2,-59.2 L-29.0,-50.2 Z M-29.0,-50.2 L-32.7,-56.6 L-25.0,-60.3 L-22.2,-53.6 Z M-22.2,-53.6 L-25.0,-60.3 L-16.9,-63.1 L-15.0,-56.0 Z M-15.0,-56.0 L-16.9,-63.1 L-8.5,-64.8 L-7.6,-57.5 Z M-7.6,-57.5 L-8.9,-67.8 L-0.0,-68.3 L-0.0,-58.0 Z" fill="#FF7E8B"/>
+      <text y="-124" class="dial">sunset</text>
+      <text y="136" class="dial">12 hours later</text>
+      <g style="animation-delay:1s" class="hand">
+        <line x1="0" y1="0" x2="57.4" y2="-110.6" stroke="#F1EAD7" stroke-width="6" stroke-linecap="round"/>
+        <path d="M58.3,-96.6 L57.4,-110.6 L45.4,-103.3" fill="none" stroke="#F1EAD7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <circle r="7" fill="#F1EAD7"/>
+      <path d="M-118,-62 C-90,-140 90,-140 118,-62 C60,-104 -60,-104 -118,-62Z" fill="#ffffff" opacity=".2"/>
+    </g>
+<text x="213" y="414" class="head">The year opens the season</text><text x="213" y="456" class="value">R = 0.72</text><text x="213" y="488" class="note">89% of reef-nights fall while the local</text><text x="213" y="513" class="note">sea warms</text><text x="640" y="414" class="head">The Moon narrows the night</text><text x="640" y="456" class="value">R = 0.57</text><text x="640" y="488" class="note">88% in the tropics and 51% beyond them, in</text><text x="640" y="513" class="note">the eight days from full moon</text><text x="1067" y="414" class="head">The Sun sets the hour</text><text x="1067" y="456" class="value">R = 0.90</text><text x="1067" y="488" class="note">Half of all starts come 1.5 to 2.5 hours</text><text x="1067" y="513" class="note">after sunset</text>
+<rect x="1.5" y="1.5" width="1277" height="557" rx="25" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+</svg>
