@@ -124,7 +124,7 @@ The calendar model's mean held-out probability is 0.160, and the observed rate i
 | 7 | 126 | 0.350 | 0.286 |
 | 8 | 125 | 0.501 | 0.472 |
 
-The ordering holds and the overall level is right, so the probabilities are usable within this diary. The middle is less exact: bin 5 under-predicts and bin 7 over-predicts. No date is predicted much above one half, so the model identifies likely periods more than single nights.
+The ordering holds and the overall level is right, so the probabilities are usable within this diary. The middle is less exact: bin 5 under-predicts and bin 7 over-predicts. The highest held-out probability is 0.61, and only 5% of dates exceed 0.5, so the model identifies likely periods more than single nights.
 
 ## What this does and does not show
 
