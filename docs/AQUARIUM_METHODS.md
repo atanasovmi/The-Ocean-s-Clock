@@ -1,91 +1,141 @@
 # What can the calendar predict before a spawning day?
 
-The wild-reef database records occurrences without complete non-event monitoring. It can show when recorded events happened, but cannot by itself support a daily yes/no spawning model. A second study supplies a different kind of evidence: a fifteen-year seasonal diary from the Okinawa Churaumi Aquarium, with explicit zero as well as positive dates. We keep these systems separate.
+Wild-reef records list spawning events and leave out the nights nobody watched, so they cannot support a daily yes-or-no model. The Okinawa Churaumi Aquarium diary can: it records 1,350 monitored days across fifteen seasons, including the days without spawning. This page tests how well each candidate cue predicts spawning in a year the model has never seen.
 
-The [source paper](https://doi.org/10.1098/rsos.240183) examined environmental associations with annual first and peak spawning dates. Our additional question is about validation: **does environmental information improve predictions for a year that was excluded from model fitting?** This is our independently specified reanalysis of published data, not a claim to have discovered coral spawning cues for the first time.
+The answer is clear for this aquarium. **Season predicts spawning. The Moon adds no detectable skill once season is known, and preceding-week conditions add none either.**
 
-## Response and sample
+## Result
 
-For diary date $t$, let $K_t$ be the number of spawning tanks. The indicator $Y_t$ equals one if any tank spawned and zero otherwise.
+All five models are scored on the same 1,007 dates. Each date is predicted by a model fitted without its year. Skill is the reduction in Brier score relative to the baseline, and a lower Brier score is better.
+
+| Model | Terms | Parameters | Held-out Brier (95% interval) | Skill | Within-year AUC |
+| --- | --- | ---: | --- | ---: | ---: |
+| Baseline | Training-year prevalence | 1 | 0.1356 (0.1137 to 0.1552) | 0% | 0.500 |
+| Moon | Two lunar harmonics | 5 | 0.1359 (0.1139 to 0.1569) | −0.2% | 0.570 |
+| Season | One annual harmonic | 3 | 0.1129 (0.0940 to 0.1313) | 16.7% | 0.808 |
+| Calendar | Season and Moon | 7 | 0.1114 (0.0909 to 0.1317) | 17.8% | 0.838 |
+| Environment | Calendar and four weekly inputs | 11 | 0.1147 (0.0937 to 0.1354) | 15.4% | 0.835 |
+
+The separate intervals overlap heavily, and that says little: a year that is hard for one model is hard for all of them. The comparison that answers the question is paired, using the same resampled years for both models. A positive difference means the second model scores better.
+
+| Comparison | Difference in Brier | 95% interval | Years improved | Reading |
+| --- | ---: | --- | ---: | --- |
+| Baseline to calendar | +0.0241 | 0.0143 to 0.0333 | 13 of 14 | Clear gain |
+| Baseline to season | +0.0227 | 0.0119 to 0.0319 | 12 of 14 | Clear gain |
+| Baseline to Moon | −0.0003 | −0.0029 to 0.0021 | 8 of 14 | No gain |
+| Season to calendar (adds the Moon) | +0.0014 | −0.0032 to 0.0059 | 10 of 14 | No detectable gain |
+| Calendar to environment (adds weather) | −0.0033 | −0.0078 to 0.0006 | 5 of 14 | No gain, leaning worse |
+
+Three conclusions follow.
+
+1. **Season carries the forecast.** Its interval excludes zero, and it supplies 94% of the calendar model's improvement over the baseline.
+2. **The Moon's added value is small at most.** The interval rules out a gain above 0.0059, about 4% of the baseline error, so this is a bounded result and more than a failure to find an effect.
+3. **Preceding-week conditions do not help.** The most favourable end of the interval is a gain of 0.0006. With four more parameters the point estimate gets worse, which is what added variance without added signal looks like.
+
+## Why the Moon can matter and still not forecast
+
+The lunar terms are not empty. In the calendar model fitted to all fourteen years, the lunar curve peaks 3.5 days before full moon and reaches its low 13.1 days before it. That span is 1.41 logit units, about a fourfold change in the odds.
+
+The seasonal curve peaks on 11 June and spans about 14 logit units across the sampled dates, 19 April to 10 August. Most dates are therefore already near zero or well inside the season before the Moon is considered, which leaves the lunar terms little to add. Moon alone cannot separate June from August at all, which is why it matches the baseline.
+
+These are full-data fits, and their ordinary standard errors ignore dependence within a year, so they describe shape and do not test it. In the environment model, all four weather coefficients have a $z$ value below 2 in absolute size on that same optimistic scale.
+
+## Design
+
+### Response and sample
+
+For diary date $t$, let $K_t$ be the number of tanks spawning. The source column `spawning_binary` holds this count, from 0 to 17, despite its name. The response is presence:
 
 ```math
 \Large
 Y_t=\mathrm{I}(K_t>0).
 ```
 
-The source variable is unfortunately called `spawning_binary`, but contains counts from zero to seventeen. It is converted explicitly, rather than passed incorrectly into a binomial model. The 1,350 diary dates include 208 positive dates. Extra zero scores outside the supplied seasonal diary are not counted as surveyed absences.
+The diary has 1,350 dates, 90 per season from 2003 to 2017, with 208 spawning dates. Dates outside the diary are never treated as observed zeros, even where the environmental file has a score for them.
 
-Weather and tank-temperature measurements from the seven preceding calendar dates are averaged:
+The weekly inputs need complete measurements, and missing tank temperatures remove all of 2003 and much of 2004 to 2007. The complete-case sample has 1,007 dates in fourteen years, with 162 spawning dates, a prevalence of 16.1%. Every model uses exactly these dates.
+
+### Models
+
+All models are binomial logistic regressions, with $p_t=\mathrm{P}(Y_t=1)$. With day of year $j_t$ and offset from full moon $d_t$, the angles are $u_t=2\pi j_t/365.2425$ and $v_t=2\pi d_t/29.53059$.
+
+```math
+\Large
+\begin{aligned}
+\log\!\left(\frac{p_t}{1-p_t}\right)&=\beta_0+S_t+L_t+\gamma^{\top}x_t,\\
+S_t&=a\sin u_t+b\cos u_t,\\
+L_t&=\sum_{h=1}^{2}[c_h\sin(hv_t)+e_h\cos(hv_t)].
+\end{aligned}
+```
+
+Season keeps only $S_t$, Moon only $L_t$, calendar both, and environment adds $\gamma^{\top}x_t$. Sine and cosine pairs keep each cycle continuous across its boundary, and the second lunar harmonic allows two peaks in a month. The model forms were fixed before scoring: there is no stepwise selection, no tuning and no classification threshold.
+
+The vector $x_t$ holds tank temperature, wind speed, `log1p` rainfall and solar flux, each averaged over the seven dates before $t$:
 
 ```math
 \Large
 \overline{x}_{t,-7:-1}=\frac{1}{7}\sum_{k=1}^{7}x_{t-k}.
 ```
 
-The predicted day's measurement is never included. A missing measurement makes that seven-day average missing; we do not fill it using later dates. All three model comparisons use the **same 1,007 complete-case dates from 14 years**, including 162 positive dates. The raw diary remains available for describing the full fifteen seasons. Missing tank-temperature records, notably 2003, explain the narrower model sample.
+The predicted day's own measurement never enters. A window with a missing value stays missing and is not filled.
 
-## Three comparisons
+### Validation
 
-The reference model predicts the spawning share in the training years. The calendar model is a binomial logistic regression using two lunar harmonics and one seasonal harmonic. For the offset from full moon $d_t$ and the day of year $j_t$, use the angles $v_t=2\pi d_t/29.53059$ and $u_t=2\pi j_t/365.2425$.
+Each of the fourteen years is held out in turn. Models are fitted to the other thirteen, and the held-out dates are predicted. Adjacent days of one season never fall on both sides of a split, which a random split would allow. The baseline predicts the training-year prevalence, recalculated for each fold.
 
-```math
-\Large
-\begin{aligned}
-\log\!\left(\frac{p_t}{1-p_t}\right)&=\beta_0+S_t+L_t,\\
-S_t&=a\sin u_t+b\cos u_t,\\
-L_t&=\sum_{h=1}^{2}[c_h\sin(hv_t)+e_h\cos(hv_t)].
-\end{aligned}
-```
+This is retrospective validation. A fold can learn from years after the one it predicts, so it measures how well the calendar generalises between years. It is not a test of live forecasting.
 
-Sine and cosine represent cycles continuously: the end of a lunar cycle is close to its beginning. The second harmonic allows more than one broad concentration of spawning dates per cycle. These terms are specified before fitting the comparisons; no stepwise search selects a favourable model.
+### Scores
 
-The environmental model adds preceding-week mean tank temperature, wind speed, rainfall and solar flux. Rainfall is transformed with `log1p` to reduce the influence of large wet-day averages. No feature uses future measurements or a response-derived peak date.
-
-## Testing and uncertainty
-
-One complete year is withheld, the models are fitted to all the other eligible years, and predictions are made for that excluded year. This repeats across fourteen years. It is retrospective leave-one-year-out validation, not a chronological operational forecast: a fold can use later years to predict an earlier excluded year. No random split places adjacent dates from the same season on both sides of the comparison.
-
-The primary score is the Brier score:
+The primary score is the Brier score over the $n$ held-out dates:
 
 ```math
 \Large
-\mathrm{BS}=\frac{1}{n}\sum_{t=1}^{n}(p_t-Y_t)^2.
+\mathrm{BS}_M=\frac{1}{n}\sum_{t=1}^{n}(p_{M,t}-Y_t)^2.
 ```
 
-Lower values mean smaller squared probability errors. Equal-count reliability bins compare predicted probabilities with observed spawning shares. AUC is exported as a secondary ranking measure, both pooled and averaged within held-out years containing both response classes; years without both classes still count in Brier scoring. The training-prevalence reference is constant within a fold, so its within-year AUC is 0.5; its pooled AUC can differ because training prevalence changes inversely with held-out-year prevalence.
+It is a proper score, so it rewards honest probabilities. Accuracy would be a poor measure here, because always predicting no spawning is already right on 83.9% of dates. AUC is secondary: it measures ranking only, and the within-year version averages the 13 years that contain both outcomes. The pooled baseline AUC of 0.377 is an artefact, since a fold's training prevalence falls when its held-out year is rich in spawning.
 
-Class imbalance makes ordinary classification accuracy a poor headline here: always predicting no spawning would already classify about 84% of the eligible dates correctly. The Brier score instead evaluates probabilities against a reference fitted without the test year's responses. No arbitrary classification threshold is chosen to make a result look better.
+Each date has equal weight, so full seasons count more than the short early ones, which hold 27 to 39 dates each. 2006 has no spawning date in the sample, so it affects Brier scores but not within-year AUC.
 
-Confidence intervals resample whole held-out years 1,000 times, preserving within-year dependence. They are conditional on the already fitted held-out predictions; they do not refit models in each bootstrap or capture all possible feature-selection uncertainty. We also bootstrap the **paired difference** between calendar and environmental scores, rather than deciding from overlap of separate intervals.
+### Uncertainty
 
-The reported score weights each eligible date equally. The cluster bootstrap resamples complete years and recomputes that same date-weighted score on the resampled dates; it does not switch to an equal-year point estimate. Years with more complete eligible dates therefore have more influence on the main point estimate. That estimand is stated explicitly because the early years have substantial temperature missingness.
+Days within a season are dependent, so the resampling unit is the year. Each of 1,000 replicates draws fourteen years with replacement, keeps their dates together and recomputes the date-weighted score for every model on the same draw:
 
-## Result and meaning
+```math
+\Large
+\mathrm{BS}^{*}_{M}=\frac{\sum_{y\in\mathcal{Y}^{*}}\sum_{t\in y}(p_{M,t}-Y_t)^2}{\sum_{y\in\mathcal{Y}^{*}}n_y}.
+```
 
-The calendar model achieves Brier **0.111** versus **0.136** for training prevalence, an approximately 18% reduction in squared probability error. Adding preceding-week environmental variables produces **0.115**. The paired calendar-minus-environment improvement is **−0.0033**, with a whole-year bootstrap 95% interval of **−0.0078 to +0.0006**. In this specified comparison, the added variables provide no clear gain on excluded years.
+Paired differences come from the same replicates. The intervals are percentile intervals and condition on the fitted held-out predictions, so they do not include refitting uncertainty. With fourteen clusters they are approximate.
 
-This is an informative limit on prediction. It does not show that temperature or weather is biologically irrelevant, nor contradict the source paper's annual associations: the response, lag window, model form and validation question differ. Tank and colony composition, missingness, the limited number of years and aquarium-specific conditions also restrict interpretation. The fitted model is not a wild-reef forecasting service.
+## Calibration
 
-See `R/fit_aquarium_models.R`, `outputs/tables/aquarium_*`, `outputs/models/aquarium_models.rds` and plot 5 for executable calculations, held-out predictions and visual checks.
+The calendar model's mean held-out probability is 0.160, and the observed rate is 0.161. Grouped into eight equal-sized bins by predicted probability, it looks like this.
 
-## Independent numerical audit
+| Bin | Dates | Predicted | Observed |
+| ---: | ---: | ---: | ---: |
+| 1 | 126 | 0.000 | 0.000 |
+| 2 | 126 | 0.003 | 0.000 |
+| 3 | 126 | 0.014 | 0.008 |
+| 4 | 126 | 0.052 | 0.087 |
+| 5 | 126 | 0.128 | 0.222 |
+| 6 | 126 | 0.237 | 0.214 |
+| 7 | 126 | 0.350 | 0.286 |
+| 8 | 125 | 0.501 | 0.472 |
 
-The 4,028 lagged inputs in the complete model sample were separately reconstructed in Python using explicit calendar-date lookups, rather than R's rolling filter. The maximum absolute difference was below \(1.2\times10^{-13}\). All twenty-eight held-out logistic models were independently refitted with a SciPy maximum-likelihood solver, using feature scaling calculated on each training fold only. The maximum difference from the R probabilities was below \(8.8\times10^{-9}\). The optional check can be repeated with `python tools/check_aquarium.py` after installing Python's NumPy, pandas and SciPy. Those packages are not dependencies of the R analysis itself.
+The ordering holds and the overall level is right, so the probabilities are usable within this diary. The middle is less exact: bin 5 under-predicts and bin 7 over-predicts. No date is predicted much above one half, so the model identifies likely periods more than single nights.
 
-The R workflow records convergence, matrix rank and warning counts for every fold in `aquarium_fitting_audit.csv`; full-data models are saved separately from the held-out predictions. There is no global or test-informed feature standardization in the R fitting code.
+## What this does and does not show
 
-## Which clock carries the forecast?
+The diary covers 90 days a year around the expected season, so season only has to locate a peak inside a window that was already chosen for spawning. Its skill would look different over a full year. This is one aquarium, with its own tanks, colonies and lighting. The result cannot say whether field records overstate the Moon because teams go out near full moon, or whether a tank dulls a lunar signal.
 
-The calendar model mixes lunar and seasonal terms, so each half is also fitted alone, on the same folds and the same 1,007 dates.
+The weather result concerns these four inputs, averaged over this one window, in a daily model. It does not show that temperature or weather is biologically irrelevant, and it does not contradict [Sakai, Yamamoto and Maruyama (2024)](https://doi.org/10.1098/rsos.240183), who studied annual first and peak dates. This page is our own reanalysis of their data, and it does not forecast a wild reef.
 
-| Model | Held-out Brier error |
-| --- | --- |
-| Same chance every day | 0.136 |
-| Moon only | 0.136 |
-| Season only | 0.113 |
-| Moon and season | 0.111 |
-| Moon, season and preceding-week conditions | 0.115 |
+A longer complete series, more aquaria or daily field monitoring with recorded zeros could narrow the Moon's interval further. A forward test, predicting each year only from earlier ones, would be the stricter check.
 
-Season alone delivers about 94% of the improvement that the calendar model makes over the baseline, and the Moon alone delivers none. Adding the Moon to season improves the Brier error by 0.0014, with a whole-year bootstrap interval of −0.0032 to 0.0059, which includes zero. The lunar terms are not empty: inside the main late-May-to-June window the spawning rate is highest in the days just before full moon. They add little once the season is known.
+## Numerical audit
 
-The diary covers 90 days a year around the expected season, so the season term only has to find a peak inside that window. It is one aquarium with its own tanks and lighting. The result is a reason for caution about the field concentration, not an estimate for wild reefs.
+`python tools/check_aquarium.py` repeats the calculation outside R. It rebuilds all 4,028 weekly inputs from explicit date lookups, with a largest difference of $1.14\times10^{-13}$. It also refits all 56 held-out logistic models, four models in each of fourteen years, with a SciPy solver, and predicted probabilities differ by at most $8.75\times10^{-9}$. All fits converge at full rank with no numerical warnings, as recorded in `aquarium_fitting_audit.csv`.
+
+The calculation is in [`R/fit_aquarium_models.R`](../R/fit_aquarium_models.R). The results are in [`aquarium_model_scores.csv`](../outputs/tables/aquarium_model_scores.csv), [`aquarium_environment_increment.csv`](../outputs/tables/aquarium_environment_increment.csv), [`aquarium_year_scores.csv`](../outputs/tables/aquarium_year_scores.csv) and [`aquarium_calibration.csv`](../outputs/tables/aquarium_calibration.csv). [Plot 5](../outputs/figures/05_diary.png) shows the diary.

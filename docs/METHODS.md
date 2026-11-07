@@ -99,7 +99,7 @@ We compare models through paired score differences on those same dates. For addi
 -\mathrm{BS}_{\mathrm{season+moon}}.
 ```
 
-A positive difference favours the added lunar terms. The estimate is 0.0014, with a 95% interval from −0.0032 to 0.0059. The interval allows both improvement and deterioration, limiting the evidence for an incremental lunar contribution in this sample.
+A positive difference favours the added lunar terms. The estimate is 0.0014, with a 95% interval from −0.0032 to 0.0059, so the Moon adds no detectable skill once season is known. Season against the baseline gains 0.0227, with an interval from 0.0119 to 0.0319 that excludes zero, and it improves 12 of the 14 held-out years. Adding preceding-week conditions to the calendar model changes the score by −0.0033, with an interval from −0.0078 to 0.0006. The [aquarium methods](AQUARIUM_METHODS.md#result) give the full table.
 
 Each of the 1,000 bootstrap replicates samples fourteen held-out years with replacement, keeps each year's dates together and recomputes the date-weighted score. Using the same resampled years for every model preserves the pairing. The intervals condition on the already fitted predictions. Folds can train on years before and after the excluded year, so the comparison measures retrospective predictive performance within this aquarium's monitored seasons. [Model implementation](../R/fit_aquarium_models.R), [detailed aquarium methods](AQUARIUM_METHODS.md).
 

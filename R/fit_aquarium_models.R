@@ -152,17 +152,34 @@ improvement <- bootstrap_scores |>
   select(replicate, model, brier) |>
   pivot_wider(names_from = model, values_from = brier) |>
   mutate(calendar_to_environment = calendar - environment,
-         season_to_calendar = season - calendar)
+         season_to_calendar = season - calendar,
+         # Each model against the baseline. Separate intervals overlap because
+         # hard years are hard for every model, so only a paired test can tell.
+         prevalence_to_season = prevalence - season,
+         prevalence_to_moon = prevalence - moon,
+         prevalence_to_calendar = prevalence - calendar)
 brier_of <- function(name) scores$brier[scores$model == name]
 improvement_summary <- tibble(
   comparison = c("Calendar Brier minus calendar+environment Brier",
-                 "Season Brier minus season+moon Brier"),
+                 "Season Brier minus season+moon Brier",
+                 "Prevalence Brier minus season Brier",
+                 "Prevalence Brier minus moon Brier",
+                 "Prevalence Brier minus season+moon Brier"),
   estimate = c(brier_of("calendar") - brier_of("environment"),
-               brier_of("season") - brier_of("calendar")),
+               brier_of("season") - brier_of("calendar"),
+               brier_of("prevalence") - brier_of("season"),
+               brier_of("prevalence") - brier_of("moon"),
+               brier_of("prevalence") - brier_of("calendar")),
   low = c(quantile(improvement$calendar_to_environment, 0.025),
-          quantile(improvement$season_to_calendar, 0.025)),
+          quantile(improvement$season_to_calendar, 0.025),
+          quantile(improvement$prevalence_to_season, 0.025),
+          quantile(improvement$prevalence_to_moon, 0.025),
+          quantile(improvement$prevalence_to_calendar, 0.025)),
   high = c(quantile(improvement$calendar_to_environment, 0.975),
-           quantile(improvement$season_to_calendar, 0.975)))
+           quantile(improvement$season_to_calendar, 0.975),
+           quantile(improvement$prevalence_to_season, 0.975),
+           quantile(improvement$prevalence_to_moon, 0.975),
+           quantile(improvement$prevalence_to_calendar, 0.975)))
 
 # Reliability bins are defined by held-out prediction ranks, not outcomes.
 calibration <- predictions |>
