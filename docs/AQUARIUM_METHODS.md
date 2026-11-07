@@ -6,23 +6,36 @@ The [source paper](https://doi.org/10.1098/rsos.240183) examined environmental a
 
 ## Response and sample
 
-For a diary date \(t\),
+For diary date $t$, let $K_t$ be the number of spawning tanks. The indicator $Y_t$ equals one if any tank spawned and zero otherwise.
 
-$$Y_t=\mathbb{1}\{\text{number of tanks spawning on }t>0\}.$$
+```math
+\Large
+Y_t=\mathrm{I}(K_t>0).
+```
 
 The source variable is unfortunately called `spawning_binary`, but contains counts from zero to seventeen. It is converted explicitly, rather than passed incorrectly into a binomial model. The 1,350 diary dates include 208 positive dates. Extra zero scores outside the supplied seasonal diary are not counted as surveyed absences.
 
 Weather and tank-temperature measurements from the seven preceding calendar dates are averaged:
 
-$$\overline{x}_{t,-7:-1}=\frac{1}{7}\sum_{k=1}^{7}x_{t-k}.$$
+```math
+\Large
+\overline{x}_{t,-7:-1}=\frac{1}{7}\sum_{k=1}^{7}x_{t-k}.
+```
 
 The predicted day's measurement is never included. A missing measurement makes that seven-day average missing; we do not fill it using later dates. All three model comparisons use the **same 1,007 complete-case dates from 14 years**, including 162 positive dates. The raw diary remains available for describing the full fifteen seasons. Missing tank-temperature records, notably 2003, explain the narrower model sample.
 
 ## Three comparisons
 
-The reference model predicts the spawning share in the training years. The calendar model is a binomial logistic regression, using two lunar harmonics and one seasonal harmonic. If \(d_t\) is the supplied offset from full moon and \(j_t\) the day of year,
+The reference model predicts the spawning share in the training years. The calendar model is a binomial logistic regression using two lunar harmonics and one seasonal harmonic. For the offset from full moon $d_t$ and the day of year $j_t$, use the angles $v_t=2\pi d_t/29.53059$ and $u_t=2\pi j_t/365.2425$.
 
-$$\operatorname{logit}(p_t)=\beta_0+\sum_{h=1}^{2}\left[\beta_{s,h}\sin\!\left(\frac{2\pi h d_t}{29.53059}\right)+\beta_{c,h}\cos\!\left(\frac{2\pi h d_t}{29.53059}\right)\right]+\gamma_s\sin\!\left(\frac{2\pi j_t}{365.2425}\right)+\gamma_c\cos\!\left(\frac{2\pi j_t}{365.2425}\right).$$
+```math
+\Large
+\begin{aligned}
+\log\!\left(\frac{p_t}{1-p_t}\right)&=\beta_0+S_t+L_t,\\
+S_t&=a\sin u_t+b\cos u_t,\\
+L_t&=\sum_{h=1}^{2}[c_h\sin(hv_t)+e_h\cos(hv_t)].
+\end{aligned}
+```
 
 Sine and cosine represent cycles continuously: the end of a lunar cycle is close to its beginning. The second harmonic allows more than one broad concentration of spawning dates per cycle. These terms are specified before fitting the comparisons; no stepwise search selects a favourable model.
 
@@ -34,7 +47,10 @@ One complete year is withheld, the models are fitted to all the other eligible y
 
 The primary score is the Brier score:
 
-$$\mathrm{BS}=\frac{1}{n}\sum_{t=1}^{n}(p_t-Y_t)^2.$$
+```math
+\Large
+\mathrm{BS}=\frac{1}{n}\sum_{t=1}^{n}(p_t-Y_t)^2.
+```
 
 Lower values mean smaller squared probability errors. Equal-count reliability bins compare predicted probabilities with observed spawning shares. AUC is exported as a secondary ranking measure, both pooled and averaged within held-out years containing both response classes; years without both classes still count in Brier scoring. The training-prevalence reference is constant within a fold, so its within-year AUC is 0.5; its pooled AUC can differ because training prevalence changes inversely with held-out-year prevalence.
 

@@ -19,9 +19,12 @@ We use sites with at least ten recorded reef-nights across at least three years.
 Let $n_{s,m}$ be the number of recorded reef-nights at site $s$ in month $m$, and $S_r$ the number of eligible sites in region $r$. First normalise within each site, then average the site shares within the region.
 
 ```math
-q_{s,m}=\frac{n_{s,m}}{\sum_{k=1}^{12}n_{s,k}},\qquad
-w_{r,m}=\frac{1}{S_r}\sum_{s\in r}q_{s,m},\qquad
-\sum_{m=1}^{12}w_{r,m}=1.
+\Large
+\begin{aligned}
+q_{s,m}&=\frac{n_{s,m}}{\sum_{k=1}^{12}n_{s,k}},\\
+w_{r,m}&=\frac{1}{S_r}\sum_{s\in r}q_{s,m},\\
+\sum_{m=1}^{12}w_{r,m}&=1.
+\end{aligned}
 ```
 
 This gives each eligible site equal influence, so a heavily recorded site cannot dominate simply through its record count. Within a site, a month with no recorded events gets a share of zero. That zero describes the available records, while survey schedules still limit what we know about unobserved spawning.
@@ -31,12 +34,14 @@ This gives each eligible site equal influence, so a heavily recorded site cannot
 For region $r$, year $y$ and month $m$, let $D_{r,y,m}$ be the number of available daily records and $H_{r,y,m}$ the number with degree heating weeks (DHW) at least 4 °C-weeks. The monthly stress fraction and annual overlap are
 
 ```math
-f_{r,y,m}=\frac{H_{r,y,m}}{D_{r,y,m}},\qquad
-E_{r,y}=\sum_{m=1}^{12}w_{r,m}f_{r,y,m},\qquad
-0\leq E_{r,y}\leq1.
+\Large
+\begin{aligned}
+f_{r,y,m}&=\frac{H_{r,y,m}}{D_{r,y,m}},\\
+E_{r,y}&=\sum_{m=1}^{12}w_{r,m}f_{r,y,m}.
+\end{aligned}
 ```
 
-Using a fraction accounts for different month lengths, including leap-year February. The coverage audit confirms complete daily records throughout 1986–2024 for the regions used here. The threshold of 4 °C-weeks belongs to this overlap calculation. Plot 7 separately counts regions reaching 8 °C-weeks in a year.
+The overlap lies between zero and one because it is a weighted average of fractions. Using a fraction accounts for different month lengths, including leap-year February. The coverage audit confirms complete daily records throughout 1986–2024 for the regions used here. The threshold of 4 °C-weeks belongs to this overlap calculation. Plot 7 separately counts regions reaching 8 °C-weeks in a year.
 
 Suppose a region's calendar puts 60% of its weight in May and 40% in June. If half of May's days and one quarter of June's days meet the threshold, its overlap is $0.6\times0.5+0.4\times0.25=0.40$. If we draw a month using the calendar weights and then draw one of its days uniformly, 40% of those draws would meet the heat threshold.
 
@@ -45,9 +50,11 @@ The weights are held fixed for every year. Changes in $E_{r,y}$ therefore come f
 Plot 8 shows all 39 years and compares equal-year decade means. Its change is
 
 ```math
-\Delta E_r=
-\frac{1}{10}\sum_{y=2015}^{2024}E_{r,y}
--\frac{1}{10}\sum_{y=1986}^{1995}E_{r,y}.
+\Large
+\begin{aligned}
+\Delta E_r &= \frac{1}{10}\sum_{y=2015}^{2024}E_{r,y}\\
+&\quad -\frac{1}{10}\sum_{y=1986}^{1995}E_{r,y}.
+\end{aligned}
 ```
 
 A change of 0.10 corresponds to ten percentage points. The implementation checks that each region's calendar weights sum to one. A separate Python calculation reproduces all 546 region-years from the source histories to numerical precision. [Calculation](../R/analyse_heat_exposure.R), [independent check](../tools/check_climate.py), [validation record](VALIDATION.md).
@@ -58,20 +65,18 @@ The aquarium diary explicitly supplies monitored non-spawning days. Its `spawnin
 
 ### Why use cyclic logistic models?
 
-Write $p_t$ for the probability of at least one tank spawning on a monitored date. Logistic regression keeps fitted probabilities between zero and one. The combined calendar model uses one seasonal harmonic and two lunar harmonics.
+Write $p_t$ for the probability of at least one tank spawning on a monitored date. The calendar model uses the seasonal angle $u_t=2\pi j_t/365.2425$ and the lunar angle $v_t=2\pi d_t/29.53059$. Here $j_t$ is day of year and $d_t$ is the supplied offset from full moon.
 
 ```math
+\Large
 \begin{aligned}
-\log\!\left(\frac{p_t}{1-p_t}\right)
-&=\beta_0+S_t+L_t,\\
-S_t&=a\sin(2\pi j_t/365.2425)+b\cos(2\pi j_t/365.2425),\\
-L_t&=\sum_{h=1}^{2}\left[
-c_h\sin(2\pi h d_t/29.53059)
-+e_h\cos(2\pi h d_t/29.53059)\right].
+\log\!\left(\frac{p_t}{1-p_t}\right)&=\beta_0+S_t+L_t,\\
+S_t&=a\sin u_t+b\cos u_t,\\
+L_t&=\sum_{h=1}^{2}[c_h\sin(hv_t)+e_h\cos(hv_t)].
 \end{aligned}
 ```
 
-Here $j_t$ is day of year and $d_t$ is the supplied offset from full moon. A sine–cosine pair lets the data determine the phase of a cycle without a discontinuity at its boundary. The second lunar harmonic allows a more flexible shape, including two concentrations within a cycle. Separate season-only and moon-only fits reveal which set of terms contributes predictive information. The environmental extension adds preceding-week temperature, wind, solar flux and `log1p` rainfall.
+A sine–cosine pair lets the data determine the phase of a cycle without a discontinuity at its boundary. The second lunar harmonic allows a more flexible shape, including two concentrations within a cycle. Separate season-only and moon-only fits reveal which set of terms contributes predictive information. The environmental extension adds preceding-week temperature, wind, solar flux and `log1p` rainfall.
 
 All five models are evaluated on the same 1,007 complete-case dates in fourteen years, so each comparison has the same missing-data coverage. For each fold we exclude one entire year before fitting and predict its eligible dates. Environmental predictors use the seven calendar dates strictly before the target date. The baseline is the spawning prevalence in the training years, calculated afresh for each fold.
 
@@ -80,6 +85,7 @@ All five models are evaluated on the same 1,007 complete-case dates in fourteen 
 Let $Y_t$ equal one when at least one tank spawned and zero otherwise. The Brier score averages squared probability errors over held-out dates.
 
 ```math
+\Large
 \mathrm{BS}=\frac{1}{n}\sum_{t=1}^{n}(p_t-Y_t)^2.
 ```
 
@@ -88,6 +94,7 @@ Lower scores are better. For example, a probability of 0.8 incurs loss 0.04 on a
 We compare models through paired score differences on those same dates. For adding the Moon to season, the reported improvement is
 
 ```math
+\Large
 \Delta\mathrm{BS}=\mathrm{BS}_{\mathrm{season}}
 -\mathrm{BS}_{\mathrm{season+moon}}.
 ```
@@ -101,9 +108,12 @@ Each of the 1,000 bootstrap replicates samples fourteen held-out years with repl
 Year, lunar month and day are circles, so an ordinary mean can point to the wrong time. Days −14 and +14 are close across the lunar boundary, but their arithmetic mean is full moon. Each record with value $v_i$ on a cycle of period $P$ becomes a unit arrow at angle $\theta_i = 2\pi v_i / P$, and the arrows are averaged.
 
 ```math
-\bar{R}=\sqrt{\bar{c}^{2}+\bar{s}^{2}},\qquad
-\bar{c}=\frac{1}{n}\sum_{i=1}^{n}\cos\theta_i,\qquad
-\bar{s}=\frac{1}{n}\sum_{i=1}^{n}\sin\theta_i.
+\Large
+\begin{aligned}
+\bar{c}&=\frac{1}{n}\sum_{i=1}^{n}\cos\theta_i,\\
+\bar{s}&=\frac{1}{n}\sum_{i=1}^{n}\sin\theta_i,\\
+\bar{R}&=\sqrt{\bar{c}^{2}+\bar{s}^{2}}.
+\end{aligned}
 ```
 
 $\bar{R}$ is the mean resultant length, labelled R in the plots. Its upper bound follows because the average of unit arrows has length at most one. A value of one means all arrows point in the same direction. A value near zero means their directions largely cancel. Two equally strong opposite clusters also cancel, so a low value alone cannot establish an even spread. The distributions shown beside the summaries reveal this structure.
@@ -111,7 +121,8 @@ $\bar{R}$ is the mean resultant length, labelled R in the plots. Its upper bound
 The angle of the average arrow gives the circular mean, converted back to the original unit by
 
 ```math
-\bar{v}=\frac{P}{2\pi}\operatorname{atan2}(\bar{s},\bar{c}).
+\Large
+\bar{v}=\frac{P}{2\pi}\,\mathrm{atan2}(\bar{s},\bar{c}).
 ```
 
 `atan2` retains the correct quadrant. Equivalent values differ by a whole period. The direction becomes unstable when the resultant is close to zero and is undefined when it is exactly zero. Moving the origin of a cycle rotates every arrow equally and preserves $\bar{R}$, which makes the length useful across different reference times.
@@ -141,6 +152,7 @@ The place-level 95% intervals resample individual recorded nights 2,000 times. N
 If $\widetilde{T}_r(j)$ is the smoothed typical temperature on day $j$, the quantity used is
 
 ```math
+\Large
 g_r(j)=\widetilde{T}_r(j+15)-\widetilde{T}_r(j-15),
 ```
 
@@ -160,12 +172,13 @@ The headline sample combines exact and approximate times on natural reefs. The f
 
 ### Why the same-reef slope matters
 
-Let $x_i$ be lunar day and $z_i$ the start in hours after sunset. Within each reef–genus group $g$, subtract the group's own averages. The estimated drift in minutes per lunar day is
+Let $x_i$ be lunar day and $z_i$ the start in hours after sunset. Within each reef–genus group $g$, subtract the group's own averages to get $\tilde{x}_i=x_i-\bar{x}_g$ and $\tilde{z}_i=z_i-\bar{z}_g$. The estimated drift in minutes per lunar day is
 
 ```math
+\Large
 \widehat{\beta}_{\mathrm{within}}
-=60\,\frac{\sum_g\sum_{i\in g}(x_i-\bar{x}_g)(z_i-\bar{z}_g)}
-{\sum_g\sum_{i\in g}(x_i-\bar{x}_g)^2}.
+=60\,\frac{\sum_g\sum_{i\in g}\tilde{x}_i\tilde{z}_i}
+{\sum_g\sum_{i\in g}\tilde{x}_i^2}.
 ```
 
 This removes each group's persistent timing offset. A group observed on only one lunar day contributes no information about drift. Groups with more observations and more spread in lunar day contribute more to the slope. The implementation checks that this calculation agrees with a linear model containing reef–genus fixed effects to within $10^{-8}$ minutes per day.
