@@ -10,11 +10,12 @@ moonrise and dawn.
 """
 import math
 import random
-import re
+from base64 import b64encode
 
 from common import ASSETS, data_uri, render_html, render_svg
 
 W, H = 1280, 620
+PLAQUE_WIDTH, PLAQUE_HEIGHT = 130, 74
 LOOP = 32  # seconds for one day and night
 
 BEVEL = """
@@ -333,14 +334,20 @@ def ray_layer(seed):
 
 
 def plaque_layer():
-    """The FHNW logo as a small white plaque on the tank glass, like a label in a public aquarium."""
-    logo = (ASSETS / "fhnw-logo-en.svg").read_text(encoding="utf-8")
-    inner = re.search(r"<svg[^>]*>(.*)</svg>", logo, re.S).group(1)
+    """The short FHNW mark on a small plaque with a rim that catches the tank light."""
+    mark = b64encode((ASSETS / "fhnw_mark.png").read_bytes()).decode("ascii")
     return f"""
-    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="60" viewBox="0 0 300 60">
-      <defs><linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".97"/><stop offset="1" stop-color="#e8f9ff" stop-opacity=".94"/></linearGradient></defs>
-      <rect x="1.5" y="1.5" width="297" height="57" rx="15" fill="url(#p)" stroke="#ffffff" stroke-width="1.5"/>
-      <svg x="20" y="12" width="260" height="37" viewBox="732 401 349 50">{inner}</svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="{PLAQUE_WIDTH}" height="{PLAQUE_HEIGHT}">
+      <defs>
+        <clipPath id="mark"><rect x="5" y="3" width="120" height="63" rx="12"/></clipPath>
+        <filter id="plaque-shadow">
+          <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#08244d" flood-opacity=".5"/>
+        </filter>
+      </defs>
+      <g filter="url(#plaque-shadow)">
+        <image href="data:image/png;base64,{mark}" x="5" y="3" width="120" height="63" clip-path="url(#mark)"/>
+        <rect x="5.5" y="3.5" width="119" height="62" rx="11.5" fill="none" stroke="#e8f9ff" stroke-opacity=".85"/>
+      </g>
     </svg>"""
 
 
@@ -502,7 +509,7 @@ def build():
     reef = data_uri(render_svg(reef_layer(tips), W, H, scale=1.5, transparent=True), quality=78)
     title = data_uri(render_html(title_layer(), W, 300, scale=1.5), quality=90)
     beam = data_uri(render_svg(beam_layer(), W, H, scale=.5, transparent=True), quality=60)
-    plaque = data_uri(render_svg(plaque_layer(), 300, 60, scale=2.5, transparent=True), quality=92)
+    plaque = data_uri(render_svg(plaque_layer(), PLAQUE_WIDTH, PLAQUE_HEIGHT, scale=2.5, transparent=True), quality=95)
     rays_a = data_uri(render_svg(ray_layer(1), W, H, scale=.5, transparent=True), quality=60)
     rays_b = data_uri(render_svg(ray_layer(2), W, H, scale=.5, transparent=True), quality=60)
     captions = [data_uri(render_html(caption_layer(text), 900, 64, scale=1.5), quality=90) for text, _, _ in CAPTIONS]
@@ -592,7 +599,7 @@ def build():
 <g>{spawn(tips)}</g>
 <path d="M0,0 H{W} V58 C900,120 380,120 0,70 Z" fill="url(#gloss)" opacity=".4"/>
 <image href="{title}" width="{W}" height="300"/>
-<image href="{plaque}" x="958" y="18" width="300" height="60"/>
+<image href="{plaque}" x="{W - PLAQUE_WIDTH - 17}" y="15" width="{PLAQUE_WIDTH}" height="{PLAQUE_HEIGHT}"/>
 {''.join(caption_tags)}
 </g>
 <rect x="1.5" y="1.5" width="{W - 3}" height="{H - 3}" rx="27" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="3"/>
