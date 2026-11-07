@@ -333,7 +333,7 @@ def ray_layer(seed):
 
 
 def logo_layer():
-    """A frosted mark in the upper-left corner of the tank glass."""
+    """A frosted mark in the upper-right corner of the tank glass."""
     mark = b64encode((ASSETS / "fhnw_mark.png").read_bytes()).decode("ascii")
     width = 100
     height = width * 1519 / 2560  # Preserve the transparent source's proportions.
@@ -345,7 +345,7 @@ def logo_layer():
           <feDropShadow dx="0" dy="1.5" stdDeviation="1.4" flood-color="#063158" flood-opacity=".8"/>
         </filter>
       </defs>
-      <image href="data:image/png;base64,{mark}" x="32" y="30" width="{width}" height="{height:.4f}" filter="url(#fhnw-glass)"/>
+      <image href="data:image/png;base64,{mark}" x="{W - width - 32}" y="30" width="{width}" height="{height:.4f}" filter="url(#fhnw-glass)"/>
     </g>"""
 
 
